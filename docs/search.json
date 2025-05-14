@@ -1,5 +1,169 @@
 [
   {
+    "objectID": "kruskalWallis.html",
+    "href": "kruskalWallis.html",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1 Example\nThe Kruskal-Wallis test is a non-parametric statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a one-way ANOVA are violated. It’s essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after William Kruskal and W. Allen Wallis, who developed it in 1952.\nIn the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in Figure 1.1, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#example-scenario",
+    "href": "kruskalWallis.html#example-scenario",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "Study Context\n\n\n\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#assumptions",
+    "href": "kruskalWallis.html#assumptions",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.2 Assumptions",
+    "text": "1.2 Assumptions\nThe Kruskal-Wallis test relies on the following assumptions:\n Non-parametric: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data\n Independence of Observations: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group\n Ordinal or Continuous Data: The data should be atleast ordinal, meaning it can be ranked, or continuous.\n\n\nKey Features of Kruskal-Wallis Test\n\n\nNon-parametric: Unlike ANOVA, it does not assume normality or equal variances, making it suitable for non-normal data.\nExtension of the Mann-Whitney U test: It is essentially an extension of the Mann-Whitney U test, designed for more than two independent samples.\nRanking-based: Like the Mann-Whitney U test, the Kruskal-Wallis test relies on ranking the data rather than using raw values.\nTest statistic: The test calculates a statistic based on the ranked data to determine if significant differences exist between the groups.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#when-to-use",
+    "href": "kruskalWallis.html#when-to-use",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.3 When to use",
+    "text": "1.3 When to use",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#hypotheses",
+    "href": "kruskalWallis.html#hypotheses",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.3 Hypotheses",
+    "text": "1.3 Hypotheses\nThe Kruskal-Wallis test evaluates the following hypotheses:\n\n\n\n\n\n\nNull Hypothesis (H₀)\n\n\n\nThe population medians of all groups are equal.\n\n\n\n\n\n\n\n\nAlternative Hypothesis (H₁)\n\n\n\nAt least one population median is different from the others.\n\n\n\n\nSteps in Kruskal-Wallis Test\n\n\nStep one: Sort and assign ranks to the data\nStep two: Add up the ranks for each group\nStep three: Calculate the H statistic\nStep four: Obtain and interpret the p-value",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#correction-for-ties",
+    "href": "kruskalWallis.html#correction-for-ties",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.5 Correction for Ties",
+    "text": "1.5 Correction for Ties\nIf there are tied values in the dataset, the test statistic is adjusted using:\n\n\n\n\n\n\nUse this for Kruskal-Wallis Test\n\n\n\n\\[\n\\Large H_{corrected} = \\frac{H}{1 - \\frac{\\sum_{i=1}^{G} (t_i^3 - t_i)}{N^3 - N}}\n\\tag{1.2}\\]\n\n\nWhere:\n\n\\(G\\) is the number of groups of tied ranks.\n\\(t_i\\) is the number of tied values in the \\(i\\)-th group.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#multiple-comparison-test",
+    "href": "kruskalWallis.html#multiple-comparison-test",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.1 Multiple Comparison Test",
+    "text": "2.1 Multiple Comparison Test\nWhen the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:\n\n\nDunn’s Test\n- Dunn’s Test, developed by Olive Dunn in 1964, is primarily used as a post hoc procedure following the Kruskal-Wallis test.\n- It performs pairwise comparisons while controlling for the family-wise error rate.\n\n\nLSD (Least Significant Difference) Test\n- Fisher’s LSD test is a parametric post hoc test used after ANOVA to compare all pairwise group differences.\n- It does not correct for multiple comparisons, increasing the false positive rate.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#p-adjustment",
+    "href": "kruskalWallis.html#p-adjustment",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.2 P Adjustment Method",
+    "text": "2.2 P Adjustment Method\nIn statistical hypothesis testing, p-values indicate the probability of observing results at least as extreme as those observed, assuming the null hypothesis is true. When multiple tests are conducted, the risk of false positives (Type I errors) increases. P-value adjustment methods address this issue by controlling the overall error rate, ensuring reliable inference in multiple testing scenarios.\nYou can select different p-adjustment methods:\n\nBonferroni\nHolm\nHommel\nBenjamini-Hochberg Procedure (BH)\nBenjamini-Yekutieli Procedure (BY)\nFalse Discovery Rate (q-value) Approach",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#getting-started",
+    "href": "kruskalWallis.html#getting-started",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.3 Getting Started",
+    "text": "2.3 Getting Started\n\n2.3.1 Log In to RAISINS\n\n” Head to www.raisins.live and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric! “\n\n\n2.3.2 Upload the data\nDownload the model datasets from the RAISINS DATATSETS TAB \nEx : Sensory Evaluation dataset\nThis is a hypothetical qualitative(categorical) dataset containing four treatments named as Groups (V1, V2, V3, V4), each representing a different product variant, with data collected from 10 judges as replicates per treatment. The dataset includes sensory evaluation scores for five attributes: Appearance, Color, Texture, Taste, and Flavour, each rated on a scale from 1 to 5.\n\n\n\nGroups\nAppearance\nColor\nTexture\nTaste\nFlavour\n\n\n\n\nV1\n4\n4\n4\n3\n5\n\n\nV1\n3\n3\n3\n3\n3\n\n\nV1\n4\n3\n4\n3\n3\n\n\nV1\n5\n4\n3\n1\n2\n\n\nV1\n2\n1\n2\n2\n2\n\n\nV2\n3\n3\n4\n3\n1\n\n\nV2\n2\n3\n3\n3\n4\n\n\nV2\n4\n4\n5\n4\n4\n\n\nV2\n4\n4\n4\n4\n4\n\n\nV2\n4\n5\n3\n4\n3\n\n\n\nCreate a Dataset in Excel \nWant to craft your own RAISINS dataset? USE Microsoft Excel and create your data according to the model dataset’s structure.\n\n\n\n  \n    \n      \n        1. SPACING\n      \n      \n        No space is allowed in the Column name\n\nIf space is required use underscore '_' or '.' full stop.\n      \n    \n  \n\n  \n    \n      \n        2. DATA ARRANGEMET\n      \n      \n        Data should be arranged towards upper left corner and row above the data should not be left blank.\n      \n    \n  \n\n  \n    \n      \n        3. CONTENTS\n      \n      \n        Don't type and delete anything on other cells without data. If so select those cells, right click and click clear contents\n      \n    \n  \n\n  \n    \n      \n        4. NAMING\n      \n      \n        Give names to all column, Don't add any unnecessary columns that is not required for analysis.\n      \n    \n  \n\n\n\n\n\n\n\nNote\n\n\n\nOnce all these are done, your file is ready. Now save it as CSV file. Upload file by clicking browse in the app\n\n\nGenerating Data in the Application \n“RAISINS” application lets you generate a raisins dataset directly within its interface. Here’s how:\n\nOpen RAISINS ➡️Navigate to the Create Data Tab➡️ Select the number of Treatments ➡️ Select number of replications➡️Click on Create\n\n\n\n\n\n\nNote\n\n\n\nA model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the file is ready! click on browse and upload the file\n\n\nOnce the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis !",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#results",
+    "href": "kruskalWallis.html#results",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.4 Results",
+    "text": "2.4 Results",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#customizable-plots",
+    "href": "kruskalWallis.html#customizable-plots",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.5 Customizable plots",
+    "text": "2.5 Customizable plots\n\n\n\n\n\n\n\n\nBox plot\n\n\n\nA box plot displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!\n\n\n\n\n\n\n\n\nPairs plot\n\n\n\nA pairs plot weaves a colorful matrix of scatterplots, revealing pairwise relationships between variables. Diagonals burst with histograms or density plots, showcasing each variable’s distribution.\n\n\n\n\n\n\n\n\nBar plot\n\n\n\nA bar plot paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.\n\n\n\n\n\n\n\n\nConnected plot\n\n\n\nA connected plot links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.\n\n\n\n\n\n\n\n\nMean Value Plot\n\n\n\nA mean value plot shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.\n\n\n\n\n\n\n\n\nViolin plot\n\n\n\nA violin plot blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#multivariate-and-ai",
+    "href": "kruskalWallis.html#multivariate-and-ai",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.6 Multivariate and AI",
+    "text": "2.6 Multivariate and AI\nThe Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, imagine you have more than one variable (for example, height and weight), and you still want to compare these across different groups. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !\n“Don’t worry RAISIN will guide you to perform Multivariate analysis !”\nRAISINS is equipped with an AI-powered interpretation feature designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.\nRAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#faqs",
+    "href": "kruskalWallis.html#faqs",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.7 FAQ’s",
+    "text": "2.7 FAQ’s\nDetailed instruction on how to use the app is available under the FAQ’s section!",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#user",
+    "href": "kruskalWallis.html#user",
+    "title": "1  Kruskal Wallis Test",
+    "section": "2.8 User",
+    "text": "2.8 User\nUser details including usage percentage and other billing details is available in the USER tab",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Preface",
+    "section": "",
+    "text": "For a long time, I have dreamed of writing a book that truly serves the needs of undergraduate students in agriculture—a book that demystifies statistics and makes it accessible and practical for their studies and research. Statistics, while being an essential tool in agricultural sciences, is often presented in ways that make it seem more complicated than it actually is. Textbooks in this field tend to delve into intricate details that go far beyond what most agricultural students require, leaving them overwhelmed and disconnected from the subject’s practical relevance.\nThis book is my humble attempt to change that. It has been written with undergraduate students in mind, focusing on the basics of statistics and their direct applications in agricultural research. Each chapter is designed to simplify complex concepts, making them clear, relatable, and easy to understand. While the primary audience is undergraduate students, this book can also serve as a helpful resource for anyone looking to brush up on the fundamentals of statistics.\nThe journey of writing this book has been greatly enriched by the feedback and insights of the students at the College of Agriculture, Vellayani. For two years, an earlier version of this book was made available on MeLON (Module for eLearning and Online Notes), our college’s online platform. The students, with their thoughtful suggestions and sharp observations, have helped refine the content and shape it into what it is today. Their enthusiasm and curiosity have been a constant source of inspiration throughout this process.\nI would also like to express my heartfelt gratitude to my co-authors, Dr. Manju Mary Paul, Dr. Adarsh V. S., and Mohammed Hisham M., whose expertise, commitment, and contributions have been invaluable in bringing this book to life. Their collaboration and dedication have greatly enhanced the quality and depth of this work.\nA special thanks to Jithin Chandran, Gaatha Prasad, Anjana Biwas T., and Varsha H. for their valuable suggestions and minor corrections. They were postgraduate students in Agricultural Statistics at the time of writing this book, and their support has significantly increased the quality of this work.\nI hope this textbook becomes a guiding light for students and researchers alike, helping them build a solid foundation in statistics while inspiring confidence in their ability to use these tools effectively. If this book makes statistics less intimidating and more approachable for even one reader, I will consider my efforts worthwhile.\nWith deep gratitude to my students, colleagues, and everyone who supported this work, I present this book as a tool to empower the next generation of agricultural scientists and researchers.\nDr. Pratheesh P. Gopinath\nHead\nDepartment of Agricultural Statistics\nCollege of Agriculture, Vellayani\n2 December 2024",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "RAISINS TUTORIAL",
@@ -7,6 +171,17 @@
     "text": "Welcome\nWelcome to the Textbook of Agricultural Statistics – a comprehensive resource thoughtfully crafted by the Department of Agricultural Statistics at the College of Agriculture, Vellayani, Kerala Agricultural University. This book was created to meet the need for a clear, accessible, and practical guide to statistics tailored for agricultural research.\nStatistics is an essential tool in agriculture, enabling researchers and practitioners to uncover patterns, validate results, and make data-driven decisions. However, the subject is often perceived as complex and challenging to master. This textbook is designed to change that perception, offering straightforward explanations and practical guidance to make statistical concepts approachable and applicable.\nAs John Tukey once said, “The greatest value of a picture is when it forces us to notice what we never expected to see.” We have embraced this philosophy by incorporating clear examples, practical applications, and data visualizations to illustrate concepts and deepen understanding.\nWhile this book is primarily written with undergraduate students in mind, its simplicity and focus on real-world applications make it a valuable resource for a wide audience, including postgraduate students, researchers, and anyone seeking to build a strong foundation in statistics and experimental design.\nYou will find clear explanations, practical examples, and step-by-step instructions throughout the chapters, all tailored to the unique needs of agricultural studies. Our goal is to ensure that learners at all levels can confidently apply statistical methods to their work and research.\nWhether you are new to statistics or looking to revisit the basics with a fresh perspective, we hope this book serves as a supportive companion in your journey to understanding and applying statistical tools effectively in agriculture.\n\nAcknowledgements\nThis book is the result of collaborative efforts among dedicated teachers and statisticians, but the majority of the reviewing, editing, and refinement has been inspired and shaped by the students.\nFor two years, this book was made available online on the MeLON (Module for eLearning and Online Notes) platform of the College of Agriculture, Vellayani. During this time, students provided valuable feedback, pointed out areas for improvement, and offered insights that greatly enhanced the quality and clarity of the content. We are sincerely grateful to all the students whose suggestions and input played a key role in the development of this textbook.\nWe would also like to thank the College of Agriculture, Vellayani, for fostering an environment that encourages learning, growth, and the sharing of ideas.\n\n\nNote from the Publisher\nThis textbook is published by PAPAYA, the publication division of Statoberry LLP, which is committed to providing high-quality educational resources for agricultural research. The online version of this book is available for free, in line with our dedication to open access and knowledge sharing. Visit us at PAPAYA.\n\n\nCopyright Information\n© 2024 Statoberry LLP. All rights reserved.\nOnline version of this book is licensed under a\n\nCreative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.\nUnder this license:\n- Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made.\n- Non Commercial: You may not use the material for commercial purposes.\n- No Derivatives: If you remix, transform, or build upon the material, you may not distribute the modified material.\nFor commercial use or distribution of print copies, prior written permission from Statoberry LLP is required.",
     "crumbs": [
       "Welcome"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#the-test-statistic",
+    "href": "kruskalWallis.html#the-test-statistic",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.4 The Test Statistic",
+    "text": "1.4 The Test Statistic\nThe Kruskal-Wallis test statistic is calculated as:\n\n\n\n\n\n\nUse this for Kruskal-Wallis Test\n\n\n\n\\[\n\\Large H = \\frac{12}{N(N+1)} \\sum_{i=1}^{k} \\frac{R_i^2}{n_i} - 3(N+1)\n\\tag{1.1}\\]\n\n\nWhere:\n\n\\(N\\) is the total number of observations across all groups.\n\\(k\\) is the number of groups.\n\\(n_i\\) is the number of observations in group \\(i\\).\n\\(R_i\\) is the sum of ranks for group \\(i\\).\n\nWhen there are no ties in the data, \\(H\\) follows a chi-square distribution with \\(k-1\\) degrees of freedom. When ties exist, a correction factor is applied.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
     ]
   }
 ]

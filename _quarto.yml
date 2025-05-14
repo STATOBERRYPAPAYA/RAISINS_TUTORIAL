@@ -13,9 +13,7 @@ book:
   favicon: images/cover.jpg
   author: 
     - Dr. Pratheesh P. Gopinath
-    - Dr. Manju Mary Paul
-    - Dr. Adarsh V.S.
-    - Mohammed Hisham M.
+    - Jithin Chandran
   date: "2/12/2024"
   reader-mode: true
   page-navigation: true
@@ -23,16 +21,18 @@ book:
   search: true
   site-url: https://cleaning-data-r.ala.org.au/
   repo-url: https://github.com/STATOBERRYPAPAYA/TextbookofAgstat
-  image: images/cover.jpg
+  image: images/cover.png
   image-alt: "Textbook of Agricultural Statistics"
   open-graph: 
-    image: images/cover.jpg
+    image: images/cover.png
     image-alt: "Textbook of Agricultural Statistics"
   chapters:
-   - index.qmd
-   - preface.qmd
-   - intro.qmd
-   - references.qmd
+    - index.qmd
+    - preface.qmd
+    - part: "Non-parametric Test"
+      chapters:
+        - kruskalWallis.qmd
+    - references.qmd
   twitter-card: 
     image: images/papayalogo.png
     image-alt: "Textbook of Agricultural Statistics"
@@ -48,7 +48,7 @@ book:
     right: |
         Licenced under [CC-BY-NC-ND 4.0 Int License](https://creativecommons.org/licenses/by-nc-nd/4.0/) <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">![](/images/cclogo.png){style='width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;'}</a>
         Built with <a href="https://quarto.org/">Quarto</a>
-  cover-image: images/cover.jpg
+  cover-image: images/cover.png
   
 bibliography: 
   - book.bib

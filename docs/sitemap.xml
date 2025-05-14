@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cleaning-data-r.ala.org.au/kruskalWallis.html</loc>
+    <lastmod>2025-05-14T03:03:51.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cleaning-data-r.ala.org.au/preface.html</loc>
+    <lastmod>2025-05-14T01:35:05.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cleaning-data-r.ala.org.au/references.html</loc>
+    <lastmod>2025-05-14T01:35:05.797Z</lastmod>
+  </url>
+  <url>
     <loc>https://cleaning-data-r.ala.org.au/index.html</loc>
-    <lastmod>2024-12-12T05:16:06.807Z</lastmod>
+    <lastmod>2025-05-14T02:16:08.012Z</lastmod>
   </url>
 </urlset>

@@ -93,7 +93,28 @@ a {
   table-layout: fixed;
   word-wrap: break-word;
 }
+/*kruskal*/
 
 
+.dunn-box {
+  background: linear-gradient(135deg, #e6f3ff, #b3d4ff);
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.dunn-box:hover {
+  transform: scale(1.02);
+}
+.lsd-box {
+  background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.lsd-box:hover {
+  transform: scale(1.02);
+}
 
 
