@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,8 +38,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-180e2faffd6b3a514b52cc0b2cbd62b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -214,21 +214,20 @@ window.Quarto = {
   <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses"><span class="header-section-number">1.3</span> Hypotheses</a></li>
   <li><a href="#the-test-statistic" id="toc-the-test-statistic" class="nav-link" data-scroll-target="#the-test-statistic"><span class="header-section-number">1.4</span> The Test Statistic</a></li>
   <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties"><span class="header-section-number">1.5</span> Correction for Ties</a></li>
-  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results"><span class="header-section-number">2</span> Interpreting the Results</a>
+  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results"><span class="header-section-number">1.6</span> Interpreting the Results</a></li>
+  <li><a href="#multiple-comparison-test" id="toc-multiple-comparison-test" class="nav-link" data-scroll-target="#multiple-comparison-test"><span class="header-section-number">1.7</span> Multiple Comparison Test</a></li>
+  <li><a href="#p-adjustment" id="toc-p-adjustment" class="nav-link" data-scroll-target="#p-adjustment"><span class="header-section-number">1.8</span> P Adjustment Method</a></li>
+  <li><a href="#kruskal-wallis-test-in-raisins" id="toc-kruskal-wallis-test-in-raisins" class="nav-link" data-scroll-target="#kruskal-wallis-test-in-raisins"><span class="header-section-number">1.9</span> KRUSKAL WALLIS TEST IN <span style="color:red;">RAISINS</span></a>
   <ul class="collapse">
-  <li><a href="#multiple-comparison-test" id="toc-multiple-comparison-test" class="nav-link" data-scroll-target="#multiple-comparison-test"><span class="header-section-number">2.1</span> Multiple Comparison Test</a></li>
-  <li><a href="#p-adjustment" id="toc-p-adjustment" class="nav-link" data-scroll-target="#p-adjustment"><span class="header-section-number">2.2</span> P Adjustment Method</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">2.3</span> Getting Started</a>
-  <ul class="collapse">
-  <li><a href="#log-in-to-raisins" id="toc-log-in-to-raisins" class="nav-link" data-scroll-target="#log-in-to-raisins"><span class="header-section-number">2.3.1</span> Log In to RAISINS</a></li>
-  <li><a href="#upload-the-data" id="toc-upload-the-data" class="nav-link" data-scroll-target="#upload-the-data"><span class="header-section-number">2.3.2</span> Upload the data</a></li>
+  <li><a href="#log-in-to-raisins" id="toc-log-in-to-raisins" class="nav-link" data-scroll-target="#log-in-to-raisins"><span class="header-section-number">1.9.1</span> Log In to RAISINS</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">1.9.2</span> DATASET</a></li>
+  <li><a href="#create-dataset-in-raisins" id="toc-create-dataset-in-raisins" class="nav-link" data-scroll-target="#create-dataset-in-raisins"><span class="header-section-number">1.9.3</span> Create dataset in RAISINS</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2.4</span> Results</a></li>
-  <li><a href="#customizable-plots" id="toc-customizable-plots" class="nav-link" data-scroll-target="#customizable-plots"><span class="header-section-number">2.5</span> Customizable plots</a></li>
-  <li><a href="#multivariate-and-ai" id="toc-multivariate-and-ai" class="nav-link" data-scroll-target="#multivariate-and-ai"><span class="header-section-number">2.6</span> Multivariate and AI</a></li>
-  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">2.7</span> FAQ’s</a></li>
-  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">2.8</span> User</a></li>
-  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">1.10</span> Results</a></li>
+  <li><a href="#customizable-plots" id="toc-customizable-plots" class="nav-link" data-scroll-target="#customizable-plots"><span class="header-section-number">1.11</span> Customizable plots</a></li>
+  <li><a href="#multivariate-and-ai" id="toc-multivariate-and-ai" class="nav-link" data-scroll-target="#multivariate-and-ai"><span class="header-section-number">1.12</span> Multivariate and AI</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">1.13</span> FAQ’s</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">1.14</span> User</a></li>
   </ul>
 </nav>
     </div>
@@ -254,14 +253,8 @@ window.Quarto = {
 </header>
 
 
-<p>The Kruskal-Wallis test is a <strong>non-parametric</strong> statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a <strong>one-way ANOVA</strong> are violated. It’s essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after <strong>William Kruskal and W. Allen Wallis</strong>, who developed it in 1952.</p>
+<p>The Kruskal-Wallis test is a <strong>non-parametric (</strong>distribution free<strong>)</strong> statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a <strong>one-way ANOVA</strong> are violated. It’s essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after <strong>William Kruskal and W. Allen Wallis</strong>, who developed it in 1952.</p>
 <p>In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in <a href="#fig-anvakwt" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/kwt/when_kruskal.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>When to use kruskal wallis test</figcaption>
-</figure>
-</div>
 <div id="fig-anvakwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-anvakwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -269,6 +262,16 @@ window.Quarto = {
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anvakwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.1: Comparison between ANOVA (means) and Kruskal Wallis test (ranks)
+</figcaption>
+</figure>
+</div>
+<div id="fig-akwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-akwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/when_kruskal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-akwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: When to use kruskal wallis test
 </figcaption>
 </figure>
 </div>
@@ -295,9 +298,11 @@ Study Context
 <section id="assumptions" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">1.2</span> Assumptions</h2>
 <p>The Kruskal-Wallis test relies on the following assumptions:</p>
-<p><img src="images/kwt/one.png" class="img-fluid" width="30"> <strong>Non-parametric</strong>: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data</p>
-<p><img src="images/kwt/two.png" class="img-fluid" width="30"> <strong>Independence of Observations</strong>: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group</p>
-<p><img src="images/kwt/three.png" class="img-fluid" width="30"> <strong>Ordinal or Continuous Data</strong>: The data should be atleast ordinal, meaning it can be ranked, or continuous.</p>
+<ul>
+<li><p><strong>Non-parametric</strong>: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data</p></li>
+<li><p><strong>Independence of Observations</strong>: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group</p></li>
+<li><p><strong>Ordinal or Continuous Data</strong>: The data should be ordinal, meaning it can be ranked, or continuous.</p></li>
+</ul>
 <details>
 <summary>
 Key Features of Kruskal-Wallis Test
@@ -352,7 +357,7 @@ Steps in Kruskal-Wallis Test
 </details></section>
 <section id="the-test-statistic" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="the-test-statistic"><span class="header-section-number">1.4</span> The Test Statistic</h2>
-<p>The Kruskal-Wallis test statistic is calculated as:</p>
+<p>The Kruskal-Wallis test statistic is calculated using the <a href="#eq-kwt1" class="quarto-xref">Equation&nbsp;<span>1.1</span></a></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Use this for Kruskal-Wallis Test">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -375,7 +380,7 @@ Use this for Kruskal-Wallis Test
 <li><span class="math inline">\(n_i\)</span> is the number of observations in group <span class="math inline">\(i\)</span>.</li>
 <li><span class="math inline">\(R_i\)</span> is the sum of ranks for group <span class="math inline">\(i\)</span>.</li>
 </ul>
-<p>When there are no ties in the data, <span class="math inline">\(H\)</span> follows a chi-square distribution with <span class="math inline">\(k-1\)</span> degrees of freedom. When ties exist, a correction factor is applied.</p>
+<p>When there are no ties in the data, <span class="math inline">\(H\)</span> follows a chi-square distribution with <span class="math inline">\(k-1\)</span> degrees of freedom. When ties exist, a correction factor given in the <a href="#eq-kwt2" class="quarto-xref">Equation&nbsp;<span>1.2</span></a> is applied.</p>
 </section>
 <section id="correction-for-ties" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="correction-for-ties"><span class="header-section-number">1.5</span> Correction for Ties</h2>
@@ -401,31 +406,31 @@ Use this for Kruskal-Wallis Test
 <li><span class="math inline">\(t_i\)</span> is the number of tied values in the <span class="math inline">\(i\)</span>-th group.</li>
 </ul>
 </section>
-<section id="interpreting-the-results" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Interpreting the Results</h1>
-<p>After calculating the H statistic:</p>
-<p><img src="images/kwt/one.png" class="img-fluid" width="26"> Compare the H value to the critical value from a chi-square distribution with <strong>k-1</strong> degrees of freedom</p>
-<p><img src="images/kwt/two.png" class="img-fluid" width="26"> If H exceeds the critical value, reject the null hypothesis</p>
-<p><img src="images/kwt/three.png" class="img-fluid" width="25"> Alternatively, compare the p-value to your chosen significance level (typically 0.05)</p>
-<p>If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.</p>
-<section id="multiple-comparison-test" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="multiple-comparison-test"><span class="header-section-number">2.1</span> Multiple Comparison Test</h2>
+<section id="interpreting-the-results" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="interpreting-the-results"><span class="header-section-number">1.6</span> Interpreting the Results</h2>
+<p>The test statistic H approximately follows a chi-square distribution with k - 1 degrees of freedom, where k is the number of groups. To determine if the null hypothesis can be rejected, the H test value is compared to an H critical value obtained from a chi-square table by cross reference the degrees of freedom (df), with the level of significance (ɑ). If H exceeds the critical value, reject the null hypothesis</p>
+<p>If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.</p>
+</section>
+<section id="multiple-comparison-test" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="multiple-comparison-test"><span class="header-section-number">1.7</span> Multiple Comparison Test</h2>
 <p>When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:</p>
-<div style="display: flex; gap: 1em;">
+<div style="display: flex; gap: 2em;">
 <div class="dunn-box">
 <p><strong>Dunn’s Test</strong><br>
-- Dunn’s Test, developed by Olive Dunn in 1964, is primarily used as a post hoc procedure following the Kruskal-Wallis test.<br>
-- It performs pairwise comparisons while controlling for the <strong>family-wise error rate</strong>.</p>
+-The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test.<br>
+-Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.<br>
+</p>
 </div>
 <div class="lsd-box">
 <p><strong>LSD (Least Significant Difference) Test</strong><br>
-- Fisher’s LSD test is a parametric post hoc test used after ANOVA to compare all pairwise group differences.<br>
-- It does not correct for multiple comparisons, increasing the false positive rate.</p>
+- Fisher’s LSD test is primarily used as a post-hoc test after a significant ANOVA (Analysis of Variance), which is a parametric test.<br>
+</p>
 </div>
 </div>
+<p>Dunn test is the recommended and standard approach due to its alignment with non-parametric assumptions and its ability to handle multiple comparisons appropriately. The LSD test is not suitable in this context because it relies on parametric assumptions that are typically violated when Kruskal-Wallis is used.</p>
 </section>
-<section id="p-adjustment" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="p-adjustment"><span class="header-section-number">2.2</span> P Adjustment Method</h2>
+<section id="p-adjustment" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="p-adjustment"><span class="header-section-number">1.8</span> P Adjustment Method</h2>
 <p>In statistical hypothesis testing, p-values indicate the probability of observing results at least as extreme as those observed, assuming the null hypothesis is true. When multiple tests are conducted, the risk of false positives (Type I errors) increases. P-value adjustment methods address this issue by controlling the overall error rate, ensuring reliable inference in multiple testing scenarios.</p>
 <p>You can select different p-adjustment methods:</p>
 <ul>
@@ -437,223 +442,50 @@ Use this for Kruskal-Wallis Test
 <li><a href="https://en.wikipedia.org/wiki/False_discovery_rate">False Discovery Rate (q-value) Approach</a></li>
 </ul>
 </section>
-<section id="getting-started" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">2.3</span> Getting Started</h2>
-<section id="log-in-to-raisins" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="log-in-to-raisins"><span class="header-section-number">2.3.1</span> Log In to RAISINS</h3>
+<section id="kruskal-wallis-test-in-raisins" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="kruskal-wallis-test-in-raisins"><span class="header-section-number">1.9</span> KRUSKAL WALLIS TEST IN <span style="color:red;">RAISINS</span></h2>
+<p>RAISINS is an innovative online platform designed to simplify data analysis for agricultural research, developed by STATOBERRY LLP. RAISINS provide you a comprehensive environment where you can perform KRUSKAL WALLIS test. Before proceeding further, Create an account in <a href="https://www.raisins.live">RAISINS</a> Once created, login with the credentials and explore.</p>
+<section id="log-in-to-raisins" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="log-in-to-raisins"><span class="header-section-number">1.9.1</span> Log In to RAISINS</h3>
 <p><img src="images/kwt/login.png" class="img-fluid"></p>
-<p><strong><em>” Head to <a href="https://www.raisins.live">www.raisins.live</a> and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric! “</em></strong></p>
+<p>Head to <a href="https://www.raisins.live">www.raisins.live</a> and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric!</p>
+<p>Once logged in, we need a structured data for the analysis. For that create a data of your own following the prescribed format given in <strong>RAISINS.</strong> So lets create a data first !</p>
 </section>
-<section id="upload-the-data" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="upload-the-data"><span class="header-section-number">2.3.2</span> Upload the data</h3>
-<p><strong>Download the model datasets from the RAISINS DATATSETS TAB</strong> <img src="images/kwt/create.png" class="img-fluid" width="41"></p>
-<p><strong>Ex : Sensory Evaluation dataset</strong></p>
-<p>This is a hypothetical qualitative(categorical) dataset containing four treatments named as Groups (V1, V2, V3, V4), each representing a different product variant, with data collected from 10 judges as replicates per treatment. The dataset includes sensory evaluation scores for five attributes: Appearance, Color, Texture, Taste, and Flavour, each rated on a scale from 1 to 5.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Groups</th>
-<th>Appearance</th>
-<th>Color</th>
-<th>Texture</th>
-<th>Taste</th>
-<th>Flavour</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>V1</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>3</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>V1</td>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>V1</td>
-<td>4</td>
-<td>3</td>
-<td>4</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>V1</td>
-<td>5</td>
-<td>4</td>
-<td>3</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>V1</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>V2</td>
-<td>3</td>
-<td>3</td>
-<td>4</td>
-<td>3</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>V2</td>
-<td>2</td>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>V2</td>
-<td>4</td>
-<td>4</td>
-<td>5</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>V2</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>V2</td>
-<td>4</td>
-<td>5</td>
-<td>3</td>
-<td>4</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Create a Dataset in Excel</strong> <img src="images/kwt/create.png" class="img-fluid" width="41"></p>
-<p>Want to craft your own RAISINS dataset? USE Microsoft Excel and create your data according to the model dataset’s structure.</p>
-<style>
-.kw-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.kw-flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.kw-flip-inner {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.kw-flip-card:hover .kw-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.kw-box-front, .kw-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  padding: 20px;
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.kw-box-front {
-  background-color: #14577c;
-}
-
-.kw-box-back {
-  background-color: #0e3c59;
-  transform: rotateY(180deg);
-}
-
-.kw-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.kw-description {
-  font-size: 0.9em;
-  line-height: 1.4;
-}
-</style>
-
-<div class="kw-container">
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">1. SPACING</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">No space is allowed in the Column name
-
-If space is required use underscore '_' or '.' full stop.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">2. DATA ARRANGEMET</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Data should be arranged towards upper left corner and row above the data should not be left blank.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">3. CONTENTS</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Don't type and delete anything on other cells without data. If so select those cells, right click and click clear contents</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">4. NAMING</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Give names to all column, Don't add any unnecessary columns that is not required for analysis.</div>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="dataset" class="level3" data-number="1.9.2">
+<h3 data-number="1.9.2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">1.9.2</span> DATASET</h3>
+<p>You can download the model datasets from the dataset tab in the <strong>RAISINS</strong> and create your own uisng the microsoft excel following the structure given in the model datasets and save them as csv file for further analysis</p>
+<p><img src="images/kwt/DATASET.png" class="img-fluid"></p>
+<details>
+<summary>
+Dataset Creation Rules
+</summary>
+<ol type="1">
+<li><strong>Column Naming Convention</strong>
+<ul>
+<li>No spaces allowed in column names.<br>
+</li>
+<li>Use underscores (<code>_</code>) or full stops (<code>.</code>) for separation.</li>
+</ul></li>
+<li><strong>Data Arrangement</strong>
+<ul>
+<li>Align data towards the upper-left corner.<br>
+</li>
+<li>Ensure the row above the data is not blank.</li>
+</ul></li>
+<li><strong>Cell Management</strong>
+<ul>
+<li>Avoid typing or deleting in cells without data.<br>
+</li>
+<li>If needed, select affected cells, right-click, and select <strong>Clear Contents</strong>.</li>
+</ul></li>
+<li><strong>Column Relevance</strong>
+<ul>
+<li>Name all columns meaningfully.<br>
+</li>
+<li>Exclude unnecessary columns not required for analysis.</li>
+</ul></li>
+</ol>
+</details>
 <div class="callout callout-style-default callout-tip callout-titled" title="Note">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -667,10 +499,11 @@ Note
 <p>Once all these are done, your file is ready. Now save it as CSV file. Upload file by clicking browse in the app</p>
 </div>
 </div>
-<p><strong>Generating Data in the Application</strong> <img src="images/kwt/create.png" class="img-fluid" width="40"></p>
-<p>“RAISINS” application lets you generate a raisins dataset directly within its interface. Here’s how:</p>
+</section>
+<section id="create-dataset-in-raisins" class="level3" data-number="1.9.3">
+<h3 data-number="1.9.3" class="anchored" data-anchor-id="create-dataset-in-raisins"><span class="header-section-number">1.9.3</span> Create dataset in RAISINS</h3>
+<p><strong>RAISINS</strong> application lets you generate a raisins dataset directly within its interface. Here’s how: Open <strong>RAISINS</strong> ➡️Select <strong>KRUSKAL WALLIS TEST</strong> ➡️Navigate to the <strong>Create Data</strong> Tab➡️ Select the number of <strong>Treatments</strong> ➡️ Select number of <strong>replications</strong>➡️Click on <strong>Create</strong></p>
 <p><img src="images/kwt/create_data.png" class="img-fluid" width="1011"></p>
-<p>Open <strong>RAISINS</strong> ➡️Navigate to the <strong>Create Data</strong> Tab➡️ Select the number of <strong>Treatments</strong> ➡️ Select number of <strong>replications</strong>➡️Click on <strong>Create</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Note">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -681,22 +514,29 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>A model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the file is ready! click on browse and upload the file</strong></p>
+<p><strong>Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis</strong></p>
 </div>
 </div>
-<p>Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and <strong>Click Run Analysis !</strong><a href="images/kwt/analytics.png" width="40"></a></p>
 </section>
 </section>
-<section id="results" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="results"><span class="header-section-number">2.4</span> Results</h2>
+<section id="results" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="results"><span class="header-section-number">1.10</span> Results</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/result_table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="703"></p>
 </figure>
 </div>
+<div class="content">
+<details>
+<summary>
+Results Table
+</summary>
+This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.
+</details>
+</div>
 </section>
-<section id="customizable-plots" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="customizable-plots"><span class="header-section-number">2.5</span> Customizable plots</h2>
+<section id="customizable-plots" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="customizable-plots"><span class="header-section-number">1.11</span> Customizable plots</h2>
 <script>
 // Hide all descriptions on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -788,7 +628,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_boxplot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Box+Plot"></p>
+<p><img src="images/kwt/box.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Box+Plot"></p>
 <figcaption>Box plot</figcaption>
 </figure>
 </div>
@@ -801,12 +641,12 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_pairsplot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"></p>
+<p><img src="images/kwt/corr.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"></p>
 <figcaption>Pairs plot</figcaption>
 </figure>
 </div>
 <div id="pairsplot-desc" class="plot-description">
-<p>A <strong>pairs plot</strong> weaves a colorful matrix of scatterplots, revealing pairwise relationships between variables. Diagonals burst with histograms or density plots, showcasing each variable’s distribution.</p>
+<p>A correlation plot, often called a correlation matrix or heatmap, is a visual tool used to display the correlation coefficients between multiple variables in a dataset</p>
 </div>
 </div>
 </div>
@@ -814,7 +654,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_BarPlot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Bar+Plot"></p>
+<p><img src="images/kwt/bar.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Bar+Plot"></p>
 <figcaption>Bar plot</figcaption>
 </figure>
 </div>
@@ -827,7 +667,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_ConnectedPlot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Connected+Plot"></p>
+<p><img src="images/kwt/Connected.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Connected+Plot"></p>
 <figcaption>Connected plot</figcaption>
 </figure>
 </div>
@@ -840,7 +680,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_meanValuePlot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"></p>
+<p><img src="images/kwt/mean.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"></p>
 <figcaption>Mean Value Plot</figcaption>
 </figure>
 </div>
@@ -853,7 +693,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/crdp_violinPlot-2025-05-09.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Violin+Plot"></p>
+<p><img src="images/kwt/violin.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Violin+Plot"></p>
 <figcaption>Violin plot</figcaption>
 </figure>
 </div>
@@ -864,24 +704,23 @@ function hideDescription(id) {
 </div>
 </div>
 </section>
-<section id="multivariate-and-ai" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="multivariate-and-ai"><span class="header-section-number">2.6</span> Multivariate and AI</h2>
+<section id="multivariate-and-ai" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="multivariate-and-ai"><span class="header-section-number">1.12</span> Multivariate and AI</h2>
 <p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, imagine you have more than one variable (for example, height and weight), and you still want to compare these across different groups. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !</p>
 <p><strong><em>“Don’t worry RAISIN will guide you to perform Multivariate analysis !”</em></strong></p>
 <p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.</p>
 <p>RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.</p>
 </section>
-<section id="faqs" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="faqs"><span class="header-section-number">2.7</span> FAQ’s</h2>
+<section id="faqs" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1.13</span> FAQ’s</h2>
 <p>Detailed instruction on how to use the app is available under the FAQ’s section!</p>
 </section>
-<section id="user" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="user"><span class="header-section-number">2.8</span> User</h2>
+<section id="user" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="user"><span class="header-section-number">1.14</span> User</h2>
 <p>User details including usage percentage and other billing details is available in the <strong>USER</strong> tab</p>
 
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

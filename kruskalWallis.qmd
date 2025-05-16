@@ -1,12 +1,12 @@
 # Kruskal Wallis Test {#kwt}
 
-The Kruskal-Wallis test is a **non-parametric** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952.  
+The Kruskal-Wallis test is a **non-parametric (**distribution free**)** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952.
 
 In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in @fig-anvakwt, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.
 
-![When to use kruskal wallis test](images/kwt/when_kruskal.png){fig-align="center" width="50%"}
-
 ![Comparison between ANOVA (means) and Kruskal Wallis test (ranks)](images/kwt/Difference_between_ANOVA_and_KW_test.png){#fig-anvakwt fig-align="center" width="558"}
+
+![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
 ## Example {#example-scenario}
 
@@ -24,13 +24,13 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 
 The Kruskal-Wallis test relies on the following assumptions:
 
-![](images/kwt/one.png){width="30"} **Non-parametric**: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data
+-   **Non-parametric**: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data
 
-![](images/kwt/two.png){width="30"} **Independence of Observations**: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group
+-   **Independence of Observations**: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group
 
-![](images/kwt/three.png){width="30"} **Ordinal or Continuous Data**: The data should be atleast ordinal, meaning it can be ranked, or continuous.
+-   **Ordinal or Continuous Data**: The data should be ordinal, meaning it can be ranked, or continuous.
 
-<details>  
+<details>
 
 <summary>Key Features of Kruskal-Wallis Test</summary>
 
@@ -51,24 +51,23 @@ The population medians of all groups are equal.
 
 ::: {.callout-note title="Alternative Hypothesis (H₁)"}
 At least one population median is different from the others.
-:::  
+:::
 
-<details>  
+<details>
 
-<summary>Steps in Kruskal-Wallis Test</summary>  
+<summary>Steps in Kruskal-Wallis Test</summary>
 
- - Step one: Sort and assign ranks to the data
+-   Step one: Sort and assign ranks to the data
 
- - Step two: Add up the ranks for each group
+-   Step two: Add up the ranks for each group
 
- - Step three: Calculate the H statistic
+-   Step three: Calculate the H statistic
 
- - Step four: Obtain and interpret the p-value  
- 
+-   Step four: Obtain and interpret the p-value
 
 ## The Test Statistic
 
-The Kruskal-Wallis test statistic is calculated as:
+The Kruskal-Wallis test statistic is calculated using the @eq-kwt1
 
 ::: {.callout-tip title="Use this for Kruskal-Wallis Test"}
 $$
@@ -83,7 +82,7 @@ Where:
 -   $n_i$ is the number of observations in group $i$.
 -   $R_i$ is the sum of ranks for group $i$.
 
-When there are no ties in the data, $H$ follows a chi-square distribution with $k-1$ degrees of freedom. When ties exist, a correction factor is applied.
+When there are no ties in the data, $H$ follows a chi-square distribution with $k-1$ degrees of freedom. When ties exist, a correction factor given in the @eq-kwt2 is applied.
 
 ## Correction for Ties
 
@@ -100,35 +99,30 @@ Where:
 -   $G$ is the number of groups of tied ranks.
 -   $t_i$ is the number of tied values in the $i$-th group.
 
-# Interpreting the Results
+## Interpreting the Results
 
-After calculating the H statistic:
+The test statistic H approximately follows a chi-square distribution with k - 1 degrees of freedom, where k is the number of groups. To determine if the null hypothesis can be rejected, the H test value is compared to an H critical value obtained from a chi-square table by cross reference the degrees of freedom (df), with the level of significance (ɑ). If H exceeds the critical value, reject the null hypothesis
 
-![](images/kwt/one.png){width="26"} Compare the H value to the critical value from a chi-square distribution with **k-1** degrees of freedom
-
-![](images/kwt/two.png){width="26"} If H exceeds the critical value, reject the null hypothesis
-
-![](images/kwt/three.png){width="25"} Alternatively, compare the p-value to your chosen significance level (typically 0.05)
-
-If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.
+If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.
 
 ## Multiple Comparison Test
 
 When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:
 
-::::: {style="display: flex; gap: 1em;"}
+::::: {style="display: flex; gap: 2em;"}
 ::: dunn-box
 **Dunn's Test**\
-- Dunn’s Test, developed by Olive Dunn in 1964, is primarily used as a post hoc procedure following the Kruskal-Wallis test.\
-- It performs pairwise comparisons while controlling for the **family-wise error rate**.
+-The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test.\
+-Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.\
 :::
 
 ::: lsd-box
 **LSD (Least Significant Difference) Test**\
-- Fisher’s LSD test is a parametric post hoc test used after ANOVA to compare all pairwise group differences.\
-- It does not correct for multiple comparisons, increasing the false positive rate.
+- Fisher’s LSD test is primarily used as a post-hoc test after a significant ANOVA (Analysis of Variance), which is a parametric test.\
 :::
 :::::
+
+Dunn test is the recommended and standard approach due to its alignment with non-parametric assumptions and its ability to handle multiple comparisons appropriately. The LSD test is not suitable in this context because it relies on parametric assumptions that are typically violated when Kruskal-Wallis is used.
 
 ## P Adjustment Method {#p-adjustment}
 
@@ -143,172 +137,67 @@ You can select different p-adjustment methods:
 -   [Benjamini-Yekutieli Procedure (BY)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure)
 -   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)
 
-## Getting Started
+## KRUSKAL WALLIS TEST IN [RAISINS]{style="color:red;"}
+
+RAISINS is an innovative online platform designed to simplify data analysis for agricultural research, developed by STATOBERRY LLP. RAISINS provide you a comprehensive environment where you can perform KRUSKAL WALLIS test. Before proceeding further, Create an account in [RAISINS](https://www.raisins.live) Once created, login with the credentials and explore.
 
 ### Log In to RAISINS
 
 ![](images/kwt/login.png)
 
-***" Head to [www.raisins.live](https://www.raisins.live) and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric! "***
+Head to [www.raisins.live](https://www.raisins.live) and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric!
 
-### Upload the data
+Once logged in, we need a structured data for the analysis. For that create a data of your own following the prescribed format given in **RAISINS.** So lets create a data first !
 
-**Download the model datasets from the RAISINS DATATSETS TAB** ![](images/kwt/create.png){width="41"}
+### DATASET
 
-**Ex : Sensory Evaluation dataset**
+You can download the model datasets from the dataset tab in the **RAISINS** and create your own uisng the microsoft excel following the structure given in the model datasets and save them as csv file for further analysis
 
-This is a hypothetical qualitative(categorical) dataset containing four treatments named as Groups (V1, V2, V3, V4), each representing a different product variant, with data collected from 10 judges as replicates per treatment. The dataset includes sensory evaluation scores for five attributes: Appearance, Color, Texture, Taste, and Flavour, each rated on a scale from 1 to 5.
+![](images/kwt/DATASET.png)
 
-| Groups | Appearance | Color | Texture | Taste | Flavour |
-|--------|------------|-------|---------|-------|---------|
-| V1     | 4          | 4     | 4       | 3     | 5       |
-| V1     | 3          | 3     | 3       | 3     | 3       |
-| V1     | 4          | 3     | 4       | 3     | 3       |
-| V1     | 5          | 4     | 3       | 1     | 2       |
-| V1     | 2          | 1     | 2       | 2     | 2       |
-| V2     | 3          | 3     | 4       | 3     | 1       |
-| V2     | 2          | 3     | 3       | 3     | 4       |
-| V2     | 4          | 4     | 5       | 4     | 4       |
-| V2     | 4          | 4     | 4       | 4     | 4       |
-| V2     | 4          | 5     | 3       | 4     | 3       |
+<details>
 
-**Create a Dataset in Excel** ![](images/kwt/create.png){width="41"}
+<summary>Dataset Creation Rules</summary>
 
-Want to craft your own RAISINS dataset? USE Microsoft Excel and create your data according to the model dataset's structure.
+1.  **Column Naming Convention**
+    -   No spaces allowed in column names.\
+    -   Use underscores (`_`) or full stops (`.`) for separation.
+2.  **Data Arrangement**
+    -   Align data towards the upper-left corner.\
+    -   Ensure the row above the data is not blank.
+3.  **Cell Management**
+    -   Avoid typing or deleting in cells without data.\
+    -   If needed, select affected cells, right-click, and select **Clear Contents**.
+4.  **Column Relevance**
+    -   Name all columns meaningfully.\
+    -   Exclude unnecessary columns not required for analysis.
 
-```{=html}
-<style>
-.kw-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.kw-flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.kw-flip-inner {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.kw-flip-card:hover .kw-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.kw-box-front, .kw-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  padding: 20px;
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.kw-box-front {
-  background-color: #14577c;
-}
-
-.kw-box-back {
-  background-color: #0e3c59;
-  transform: rotateY(180deg);
-}
-
-.kw-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.kw-description {
-  font-size: 0.9em;
-  line-height: 1.4;
-}
-</style>
-
-<div class="kw-container">
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">1. SPACING</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">No space is allowed in the Column name
-
-If space is required use underscore '_' or '.' full stop.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">2. DATA ARRANGEMET</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Data should be arranged towards upper left corner and row above the data should not be left blank.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">3. CONTENTS</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Don't type and delete anything on other cells without data. If so select those cells, right click and click clear contents</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kw-flip-card">
-    <div class="kw-flip-inner">
-      <div class="kw-box-front">
-        <div class="kw-title">4. NAMING</div>
-      </div>
-      <div class="kw-box-back">
-        <div class="kw-description">Give names to all column, Don't add any unnecessary columns that is not required for analysis.</div>
-      </div>
-    </div>
-  </div>
-</div>
-```
+</details>
 
 ::: {.callout-tip title="Note"}
 Once all these are done, your file is ready. Now save it as CSV file. Upload file by clicking browse in the app
 :::
 
-**Generating Data in the Application** ![](images/kwt/create.png){width="40"}
+### Create dataset in RAISINS
 
-"RAISINS" application lets you generate a raisins dataset directly within its interface. Here's how:
+**RAISINS** application lets you generate a raisins dataset directly within its interface. Here's how: Open **RAISINS** ➡️Select **KRUSKAL WALLIS TEST** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
 
 ![](images/kwt/create_data.png){width="1011"}
 
-Open **RAISINS** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
-
 ::: {.callout-tip title="Note"}
-**A model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the file is ready! click on browse and upload the file**
+**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis**
 :::
-
-Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and **Click Run Analysis !**[ ](images/kwt/analytics.png){width="40"}
 
 ## Results
 
 ![](images/kwt/result_table.png){fig-align="center" width="703"}
+
+::: {.content}
+<details>
+<summary>Results Table</summary>
+This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.
+</details>
+:::
 
 ## Customizable plots
 
@@ -407,7 +296,7 @@ function hideDescription(id) {
 ::::::::::::::::::::: grid
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')"}
-![Box plot](images/kwt/crdp_boxplot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Box+Plot"}
+![Box plot](images/kwt/box.png){fallback="https://via.placeholder.com/400x300?text=Box+Plot"}
 
 ::: {#boxplot-desc .plot-description}
 A **box plot** displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!
@@ -417,17 +306,17 @@ A **box plot** displays the distribution of data with a five-number summary: min
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
-![Pairs plot](images/kwt/crdp_pairsplot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"}
+![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"}
 
 ::: {#pairsplot-desc .plot-description}
-A **pairs plot** weaves a colorful matrix of scatterplots, revealing pairwise relationships between variables. Diagonals burst with histograms or density plots, showcasing each variable’s distribution.
+A correlation plot, often called a correlation matrix or heatmap, is a visual tool used to display the correlation coefficients between multiple variables in a dataset
 :::
 ::::
 :::::
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')"}
-![Bar plot](images/kwt/crdp_BarPlot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Bar+Plot"}
+![Bar plot](images/kwt/bar.png){fallback="https://via.placeholder.com/400x300?text=Bar+Plot"}
 
 ::: {#barplot-desc .plot-description}
 A **bar plot** paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.
@@ -437,7 +326,7 @@ A **bar plot** paints categorical data with vibrant bars, their heights dancing 
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
-![Connected plot](images/kwt/crdp_ConnectedPlot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Connected+Plot"}
+![Connected plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/400x300?text=Connected+Plot"}
 
 ::: {#connectedplot-desc .plot-description}
 A **connected plot** links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.
@@ -447,7 +336,7 @@ A **connected plot** links data points with flowing lines, tracing trends across
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')"}
-![Mean Value Plot](images/kwt/crdp_meanValuePlot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"}
+![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"}
 
 ::: {#meanvalueplot-desc .plot-description}
 A **mean value plot** shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.
@@ -457,7 +346,7 @@ A **mean value plot** shines a spotlight on group averages, with error bars addi
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
-![Violin plot](images/kwt/crdp_violinPlot-2025-05-09.png){fallback="https://via.placeholder.com/400x300?text=Violin+Plot"}
+![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/400x300?text=Violin+Plot"}
 
 ::: {#violinplot-desc .plot-description}
 A **violin plot** blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.
