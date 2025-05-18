@@ -15,7 +15,7 @@
     "href": "kruskalWallis.html#example-scenario",
     "title": "1  Kruskal Wallis Test",
     "section": "",
-    "text": "Study Context\n\n\n\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.{#example1}\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.{#example}\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.{#example} (example1?)",
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
@@ -114,7 +114,7 @@
     "href": "kruskalWallis.html#customizable-plots",
     "title": "1  Kruskal Wallis Test",
     "section": "1.11 Customizable plots",
-    "text": "1.11 Customizable plots\n\n\n\n\n\n\n\n\nBox plot\n\n\n\nA box plot displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!\n\n\n\n\n\n\n\n\nPairs plot\n\n\n\nA correlation plot, often called a correlation matrix or heatmap, is a visual tool used to display the correlation coefficients between multiple variables in a dataset\n\n\n\n\n\n\n\n\nBar plot\n\n\n\nA bar plot paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.\n\n\n\n\n\n\n\n\nConnected plot\n\n\n\nA connected plot links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.\n\n\n\n\n\n\n\n\nMean Value Plot\n\n\n\nA mean value plot shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.\n\n\n\n\n\n\n\n\nViolin plot\n\n\n\nA violin plot blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.",
+    "text": "1.11 Customizable plots\n\n\n\n\n\n\n\n\nBox plot\n\n\n\nA box plot displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!\n\n\n\n\n\n\n\n\nPairs plot\n\n\n\nA correlation plot, often called a correlation matrix or heatmap, is a visual tool used to display the correlation coefficients between multiple variables in a dataset\n\n\n\n\n\n\n\n\nBar plot\n\n\n\nA bar plot paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.\n\n\n\n\n\n\n\n\nConnected plot\n\n\n\nA connected plot links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.\n\n\n\n\n\n\n\n\nMean Value Plot\n\n\n\nA mean value plot shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.\n\n\n\n\n\n\n\n\nViolin plot\n\n\n\nA violin plot blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.\n\n\n\n\nPlots and visualizations serve as a critical bridge between raw data and actionable insights by transforming complex, often abstract analytical outputs into clear, intuitive, and engaging representationsThese plots are highly customizable to enhance clarity and aesthetics. You can adjust colors, line styles, marker shapes, fonts, and sizes, add labels, titles, legends, or grid lines, and modify scales or orientations",
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
@@ -124,8 +124,8 @@
     "objectID": "kruskalWallis.html#multivariate-and-ai",
     "href": "kruskalWallis.html#multivariate-and-ai",
     "title": "1  Kruskal Wallis Test",
-    "section": "1.12 Multivariate and AI",
-    "text": "1.12 Multivariate and AI\nThe Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, imagine you have more than one variable (for example, height and weight), and you still want to compare these across different groups. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !\n“Don’t worry RAISIN will guide you to perform Multivariate analysis !”\nRAISINS is equipped with an AI-powered interpretation feature designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.\nRAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.",
+    "section": "1.13 Multivariate and AI",
+    "text": "1.13 Multivariate and AI\nThe Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the Example section; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to Multivariate tab. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the above given example.\n\n\n\n\n\n\n\n\nFigure 1.3: Scree Plot\n\n\n\n\n\n\n\n\n\n\nFigure 1.4: Bi Plot\n\n\n\n\n\nThe scree plot given Figure 1.3 illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.\nThe biplot given Figure 1.4 provides a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation—smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.\n\n\n\n\n\n\nFigure 1.5: Index Plot\n\n\n\nBased on the loadings of PC’s an index will be calculated and scaled. An index plot given Figure 1.5 in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.\nRAISINS is equipped with an AI-powered interpretation feature designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below Figure 1.6\n\n\n\n\n\n\nFigure 1.6: AI INTERPRETATION\n\n\n\nRAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.\nDon’t wait ! Subscribe and Explore the Kruskal Wallis test in RAISINS",
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
@@ -135,8 +135,8 @@
     "objectID": "kruskalWallis.html#faqs",
     "href": "kruskalWallis.html#faqs",
     "title": "1  Kruskal Wallis Test",
-    "section": "1.13 FAQ’s",
-    "text": "1.13 FAQ’s\nDetailed instruction on how to use the app is available under the FAQ’s section!",
+    "section": "1.14 FAQ’s",
+    "text": "1.14 FAQ’s\nDetailed instruction on how to use the app is available under the FAQ’s section!",
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
@@ -146,8 +146,8 @@
     "objectID": "kruskalWallis.html#user",
     "href": "kruskalWallis.html#user",
     "title": "1  Kruskal Wallis Test",
-    "section": "1.14 User",
-    "text": "1.14 User\nUser details including usage percentage and other billing details is available in the USER tab",
+    "section": "1.15 User",
+    "text": "1.15 User\nUser details including usage percentage and other billing details is available in the USER tab",
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
@@ -226,6 +226,82 @@
     "crumbs": [
       "Non-parametric Test",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#how-to-customize",
+    "href": "kruskalWallis.html#how-to-customize",
+    "title": "1  Kruskal Wallis Test",
+    "section": "1.12 How to customize",
+    "text": "1.12 How to customize\nRAISIN provides user various customization features for the plots to enhance the visualization according to the requirement of the user.Click on the below images to get a clear idea on the customizing features\n\n\n\n  \n    \n  \n\n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n\n\n\n  ×",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#example",
+    "href": "kruskalWallis.html#example",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#Example1",
+    "href": "kruskalWallis.html#Example1",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. (Example1?)\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.{#example}\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#example-example1-example1",
+    "href": "kruskalWallis.html#example-example1-example1",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. (Example1?)\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.{#example}\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#exampleexample1",
+    "href": "kruskalWallis.html#exampleexample1",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. (Example1?)\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.{#example}\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "kruskalWallis.html#Example",
+    "href": "kruskalWallis.html#Example",
+    "title": "1  Kruskal Wallis Test",
+    "section": "",
+    "text": "1.1.1 Study Context\n\nA food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. (#Example1)\nAn agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.{#example}\nAn agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.",
+    "crumbs": [
+      "Non-parametric Test",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Kruskal Wallis Test</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "2  References",
+    "section": "",
+    "text": "Corder, Gregory W., and Dale I. Foreman. 2014. Nonparametric\nStatistics: A Step-by-Step Approach. 2nd ed. John Wiley & Sons.\n\n\nJayant V Deshpande, Isha Dewan, Uttara Naik-Nimbalkar. 2017.\nNONPARAMETRIC STATISTICS- Theory and Methods. World Scientific.\n\n\nJ.Sheskin, David. 2003. Handbook of Parametric and Nonparametric\nStatistical Procedures. 2nd ed. Chapman; hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>References</span>"
     ]
   }
 ]

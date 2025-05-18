@@ -1,4 +1,9 @@
 # References
 
 ::: {#refs}
+1.  @Deshpande
+
+2.  @Gregory
+
+3.  @Sheskin
 :::

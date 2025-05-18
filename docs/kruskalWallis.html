@@ -209,7 +209,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#example-scenario" id="toc-example-scenario" class="nav-link active" data-scroll-target="#example-scenario"><span class="header-section-number">1.1</span> Example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example"><span class="header-section-number">1.1</span> Example</a>
+  <ul class="collapse">
+  <li><a href="#study-context" id="toc-study-context" class="nav-link" data-scroll-target="#study-context"><span class="header-section-number">1.1.1</span> Study Context</a></li>
+  </ul></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">1.2</span> Assumptions</a></li>
   <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses"><span class="header-section-number">1.3</span> Hypotheses</a></li>
   <li><a href="#the-test-statistic" id="toc-the-test-statistic" class="nav-link" data-scroll-target="#the-test-statistic"><span class="header-section-number">1.4</span> The Test Statistic</a></li>
@@ -225,9 +228,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">1.10</span> Results</a></li>
   <li><a href="#customizable-plots" id="toc-customizable-plots" class="nav-link" data-scroll-target="#customizable-plots"><span class="header-section-number">1.11</span> Customizable plots</a></li>
-  <li><a href="#multivariate-and-ai" id="toc-multivariate-and-ai" class="nav-link" data-scroll-target="#multivariate-and-ai"><span class="header-section-number">1.12</span> Multivariate and AI</a></li>
-  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">1.13</span> FAQ’s</a></li>
-  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">1.14</span> User</a></li>
+  <li><a href="#how-to-customize" id="toc-how-to-customize" class="nav-link" data-scroll-target="#how-to-customize"><span class="header-section-number">1.12</span> How to customize</a></li>
+  <li><a href="#multivariate-and-ai" id="toc-multivariate-and-ai" class="nav-link" data-scroll-target="#multivariate-and-ai"><span class="header-section-number">1.13</span> Multivariate and AI</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">1.14</span> FAQ’s</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">1.15</span> User</a></li>
   </ul>
 </nav>
     </div>
@@ -275,25 +279,16 @@ Figure&nbsp;1.2: When to use kruskal wallis test
 </figcaption>
 </figure>
 </div>
-<section id="example-scenario" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="example-scenario"><span class="header-section-number">1.1</span> Example</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Study Context
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="example" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.1</span> Example</h2>
+<section id="study-context" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="study-context"><span class="header-section-number">1.1.1</span> Study Context</h3>
 <ol type="1">
 <li><p>A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.</p></li>
 <li><p>An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.</p></li>
 <li><p>An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.</p></li>
 </ol>
-</div>
-</div>
+</section>
 </section>
 <section id="assumptions" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">1.2</span> Assumptions</h2>
@@ -531,7 +526,7 @@ Note
 <summary>
 Results Table
 </summary>
-This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.
+<p>This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.</p>
 </details>
 </div>
 </section>
@@ -703,20 +698,194 @@ function hideDescription(id) {
 </div>
 </div>
 </div>
+<p>Plots and visualizations serve as a critical bridge between raw data and actionable insights by transforming complex, often abstract analytical outputs into clear, intuitive, and engaging representationsThese plots are highly customizable to enhance clarity and aesthetics. You can adjust colors, line styles, marker shapes, fonts, and sizes, add labels, titles, legends, or grid lines, and modify scales or orientations</p>
 </section>
-<section id="multivariate-and-ai" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="multivariate-and-ai"><span class="header-section-number">1.12</span> Multivariate and AI</h2>
-<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, imagine you have more than one variable (for example, height and weight), and you still want to compare these across different groups. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !</p>
-<p><strong><em>“Don’t worry RAISIN will guide you to perform Multivariate analysis !”</em></strong></p>
-<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.</p>
+<section id="how-to-customize" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="how-to-customize"><span class="header-section-number">1.12</span> How to customize</h2>
+<p>RAISIN provides user various customization features for the plots to enhance the visualization according to the requirement of the user.<strong>Click</strong> on the below images to get a clear idea on the customizing features</p>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+.grid-item {
+  cursor: pointer;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 50%; /* Reduced from 80% to make the zoomed image smaller */
+  max-height: 50%; /* Reduced from 80% to make the zoomed image smaller */
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+.modal-description {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div class="grid-container">
+  <div class="grid-item" onclick="openModal('images/kwt/plot1.png', 'A gear button on the left side of each plot can be used to customize the plots according to the requirements.')">
+    <img src="images/kwt/plot1.png" alt="Plot 1">
+  </div>
+<div class="grid-item" onclick="openModal('images/kwt/plot2.png', 'TITLES &amp; LABELS: Once clicked a dropdown menu appears, where you can change the axis title, plot titles and legends. You can enter them manually !')">
+    <img src="images/kwt/plot2.png" alt="Plot 2">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot3.png', 'COLORS AND PATTERNS: This section is used to change the colours of the each plots. Different themes are available in this section. Use them accordingly.')">
+    <img src="images/kwt/plot3.png" alt="Plot 3">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot4.png', 'SHOW/HIDE OPTIONS: This section enables to toggle whether you wish to display the axis labels and grouping letters.Their respective colors can also be changed.')">
+    <img src="images/kwt/plot4.png" alt="Plot 4">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot5.png', 'LINE &amp; THEME: The appearance of lines can be changed in this part.')">
+    <img src="images/kwt/plot5.png" alt="Plot 5">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot6.png', 'LINE &amp; THEME: Along with changing the line type, the respective theme of visualization can also be changed.')">
+    <img src="images/kwt/plot6.png" alt="Plot 6">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot7.png', 'SIZE &amp; SPACING:  The distance of each section and their size can be changed here.')">
+    <img src="images/kwt/plot7.png" alt="Plot 7">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot8.png', 'TEXT &amp; LABEL:  Here you can change text color and size, also the background color !.')">
+    <img src="images/kwt/plot8.png" alt="Plot 8">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="Zoomed Plot">
+    <div id="modalDescription" class="modal-description"></div>
+  </div>
+</div>
+
+<script>
+function openModal(src, description) {
+  console.log("Opening modal with src:", src); // Debugging log
+  const modal = document.getElementById('myModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalDesc = document.getElementById('modalDescription');
+  if (modal && modalImg && modalDesc) {
+    modal.style.display = 'flex';
+    modalImg.src = src;
+    modalDesc.textContent = description;
+  } else {
+    console.error("Modal elements not found.");
+  }
+}
+
+function closeModal() {
+  console.log("Closing modal"); // Debugging log
+  const modal = document.getElementById('myModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+  const modal = document.getElementById('myModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
+// Debugging: Log when script loads
+console.log("Script loaded successfully.");
+</script>
+</section>
+<section id="multivariate-and-ai" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="multivariate-and-ai"><span class="header-section-number">1.13</span> Multivariate and AI</h2>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the Example section; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to <strong>Multivariate</strong> tab. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the above given example.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-scree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/scree.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Scree Plot
+</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="fig-Biplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/biplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Bi Plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.</p>
+<p>The biplot given <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> provides a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation—smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.</p>
+<div id="fig-Index" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/index.png" class="img-fluid figure-img" width="430">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Index Plot
+</figcaption>
+</figure>
+</div>
+<p>Based on the loadings of PC’s an index will be calculated and scaled. An index plot given <a href="#fig-Index" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.</p>
+<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.6</span></a></p>
+<div id="fig-ai" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/ai.gif" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: AI INTERPRETATION
+</figcaption>
+</figure>
+</div>
 <p>RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.</p>
+<p>Don’t wait ! Subscribe and Explore the Kruskal Wallis test in <strong>RAISINS</strong></p>
 </section>
-<section id="faqs" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1.13</span> FAQ’s</h2>
+<section id="faqs" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1.14</span> FAQ’s</h2>
 <p>Detailed instruction on how to use the app is available under the FAQ’s section!</p>
 </section>
-<section id="user" class="level2" data-number="1.14">
-<h2 data-number="1.14" class="anchored" data-anchor-id="user"><span class="header-section-number">1.14</span> User</h2>
+<section id="user" class="level2" data-number="1.15">
+<h2 data-number="1.15" class="anchored" data-anchor-id="user"><span class="header-section-number">1.15</span> User</h2>
 <p>User details including usage percentage and other billing details is available in the <strong>USER</strong> tab</p>
 
 

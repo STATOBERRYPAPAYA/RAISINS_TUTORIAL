@@ -8,17 +8,15 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 
 ![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
-## Example {#example-scenario}
+## Example 
 
-::: callout-note
 ### Study Context
 
-1.  A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours.
+1.  A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. 
 
 2.  An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.
 
 3.  An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.
-:::
 
 ## Assumptions
 
@@ -192,10 +190,13 @@ Once all these are done, your file is ready. Now save it as CSV file. Upload fil
 
 ![](images/kwt/result_table.png){fig-align="center" width="703"}
 
-::: {.content}
+::: content
 <details>
+
 <summary>Results Table</summary>
+
 This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.
+
 </details>
 :::
 
@@ -355,15 +356,165 @@ A **violin plot** blends a box plot’s structure with a density plot’s elegan
 :::::
 :::::::::::::::::::::
 
+Plots and visualizations serve as a critical bridge between raw data and actionable insights by transforming complex, often abstract analytical outputs into clear, intuitive, and engaging representationsThese plots are highly customizable to enhance clarity and aesthetics. You can adjust colors, line styles, marker shapes, fonts, and sizes, add labels, titles, legends, or grid lines, and modify scales or orientations
+
+## How to customize
+
+RAISIN provides user various customization features for the plots to enhance the visualization according to the requirement of the user.**Click** on the below images to get a clear idea on the customizing features
+
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+.grid-item {
+  cursor: pointer;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 50%; /* Reduced from 80% to make the zoomed image smaller */
+  max-height: 50%; /* Reduced from 80% to make the zoomed image smaller */
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+.modal-description {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div class="grid-container">
+  <div class="grid-item" onclick="openModal('images/kwt/plot1.png', 'A gear button on the left side of each plot can be used to customize the plots according to the requirements.')">
+    <img src="images/kwt/plot1.png" alt="Plot 1">
+  </div>
+<div class="grid-item" onclick="openModal('images/kwt/plot2.png', 'TITLES & LABELS: Once clicked a dropdown menu appears, where you can change the axis title, plot titles and legends. You can enter them manually !')">
+    <img src="images/kwt/plot2.png" alt="Plot 2">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot3.png', 'COLORS AND PATTERNS: This section is used to change the colours of the each plots. Different themes are available in this section. Use them accordingly.')">
+    <img src="images/kwt/plot3.png" alt="Plot 3">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot4.png', 'SHOW/HIDE OPTIONS: This section enables to toggle whether you wish to display the axis labels and grouping letters.Their respective colors can also be changed.')">
+    <img src="images/kwt/plot4.png" alt="Plot 4">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot5.png', 'LINE & THEME: The appearance of lines can be changed in this part.')">
+    <img src="images/kwt/plot5.png" alt="Plot 5">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot6.png', 'LINE & THEME: Along with changing the line type, the respective theme of visualization can also be changed.')">
+    <img src="images/kwt/plot6.png" alt="Plot 6">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot7.png', 'SIZE & SPACING:  The distance of each section and their size can be changed here.')">
+    <img src="images/kwt/plot7.png" alt="Plot 7">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot8.png', 'TEXT & LABEL:  Here you can change text color and size, also the background color !.')">
+    <img src="images/kwt/plot8.png" alt="Plot 8">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="Zoomed Plot">
+    <div id="modalDescription" class="modal-description"></div>
+  </div>
+</div>
+
+<script>
+function openModal(src, description) {
+  console.log("Opening modal with src:", src); // Debugging log
+  const modal = document.getElementById('myModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalDesc = document.getElementById('modalDescription');
+  if (modal && modalImg && modalDesc) {
+    modal.style.display = 'flex';
+    modalImg.src = src;
+    modalDesc.textContent = description;
+  } else {
+    console.error("Modal elements not found.");
+  }
+}
+
+function closeModal() {
+  console.log("Closing modal"); // Debugging log
+  const modal = document.getElementById('myModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+  const modal = document.getElementById('myModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
+// Debugging: Log when script loads
+console.log("Script loaded successfully.");
+</script>
+```
+
 ## Multivariate and AI
 
-The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, imagine you have more than one variable (for example, height and weight), and you still want to compare these across different groups. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !
+The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the Example section; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to **Multivariate** tab. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the above given example.
 
-***"Don't worry RAISIN will guide you to perform Multivariate analysis ! "***
+::::: columns
+::: {.column width="50%"}
+![Scree Plot](images/kwt/scree.png){#fig-scree}
+:::
 
-**RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.
+::: {.column width="50%"}
+![Bi Plot](images/kwt/biplot.png){#fig-Biplot}
+:::
+:::::
+
+The scree plot given @fig-scree illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.
+
+The biplot given @fig-Biplot provides a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation—smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.
+
+![Index Plot](images/kwt/index.png){#fig-Index width="430"}
+
+Based on the loadings of PC's an index will be calculated and scaled. An index plot given @fig-Index in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.
+
+**RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below @fig-ai
+
+![AI INTERPRETATION](images/kwt/ai.gif){#fig-ai fig-align="center"}
 
 RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.
+
+Don't wait ! Subscribe and Explore the Kruskal Wallis test in **RAISINS** 
 
 ## FAQ's
 
