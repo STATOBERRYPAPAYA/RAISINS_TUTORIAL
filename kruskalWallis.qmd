@@ -8,17 +8,49 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 
 ![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
-## Example 
+## Example
 
-### Study Context
+### Study Context {#sec-exkwt}
 
-1.  A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal Wallis test can be performed for each sensory attribute to check if there are significant differences in ratings among the flavours. 
+<p>
+1. A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal-Wallis test is performed for each sensory attribute to check if there are significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+</p>
 
-2.  An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods.
+<div id="example-image1" style="display: none;">
+  <img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;">
+</div>
 
-3.  An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods.
+<p>
+2. An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods. <a href="#example2" class="toggle-image" data-target="example-image2">Example2</a>
+</p>
 
-## Assumptions
+<div id="example-image2" style="display: none;">
+  <img src="images/kwt/ex2.png" alt="Kruskal-Wallis Test Example2" style="max-width: 100%; height: auto;">
+</div>
+
+<p>
+3.  An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods. <a href="#example3" class="toggle-image" data-target="example-image3">Example3</a>
+</p>
+<div id="example-image3" style="display: none;">
+  <img src="images/kwt/ex3.png" alt="Kruskal-Wallis Test Example3" style="max-width: 100%; height: auto;">
+</div>
+
+<script>
+document.querySelectorAll('.toggle-image').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('data-target');
+    const imgDiv = document.getElementById(targetId);
+    imgDiv.style.display = imgDiv.style.display === 'none' ? 'block' : 'none';
+  });
+});
+</script>
+
+## Theory
+
+Let’s explore some of the  theoretical aspects of the Kruskal-Wallis test. Each section outlines the key steps involved in conducting the analysis. Grasping these theoretical concepts equips you to perform the analysis smoothly and confidently.
+
+### Assumptions
 
 The Kruskal-Wallis test relies on the following assumptions:
 
@@ -39,7 +71,7 @@ The Kruskal-Wallis test relies on the following assumptions:
 
 </details>
 
-## Hypotheses
+### Hypotheses
 
 The Kruskal-Wallis test evaluates the following hypotheses:
 
@@ -63,7 +95,7 @@ At least one population median is different from the others.
 
 -   Step four: Obtain and interpret the p-value
 
-## The Test Statistic
+### The Test Statistic
 
 The Kruskal-Wallis test statistic is calculated using the @eq-kwt1
 
@@ -82,7 +114,7 @@ Where:
 
 When there are no ties in the data, $H$ follows a chi-square distribution with $k-1$ degrees of freedom. When ties exist, a correction factor given in the @eq-kwt2 is applied.
 
-## Correction for Ties
+### Correction for Ties
 
 If there are tied values in the dataset, the test statistic is adjusted using:
 
@@ -97,13 +129,13 @@ Where:
 -   $G$ is the number of groups of tied ranks.
 -   $t_i$ is the number of tied values in the $i$-th group.
 
-## Interpreting the Results
+### Interpreting the Results
 
 The test statistic H approximately follows a chi-square distribution with k - 1 degrees of freedom, where k is the number of groups. To determine if the null hypothesis can be rejected, the H test value is compared to an H critical value obtained from a chi-square table by cross reference the degrees of freedom (df), with the level of significance (ɑ). If H exceeds the critical value, reject the null hypothesis
 
 If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.
 
-## Multiple Comparison Test
+### Multiple Comparison Test
 
 When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:
 
@@ -122,7 +154,7 @@ When the Kruskal-Wallis test is significant, the following post hoc tests are co
 
 Dunn test is the recommended and standard approach due to its alignment with non-parametric assumptions and its ability to handle multiple comparisons appropriately. The LSD test is not suitable in this context because it relies on parametric assumptions that are typically violated when Kruskal-Wallis is used.
 
-## P Adjustment Method {#p-adjustment}
+### p Adjustment Method {#p-adjustment}
 
 In statistical hypothesis testing, p-values indicate the probability of observing results at least as extreme as those observed, assuming the null hypothesis is true. When multiple tests are conducted, the risk of false positives (Type I errors) increases. P-value adjustment methods address this issue by controlling the overall error rate, ensuring reliable inference in multiple testing scenarios.
 
@@ -135,72 +167,39 @@ You can select different p-adjustment methods:
 -   [Benjamini-Yekutieli Procedure (BY)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure)
 -   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)
 
-## KRUSKAL WALLIS TEST IN [RAISINS]{style="color:red;"}
+## Getting started in Raisins
 
-RAISINS is an innovative online platform designed to simplify data analysis for agricultural research, developed by STATOBERRY LLP. RAISINS provide you a comprehensive environment where you can perform KRUSKAL WALLIS test. Before proceeding further, Create an account in [RAISINS](https://www.raisins.live) Once created, login with the credentials and explore.
+**RAISINS** is an innovative online platform designed to simplify data analysis for agricultural research, developed by **STATOBERRY LLP**. RAISINS is a complete online web application , that provides you a comprehensive environment where you can perform various analysis. Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
 
-### Log In to RAISINS
+![](images/kwt/click.png)
 
-![](images/kwt/login.png)
+Once you gets directed to the homepage, you can access the module by subscribing and filling out the google form provided. We offer student friendly subscription plans on monthly and annual basis. Once subscribed you can login to the web application using the credentials provided.
 
-Head to [www.raisins.live](https://www.raisins.live) and sign in to your account. If you don’t have one, create an account faster than you can say non-parametric!
+### A working example
 
-Once logged in, we need a structured data for the analysis. For that create a data of your own following the prescribed format given in **RAISINS.** So lets create a data first !
+We'll guide you through the entire kruskal wallis test. For that let's look how the analysis can be carried out using an example from @sec-exkwt. Once the dataset is ready, head onto the analysis tab and click on browse and upload and then select the Treatment and variables of interest(multiple variables can also be selected) ![](images/kwt/Analysis.png)and then click on run analysis. A complete publication ready results and tables that can be downloaded will be generated.
 
-### DATASET
+### Results
 
-You can download the model datasets from the dataset tab in the **RAISINS** and create your own uisng the microsoft excel following the structure given in the model datasets and save them as csv file for further analysis
-
-![](images/kwt/DATASET.png)
-
-<details>
-
-<summary>Dataset Creation Rules</summary>
-
-1.  **Column Naming Convention**
-    -   No spaces allowed in column names.\
-    -   Use underscores (`_`) or full stops (`.`) for separation.
-2.  **Data Arrangement**
-    -   Align data towards the upper-left corner.\
-    -   Ensure the row above the data is not blank.
-3.  **Cell Management**
-    -   Avoid typing or deleting in cells without data.\
-    -   If needed, select affected cells, right-click, and select **Clear Contents**.
-4.  **Column Relevance**
-    -   Name all columns meaningfully.\
-    -   Exclude unnecessary columns not required for analysis.
-
-</details>
-
-::: {.callout-tip title="Note"}
-Once all these are done, your file is ready. Now save it as CSV file. Upload file by clicking browse in the app
-:::
-
-### Create dataset in RAISINS
-
-**RAISINS** application lets you generate a raisins dataset directly within its interface. Here's how: Open **RAISINS** ➡️Select **KRUSKAL WALLIS TEST** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
-
-![](images/kwt/create_data.png){width="1011"}
-
-::: {.callout-tip title="Note"}
-**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis**
-:::
-
-## Results
-
-![](images/kwt/result_table.png){fig-align="center" width="703"}
+![](images/kwt/result.png){#fig-res fig-align="center" width="703"}
 
 ::: content
 <details>
 
 <summary>Results Table</summary>
 
-This is the result table that will be generated after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis.
+RAISINS generates result table in the format given in @fig-res after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis. The above result table given in @fig-res is generated by analysisng the dataset given in @sec-exkwt, where the Mean ± SD of observed characters (Appearance, color, texture, taste & flavour) are observed. The table contains chi-square statistics of each character and it's significance(p-value). The result explains that, by the analysis of @sec-exkwt , the characters; appearance, texture, taste and flavor of the four drinks are significantly different, where as color is not significant. Additionally a feature to display means ranks (Mean rank is used in the Kruskal-Wallis test to calculate the H-statistic, which determines if there are significant differences between multiple groups. ) is also available in the module. Along with the Mean ± SD values, to specify which groups(here drinks) are significantly different a multipe comparison test will be performed. Dunn's test will be performed by default, you can change the multiple comparison test to LSD (Least significant difference test) by changing from the drop down menu. The result table appears with letter grouping to show which groups differ by each character. From the @fig-res, of the four drinks appearance wise V1, V2 are same and V2, V4 are same. You can interpret all the observed characters in similar way (Groups with same lettering have similar characteristics).
 
 </details>
 :::
 
-## Customizable plots
+### Customization tabs
+
+Additionally You can also change the decimal points, multiple comparison tests, padjustment method, font and sifgnificance level according to your requireent as shown in @fig-tabs ![Customising the results](images/kwt/tabs.png){#fig-tabs}
+
+### Plots and graphs
+
+RAISINS offers you various plots for visualizing the analysis results.These plots can also be customised using the gear button available at the left side of each plot. These plots can also be downloaded as PNG format.
 
 ```{=html}
 <script>
@@ -356,9 +355,7 @@ A **violin plot** blends a box plot’s structure with a density plot’s elegan
 :::::
 :::::::::::::::::::::
 
-Plots and visualizations serve as a critical bridge between raw data and actionable insights by transforming complex, often abstract analytical outputs into clear, intuitive, and engaging representationsThese plots are highly customizable to enhance clarity and aesthetics. You can adjust colors, line styles, marker shapes, fonts, and sizes, add labels, titles, legends, or grid lines, and modify scales or orientations
-
-## How to customize
+### How to customize
 
 RAISIN provides user various customization features for the plots to enhance the visualization according to the requirement of the user.**Click** on the below images to get a clear idea on the customizing features
 
@@ -419,25 +416,25 @@ RAISIN provides user various customization features for the plots to enhance the
   <div class="grid-item" onclick="openModal('images/kwt/plot1.png', 'A gear button on the left side of each plot can be used to customize the plots according to the requirements.')">
     <img src="images/kwt/plot1.png" alt="Plot 1">
   </div>
-<div class="grid-item" onclick="openModal('images/kwt/plot2.png', 'TITLES & LABELS: Once clicked a dropdown menu appears, where you can change the axis title, plot titles and legends. You can enter them manually !')">
+<div class="grid-item" onclick="openModal('images/kwt/plot2.png', 'Titles & labels: Once clicked a dropdown menu appears, where you can change the axis title, plot titles and legends. You can enter them manually !')">
     <img src="images/kwt/plot2.png" alt="Plot 2">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot3.png', 'COLORS AND PATTERNS: This section is used to change the colours of the each plots. Different themes are available in this section. Use them accordingly.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot3.png', 'colours & patterns: This section is used to change the colours of the each plots.')">
     <img src="images/kwt/plot3.png" alt="Plot 3">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot4.png', 'SHOW/HIDE OPTIONS: This section enables to toggle whether you wish to display the axis labels and grouping letters.Their respective colors can also be changed.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot4.png', 'colours & patterns: Different themes are available in this section. Use them accordingly')">
     <img src="images/kwt/plot4.png" alt="Plot 4">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot5.png', 'LINE & THEME: The appearance of lines can be changed in this part.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot5.png', 'Line & theme: The appearance of lines and themes can be changed in this part.')">
     <img src="images/kwt/plot5.png" alt="Plot 5">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot6.png', 'LINE & THEME: Along with changing the line type, the respective theme of visualization can also be changed.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot6.png', 'Show/hide options: For showing and hiding the letter grouping and axis labels, the check boxes can be used respectively. Along with this, the size of grouping letter can also be altererd.')">
     <img src="images/kwt/plot6.png" alt="Plot 6">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot7.png', 'SIZE & SPACING:  The distance of each section and their size can be changed here.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot7.png', 'Size & spacing:  The distance of each section, their sizes &  text angle can be changed here.')">
     <img src="images/kwt/plot7.png" alt="Plot 7">
   </div>
-  <div class="grid-item" onclick="openModal('images/kwt/plot8.png', 'TEXT & LABEL:  Here you can change text color and size, also the background color !.')">
+  <div class="grid-item" onclick="openModal('images/kwt/plot8.png', 'Text & label:  Here you can change text color and size, also the background color and border colour of the sections!.')">
     <img src="images/kwt/plot8.png" alt="Plot 8">
   </div>
 </div>
@@ -486,9 +483,11 @@ console.log("Script loaded successfully.");
 </script>
 ```
 
+
+
 ## Multivariate and AI
 
-The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the Example section; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to **Multivariate** tab. Multivariate analysis in KRUSKAL WALLIS test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the above given example.
+The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the @sec-exkwt; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to **Multivariate** tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the @sec-exkwt
 
 ::::: columns
 ::: {.column width="50%"}
@@ -514,7 +513,45 @@ Based on the loadings of PC's an index will be calculated and scaled. An index p
 
 RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.
 
-Don't wait ! Subscribe and Explore the Kruskal Wallis test in **RAISINS** 
+## Datatsets
+For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and  create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in both Csv and Excel file, but we prefer **csv**. 
+
+![](images/kwt/DATASET.png)
+
+<details>
+
+<summary>Dataset Creation Rules</summary>
+
+1.  **Column Naming Convention**
+    -   No spaces allowed in column names.\
+    -   Use underscores (`_`) or full stops (`.`) for separation.
+2.  **Data Arrangement**
+    -   Align data towards the upper-left corner.\
+    -   Ensure the row above the data is not blank.
+3.  **Cell Management**
+    -   Avoid typing or deleting in cells without data.\
+    -   If needed, select affected cells, right-click, and select **Clear Contents**.
+4.  **Column Relevance**
+    -   Name all columns meaningfully.\
+    -   Exclude unnecessary columns not required for analysis.
+
+</details>
+
+::: {.callout-tip title="Note"}
+Once all these are done, your file is ready. Now save it as CSV or excel file. Upload file by clicking browse in the app
+:::
+
+### Create dataset in RAISINS
+
+**RAISINS** application lets you generate a raisins dataset directly within its interface. Here's how: Open **RAISINS** ➡️Select **KRUSKAL WALLIS TEST** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
+
+![](images/kwt/create_data.png){width="1011"}
+
+::: {.callout-tip title="Note"}
+**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis**
+:::
+
+Once the file is ready, you are all good to go for the analysis.So don't wait ! Subscribe and Explore the Kruskal Wallis test in **RAISINS**
 
 ## FAQ's
 
