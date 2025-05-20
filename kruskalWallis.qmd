@@ -1,6 +1,24 @@
-# Kruskal Wallis Test {#kwt}
+# Kruskal Wallis Test {#kwt}  
 
-The Kruskal-Wallis test is a **non-parametric (**distribution free**)** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952.
+<style>
+  sup {
+    color: blue;
+    font-size: 0.8em;  /* smaller superscript */
+  }
+  .affiliations {
+    color: grey;
+    font-size: 0.9em;  /* one size smaller than normal */
+    margin-top: 0.2em;
+  }
+</style>
+
+Dr Pratheesh P Gopinath<sup>1</sup>, Jithin Chandran<sup>2</sup>, Mohammed Hisham M<sup>2</sup>  
+
+<div class="affiliations">  
+<sup>1</sup>Department of Agricultural Statistics, Kerala Agricultural University, <sup>2</sup>Statoberry LLP
+</div>  
+
+The Kruskal-Wallis test is a **non-parametric (**distribution free**)** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952 [@kwtref].
 
 In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in @fig-anvakwt, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.
 
@@ -9,32 +27,41 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 ![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
 ## Example
+Let's explore some practical situations in agricultural research where the Kruskal-Wallis test, also known as the Kruskal-Wallis H test, is applied.  
 
 ### Study Context {#sec-exkwt}
 
 <p>
-1. A food scientist is evaluating four drink flavours (V1 to V4) based on consumer ratings for five sensory attributes: Appearance, Color, Texture, Taste, and Flavour. Each flavour is rated by five judges, giving five replications per group. A separate Kruskal-Wallis test is performed for each sensory attribute to check if there are significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+
+1.  A food scientist is evaluating four drink flavours (V1 to V4) for five sensory attributes: appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges; since each judge gives a score, these scores can be considered as ten replications per group. A Kruskal-Wallis test can be  performed for each sensory attribute to check if there are any significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+
 </p>
 
-<div id="example-image1" style="display: none;">
-  <img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;">
-</div>
+::: {#example-image1 style="display: none;"}
+<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
+:::
 
-<p>
-2. An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods. <a href="#example2" class="toggle-image" data-target="example-image2">Example2</a>
+<p>  
+
+2.  An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods. <a href="#example2" class="toggle-image" data-target="example-image2">Example2</a>
+
 </p>
 
-<div id="example-image2" style="display: none;">
-  <img src="images/kwt/ex2.png" alt="Kruskal-Wallis Test Example2" style="max-width: 100%; height: auto;">
-</div>
+::: {#example-image2 style="display: none;"}
+<img src="images/kwt/ex2.png" alt="Kruskal-Wallis Test Example2" style="max-width: 100%; height: auto;"/>
+:::
 
 <p>
+
 3.  An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods. <a href="#example3" class="toggle-image" data-target="example-image3">Example3</a>
-</p>
-<div id="example-image3" style="display: none;">
-  <img src="images/kwt/ex3.png" alt="Kruskal-Wallis Test Example3" style="max-width: 100%; height: auto;">
-</div>
 
+</p>
+
+::: {#example-image3 style="display: none;"}
+<img src="images/kwt/ex3.png" alt="Kruskal-Wallis Test Example3" style="max-width: 100%; height: auto;"/>
+:::
+
+```{=html}
 <script>
 document.querySelectorAll('.toggle-image').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -45,10 +72,11 @@ document.querySelectorAll('.toggle-image').forEach(link => {
   });
 });
 </script>
+```
 
 ## Theory
 
-Let’s explore some of the  theoretical aspects of the Kruskal-Wallis test. Each section outlines the key steps involved in conducting the analysis. Grasping these theoretical concepts equips you to perform the analysis smoothly and confidently.
+Let’s explore some of the theoretical aspects of the Kruskal-Wallis test. Each section outlines the key steps involved in conducting the analysis. Grasping these theoretical concepts equips you to perform the analysis smoothly and confidently.
 
 ### Assumptions
 
@@ -133,26 +161,45 @@ Where:
 
 The test statistic H approximately follows a chi-square distribution with k - 1 degrees of freedom, where k is the number of groups. To determine if the null hypothesis can be rejected, the H test value is compared to an H critical value obtained from a chi-square table by cross reference the degrees of freedom (df), with the level of significance (ɑ). If H exceeds the critical value, reject the null hypothesis
 
-If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.
+If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.  
 
-### Multiple Comparison Test
+<details>
+  
+<summary>What is a post-hoc test?</summary>
+A post-hoc test is a follow-up analysis performed after 
+finding a significant result in an overall statistical 
+test (like ANOVA or Kruskal-Wallis). 
+Its purpose is to identify exactly which groups or 
+treatments differ from each other. In other words, 
+it helps pinpoint where the differences lie between 
+multiple groups when the initial test shows that 
+not all groups are the same.  
+
+</details>
+
+### Post-hoc test  
 
 When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:
 
 ::::: {style="display: flex; gap: 2em;"}
 ::: dunn-box
-**Dunn's Test**\
--The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test.\
--Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.\
+**Dunn's Test**  
+The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test. Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.It compares the sums of ranks between every pair of groups by calculating the difference in their average ranks and standardizing this difference using an estimate of its standard error. The standardized test statistic in Dunn’s test is compared to the standard normal distribution (the Z-distribution) to determine significance. [@dunn1964]
 :::
 
 ::: lsd-box
-**LSD (Least Significant Difference) Test**\
-- Fisher’s LSD test is primarily used as a post-hoc test after a significant ANOVA (Analysis of Variance), which is a parametric test.\
+**LSD (Least Significant Difference) Test**  
+The nonparametric LSD test is a post-hoc procedure used after a significant Kruskal-Wallis test to find which groups differ. It calculates the minimum significant difference (MSD) between group mean ranks based on an estimate of rank variance and uses the Student’s t-distribution to determine significance. Groups are compared pairwise by checking if their mean rank differences exceed the MSD. This test assumes similar group sizes and equal variance of ranks, offering a simpler method to classify groups when these conditions hold.[@agricolae]  
 :::
-:::::
+:::::  
 
-Dunn test is the recommended and standard approach due to its alignment with non-parametric assumptions and its ability to handle multiple comparisons appropriately. The LSD test is not suitable in this context because it relies on parametric assumptions that are typically violated when Kruskal-Wallis is used.
+
+<details>
+  
+<summary>Which post-hoc test to use?</summary>
+When choosing a post-hoc test after performing a Kruskal-Wallis test, the decision largely depends on the characteristics of your data and the goals of your analysis. Dunn’s test is the most commonly recommended method for nonparametric pairwise comparisons because it adjusts for multiple testing and compares standardized rank differences using the normal distribution, making it suitable for groups of unequal sizes and providing a more conservative control 
+of Type I errors. On the other hand, the nonparametric LSD method, such as the one implemented in the agricolae package, is simpler and uses the Student’s t-distribution along with a minimum significant difference calculated on ranks. This method works well when group sizes are approximately equal and when ease of interpretation is preferred, although it tends to be less conservative and may lead to more false positives. Overall, Dunn’s test is generally preferred for its rigor and wider acceptance, while the nonparametric LSD can be a practical alternative in balanced designs, provided the results are interpreted with caution.  
+</details>  
 
 ### p Adjustment Method {#p-adjustment}
 
@@ -165,11 +212,21 @@ You can select different p-adjustment methods:
 -   [Hommel](https://en.wikipedia.org/wiki/Multiple_testing_correction#Hommel)
 -   [Benjamini-Hochberg Procedure (BH)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Hochberg_procedure)
 -   [Benjamini-Yekutieli Procedure (BY)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure)
--   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)
+-   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)  
+
+<details>  
+
+<summary>Which p-adjustment method to use?</summary>  
+
+In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.  
+</details>  
+
 
 ## Getting started in Raisins
 
-**RAISINS** is an innovative online platform designed to simplify data analysis for agricultural research, developed by **STATOBERRY LLP**. RAISINS is a complete online web application , that provides you a comprehensive environment where you can perform various analysis. Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
+RAISINS is an innovative online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.  
+
+Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
 
 ![](images/kwt/click.png)
 
@@ -177,25 +234,38 @@ Once you gets directed to the homepage, you can access the module by subscribing
 
 ### A working example
 
-We'll guide you through the entire kruskal wallis test. For that let's look how the analysis can be carried out using an example from @sec-exkwt. Once the dataset is ready, head onto the analysis tab and click on browse and upload and then select the Treatment and variables of interest(multiple variables can also be selected) ![](images/kwt/Analysis.png)and then click on run analysis. A complete publication ready results and tables that can be downloaded will be generated.
+We'll guide you through the entire kruskal wallis test. For that let's look how the analysis can be carried out using an Example 1 descibed in @sec-exkwt.  
+
+You can see in @fig-raisinkwt how the dataset should be arranged for analysis in RAISINS.  
+
+Data preparation in RAISINS is super easy it is well explained in the section @sec-createData. Model datasets for testing from the app is explained in @sec-Datasets. 
+
+![Dataset arrangement for Kruskal-Wallis test in RAISINS](images/kwt/ex1.png){#fig-raisinkwt fig-align="center" width="558"}  
+
+Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the Treatment and variables of interest(multiple variables can also be selected) ![](images/kwt/Analysis.png)and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.  
 
 ### Results
 
-![](images/kwt/result.png){#fig-res fig-align="center" width="703"}
+![](images/kwt/result.png){#fig-res1 fig-align="center" width="703"}
 
-::: content
-<details>
+RAISINS generates result table in the format given in @fig-res1 after the analysis.  
+The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it's significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.  
 
-<summary>Results Table</summary>
+From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks. 
 
-RAISINS generates result table in the format given in @fig-res after the analysis, which contains Mean ± SD of each observed characters, Chi-square values and p-values showing test significance. RAISINS offers you downloadable results table in pdf and word format which can be used for your future research and thesis. The above result table given in @fig-res is generated by analysisng the dataset given in @sec-exkwt, where the Mean ± SD of observed characters (Appearance, color, texture, taste & flavour) are observed. The table contains chi-square statistics of each character and it's significance(p-value). The result explains that, by the analysis of @sec-exkwt , the characters; appearance, texture, taste and flavor of the four drinks are significantly different, where as color is not significant. Additionally a feature to display means ranks (Mean rank is used in the Kruskal-Wallis test to calculate the H-statistic, which determines if there are significant differences between multiple groups. ) is also available in the module. Along with the Mean ± SD values, to specify which groups(here drinks) are significantly different a multipe comparison test will be performed. Dunn's test will be performed by default, you can change the multiple comparison test to LSD (Least significant difference test) by changing from the drop down menu. The result table appears with letter grouping to show which groups differ by each character. From the @fig-res, of the four drinks appearance wise V1, V2 are same and V2, V4 are same. You can interpret all the observed characters in similar way (Groups with same lettering have similar characteristics).
+Usually while reporting Kruskal Wallis test, mean ranks are also reported so a additional feature to display means ranks  is also available in the module.  
 
-</details>
-:::
+After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn's test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu.  The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.
+
+For example, in the case of the character *Color*, no letter groupings are shown, indicating that the Kruskal-Wallis test did not find significant differences among the treatments. However, for *Appearance*, treatments V1 and V2 are assigned the letter ‘a’, while V3 and V4 are assigned the letter ‘b’. This indicates that V1 and V2 form one group with similar appearance, while V3 and V4 form another, significantly different group. Since the mean ranks of V3 and V4 are higher, it suggests that these treatments were rated better in appearance.
+
+You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.  
 
 ### Customization tabs
 
-Additionally You can also change the decimal points, multiple comparison tests, padjustment method, font and sifgnificance level according to your requireent as shown in @fig-tabs ![Customising the results](images/kwt/tabs.png){#fig-tabs}
+Additionally You can also change the decimal points, multiple comparison tests, padjustment method, font and sifgnificance level according to your requireent as shown in @fig-tabs  
+
+![Customising the results](images/kwt/tabs.png){#fig-tabs}
 
 ### Plots and graphs
 
@@ -483,8 +553,6 @@ console.log("Script loaded successfully.");
 </script>
 ```
 
-
-
 ## Multivariate and AI
 
 The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the @sec-exkwt; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to **Multivariate** tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the @sec-exkwt
@@ -513,8 +581,9 @@ Based on the loadings of PC's an index will be calculated and scaled. An index p
 
 RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.
 
-## Datatsets
-For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and  create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in both Csv and Excel file, but we prefer **csv**. 
+## Datasets {#sec-Datasets}
+
+For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in both Csv and Excel file, but we prefer **csv**.
 
 ![](images/kwt/DATASET.png)
 
@@ -541,7 +610,7 @@ For performing a demo analysis and to get a proper structural format of the data
 Once all these are done, your file is ready. Now save it as CSV or excel file. Upload file by clicking browse in the app
 :::
 
-### Create dataset in RAISINS
+### Create dataset in RAISINS {#sec-createData}
 
 **RAISINS** application lets you generate a raisins dataset directly within its interface. Here's how: Open **RAISINS** ➡️Select **KRUSKAL WALLIS TEST** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
 
