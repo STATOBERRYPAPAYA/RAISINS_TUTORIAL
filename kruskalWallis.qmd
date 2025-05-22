@@ -307,14 +307,14 @@ function hideDescription(id) {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  width: 400px; /* Fixed width for container */
+  width: 350px; /* Fixed width for container */
   height: 300px; /* Fixed height for container */
   overflow: hidden; /* Ensure content fits within container */
   margin: 10px; /* Add margin to prevent overlap */
 }
 
 .plot-container img {
-  width: 400px; /* Fixed image width */
+  width: 350px; /* Fixed image width */
   height: 300px; /* Fixed image height */
   object-fit: cover; /* Scale image to cover container */
   border: 3px solid #ddd;
@@ -373,7 +373,7 @@ function hideDescription(id) {
 ::::::::::::::::::::: grid
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')"}
-![Box plot](images/kwt/box.png){fallback="https://via.placeholder.com/400x300?text=Box+Plot"}
+![Box plot](images/kwt/box.png){fallback="https://via.placeholder.com/300x300?text=Box+Plot"}
 
 ::: {#boxplot-desc .plot-description}
 A **box plot** displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It highlights central tendencies, variability, and outliers with a splash of clarity!
@@ -383,7 +383,7 @@ A **box plot** displays the distribution of data with a five-number summary: min
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
-![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"}
+![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"}
 
 ::: {#pairsplot-desc .plot-description}
 A pairs plot provides three key pieces of information. First, it shows the individual distribution of each variable using a histogram with a smoothed line along the diagonal. Second, it displays the correlation coefficient between each pair of variables, giving a quick sense of their relationship. Third, it includes scatter plots to visually assess how two variables relate to each other. For example, in the plot above, you can see the histogram of the variable *Color* and *Texture*, the scatter plot with *Color* on the x-axis and *Texture* on the y-axis, and the correlation between *Color* and *Texture*, which is 0.14.
@@ -394,7 +394,7 @@ A pairs plot provides three key pieces of information. First, it shows the indiv
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')"}
-![Bar plot](images/kwt/bar.png){fallback="https://via.placeholder.com/400x300?text=Bar+Plot"}
+![Bar plot](images/kwt/bar.png){fallback="https://via.placeholder.com/300x300?text=Bar+Plot"}
 
 ::: {#barplot-desc .plot-description}
 A **Bar plot** with error bars is a visualization that displays data using rectangular bars, where each bar’s height represents a value (e.g., mean), and error bars indicate the variability or uncertainty (e.g., standard deviation or standard error) around that value. This type of plot is commonly used in scientific and statistical contexts to summarize data and convey reliability..
@@ -404,7 +404,7 @@ A **Bar plot** with error bars is a visualization that displays data using recta
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
-![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/400x300?text=Connected+Plot"}
+![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
 
 ::: {#connectedplot-desc .plot-description}
 A **connected line plot**, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups
@@ -414,7 +414,7 @@ A **connected line plot**, is a type of chart where mean value points are repres
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')"}
-![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"}
+![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"}
 
 ::: {#meanvalueplot-desc .plot-description}
 A **mean value plot** also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars that indicates the variability around the mean. It's used to visualize the central tendency and spread of data.
@@ -424,7 +424,7 @@ A **mean value plot** also known as a line plot, is a graphical representation o
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
-![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/400x300?text=Violin+Plot"}
+![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/300x300?text=Violin+Plot"}
 
 ::: {#violinplot-desc .plot-description}
 A **violin plot** combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.
@@ -584,13 +584,21 @@ The scree plot given @fig-scree illustrates the proportion of variance explained
 
 The biplot given @fig-Biplot provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.
 
+
+![PCA loadings](images/kwt/loadings.png){#fig-loadings}
+
+
+![Index score](images/kwt/index_score.png){#fig-indexscore fig-align="center"}
+
+
+
+After performing Principal Component Analysis (PCA), loadings are the coefficients that indicate how much each original variable contributes to each principal component (PC). They essentially quantify the correlation between each original variable and the corresponding PC. A high absolute loading value (close to 1 or -1) indicates a strong influence of the variable on the PC, while a value close to 0 suggests a weak influence. The sign of the loading (+ or -) indicates the direction of the correlation (positive or negative) between the variable and the PC. Based on the loadings of PC's as in @fig-loadings, an index will be calculated and scaled (@fig-indexscore) . An index plot given @fig-Index in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.
+
 ![Index Plot](images/kwt/index.png){#fig-Index width="430"}
 
-Based on the loadings of PC's an index will be calculated and scaled. An index plot given @fig-Index in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.
 
-![](images/kwt/index_score.png){#fig-indexscore fig-align="center"}
 
-This table quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score. (@fig-indexscore). Here ro refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.
+This table in @fig-indexscore quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score (@fig-indexscore). Here to refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.
 
 **RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below @fig-ai
 

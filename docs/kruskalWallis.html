@@ -243,13 +243,13 @@ window.Quarto = {
   <li><a href="#sec-post" id="toc-sec-post" class="nav-link" data-scroll-target="#sec-post"><span class="header-section-number">1.2.6</span> Post-hoc test</a></li>
   <li><a href="#p-adjustment" id="toc-p-adjustment" class="nav-link" data-scroll-target="#p-adjustment"><span class="header-section-number">1.2.7</span> p Adjustment Method</a></li>
   </ul></li>
-  <li><a href="#getting-started-in-raisins" id="toc-getting-started-in-raisins" class="nav-link" data-scroll-target="#getting-started-in-raisins"><span class="header-section-number">1.3</span> Getting started in Raisins</a>
+  <li><a href="#sec-rasins" id="toc-sec-rasins" class="nav-link" data-scroll-target="#sec-rasins"><span class="header-section-number">1.3</span> Getting started in Raisins</a>
   <ul class="collapse">
   <li><a href="#a-working-example" id="toc-a-working-example" class="nav-link" data-scroll-target="#a-working-example"><span class="header-section-number">1.3.1</span> A working example</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">1.3.2</span> Results</a></li>
   <li><a href="#customization-tabs" id="toc-customization-tabs" class="nav-link" data-scroll-target="#customization-tabs"><span class="header-section-number">1.3.3</span> Customization tabs</a></li>
   <li><a href="#plots-and-graphs" id="toc-plots-and-graphs" class="nav-link" data-scroll-target="#plots-and-graphs"><span class="header-section-number">1.3.4</span> Plots and graphs</a></li>
-  <li><a href="#how-to-customize" id="toc-how-to-customize" class="nav-link" data-scroll-target="#how-to-customize"><span class="header-section-number">1.3.5</span> How to customize</a></li>
+  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots"><span class="header-section-number">1.3.5</span> Customizing plots</a></li>
   </ul></li>
   <li><a href="#sec-multi" id="toc-sec-multi" class="nav-link" data-scroll-target="#sec-multi"><span class="header-section-number">1.4</span> Multivariate and AI</a></li>
   <li><a href="#sec-Datasets" id="toc-sec-Datasets" class="nav-link" data-scroll-target="#sec-Datasets"><span class="header-section-number">1.5</span> Datasets</a>
@@ -294,9 +294,9 @@ window.Quarto = {
     margin-top: 0.2em;
   }
 </style>
-<p>Dr Pratheesh P Gopinath<sup>1</sup>, Jithin Chandran<sup>2</sup>, Mohammed Hisham M<sup>2</sup></p>
+<p>Jithin Chandran<sup>1</sup>, Mohammed Hisham M<sup>1</sup>,Dr Pratheesh P Gopinath<sup>2</sup>,</p>
 <div class="affiliations">
-<p><sup>1</sup>Department of Agricultural Statistics, Kerala Agricultural University, <sup>2</sup>Statoberry LLP</p>
+<p><sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,</p>
 </div>
 <p>The Kruskal-Wallis test is a <strong>non-parametric (</strong>distribution free<strong>)</strong> statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a <strong>one-way ANOVA</strong> are violated. It’s essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after <strong>William Kruskal and W. Allen Wallis</strong>, who developed it in 1952 <span class="citation" data-cites="kwtref">(<a href="references.html#ref-kwtref" role="doc-biblioref">Kruskal and Wallis 1952</a>)</span>.</p>
 <p>In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in <a href="#fig-anvakwt" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.</p>
@@ -327,7 +327,7 @@ Figure&nbsp;1.2: When to use kruskal wallis test
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="sec-exkwt"><span class="header-section-number">1.1.1</span> Study Context</h3>
 <p>
 </p><ol type="1">
-<li>A food scientist is evaluating four drink flavours (V1 to V4) for five sensory attributes: appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges; since each judge gives a score, these scores can be considered as ten replications per group. A Kruskal-Wallis test can be performed for each sensory attribute to check if there are any significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a></li>
+<li>A food scientist is evaluating four drink flavours (V1 to V4) based on five sensory attributes: appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges, so there are ten replications (ratings) per flavour. A Kruskal-Wallis test can be performed separately for each sensory attribute to check whether there are significant differences in ratings among the four flavours.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a></li>
 </ol>
 <p></p>
 <div id="example-image1" style="display: none;">
@@ -335,7 +335,7 @@ Figure&nbsp;1.2: When to use kruskal wallis test
 </div>
 <p>
 </p><ol start="2" type="1">
-<li>An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers’ knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods. <a href="#example2" class="toggle-image" data-target="example-image2">Example2</a></li>
+<li>An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on how much knowledge farmers gain from each. Each method is tested on five different farmers, and their knowledge is scored after the training. Since each method is tested on five farmers, there are five replications per method. The Kruskal-Wallis test can be used to determine whether there is a significant difference in knowledge gain among the four training methods.<a href="#example2" class="toggle-image" data-target="example-image2">Example2</a></li>
 </ol>
 <p></p>
 <div id="example-image2" style="display: none;">
@@ -343,7 +343,7 @@ Figure&nbsp;1.2: When to use kruskal wallis test
 </div>
 <p>
 </p><ol start="3" type="1">
-<li>An agricultural extension researcher is comparing four different communication approaches (C1 to C4) for delivering farm advisories. Each method is tested on 10 farmers, who rate the clarity of the information received. These clarity scores serve as replications. The Kruskal Wallis test can be applied to determine whether there are significant differences in perceived clarity among the four communication methods. <a href="#example3" class="toggle-image" data-target="example-image3">Example3</a></li>
+<li>An agricultural extension researcher is comparing four different communication methods (C1 to C4) for delivering farm advisories. Each method is tested on a separate group of 10 farmers, who rate the clarity of the information received. So, there are 10 farmers (or replications) for each method, making a total of 40 ratings. The Kruskal-Wallis test can be used to check whether there are significant differences in the clarity ratings among the four communication methods.<a href="#example3" class="toggle-image" data-target="example-image3">Example3</a></li>
 </ol>
 <p></p>
 <div id="example-image3" style="display: none;">
@@ -363,14 +363,14 @@ document.querySelectorAll('.toggle-image').forEach(link => {
 </section>
 <section id="theory" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="theory"><span class="header-section-number">1.2</span> Theory</h2>
-<p>Let’s explore some of the theoretical aspects of the Kruskal-Wallis test. Each section outlines the key steps involved in conducting the analysis. Grasping these theoretical concepts equips you to perform the analysis smoothly and confidently.</p>
+<p>You can either read through the theory of the Kruskal-Wallis test below, or, if you’re a non-statistician interested only in the practical aspects, you may skip ahead to <a href="#sec-rasins" class="quarto-xref"><span>Section 1.3</span></a>, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.</p>
 <section id="assumptions" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">1.2.1</span> Assumptions</h3>
 <p>The Kruskal-Wallis test relies on the following assumptions:</p>
 <ul>
 <li><p><strong>Non-parametric</strong>: It does not assume a normal distribution of the data, making it suitable for non-normally distributed data</p></li>
 <li><p><strong>Independence of Observations</strong>: Each sample should be independent of the others, meaning there is no relationship or dependence between the observations within or across group</p></li>
-<li><p><strong>Ordinal or Continuous Data</strong>: The data should be ordinal, meaning it can be ranked, or continuous.</p></li>
+<li><p><strong>Ordinal or Continuous Data</strong>: The data can be ordinal, meaning it can be ranked, or continuous.</p></li>
 </ul>
 <details>
 <summary>
@@ -439,7 +439,7 @@ Use this for Kruskal-Wallis Test
 <div class="callout-body-container callout-body">
 <p><span id="eq-kwt1"><span class="math display">\[
 \Large H = \frac{12}{N(N+1)} \sum_{i=1}^{k} \frac{R_i^2}{n_i} - 3(N+1)
-\tag{1.1}\]</span></span></p>
+\tag{1.1}\]</span></span> <span class="citation" data-cites="conover1999practical">(<a href="references.html#ref-conover1999practical" role="doc-biblioref">Conover 1999</a>)</span></p>
 </div>
 </div>
 <p>Where:</p>
@@ -492,7 +492,7 @@ What is a post-hoc test?
 <div style="display: flex; gap: 2em;">
 <div class="dunn-box">
 <p><strong>Dunn’s Test</strong><br>
-The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test. Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.It compares the sums of ranks between every pair of groups by calculating the difference in their average ranks and standardizing this difference using an estimate of its standard error. The standardized test statistic in Dunn’s test is compared to the standard normal distribution (the Z-distribution) to determine significance. <span class="citation" data-cites="dunn1964">(<a href="references.html#ref-dunn1964" role="doc-biblioref">Dunn 1964</a>)</span></p>
+The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test. Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups. It compares the sums of ranks between every pair of groups by calculating the difference in their average ranks and standardizing this difference using an estimate of its standard error. The standardized test statistic in Dunn’s test is compared to the standard normal distribution (the Z-distribution) to determine significance. <span class="citation" data-cites="dunn1964">(<a href="references.html#ref-dunn1964" role="doc-biblioref">Dunn 1964</a>)</span></p>
 </div>
 <div class="lsd-box">
 <p><strong>LSD (Least Significant Difference) Test</strong><br>
@@ -512,7 +512,7 @@ Which post-hoc test to use?
 <section id="p-adjustment" class="level3" data-number="1.2.7">
 <h3 data-number="1.2.7" class="anchored" data-anchor-id="p-adjustment"><span class="header-section-number">1.2.7</span> p Adjustment Method</h3>
 <p>In statistical hypothesis testing, p-values indicate the probability of observing results at least as extreme as those observed, assuming the null hypothesis is true. When multiple tests are conducted, the risk of false positives (Type I errors) increases. P-value adjustment methods address this issue by controlling the overall error rate, ensuring reliable inference in multiple testing scenarios.</p>
-<p>You can select different p-adjustment methods:</p>
+<p>Different p-adjustment methods are listed below, if you are interested you can click on them to read more:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">Holm</a></li>
@@ -529,73 +529,77 @@ Which p-adjustment method to use?
 </details>
 </section>
 </section>
-<section id="getting-started-in-raisins" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="getting-started-in-raisins"><span class="header-section-number">1.3</span> Getting started in Raisins</h2>
-<p>RAISINS is an innovative online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.</p>
+<section id="sec-rasins" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-rasins"><span class="header-section-number">1.3</span> Getting started in Raisins</h2>
+<p>RAISINS is an online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.</p>
 <p>Head to <a href="https://www.raisins.live">www.raisins.live</a> where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section</p>
 <p><img src="images/kwt/click.png" class="img-fluid"></p>
-<p>Once you gets directed to the homepage, you can access the module by subscribing and filling out the google form provided. We offer student friendly subscription plans on monthly and annual basis. Once subscribed you can login to the web application using the credentials provided.</p>
+<p>You can log in to the web application using the credentials you received after subscribing.</p>
 <section id="a-working-example" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="a-working-example"><span class="header-section-number">1.3.1</span> A working example</h3>
-<p>We’ll guide you through the entire kruskal wallis test. For that let’s look how the analysis can be carried out using an Example 1 descibed in <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a>.</p>
-<p>You can see in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> how the dataset should be arranged for analysis in RAISINS.</p>
-<p>Data preparation in RAISINS is super easy it is well explained in the section <a href="#sec-createData" class="quarto-xref"><span>Section 1.5.1</span></a>. Model datasets for testing from the app is explained in <a href="#sec-Datasets" class="quarto-xref"><span>Section 1.5</span></a>.</p>
+<p>We’ll guide you through the entire Kruskal-Wallis test step by step. To begin, let’s look at how the analysis can be carried out using Example 1 described in <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a>. For clarity, here’s a quick recap of the example: A food scientist is evaluating four drink flavours (V1 to V4) based on five sensory attributes—appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges, providing ten replications (ratings) per flavour.</p>
+<p>The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>.</p>
+<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-createData" class="quarto-xref"><span>Section 1.5.1</span></a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Datasets" class="quarto-xref"><span>Section 1.5</span></a>.</p>
 <div id="fig-raisinkwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-raisinkwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="558">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-raisinkwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: Dataset arrangement for Kruskal-Wallis test in RAISINS
+Figure&nbsp;1.3: Dataset arrangement for analyzing sensory ratings of four drink flavours using the Kruskal-Wallis test in RAISINS
 </figcaption>
 </figure>
 </div>
-<p>Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.</p>
-<p><img src="images/kwt/Analysis.png" class="img-fluid"></p>
+<p>Once the dataset is ready, head onto the <code>Analysis</code> tab in RAISINS and click on <code>Browse</code> and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on <code>Run Analysis</code>. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See <a href="#fig-analysistab" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> for marked Analysis window in RAISINS.</p>
+<div id="fig-analysistab" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analysistab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/Analysis.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysistab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Analysis window in RAISINS
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="results" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="results"><span class="header-section-number">1.3.2</span> Results</h3>
-<div id="fig-res1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="703">
+<p>RAISINS generates result table in the format given in <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> after the analysis.<br>
+The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.</p>
+<div id="fig-res1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/result.png" id="fig-res1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="703">
+<img src="images/kwt/result.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="703">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Result table in RAISINS
 </figcaption>
 </figure>
 </div>
-<details>
-<summary>
-Results table
-</summary>
-<p>RAISINS generates result table in the format given in <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> after the analysis.<br>
-The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.</p>
 <p>From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks.</p>
 <p>Usually while reporting Kruskal Wallis test, mean ranks are also reported so a additional feature to display means ranks is also available in the module.</p>
 <p>After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn’s test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu. The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.</p>
 <p>For example, in the case of the character <em>Color</em>, no letter groupings are shown, indicating that the Kruskal-Wallis test did not find significant differences among the treatments. However, for <em>Appearance</em>, treatments V1 and V2 are assigned the letter ‘a’, while V3 and V4 are assigned the letter ‘b’. This indicates that V1 and V2 form one group with similar appearance, while V3 and V4 form another, significantly different group. Since the mean ranks of V3 and V4 are higher, it suggests that these treatments were rated better in appearance.</p>
 <p>You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.</p>
-From the results <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> , it’s found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on multivariate analysis tab. The results as mentioned in <a href="#sec-multi" class="quarto-xref"><span>Section 1.4</span></a> gives you the best treatment based on all the observed characters.
-</details>
+<p>From the results <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> , it’s found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on <code>Multivaraite</code> tab. The results as mentioned in <a href="#sec-multi" class="quarto-xref"><span>Section 1.4</span></a> gives you the best treatment based on all the observed characters.</p>
 </section>
 <section id="customization-tabs" class="level3" data-number="1.3.3">
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="customization-tabs"><span class="header-section-number">1.3.3</span> Customization tabs</h3>
-<p>Additionally You can also change the decimal points, post-hoc tests, p-adjustment method, font and significance level according to your requirements as shown in <a href="#fig-tabs" class="quarto-xref">Figure&nbsp;<span>1.5</span></a></p>
+<p>In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in <a href="#fig-tabs" class="quarto-xref">Figure&nbsp;<span>1.6</span></a>.</p>
 <div id="fig-tabs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/tabs.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.5: Customising the results
+Figure&nbsp;1.6: Customising the results
 </figcaption>
 </figure>
 </div>
 </section>
 <section id="plots-and-graphs" class="level3" data-number="1.3.4">
 <h3 data-number="1.3.4" class="anchored" data-anchor-id="plots-and-graphs"><span class="header-section-number">1.3.4</span> Plots and graphs</h3>
-<p>RAISINS offers you various plots for visualizing the analysis results.These plots can also be customised using the gear button available at the left side of each plot. These plots can also be downloaded as PNG format.</p>
+<p>RAISINS is designed for a smooth and hassle-free experience. Once you click the <code>Run Analysis</code> button, all relevant results and outputs appear instantly—leaving no room for confusion. We’ve ensured that every possible plot related to the Kruskal-Wallis test is readily available. Simply click on the <code>Plots &amp; Graphs</code> tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.</p>
 <script>
 // Hide all descriptions on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -621,14 +625,14 @@ function hideDescription(id) {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  width: 400px; /* Fixed width for container */
+  width: 350px; /* Fixed width for container */
   height: 300px; /* Fixed height for container */
   overflow: hidden; /* Ensure content fits within container */
   margin: 10px; /* Add margin to prevent overlap */
 }
 
 .plot-container img {
-  width: 400px; /* Fixed image width */
+  width: 350px; /* Fixed image width */
   height: 300px; /* Fixed image height */
   object-fit: cover; /* Scale image to cover container */
   border: 3px solid #ddd;
@@ -687,7 +691,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/box.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Box+Plot"></p>
+<p><img src="images/kwt/box.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Box+Plot"></p>
 <figcaption>Box plot</figcaption>
 </figure>
 </div>
@@ -700,12 +704,12 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/corr.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Pairs+Plot"></p>
+<p><img src="images/kwt/corr.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"></p>
 <figcaption>Pairs plot</figcaption>
 </figure>
 </div>
 <div id="pairsplot-desc" class="plot-description">
-<p>A correlation plot, often called a correlation matrix or heatmap, is a visual tool used to display the correlation coefficients between multiple variables in a dataset</p>
+<p>A pairs plot provides three key pieces of information. First, it shows the individual distribution of each variable using a histogram with a smoothed line along the diagonal. Second, it displays the correlation coefficient between each pair of variables, giving a quick sense of their relationship. Third, it includes scatter plots to visually assess how two variables relate to each other. For example, in the plot above, you can see the histogram of the variable <em>Color</em> and <em>Texture</em>, the scatter plot with <em>Color</em> on the x-axis and <em>Texture</em> on the y-axis, and the correlation between <em>Color</em> and <em>Texture</em>, which is 0.14.</p>
 </div>
 </div>
 </div>
@@ -713,7 +717,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/bar.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Bar+Plot"></p>
+<p><img src="images/kwt/bar.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Bar+Plot"></p>
 <figcaption>Bar plot</figcaption>
 </figure>
 </div>
@@ -726,12 +730,12 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/Connected.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Connected+Plot"></p>
+<p><img src="images/kwt/Connected.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Connected+Plot"></p>
 <figcaption>Connected line plot</figcaption>
 </figure>
 </div>
 <div id="connectedplot-desc" class="plot-description">
-<p>A <strong>connected line plot</strong>, also known as a connected scatter plot, is a type of chart where data points are represented by markers and connected by lines, visualizing the evolution of a variable over time or another sequential order. It helps to show trends and relationships between two variables as they change across a third variable</p>
+<p>A <strong>connected line plot</strong>, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups</p>
 </div>
 </div>
 </div>
@@ -739,12 +743,12 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/mean.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"></p>
+<p><img src="images/kwt/mean.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"></p>
 <figcaption>Mean Value Plot</figcaption>
 </figure>
 </div>
 <div id="meanvalueplot-desc" class="plot-description">
-<p>A <strong>mean value plot</strong> also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars or confidence intervals that indicate the uncertainty or variability around the mean. It’s used to visualize the central tendency and spread of data.</p>
+<p>A <strong>mean value plot</strong> also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars that indicates the variability around the mean. It’s used to visualize the central tendency and spread of data.</p>
 </div>
 </div>
 </div>
@@ -752,7 +756,7 @@ function hideDescription(id) {
 <div class="plot-container" onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/kwt/violin.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Violin+Plot"></p>
+<p><img src="images/kwt/violin.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Violin+Plot"></p>
 <figcaption>Violin plot</figcaption>
 </figure>
 </div>
@@ -763,9 +767,9 @@ function hideDescription(id) {
 </div>
 </div>
 </section>
-<section id="how-to-customize" class="level3" data-number="1.3.5">
-<h3 data-number="1.3.5" class="anchored" data-anchor-id="how-to-customize"><span class="header-section-number">1.3.5</span> How to customize</h3>
-<p>RAISIN provides user various customization features for the plots to enhance the visualization according to the requirement of the user.<strong>Click</strong> on the below images to get a clear idea on the customizing features</p>
+<section id="customizing-plots" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="customizing-plots"><span class="header-section-number">1.3.5</span> Customizing plots</h3>
+<p>RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user.<strong>Click</strong> on the below images to get a clear idea on the customizing features</p>
 <style>
 .grid-container {
   display: grid;
@@ -891,8 +895,9 @@ console.log("Script loaded successfully.");
 </section>
 <section id="sec-multi" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-multi"><span class="header-section-number">1.4</span> Multivariate and AI</h2>
-<p><img src="images/kwt/multi.png" class="img-fluid"></p>
-<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a>; if we have to analyse multiple variables (Appearance, Color, Texture, Taste, Flavour) together, navigate to <strong>multivariate</strong> tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !.</p>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups.Now, In our example of rating four flavours; if we have to identify best flavour based on multiple variables (Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <span class="quarto-unresolved-ref">?fig-multiraisin</span>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
+<p><img src="images/kwt/multi.png" id="fig-multiraisin" class="img-fluid" alt="Multivariate tab in RAISINS"> A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.</p>
+<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.7</span></a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div id="fig-scree" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -901,7 +906,7 @@ console.log("Script loaded successfully.");
 <img src="images/kwt/scree.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.6: Scree Plot
+Figure&nbsp;1.7: Scree Plot
 </figcaption>
 </figure>
 </div>
@@ -912,44 +917,53 @@ Figure&nbsp;1.6: Scree Plot
 <img src="images/kwt/biplot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.7: Bi Plot
+Figure&nbsp;1.8: Bi Plot
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.6</span></a> illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.</p>
-<p>The biplot given <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.7</span></a> provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.</p>
+<p>The biplot given <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.8</span></a> provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.</p>
+<div id="fig-loadings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/loadings.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.9: PCA loadings
+</figcaption>
+</figure>
+</div>
+<div id="fig-indexscore" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/index_score.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.10: Index score
+</figcaption>
+</figure>
+</div>
+<p>After performing Principal Component Analysis (PCA), loadings are the coefficients that indicate how much each original variable contributes to each principal component (PC). They essentially quantify the correlation between each original variable and the corresponding PC. A high absolute loading value (close to 1 or -1) indicates a strong influence of the variable on the PC, while a value close to 0 suggests a weak influence. The sign of the loading (+ or -) indicates the direction of the correlation (positive or negative) between the variable and the PC. Based on the loadings of PC’s as in <a href="#fig-loadings" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>, an index will be calculated and scaled (<a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>) . An index plot given <a href="#fig-Index" class="quarto-xref">Figure&nbsp;<span>1.11</span></a> in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.</p>
 <div id="fig-Index" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/index.png" class="img-fluid figure-img" width="430">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.8: Index Plot
+Figure&nbsp;1.11: Index Plot
 </figcaption>
 </figure>
 </div>
-<p>Based on the loadings of PC’s an index will be calculated and scaled. An index plot given <a href="#fig-Index" class="quarto-xref">Figure&nbsp;<span>1.8</span></a> in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.</p>
-<div id="fig-indexscore" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/index_score.png" id="fig-indexscore" class="img-fluid quarto-figure quarto-figure-center anchored figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.9
-</figcaption>
-</figure>
-</div>
-<p>This table quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score. (<a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>). Here ro refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.</p>
-<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.10</span></a></p>
+<p>This table in <a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.10</span></a> quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score (<a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>). Here to refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.</p>
+<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.12</span></a></p>
 <div id="fig-ai" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/ai.gif" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.10: AI INTERPRETATION
+Figure&nbsp;1.12: AI INTERPRETATION
 </figcaption>
 </figure>
 </div>
@@ -1024,7 +1038,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, don’t forget to download the file ! </strong></p>
+<p><strong>Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, don’t forget to download the file !</strong></p>
 </div>
 </div>
 <p>Once the file is ready, you are all good to go for the analysis. So don’t wait ! Subscribe and Explore the Kruskal Wallis test in <a href="https://www.raisins.live">RAISINS</a></p>
@@ -1041,6 +1055,9 @@ Note
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-conover1999practical" class="csl-entry" role="listitem">
+Conover, W. J. 1999. <em>Practical Nonparametric Statistics</em>. 3rd ed. New York: John Wiley &amp; Sons.
+</div>
 <div id="ref-dunn1964" class="csl-entry" role="listitem">
 Dunn, Olive Jean. 1964. <span>“Multiple Comparisons Using Rank Sums.”</span> <em>Technometrics</em> 6 (3): 241–52. <a href="https://doi.org/10.1080/00401706.1964.10490181">https://doi.org/10.1080/00401706.1964.10490181</a>.
 </div>
