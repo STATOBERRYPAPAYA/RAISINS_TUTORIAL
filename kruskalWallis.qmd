@@ -1,5 +1,6 @@
-# Kruskal Wallis Test {#kwt}  
+# Kruskal Wallis Test {#kwt}
 
+```{=html}
 <style>
   sup {
     color: blue;
@@ -11,12 +12,13 @@
     margin-top: 0.2em;
   }
 </style>
+```
 
-Dr Pratheesh P Gopinath<sup>1</sup>, Jithin Chandran<sup>2</sup>, Mohammed Hisham M<sup>2</sup>  
+Dr Pratheesh P Gopinath<sup>1</sup>, Jithin Chandran<sup>2</sup>, Mohammed Hisham M<sup>2</sup>
 
-<div class="affiliations">  
+::: affiliations
 <sup>1</sup>Department of Agricultural Statistics, Kerala Agricultural University, <sup>2</sup>Statoberry LLP
-</div>  
+:::
 
 The Kruskal-Wallis test is a **non-parametric (**distribution free**)** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952 [@kwtref].
 
@@ -27,13 +29,14 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 ![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
 ## Example
-Let's explore some practical situations in agricultural research where the Kruskal-Wallis test, also known as the Kruskal-Wallis H test, is applied.  
+
+Let's explore some practical situations in agricultural research where the Kruskal-Wallis test, also known as the Kruskal-Wallis H test, is applied.
 
 ### Study Context {#sec-exkwt}
 
 <p>
 
-1.  A food scientist is evaluating four drink flavours (V1 to V4) for five sensory attributes: appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges; since each judge gives a score, these scores can be considered as ten replications per group. A Kruskal-Wallis test can be  performed for each sensory attribute to check if there are any significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+1.  A food scientist is evaluating four drink flavours (V1 to V4) for five sensory attributes: appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges; since each judge gives a score, these scores can be considered as ten replications per group. A Kruskal-Wallis test can be performed for each sensory attribute to check if there are any significant differences in ratings among the flavours. <a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
 
 </p>
 
@@ -41,7 +44,7 @@ Let's explore some practical situations in agricultural research where the Krusk
 <img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
 :::
 
-<p>  
+<p>
 
 2.  An agricultural extension researcher is evaluating the effectiveness of four training methods (T1 to T4) based on farmers' knowledge gain. Each method is tested on five farmers, and their knowledge is scored after the training. These scores serve as replications. The Kruskal Wallis test can be used to determine if there is a significant difference in knowledge gain among the four training methods. <a href="#example2" class="toggle-image" data-target="example-image2">Example2</a>
 
@@ -161,45 +164,42 @@ Where:
 
 The test statistic H approximately follows a chi-square distribution with k - 1 degrees of freedom, where k is the number of groups. To determine if the null hypothesis can be rejected, the H test value is compared to an H critical value obtained from a chi-square table by cross reference the degrees of freedom (df), with the level of significance (ɑ). If H exceeds the critical value, reject the null hypothesis
 
-If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.  
+If you reject the null hypothesis, you can conclude that at least one group is significantly different from the others and proceed for multiple comparison tests.When the Kruskal-Wallis test shows a significant difference, it does not provide information about which specific pairs of groups are different. This is where post-hoc tests, like the Dunn test, become essential. They perform pairwise comparisons to identify exactly which groups differ, addressing the limitation of the Kruskal-Wallis test.
 
 <details>
-  
+
 <summary>What is a post-hoc test?</summary>
-A post-hoc test is a follow-up analysis performed after 
-finding a significant result in an overall statistical 
-test (like ANOVA or Kruskal-Wallis). 
-Its purpose is to identify exactly which groups or 
-treatments differ from each other. In other words, 
-it helps pinpoint where the differences lie between 
-multiple groups when the initial test shows that 
-not all groups are the same.  
+
+A post-hoc test is a follow-up analysis performed after finding a significant result in an overall statistical test (like ANOVA or Kruskal-Wallis). Its purpose is to identify exactly which groups or treatments differ from each other. In other words, it helps pinpoint where the differences lie between multiple groups when the initial test shows that not all groups are the same.
 
 </details>
 
-### Post-hoc test  
+### Post-hoc test {#sec-post}
 
 When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:
 
 ::::: {style="display: flex; gap: 2em;"}
 ::: dunn-box
-**Dunn's Test**  
+**Dunn's Test**\
 The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test. Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups.It compares the sums of ranks between every pair of groups by calculating the difference in their average ranks and standardizing this difference using an estimate of its standard error. The standardized test statistic in Dunn’s test is compared to the standard normal distribution (the Z-distribution) to determine significance. [@dunn1964]
 :::
 
 ::: lsd-box
-**LSD (Least Significant Difference) Test**  
-The nonparametric LSD test is a post-hoc procedure used after a significant Kruskal-Wallis test to find which groups differ. It calculates the minimum significant difference (MSD) between group mean ranks based on an estimate of rank variance and uses the Student’s t-distribution to determine significance. Groups are compared pairwise by checking if their mean rank differences exceed the MSD. This test assumes similar group sizes and equal variance of ranks, offering a simpler method to classify groups when these conditions hold.[@agricolae]  
+**LSD (Least Significant Difference) Test**\
+The nonparametric LSD test is a post-hoc procedure used after a significant Kruskal-Wallis test to find which groups differ. It calculates the minimum significant difference (MSD) between group mean ranks based on an estimate of rank variance and uses the Student’s t-distribution to determine significance. Groups are compared pairwise by checking if their mean rank differences exceed the MSD. This test assumes similar group sizes and equal variance of ranks, offering a simpler method to classify groups when these conditions hold.[@agricolae]
 :::
-:::::  
+:::::
 
+::: {style="margin-bottom: 1cm;"}
+:::
 
 <details>
-  
+
 <summary>Which post-hoc test to use?</summary>
-When choosing a post-hoc test after performing a Kruskal-Wallis test, the decision largely depends on the characteristics of your data and the goals of your analysis. Dunn’s test is the most commonly recommended method for nonparametric pairwise comparisons because it adjusts for multiple testing and compares standardized rank differences using the normal distribution, making it suitable for groups of unequal sizes and providing a more conservative control 
-of Type I errors. On the other hand, the nonparametric LSD method, such as the one implemented in the agricolae package, is simpler and uses the Student’s t-distribution along with a minimum significant difference calculated on ranks. This method works well when group sizes are approximately equal and when ease of interpretation is preferred, although it tends to be less conservative and may lead to more false positives. Overall, Dunn’s test is generally preferred for its rigor and wider acceptance, while the nonparametric LSD can be a practical alternative in balanced designs, provided the results are interpreted with caution.  
-</details>  
+
+When choosing a post-hoc test after performing a Kruskal-Wallis test, the decision largely depends on the characteristics of your data and the goals of your analysis. Dunn’s test is the most commonly recommended method for nonparametric pairwise comparisons because it adjusts for multiple testing and compares standardized rank differences using the normal distribution, making it suitable for groups of unequal sizes and providing a more conservative control of Type I errors. On the other hand, the nonparametric LSD method, such as the one implemented in the agricolae package, is simpler and uses the Student’s t-distribution along with a minimum significant difference calculated on ranks. This method works well when group sizes are approximately equal and when ease of interpretation is preferred, although it tends to be less conservative and may lead to more false positives. Overall, Dunn’s test is generally preferred for its rigor and wider acceptance, while the nonparametric LSD can be a practical alternative in balanced designs, provided the results are interpreted with caution.
+
+</details>
 
 ### p Adjustment Method {#p-adjustment}
 
@@ -212,19 +212,19 @@ You can select different p-adjustment methods:
 -   [Hommel](https://en.wikipedia.org/wiki/Multiple_testing_correction#Hommel)
 -   [Benjamini-Hochberg Procedure (BH)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Hochberg_procedure)
 -   [Benjamini-Yekutieli Procedure (BY)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure)
--   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)  
+-   [False Discovery Rate (q-value) Approach](https://en.wikipedia.org/wiki/False_discovery_rate)
 
-<details>  
+<details>
 
-<summary>Which p-adjustment method to use?</summary>  
+<summary>Which p-adjustment method to use?</summary>
 
-In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.  
-</details>  
+In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.
 
+</details>
 
 ## Getting started in Raisins
 
-RAISINS is an innovative online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.  
+RAISINS is an innovative online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.
 
 Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
 
@@ -234,36 +234,44 @@ Once you gets directed to the homepage, you can access the module by subscribing
 
 ### A working example
 
-We'll guide you through the entire kruskal wallis test. For that let's look how the analysis can be carried out using an Example 1 descibed in @sec-exkwt.  
+We'll guide you through the entire kruskal wallis test. For that let's look how the analysis can be carried out using an Example 1 descibed in @sec-exkwt.
 
-You can see in @fig-raisinkwt how the dataset should be arranged for analysis in RAISINS.  
+You can see in @fig-raisinkwt how the dataset should be arranged for analysis in RAISINS.
 
-Data preparation in RAISINS is super easy it is well explained in the section @sec-createData. Model datasets for testing from the app is explained in @sec-Datasets. 
+Data preparation in RAISINS is super easy it is well explained in the section @sec-createData. Model datasets for testing from the app is explained in @sec-Datasets.
 
-![Dataset arrangement for Kruskal-Wallis test in RAISINS](images/kwt/ex1.png){#fig-raisinkwt fig-align="center" width="558"}  
+![Dataset arrangement for Kruskal-Wallis test in RAISINS](images/kwt/ex1.png){#fig-raisinkwt fig-align="center" width="558"}
 
-Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the Treatment and variables of interest(multiple variables can also be selected) ![](images/kwt/Analysis.png)and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.  
+Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.
+
+![](images/kwt/Analysis.png)
 
 ### Results
 
 ![](images/kwt/result.png){#fig-res1 fig-align="center" width="703"}
 
-RAISINS generates result table in the format given in @fig-res1 after the analysis.  
-The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it's significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.  
+<details>
+<summary> Results table</summary>
 
-From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks. 
+RAISINS generates result table in the format given in @fig-res1 after the analysis.\
+The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it's significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
 
-Usually while reporting Kruskal Wallis test, mean ranks are also reported so a additional feature to display means ranks  is also available in the module.  
+From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks.
 
-After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn's test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu.  The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.
+Usually while reporting Kruskal Wallis test, mean ranks are also reported so a additional feature to display means ranks is also available in the module.
+
+After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn's test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu. The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.
 
 For example, in the case of the character *Color*, no letter groupings are shown, indicating that the Kruskal-Wallis test did not find significant differences among the treatments. However, for *Appearance*, treatments V1 and V2 are assigned the letter ‘a’, while V3 and V4 are assigned the letter ‘b’. This indicates that V1 and V2 form one group with similar appearance, while V3 and V4 form another, significantly different group. Since the mean ranks of V3 and V4 are higher, it suggests that these treatments were rated better in appearance.
 
-You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.  
+You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.
+
+From the results @fig-res1 , it's found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on multivariate analysis tab. The results as mentioned in @sec-multi gives you the best treatment based on all the observed characters.
+</details>
 
 ### Customization tabs
 
-Additionally You can also change the decimal points, multiple comparison tests, padjustment method, font and sifgnificance level according to your requireent as shown in @fig-tabs  
+Additionally You can also change the decimal points, post-hoc tests, p-adjustment method, font and significance level according to your requirements as shown in @fig-tabs
 
 ![Customising the results](images/kwt/tabs.png){#fig-tabs}
 
@@ -369,7 +377,7 @@ function hideDescription(id) {
 ![Box plot](images/kwt/box.png){fallback="https://via.placeholder.com/400x300?text=Box+Plot"}
 
 ::: {#boxplot-desc .plot-description}
-A **box plot** displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!
+A **box plot** displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It  highlights central tendencies, variability, and outliers with a splash of clarity!
 :::
 ::::
 :::::
@@ -389,17 +397,17 @@ A correlation plot, often called a correlation matrix or heatmap, is a visual to
 ![Bar plot](images/kwt/bar.png){fallback="https://via.placeholder.com/400x300?text=Bar+Plot"}
 
 ::: {#barplot-desc .plot-description}
-A **bar plot** paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.
+A **Bar plot** with error bars is a visualization that displays  data using rectangular bars, where each bar’s height represents a value (e.g., mean), and error bars indicate the variability or uncertainty (e.g., standard deviation or standard error) around that value. This type of plot is commonly used in scientific and statistical contexts to summarize data and convey reliability..
 :::
 ::::
 :::::
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
-![Connected plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/400x300?text=Connected+Plot"}
+![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/400x300?text=Connected+Plot"}
 
 ::: {#connectedplot-desc .plot-description}
-A **connected plot** links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.
+A **connected line plot**, also known as a connected scatter plot, is a type of chart where data points are represented by markers and connected by lines, visualizing the evolution of a variable over time or another sequential order. It helps to show trends and relationships between two variables as they change across a third variable
 :::
 ::::
 :::::
@@ -409,7 +417,7 @@ A **connected plot** links data points with flowing lines, tracing trends across
 ![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/400x300?text=Mean+Value+Plot"}
 
 ::: {#meanvalueplot-desc .plot-description}
-A **mean value plot** shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.
+A **mean value plot** also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars or confidence intervals that indicate the uncertainty or variability around the mean. It's used to visualize the central tendency and spread of data. 
 :::
 ::::
 :::::
@@ -419,7 +427,8 @@ A **mean value plot** shines a spotlight on group averages, with error bars addi
 ![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/400x300?text=Violin+Plot"}
 
 ::: {#violinplot-desc .plot-description}
-A **violin plot** blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.
+A **violin plot** combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found
+within the data.
 :::
 ::::
 :::::
@@ -553,9 +562,12 @@ console.log("Script loaded successfully.");
 </script>
 ```
 
-## Multivariate and AI
+## Multivariate and AI {#sec-multi}
 
-The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the @sec-exkwt; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to **Multivariate** tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the @sec-exkwt
+![](images/kwt/multi.png)
+
+The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the @sec-exkwt; if we have to analyse multiple variables (Appearance, Color, Texture, Taste, Flavour) together, navigate to **multivariate** tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !.
+
 
 ::::: columns
 ::: {.column width="50%"}
@@ -569,13 +581,17 @@ The Kruskal-Wallis test is usually used to compare one variable across several g
 
 The scree plot given @fig-scree illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.
 
-The biplot given @fig-Biplot provides a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation—smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.
+The biplot given @fig-Biplot provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.
 
 ![Index Plot](images/kwt/index.png){#fig-Index width="430"}
 
 Based on the loadings of PC's an index will be calculated and scaled. An index plot given @fig-Index in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.
 
-**RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below @fig-ai
+![](images/kwt/index_score.png){#fig-indexscore fig-align="center"}
+
+This table quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score. (@fig-indexscore). Here ro refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue. 
+
+**RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of  results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below @fig-ai
 
 ![AI INTERPRETATION](images/kwt/ai.gif){#fig-ai fig-align="center"}
 
@@ -583,7 +599,7 @@ RAISINS enables users to draw meaningful conclusions without requiring advanced 
 
 ## Datasets {#sec-Datasets}
 
-For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in both Csv and Excel file, but we prefer **csv**.
+For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in CSV, xls & xlsx files, but we prefer **CSV** as they are more light to handle
 
 ![](images/kwt/DATASET.png)
 
@@ -607,25 +623,39 @@ For performing a demo analysis and to get a proper structural format of the data
 </details>
 
 ::: {.callout-tip title="Note"}
-Once all these are done, your file is ready. Now save it as CSV or excel file. Upload file by clicking browse in the app
+Once all these are done, your file is ready. Now save it as CSV or xls or xlsx file. Upload file by clicking browse in the app
 :::
 
 ### Create dataset in RAISINS {#sec-createData}
 
-**RAISINS** application lets you generate a raisins dataset directly within its interface. Here's how: Open **RAISINS** ➡️Select **KRUSKAL WALLIS TEST** ➡️Navigate to the **Create Data** Tab➡️ Select the number of **Treatments** ➡️ Select number of **replications**➡️Click on **Create**
+Confused with creating a dataset in the format as given in @fig-raisinkwt?. Don't worry , Raisins provides you an option for generating a model layout in the application interface where you can add your observations directly into the model layout created , or you can also download the CSV file and then enter the observations manually into the file.
+
+Here's how;
+
+➡️Open **RAISINS**
+
+➡️Select **Kruskal wallis test**
+
+➡️Navigate to the **create Data** Tab
+
+➡️ Select the number of **treatments**
+
+➡️ Select number of **replications**
+
+➡️Click on **create button**
 
 ![](images/kwt/create_data.png){width="1011"}
 
 ::: {.callout-tip title="Note"}
-**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis**
+**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, don't forget to download the file ! **
 :::
 
-Once the file is ready, you are all good to go for the analysis.So don't wait ! Subscribe and Explore the Kruskal Wallis test in **RAISINS**
+Once the file is ready, you are all good to go for the analysis. So don't wait ! Subscribe and Explore the Kruskal Wallis test in [RAISINS](https://www.raisins.live)
 
 ## FAQ's
-
-Detailed instruction on how to use the app is available under the FAQ's section!
+![](images/kwt/faq.png)
+More informations and other Frequently asked questiosn are available in the FAQ's tab
 
 ## User
-
-User details including usage percentage and other billing details is available in the **USER** tab
+![](images/kwt/user_tab.png)
+User details including usage percentage, validity, subscribed plan and other billing details is available in the **USER** tab. You can also download the invoice.

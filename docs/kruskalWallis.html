@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -58,8 +58,8 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-6aab2237a180306a840e93b83f485a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -240,7 +240,7 @@ window.Quarto = {
   <li><a href="#the-test-statistic" id="toc-the-test-statistic" class="nav-link" data-scroll-target="#the-test-statistic"><span class="header-section-number">1.2.3</span> The Test Statistic</a></li>
   <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties"><span class="header-section-number">1.2.4</span> Correction for Ties</a></li>
   <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results"><span class="header-section-number">1.2.5</span> Interpreting the Results</a></li>
-  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test"><span class="header-section-number">1.2.6</span> Post-hoc test</a></li>
+  <li><a href="#sec-post" id="toc-sec-post" class="nav-link" data-scroll-target="#sec-post"><span class="header-section-number">1.2.6</span> Post-hoc test</a></li>
   <li><a href="#p-adjustment" id="toc-p-adjustment" class="nav-link" data-scroll-target="#p-adjustment"><span class="header-section-number">1.2.7</span> p Adjustment Method</a></li>
   </ul></li>
   <li><a href="#getting-started-in-raisins" id="toc-getting-started-in-raisins" class="nav-link" data-scroll-target="#getting-started-in-raisins"><span class="header-section-number">1.3</span> Getting started in Raisins</a>
@@ -251,7 +251,7 @@ window.Quarto = {
   <li><a href="#plots-and-graphs" id="toc-plots-and-graphs" class="nav-link" data-scroll-target="#plots-and-graphs"><span class="header-section-number">1.3.4</span> Plots and graphs</a></li>
   <li><a href="#how-to-customize" id="toc-how-to-customize" class="nav-link" data-scroll-target="#how-to-customize"><span class="header-section-number">1.3.5</span> How to customize</a></li>
   </ul></li>
-  <li><a href="#multivariate-and-ai" id="toc-multivariate-and-ai" class="nav-link" data-scroll-target="#multivariate-and-ai"><span class="header-section-number">1.4</span> Multivariate and AI</a></li>
+  <li><a href="#sec-multi" id="toc-sec-multi" class="nav-link" data-scroll-target="#sec-multi"><span class="header-section-number">1.4</span> Multivariate and AI</a></li>
   <li><a href="#sec-Datasets" id="toc-sec-Datasets" class="nav-link" data-scroll-target="#sec-Datasets"><span class="header-section-number">1.5</span> Datasets</a>
   <ul class="collapse">
   <li><a href="#sec-createData" id="toc-sec-createData" class="nav-link" data-scroll-target="#sec-createData"><span class="header-section-number">1.5.1</span> Create dataset in RAISINS</a></li>
@@ -486,8 +486,8 @@ What is a post-hoc test?
 <p>A post-hoc test is a follow-up analysis performed after finding a significant result in an overall statistical test (like ANOVA or Kruskal-Wallis). Its purpose is to identify exactly which groups or treatments differ from each other. In other words, it helps pinpoint where the differences lie between multiple groups when the initial test shows that not all groups are the same.</p>
 </details>
 </section>
-<section id="post-hoc-test" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="post-hoc-test"><span class="header-section-number">1.2.6</span> Post-hoc test</h3>
+<section id="sec-post" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="sec-post"><span class="header-section-number">1.2.6</span> Post-hoc test</h3>
 <p>When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:</p>
 <div style="display: flex; gap: 2em;">
 <div class="dunn-box">
@@ -499,11 +499,14 @@ The Dunn test is a post-hoc statistical procedure used in conjunction with the K
 The nonparametric LSD test is a post-hoc procedure used after a significant Kruskal-Wallis test to find which groups differ. It calculates the minimum significant difference (MSD) between group mean ranks based on an estimate of rank variance and uses the Student’s t-distribution to determine significance. Groups are compared pairwise by checking if their mean rank differences exceed the MSD. This test assumes similar group sizes and equal variance of ranks, offering a simpler method to classify groups when these conditions hold.<span class="citation" data-cites="agricolae">(<a href="references.html#ref-agricolae" role="doc-biblioref">Mendiburu 2020</a>)</span></p>
 </div>
 </div>
+<div style="margin-bottom: 1cm;">
+
+</div>
 <details>
 <summary>
 Which post-hoc test to use?
 </summary>
-When choosing a post-hoc test after performing a Kruskal-Wallis test, the decision largely depends on the characteristics of your data and the goals of your analysis. Dunn’s test is the most commonly recommended method for nonparametric pairwise comparisons because it adjusts for multiple testing and compares standardized rank differences using the normal distribution, making it suitable for groups of unequal sizes and providing a more conservative control of Type I errors. On the other hand, the nonparametric LSD method, such as the one implemented in the agricolae package, is simpler and uses the Student’s t-distribution along with a minimum significant difference calculated on ranks. This method works well when group sizes are approximately equal and when ease of interpretation is preferred, although it tends to be less conservative and may lead to more false positives. Overall, Dunn’s test is generally preferred for its rigor and wider acceptance, while the nonparametric LSD can be a practical alternative in balanced designs, provided the results are interpreted with caution.
+<p>When choosing a post-hoc test after performing a Kruskal-Wallis test, the decision largely depends on the characteristics of your data and the goals of your analysis. Dunn’s test is the most commonly recommended method for nonparametric pairwise comparisons because it adjusts for multiple testing and compares standardized rank differences using the normal distribution, making it suitable for groups of unequal sizes and providing a more conservative control of Type I errors. On the other hand, the nonparametric LSD method, such as the one implemented in the agricolae package, is simpler and uses the Student’s t-distribution along with a minimum significant difference calculated on ranks. This method works well when group sizes are approximately equal and when ease of interpretation is preferred, although it tends to be less conservative and may lead to more false positives. Overall, Dunn’s test is generally preferred for its rigor and wider acceptance, while the nonparametric LSD can be a practical alternative in balanced designs, provided the results are interpreted with caution.</p>
 </details>
 </section>
 <section id="p-adjustment" class="level3" data-number="1.2.7">
@@ -522,7 +525,7 @@ When choosing a post-hoc test after performing a Kruskal-Wallis test, the decisi
 <summary>
 Which p-adjustment method to use?
 </summary>
-In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.
+<p>In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.</p>
 </details>
 </section>
 </section>
@@ -547,7 +550,8 @@ Figure&nbsp;1.3: Dataset arrangement for Kruskal-Wallis test in RAISINS
 </figcaption>
 </figure>
 </div>
-<p>Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the Treatment and variables of interest(multiple variables can also be selected) <img src="images/kwt/Analysis.png" class="img-fluid">and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.</p>
+<p>Once the dataset is ready, head onto the analysis tab in RAISINS and click on browse and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on run analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format.</p>
+<p><img src="images/kwt/Analysis.png" class="img-fluid"></p>
 </section>
 <section id="results" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="results"><span class="header-section-number">1.3.2</span> Results</h3>
@@ -561,6 +565,10 @@ Figure&nbsp;1.4
 </figcaption>
 </figure>
 </div>
+<details>
+<summary>
+Results table
+</summary>
 <p>RAISINS generates result table in the format given in <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> after the analysis.<br>
 The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.</p>
 <p>From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks.</p>
@@ -568,10 +576,12 @@ The result table contains mean ± SD of each observed characters, Chi-square val
 <p>After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn’s test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu. The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.</p>
 <p>For example, in the case of the character <em>Color</em>, no letter groupings are shown, indicating that the Kruskal-Wallis test did not find significant differences among the treatments. However, for <em>Appearance</em>, treatments V1 and V2 are assigned the letter ‘a’, while V3 and V4 are assigned the letter ‘b’. This indicates that V1 and V2 form one group with similar appearance, while V3 and V4 form another, significantly different group. Since the mean ranks of V3 and V4 are higher, it suggests that these treatments were rated better in appearance.</p>
 <p>You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.</p>
+From the results <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> , it’s found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on multivariate analysis tab. The results as mentioned in <a href="#sec-multi" class="quarto-xref"><span>Section 1.4</span></a> gives you the best treatment based on all the observed characters.
+</details>
 </section>
 <section id="customization-tabs" class="level3" data-number="1.3.3">
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="customization-tabs"><span class="header-section-number">1.3.3</span> Customization tabs</h3>
-<p>Additionally You can also change the decimal points, multiple comparison tests, padjustment method, font and sifgnificance level according to your requireent as shown in <a href="#fig-tabs" class="quarto-xref">Figure&nbsp;<span>1.5</span></a></p>
+<p>Additionally You can also change the decimal points, post-hoc tests, p-adjustment method, font and significance level according to your requirements as shown in <a href="#fig-tabs" class="quarto-xref">Figure&nbsp;<span>1.5</span></a></p>
 <div id="fig-tabs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -682,7 +692,7 @@ function hideDescription(id) {
 </figure>
 </div>
 <div id="boxplot-desc" class="plot-description">
-<p>A <strong>box plot</strong> displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It vividly highlights central tendencies, variability, and outliers with a splash of clarity!</p>
+<p>A <strong>box plot</strong> displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It highlights central tendencies, variability, and outliers with a splash of clarity!</p>
 </div>
 </div>
 </div>
@@ -708,7 +718,7 @@ function hideDescription(id) {
 </figure>
 </div>
 <div id="barplot-desc" class="plot-description">
-<p>A <strong>bar plot</strong> paints categorical data with vibrant bars, their heights dancing to the tune of values or frequencies, perfect for comparing categories with flair.</p>
+<p>A <strong>Bar plot</strong> with error bars is a visualization that displays data using rectangular bars, where each bar’s height represents a value (e.g., mean), and error bars indicate the variability or uncertainty (e.g., standard deviation or standard error) around that value. This type of plot is commonly used in scientific and statistical contexts to summarize data and convey reliability..</p>
 </div>
 </div>
 </div>
@@ -717,11 +727,11 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/Connected.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/400x300?text=Connected+Plot"></p>
-<figcaption>Connected plot</figcaption>
+<figcaption>Connected line plot</figcaption>
 </figure>
 </div>
 <div id="connectedplot-desc" class="plot-description">
-<p>A <strong>connected plot</strong> links data points with flowing lines, tracing trends across time or other variables with a dynamic, storytelling vibe.</p>
+<p>A <strong>connected line plot</strong>, also known as a connected scatter plot, is a type of chart where data points are represented by markers and connected by lines, visualizing the evolution of a variable over time or another sequential order. It helps to show trends and relationships between two variables as they change across a third variable</p>
 </div>
 </div>
 </div>
@@ -734,7 +744,7 @@ function hideDescription(id) {
 </figure>
 </div>
 <div id="meanvalueplot-desc" class="plot-description">
-<p>A <strong>mean value plot</strong> shines a spotlight on group averages, with error bars adding a touch of drama to show variability or confidence intervals across categories.</p>
+<p>A <strong>mean value plot</strong> also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars or confidence intervals that indicate the uncertainty or variability around the mean. It’s used to visualize the central tendency and spread of data.</p>
 </div>
 </div>
 </div>
@@ -747,7 +757,7 @@ function hideDescription(id) {
 </figure>
 </div>
 <div id="violinplot-desc" class="plot-description">
-<p>A <strong>violin plot</strong> blends a box plot’s structure with a density plot’s elegance, its curves swaying to reveal data distribution and density with vibrant charm.</p>
+<p>A <strong>violin plot</strong> combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.</p>
 </div>
 </div>
 </div>
@@ -879,9 +889,10 @@ console.log("Script loaded successfully.");
 </script>
 </section>
 </section>
-<section id="multivariate-and-ai" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="multivariate-and-ai"><span class="header-section-number">1.4</span> Multivariate and AI</h2>
-<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a>; if we have to analyse multiple variables ( Appearance, Color, Texture, Taste, Flavour) together, navigate to <strong>Multivariate</strong> tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !. The following part are the results of the multivariate analysis done for the <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a></p>
+<section id="sec-multi" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-multi"><span class="header-section-number">1.4</span> Multivariate and AI</h2>
+<p><img src="images/kwt/multi.png" class="img-fluid"></p>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. It’s a non-parametric test, which means it doesn’t assume the data follows a normal distribution.Now, In the example given in the <a href="#sec-exkwt" class="quarto-xref"><span>Section 1.1.1</span></a>; if we have to analyse multiple variables (Appearance, Color, Texture, Taste, Flavour) together, navigate to <strong>multivariate</strong> tab. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously !.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div id="fig-scree" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -908,7 +919,7 @@ Figure&nbsp;1.7: Bi Plot
 </div>
 </div>
 <p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.6</span></a> illustrates the proportion of variance explained by each principal component.PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 40% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 60% of the variance in the data, an index score based on both PCs is also appropriate. You should look upon the loadings of each variable in the below table and decide which PC-based index needs to be selected.</p>
-<p>The biplot given <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.7</span></a> provides a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation—smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.</p>
+<p>The biplot given <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.7</span></a> provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.</p>
 <div id="fig-Index" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -920,14 +931,25 @@ Figure&nbsp;1.8: Index Plot
 </figure>
 </div>
 <p>Based on the loadings of PC’s an index will be calculated and scaled. An index plot given <a href="#fig-Index" class="quarto-xref">Figure&nbsp;<span>1.8</span></a> in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.</p>
-<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of analytical results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.9</span></a></p>
+<div id="fig-indexscore" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/index_score.png" id="fig-indexscore" class="img-fluid quarto-figure quarto-figure-center anchored figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.9
+</figcaption>
+</figure>
+</div>
+<p>This table quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score. (<a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>). Here ro refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.</p>
+<p><strong>RAISINS</strong> is equipped with an <strong>AI-powered interpretation feature</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.10</span></a></p>
 <div id="fig-ai" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/ai.gif" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.9: AI INTERPRETATION
+Figure&nbsp;1.10: AI INTERPRETATION
 </figcaption>
 </figure>
 </div>
@@ -935,7 +957,7 @@ Figure&nbsp;1.9: AI INTERPRETATION
 </section>
 <section id="sec-Datasets" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="sec-Datasets"><span class="header-section-number">1.5</span> Datasets</h2>
-<p>For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in both Csv and Excel file, but we prefer <strong>csv</strong>.</p>
+<p>For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in CSV, xls &amp; xlsx files, but we prefer <strong>CSV</strong> as they are more light to handle</p>
 <p><img src="images/kwt/DATASET.png" class="img-fluid"></p>
 <details>
 <summary>
@@ -978,12 +1000,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Once all these are done, your file is ready. Now save it as CSV or excel file. Upload file by clicking browse in the app</p>
+<p>Once all these are done, your file is ready. Now save it as CSV or xls or xlsx file. Upload file by clicking browse in the app</p>
 </div>
 </div>
 <section id="sec-createData" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="sec-createData"><span class="header-section-number">1.5.1</span> Create dataset in RAISINS</h3>
-<p><strong>RAISINS</strong> application lets you generate a raisins dataset directly within its interface. Here’s how: Open <strong>RAISINS</strong> ➡️Select <strong>KRUSKAL WALLIS TEST</strong> ➡️Navigate to the <strong>Create Data</strong> Tab➡️ Select the number of <strong>Treatments</strong> ➡️ Select number of <strong>replications</strong>➡️Click on <strong>Create</strong></p>
+<p>Confused with creating a dataset in the format as given in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>?. Don’t worry , Raisins provides you an option for generating a model layout in the application interface where you can add your observations directly into the model layout created , or you can also download the CSV file and then enter the observations manually into the file.</p>
+<p>Here’s how;</p>
+<p>➡️Open <strong>RAISINS</strong></p>
+<p>➡️Select <strong>Kruskal wallis test</strong></p>
+<p>➡️Navigate to the <strong>create Data</strong> Tab</p>
+<p>➡️ Select the number of <strong>treatments</strong></p>
+<p>➡️ Select number of <strong>replications</strong></p>
+<p>➡️Click on <strong>create button</strong></p>
 <p><img src="images/kwt/create_data.png" class="img-fluid" width="1011"></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Note">
 <div class="callout-header d-flex align-content-center">
@@ -995,19 +1024,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the csv file once downloaded, or paste the observations straight into the file provided. Once the data is ready, you are all set to perform KRUSKAL WALLIS TEST. Now browse and upload the file and Click Run Analysis</strong></p>
+<p><strong>Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, don’t forget to download the file ! </strong></p>
 </div>
 </div>
-<p>Once the file is ready, you are all good to go for the analysis.So don’t wait ! Subscribe and Explore the Kruskal Wallis test in <strong>RAISINS</strong></p>
+<p>Once the file is ready, you are all good to go for the analysis. So don’t wait ! Subscribe and Explore the Kruskal Wallis test in <a href="https://www.raisins.live">RAISINS</a></p>
 </section>
 </section>
 <section id="faqs" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1.6</span> FAQ’s</h2>
-<p>Detailed instruction on how to use the app is available under the FAQ’s section!</p>
+<p><img src="images/kwt/faq.png" class="img-fluid"> More informations and other Frequently asked questiosn are available in the FAQ’s tab</p>
 </section>
 <section id="user" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="user"><span class="header-section-number">1.7</span> User</h2>
-<p>User details including usage percentage and other billing details is available in the <strong>USER</strong> tab</p>
+<p><img src="images/kwt/user_tab.png" class="img-fluid"> User details including usage percentage, validity, subscribed plan and other billing details is available in the <strong>USER</strong> tab. You can also download the invoice.</p>
 
 
 
