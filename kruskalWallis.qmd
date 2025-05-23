@@ -14,14 +14,14 @@
 </style>
 ```
 
-Jithin Chandran<sup>1</sup>, Mohammed Hisham M<sup>1</sup>,Dr Pratheesh P Gopinath<sup>2</sup>, 
+Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup> 
 
 ::: affiliations
  <sup>1</sup>Statoberry LLP,
  <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,
 :::
 
-The Kruskal-Wallis test is a **non-parametric (**distribution free**)** statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952 [@kwtref].
+The Kruskal-Wallis test is a **non-parametric** (distribution free) statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952 [@kwtref].
 
 In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in @fig-anvakwt, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.
 
@@ -224,13 +224,13 @@ In agricultural research, it is a common practice to use no p-value adjustment (
 
 </details>
 
-## Getting started in Raisins {#sec-rasins}
+## Getting started in RAISINS {#sec-rasins}
 
-RAISINS is an online platform that simplifies data analysis for agricultural research—no downloads required. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.
+RAISINS (R and AI Solutions in INferential Statistics) is an online platform that simplifies data analysis for agricultural research. RAISINS is completely online and doesnot require any downloads. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.
 
 Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
 
-![](images/kwt/click.png)
+![Accessing Kruskal Wallis test in RAISINS](images/kwt/click.png){#kwtinraisins}
 
 You can log in to the web application using the credentials you received after subscribing.
 
@@ -240,7 +240,7 @@ We’ll guide you through the entire Kruskal-Wallis test step by step. To begin,
 
 The dataset format required for analysis in RAISINS is illustrated in @fig-raisinkwt.
 
-Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in @sec-createData. Additionally, model datasets are available within the app for testing purposes, as explained in @sec-Datasets.
+Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in @sec-createData. Additionally, model datasets are available within the app for testing purposes, as explained in @sec-Datasets. See how dataset is arranged for analysis @fig-raisinkwt. 
 
 
 ![Dataset arrangement for analyzing sensory ratings of four drink flavours using the Kruskal-Wallis test in RAISINS](images/kwt/ex1.png){#fig-raisinkwt fig-align="center" width="558"}
@@ -382,12 +382,11 @@ A **box plot** displays the distribution of data with a five-number summary: min
 :::::
 
 ::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
-![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"}
+:::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
+![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/300x300?text=Violin+Plot"}
 
-::: {#pairsplot-desc .plot-description}
-A pairs plot provides three key pieces of information. First, it shows the individual distribution of each variable using a histogram with a smoothed line along the diagonal. Second, it displays the correlation coefficient between each pair of variables, giving a quick sense of their relationship. Third, it includes scatter plots to visually assess how two variables relate to each other. For example, in the plot above, you can see the histogram of the variable *Color* and *Texture*, the scatter plot with *Color* on the x-axis and *Texture* on the y-axis, and the correlation between *Color* and *Texture*, which is 0.14.
-
+::: {#violinplot-desc .plot-description}
+A **violin plot** combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.
 :::
 ::::
 :::::
@@ -403,16 +402,6 @@ A **Bar plot** with error bars is a visualization that displays data using recta
 :::::
 
 ::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
-![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
-
-::: {#connectedplot-desc .plot-description}
-A **connected line plot**, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups
-:::
-::::
-:::::
-
-::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')"}
 ![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"}
 
@@ -423,15 +412,26 @@ A **mean value plot** also known as a line plot, is a graphical representation o
 :::::
 
 ::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
-![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/300x300?text=Violin+Plot"}
+:::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
+![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
 
-::: {#violinplot-desc .plot-description}
-A **violin plot** combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.
+::: {#connectedplot-desc .plot-description}
+A **connected line plot**, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups
 :::
 ::::
 :::::
-:::::::::::::::::::::
+
+::::: g-col-6
+:::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
+![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"}
+
+::: {#pairsplot-desc .plot-description}
+A pairs plot provides three key pieces of information. First, it shows the individual distribution of each variable using a histogram with a smoothed line along the diagonal. Second, it displays the correlation coefficient between each pair of variables, giving a quick sense of their relationship. Third, it includes scatter plots to visually assess how two variables relate to each other. For example, in the example plot, you can see the histogram of the variable *Color* and *Texture*, the scatter plot with *Color* on the x-axis and *Texture* on the y-axis, and the correlation between *Color* and *Texture*, which is 0.14.
+:::
+::::
+:::::
+:::::::::::::::::::::  
+
 
 ### Customizing plots
 
@@ -563,54 +563,54 @@ console.log("Script loaded successfully.");
 
 ## Multivariate and AI {#sec-multi}
 
-The Kruskal-Wallis test is usually used to compare one variable across several groups.Now, In our example of rating four flavours; if we have to identify best flavour based on multiple variables (Appearance, Color, Texture, Taste, Flavour), navigate to `Multivariate` tab see @fig-multiraisin. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.  
+The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (*i.e.* Appearance, Color, Texture, Taste, Flavour), navigate to `Multivariate` tab see @fig-multiraisin. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.  
 
 ![Multivariate tab in RAISINS](images/kwt/multi.png){#fig-multiraisin}
 A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.  
 
 The scree plot given @fig-scree illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected. 
 
-::::: columns
-::: {.column width="50%"}
 ![Scree Plot](images/kwt/scree.png){#fig-scree}
-:::
 
-::: {.column width="50%"}
-![Bi Plot](images/kwt/biplot.png){#fig-Biplot}
-:::
-:::::
+The loadings of each variable on PCs can be seen in @fig-loadings. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you  want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in @fig-indexscore. More mathematical aspects of index construction and scalling can be read in the app itself. 
 
 
 
-The biplot given @fig-Biplot provides a visual representation of the relationships among variables and treatments.From the bi-plot, you can observe that, if we have to select a treatment(here drinks) which has good apperance, texture and flavour based on PC1, V3 and V4 are the best.
+![Loadings of each varaibles on PCs](images/kwt/loadings.png){#fig-loadings}  
 
+Based on index score it can be seen that, V3 has the highest index followed by V4. So Experimenter can select the drink V3 and V4. Also in some cases when the loadings of prefered variables are negative, a lower index value is preferred. Here to refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.
 
-![PCA loadings](images/kwt/loadings.png){#fig-loadings}
+![Index score based on PCA](images/kwt/index_score.png){#fig-indexscore fig-align="center"}  
 
+The index plot shown in @fig-index, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In @fig-index, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.  
 
-![Index score](images/kwt/index_score.png){#fig-indexscore fig-align="center"}
+![Index Plot](images/kwt/index.png){#fig-index width="430"}  
 
+Additionally, the biplot in @fig-Biplot clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from @fig-res1. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.
 
+![Biplot from PCA ](images/kwt/biplot.png){#fig-Biplot}
+Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.  
 
-After performing Principal Component Analysis (PCA), loadings are the coefficients that indicate how much each original variable contributes to each principal component (PC). They essentially quantify the correlation between each original variable and the corresponding PC. A high absolute loading value (close to 1 or -1) indicates a strong influence of the variable on the PC, while a value close to 0 suggests a weak influence. The sign of the loading (+ or -) indicates the direction of the correlation (positive or negative) between the variable and the PC. Based on the loadings of PC's as in @fig-loadings, an index will be calculated and scaled (@fig-indexscore) . An index plot given @fig-Index in the context of Principal Component Analysis (PCA), like the radar chart, visually represents the positions of variables (or samples) based on their scores along a principal component, here the first one (PC1). It signifies how much each variable contributes to the variance captured by PC1 and how variables are related to each other. Here the PCA results indicate that V3 and V4 are closely related and dominate the variance along PC1, while V1 and V2 form a separate cluster with opposing contributions.
+RAISINS is equipped with an **AI-powered RAISINS Assistant** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below @fig-ai
 
-![Index Plot](images/kwt/index.png){#fig-Index width="430"}
+![AI powere RAISINS Assistant to interpret your results](images/kwt/ai.gif){#fig-ai fig-align="center"}
 
+RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.  
 
+## Preparing your data {#sec-createData}  
 
-This table in @fig-indexscore quantifies that if we are selecting treatment based on PC1, V3 and V4 are the best in terms of characters ; appearance,texture, flavour, as these treatments have higher index score (@fig-indexscore). Here to refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.
+What truly matters is the quality of your data! As the saying goes, "garbage in, garbage out" — and this holds true for any software. To prepare your dataset for analysis in RAISINS, you have two options:
 
-**RAISINS** is equipped with an **AI-powered interpretation feature** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations.The AI interpretation given below @fig-ai
+1. Create your dataset in MS Excel  
+2. Build your dataset directly within the RAISINS app
 
-![AI INTERPRETATION](images/kwt/ai.gif){#fig-ai fig-align="center"}
+### Preparing data in MS Excel  
 
-RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.
+Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as "Group" or "Treatment." All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in @fig-modata1. As illustrated in @fig-raisinkwt, groups must appear repeatedly based on replications, and the data can also be arranged as shown in @fig-modata2.
 
-## Datasets {#sec-Datasets}
+![Model1 showing how the prepared Excel file for upload should look like](images/kwt/modeldata1.png){#fig-modata1 fig-align="center"}  
 
-For performing a demo analysis and to get a proper structural format of the dataset to be uploaded in this module, we provide you model datasets which can be downloaded from the datasets tab in kruskal wallis web application.Observe the alignment of the dataset and create your own using the microsoft excel by strictly following the structure given in the model datasets. The dataset can be uploaded in CSV, xls & xlsx files, but we prefer **CSV** as they are more light to handle
-
-![](images/kwt/DATASET.png)
+![Model2 showing how the prepared Excel file for upload should look like](images/kwt/modeldata2.png){#fig-modata2 fig-align="center"}
 
 <details>
 
@@ -619,8 +619,9 @@ For performing a demo analysis and to get a proper structural format of the data
 1.  **Column Naming Convention**
     -   No spaces allowed in column names.\
     -   Use underscores (`_`) or full stops (`.`) for separation.
+    -   Avoid symbols and special characters like %,# etc
 2.  **Data Arrangement**
-    -   Align data towards the upper-left corner.\
+    -   Start data arrangement towards the upper-left corner.\
     -   Ensure the row above the data is not blank.
 3.  **Cell Management**
     -   Avoid typing or deleting in cells without data.\
@@ -629,42 +630,70 @@ For performing a demo analysis and to get a proper structural format of the data
     -   Name all columns meaningfully.\
     -   Exclude unnecessary columns not required for analysis.
 
+</details>  
+
+<details>
+
+<summary>How to Save as CSV in MS Excel</summary>
+
+1. **Open Your Workbook**
+
+   * Ensure your data is arranged properly with only one sheet.
+
+2. **Click ‘File’ Menu**
+
+   * Go to the top-left corner and click on **File**.
+
+3. **Choose ‘Save As’ or ‘Save a Copy’**
+
+   * Select the location where you want to save your file.
+
+4. **Set File Type to CSV**
+
+   * In the **‘Save as type’** dropdown menu, choose **CSV (Comma delimited) (\*.csv)**.
+
+5. **Name Your File**
+
+   * Enter a relevant file name without spaces (use underscores if needed).
+
+6. **Click ‘Save’**
+
+   * Click **Save** to export the file.
+
+> 💡 Tip: Before saving, double-check that your data is on the first sheet and follows the required format (e.g., no empty rows above the data, meaningful column names).
+
 </details>
 
-::: {.callout-tip title="Note"}
-Once all these are done, your file is ready. Now save it as CSV or xls or xlsx file. Upload file by clicking browse in the app
-:::
+### Creating dataset in RAISINS  
 
-### Create dataset in RAISINS {#sec-createData}
+If you're unsure about the correct format for creating a dataset, don't worry—Raisins offers an option to create data directly within the app using the prescribed template. Here's how:
 
-Confused with creating a dataset in the format as given in @fig-raisinkwt?. Don't worry , Raisins provides you an option for generating a model layout in the application interface where you can add your observations directly into the model layout created , or you can also download the CSV file and then enter the observations manually into the file.
+➡️Navigate to the `Create Data` Tab
 
-Here's how;
+➡️ Select the number of **Treatments**
 
-➡️Open **RAISINS**
+➡️ Select number of **Replications**
 
-➡️Select **Kruskal wallis test**
+➡️Click on`Create` button**  
 
-➡️Navigate to the **create Data** Tab
+Model layout will appear as shown in @fig-createdata. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis` tab! 
 
-➡️ Select the number of **treatments**
+![Creating dataset within RAISINS](images/kwt/create_data.png){#fig-createdata width="1011"}  
 
-➡️ Select number of **replications**
+## Model Datasets {#sec-Datasets}  
+To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the `Datasets` tab.  
 
-➡️Click on **create button**
 
-![](images/kwt/create_data.png){width="1011"}
+![](images/kwt/DATASET.png)  
 
-::: {.callout-tip title="Note"}
-**Using the create data option in RAISINS, a model dataset will be created. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, don't forget to download the file !**
-:::
+## FAQ's  
+The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.  
 
-Once the file is ready, you are all good to go for the analysis. So don't wait ! Subscribe and Explore the Kruskal Wallis test in [RAISINS](https://www.raisins.live)
+![](images/kwt/faq.png)  
 
-## FAQ's
 
-![](images/kwt/faq.png) More informations and other Frequently asked questiosn are available in the FAQ's tab
+## User  
 
-## User
+You can find all your account details—including usage percentage, plan validity, subscription type, and billing information—under the `User` tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.
 
-![](images/kwt/user_tab.png) User details including usage percentage, validity, subscribed plan and other billing details is available in the **USER** tab. You can also download the invoice.
+![](images/kwt/user_tab.png) 

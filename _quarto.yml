@@ -8,8 +8,8 @@ project:
     - "*.svg"
 
 book:
-  title: "RAISINS TUTORIAL"
-  subtitle: "A comprehensive guide in basic statistics for agricultural research"
+  title: "The RAISINS HANDBOOK"
+  subtitle: "Handling Statistical Analysis of Agricultural Research Data using RAISINS -online software"
   favicon: images/cover.jpg
   author: 
     - Dr. Pratheesh P. Gopinath
@@ -19,12 +19,12 @@ book:
   page-navigation: true
   back-to-top-navigation: true
   search: true
-  site-url: https://cleaning-data-r.ala.org.au/
-  repo-url: https://github.com/STATOBERRYPAPAYA/TextbookofAgstat
+  site-url: https://www.raisins.live/
+  repo-url: https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues
   image: images/cover.png
   image-alt: "Textbook of Agricultural Statistics"
   open-graph: 
-    image: images/cover.png
+    image: images/cover.jpg
     image-alt: "Textbook of Agricultural Statistics"
   chapters:
     - index.qmd
@@ -48,7 +48,7 @@ book:
     right: |
         Licenced under [CC-BY-NC-ND 4.0 Int License](https://creativecommons.org/licenses/by-nc-nd/4.0/) <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">![](/images/cclogo.png){style='width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;'}</a>
         Built with <a href="https://quarto.org/">Quarto</a>
-  cover-image: images/cover.png
+  cover-image: images/cover.jpg
   
 bibliography: 
   - book.bib
