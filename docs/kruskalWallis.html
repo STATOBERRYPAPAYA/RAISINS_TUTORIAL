@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Kruskal Wallis Test – The RAISINS HANDBOOK</title>
+<title>1&nbsp; Kruskal Wallis Test – The RAISINS Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,12 +122,12 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="1&nbsp; Kruskal Wallis Test – The RAISINS HANDBOOK">
+<meta property="og:title" content="1&nbsp; Kruskal Wallis Test – The RAISINS Handbook">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.raisins.live/images/cover.jpg">
-<meta property="og:site_name" content="The RAISINS HANDBOOK">
+<meta property="og:site_name" content="The RAISINS Handbook">
 <meta property="og:image:alt" content="Textbook of Agricultural Statistics">
-<meta name="twitter:title" content="1&nbsp; Kruskal Wallis Test – The RAISINS HANDBOOK">
+<meta name="twitter:title" content="1&nbsp; Kruskal Wallis Test – The RAISINS Handbook">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.raisins.live/images/papayalogo.png">
 <meta name="twitter:image:alt" content="Textbook of Agricultural Statistics">
@@ -163,7 +163,7 @@ window.Quarto = {
       <img src="./images/sidebarcover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">The RAISINS HANDBOOK</a> 
+      <a href="./">The RAISINS Handbook</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -900,27 +900,37 @@ console.log("Script loaded successfully.");
 </section>
 <section id="sec-multi" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-multi"><span class="header-section-number">1.4</span> Multivariate and AI</h2>
-<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (<em>i.e.</em> Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <span class="quarto-unresolved-ref">?fig-multiraisin</span>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
-<p><img src="images/kwt/multi.png" id="fig-multiraisin" class="img-fluid" alt="Multivariate tab in RAISINS"> A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.</p>
-<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.7</span></a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (<em>i.e.</em> Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <a href="#fig-multiraisin" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
+<div id="fig-multiraisin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiraisin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/multi.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiraisin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.7: Multivariate tab in RAISINS
+</figcaption>
+</figure>
+</div>
+<p>A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.</p>
+<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>1.8</span></a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
 <div id="fig-scree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/scree.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.7: Scree Plot
+Figure&nbsp;1.8: Scree Plot
 </figcaption>
 </figure>
 </div>
-<p>The loadings of each variable on PCs can be seen in <a href="#fig-loadings" class="quarto-xref">Figure&nbsp;<span>1.8</span></a>. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in <a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>. More mathematical aspects of index construction and scalling can be read in the app itself.</p>
+<p>The loadings of each variable on PCs can be seen in <a href="#fig-loadings" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in <a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>. More mathematical aspects of index construction and scalling can be read in the app itself.</p>
 <div id="fig-loadings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/loadings.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.8: Loadings of each varaibles on PCs
+Figure&nbsp;1.9: Loadings of each varaibles on PCs
 </figcaption>
 </figure>
 </div>
@@ -931,31 +941,41 @@ Figure&nbsp;1.8: Loadings of each varaibles on PCs
 <img src="images/kwt/index_score.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.9: Index score based on PCA
+Figure&nbsp;1.10: Index score based on PCA
 </figcaption>
 </figure>
 </div>
-<p>The index plot shown in <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.</p>
+<p>The index plot shown in <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>1.11</span></a>, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>1.11</span></a>, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.</p>
 <div id="fig-index" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/index.png" class="img-fluid figure-img" width="430">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.10: Index Plot
+Figure&nbsp;1.11: Index Plot
 </figcaption>
 </figure>
 </div>
-<p>Additionally, the biplot in <span class="quarto-unresolved-ref">?fig-Biplot</span> clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.</p>
-<p><img src="images/kwt/biplot.png" id="fig-Biplot" class="img-fluid" alt="Biplot from PCA"> Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.</p>
-<p>RAISINS is equipped with an <strong>AI-powered RAISINS Assistant</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.11</span></a></p>
+<p>Additionally, the biplot in <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>1.12</span></a> clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.</p>
+<div id="fig-Biplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kwt/biplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.12: Biplot from PCA
+</figcaption>
+</figure>
+</div>
+<p>Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.</p>
+<p>RAISINS is equipped with an <strong>AI-powered RAISINS Assistant</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>1.13</span></a></p>
 <div id="fig-ai" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/ai.gif" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.11: AI powere RAISINS Assistant to interpret your results
+Figure&nbsp;1.13: AI powere RAISINS Assistant to interpret your results
 </figcaption>
 </figure>
 </div>
@@ -971,14 +991,14 @@ Figure&nbsp;1.11: AI powere RAISINS Assistant to interpret your results
 </ol>
 <section id="preparing-data-in-ms-excel" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="preparing-data-in-ms-excel"><span class="header-section-number">1.5.1</span> Preparing data in MS Excel</h3>
-<p>Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in <a href="#fig-modata1" class="quarto-xref">Figure&nbsp;<span>1.12</span></a>. As illustrated in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>, groups must appear repeatedly based on replications, and the data can also be arranged as shown in <a href="#fig-modata2" class="quarto-xref">Figure&nbsp;<span>1.13</span></a>.</p>
+<p>Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in <a href="#fig-modata1" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>. As illustrated in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>, groups must appear repeatedly based on replications, and the data can also be arranged as shown in <a href="#fig-modata2" class="quarto-xref">Figure&nbsp;<span>1.15</span></a>.</p>
 <div id="fig-modata1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-modata1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/modeldata1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modata1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.12: Model1 showing how the prepared Excel file for upload should look like
+Figure&nbsp;1.14: Model1 showing how the prepared Excel file for upload should look like
 </figcaption>
 </figure>
 </div>
@@ -988,7 +1008,7 @@ Figure&nbsp;1.12: Model1 showing how the prepared Excel file for upload should l
 <img src="images/kwt/modeldata2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.13: Model2 showing how the prepared Excel file for upload should look like
+Figure&nbsp;1.15: Model2 showing how the prepared Excel file for upload should look like
 </figcaption>
 </figure>
 </div>
@@ -1066,14 +1086,14 @@ How to Save as CSV in MS Excel
 <p>➡️ Select the number of <strong>Treatments</strong></p>
 <p>➡️ Select number of <strong>Replications</strong></p>
 <p>➡️Click on<code>Create</code> button**</p>
-<p>Model layout will appear as shown in <a href="#fig-createdata" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code> tab!</p>
+<p>Model layout will appear as shown in <a href="#fig-createdata" class="quarto-xref">Figure&nbsp;<span>1.16</span></a>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code> tab!</p>
 <div id="fig-createdata" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-createdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/kwt/create_data.png" class="img-fluid figure-img" width="1011">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-createdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.14: Creating dataset within RAISINS
+Figure&nbsp;1.16: Creating dataset within RAISINS
 </figcaption>
 </figure>
 </div>

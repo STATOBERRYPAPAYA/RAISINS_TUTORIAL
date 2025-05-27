@@ -8,13 +8,14 @@ project:
     - "*.svg"
 
 book:
-  title: "The RAISINS HANDBOOK"
+  title: "The RAISINS Handbook"
   subtitle: "Handling Statistical Analysis of Agricultural Research Data using RAISINS -online software"
   favicon: images/cover.jpg
   author: 
     - Dr. Pratheesh P. Gopinath
     - Jithin Chandran
-  date: "2/12/2024"
+    - Mohammed Hisham M.
+  date: "5/23/2025"
   reader-mode: true
   page-navigation: true
   back-to-top-navigation: true
@@ -29,6 +30,7 @@ book:
   chapters:
     - index.qmd
     - preface.qmd
+    - about_raisins.qmd
     - part: "Non-parametric Test"
       chapters:
         - kruskalWallis.qmd

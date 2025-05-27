@@ -14,11 +14,10 @@
 </style>
 ```
 
-Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup> 
+Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup>
 
 ::: affiliations
- <sup>1</sup>Statoberry LLP,
- <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,
+<sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,
 :::
 
 The Kruskal-Wallis test is a **non-parametric** (distribution free) statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a **one-way ANOVA** are violated. It's essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after **William Kruskal and W. Allen Wallis**, who developed it in 1952 [@kwtref].
@@ -78,10 +77,9 @@ document.querySelectorAll('.toggle-image').forEach(link => {
 </script>
 ```
 
-## Theory  
+## Theory
 
-You can either read through the theory of the Kruskal-Wallis test below, or, if you're a non-statistician interested only in the practical aspects, you may skip ahead to @sec-rasins, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.  
-
+You can either read through the theory of the Kruskal-Wallis test below, or, if you're a non-statistician interested only in the practical aspects, you may skip ahead to @sec-rasins, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.
 
 ### Assumptions
 
@@ -240,20 +238,20 @@ We’ll guide you through the entire Kruskal-Wallis test step by step. To begin,
 
 The dataset format required for analysis in RAISINS is illustrated in @fig-raisinkwt.
 
-Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in @sec-createData. Additionally, model datasets are available within the app for testing purposes, as explained in @sec-Datasets. See how dataset is arranged for analysis @fig-raisinkwt. 
-
+Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in @sec-createData. Additionally, model datasets are available within the app for testing purposes, as explained in @sec-Datasets. See how dataset is arranged for analysis @fig-raisinkwt.
 
 ![Dataset arrangement for analyzing sensory ratings of four drink flavours using the Kruskal-Wallis test in RAISINS](images/kwt/ex1.png){#fig-raisinkwt fig-align="center" width="558"}
 
-Once the dataset is ready, head onto the `Analysis` tab in RAISINS and click on `Browse` and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on `Run Analysis`. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See @fig-analysistab for marked Analysis window in RAISINS.  
+Once the dataset is ready, head onto the `Analysis` tab in RAISINS and click on `Browse` and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on `Run Analysis`. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See @fig-analysistab for marked Analysis window in RAISINS.
 
 ![Analysis window in RAISINS](images/kwt/Analysis.png){#fig-analysistab fig-align="center"}
 
-### Results  
+### Results
+
 RAISINS generates result table in the format given in @fig-res1 after the analysis.\
 The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it's significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
 
-![Result table in RAISINS](images/kwt/result.png){#fig-res1 fig-align="center" width="703"}  
+![Result table in RAISINS](images/kwt/result.png){#fig-res1 fig-align="center" width="703"}
 
 From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks.
 
@@ -265,7 +263,7 @@ For example, in the case of the character *Color*, no letter groupings are shown
 
 You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.
 
-From the results @fig-res1 , it's found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on `Multivaraite` tab. The results as mentioned in @sec-multi gives you the best treatment based on all the observed characters.  
+From the results @fig-res1 , it's found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on `Multivaraite` tab. The results as mentioned in @sec-multi gives you the best treatment based on all the observed characters.
 
 ### Customization tabs
 
@@ -275,8 +273,7 @@ In RAISINS, you can easily customize your analysis by adjusting settings such as
 
 ### Plots and graphs
 
-RAISINS is designed for a smooth and hassle-free experience. Once you click the `Run Analysis` button, all relevant results and outputs appear instantly—leaving no room for confusion. We’ve ensured that every possible plot related to the Kruskal-Wallis test is readily available. Simply click on the `Plots & Graphs` tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.  
-
+RAISINS is designed for a smooth and hassle-free experience. Once you click the `Run Analysis` button, all relevant results and outputs appear instantly—leaving no room for confusion. We’ve ensured that every possible plot related to the Kruskal-Wallis test is readily available. Simply click on the `Plots & Graphs` tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.
 
 ```{=html}
 <script>
@@ -430,8 +427,7 @@ A pairs plot provides three key pieces of information. First, it shows the indiv
 :::
 ::::
 :::::
-:::::::::::::::::::::  
-
+:::::::::::::::::::::
 
 ### Customizing plots
 
@@ -565,50 +561,50 @@ console.log("Script loaded successfully.");
 
 The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (*i.e.* Appearance, Color, Texture, Taste, Flavour), navigate to `Multivariate` tab see @fig-multiraisin. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.  
 
-![Multivariate tab in RAISINS](images/kwt/multi.png){#fig-multiraisin}
-A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.  
+![Multivariate tab in RAISINS](images/kwt/multi.png){#fig-multiraisin}  
 
-The scree plot given @fig-scree illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected. 
+A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.
+
+The scree plot given @fig-scree illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.
 
 ![Scree Plot](images/kwt/scree.png){#fig-scree}
 
-The loadings of each variable on PCs can be seen in @fig-loadings. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you  want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in @fig-indexscore. More mathematical aspects of index construction and scalling can be read in the app itself. 
+The loadings of each variable on PCs can be seen in @fig-loadings. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in @fig-indexscore. More mathematical aspects of index construction and scalling can be read in the app itself.
 
-
-
-![Loadings of each varaibles on PCs](images/kwt/loadings.png){#fig-loadings}  
+![Loadings of each varaibles on PCs](images/kwt/loadings.png){#fig-loadings}
 
 Based on index score it can be seen that, V3 has the highest index followed by V4. So Experimenter can select the drink V3 and V4. Also in some cases when the loadings of prefered variables are negative, a lower index value is preferred. Here to refine your selection, use the 'Select cutoff for Scaled Index Score' feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.
 
-![Index score based on PCA](images/kwt/index_score.png){#fig-indexscore fig-align="center"}  
+![Index score based on PCA](images/kwt/index_score.png){#fig-indexscore fig-align="center"}
 
-The index plot shown in @fig-index, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In @fig-index, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.  
+The index plot shown in @fig-index, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In @fig-index, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.
 
-![Index Plot](images/kwt/index.png){#fig-index width="430"}  
+![Index Plot](images/kwt/index.png){#fig-index width="430"}
 
-Additionally, the biplot in @fig-Biplot clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from @fig-res1. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.
+Additionally, the biplot in @fig-Biplot clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from @fig-res1. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.  
 
-![Biplot from PCA ](images/kwt/biplot.png){#fig-Biplot}
-Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.  
+![Biplot from PCA](images/kwt/biplot.png){#fig-Biplot}  
+
+Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.
 
 RAISINS is equipped with an **AI-powered RAISINS Assistant** designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below @fig-ai
 
 ![AI powere RAISINS Assistant to interpret your results](images/kwt/ai.gif){#fig-ai fig-align="center"}
 
-RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.  
+RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.
 
-## Preparing your data {#sec-createData}  
+## Preparing your data {#sec-createData}
 
 What truly matters is the quality of your data! As the saying goes, "garbage in, garbage out" — and this holds true for any software. To prepare your dataset for analysis in RAISINS, you have two options:
 
-1. Create your dataset in MS Excel  
-2. Build your dataset directly within the RAISINS app
+1.  Create your dataset in MS Excel\
+2.  Build your dataset directly within the RAISINS app
 
-### Preparing data in MS Excel  
+### Preparing data in MS Excel
 
 Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as "Group" or "Treatment." All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in @fig-modata1. As illustrated in @fig-raisinkwt, groups must appear repeatedly based on replications, and the data can also be arranged as shown in @fig-modata2.
 
-![Model1 showing how the prepared Excel file for upload should look like](images/kwt/modeldata1.png){#fig-modata1 fig-align="center"}  
+![Model1 showing how the prepared Excel file for upload should look like](images/kwt/modeldata1.png){#fig-modata1 fig-align="center"}
 
 ![Model2 showing how the prepared Excel file for upload should look like](images/kwt/modeldata2.png){#fig-modata2 fig-align="center"}
 
@@ -630,41 +626,41 @@ Open a new blank sheet in MS Excel with only one sheet included, and avoid addin
     -   Name all columns meaningfully.\
     -   Exclude unnecessary columns not required for analysis.
 
-</details>  
+</details>
 
 <details>
 
 <summary>How to Save as CSV in MS Excel</summary>
 
-1. **Open Your Workbook**
+1.  **Open Your Workbook**
 
-   * Ensure your data is arranged properly with only one sheet.
+    -   Ensure your data is arranged properly with only one sheet.
 
-2. **Click ‘File’ Menu**
+2.  **Click ‘File’ Menu**
 
-   * Go to the top-left corner and click on **File**.
+    -   Go to the top-left corner and click on **File**.
 
-3. **Choose ‘Save As’ or ‘Save a Copy’**
+3.  **Choose ‘Save As’ or ‘Save a Copy’**
 
-   * Select the location where you want to save your file.
+    -   Select the location where you want to save your file.
 
-4. **Set File Type to CSV**
+4.  **Set File Type to CSV**
 
-   * In the **‘Save as type’** dropdown menu, choose **CSV (Comma delimited) (\*.csv)**.
+    -   In the **‘Save as type’** dropdown menu, choose **CSV (Comma delimited) (\*.csv)**.
 
-5. **Name Your File**
+5.  **Name Your File**
 
-   * Enter a relevant file name without spaces (use underscores if needed).
+    -   Enter a relevant file name without spaces (use underscores if needed).
 
-6. **Click ‘Save’**
+6.  **Click ‘Save’**
 
-   * Click **Save** to export the file.
+    -   Click **Save** to export the file.
 
 > 💡 Tip: Before saving, double-check that your data is on the first sheet and follows the required format (e.g., no empty rows above the data, meaningful column names).
 
 </details>
 
-### Creating dataset in RAISINS  
+### Creating dataset in RAISINS
 
 If you're unsure about the correct format for creating a dataset, don't worry—Raisins offers an option to create data directly within the app using the prescribed template. Here's how:
 
@@ -674,26 +670,26 @@ If you're unsure about the correct format for creating a dataset, don't worry—
 
 ➡️ Select number of **Replications**
 
-➡️Click on`Create` button**  
+➡️Click on`Create` button\*\*
 
-Model layout will appear as shown in @fig-createdata. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis` tab! 
+Model layout will appear as shown in @fig-createdata. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis` tab!
 
-![Creating dataset within RAISINS](images/kwt/create_data.png){#fig-createdata width="1011"}  
+![Creating dataset within RAISINS](images/kwt/create_data.png){#fig-createdata width="1011"}
 
-## Model Datasets {#sec-Datasets}  
-To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the `Datasets` tab.  
+## Model Datasets {#sec-Datasets}
 
+To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the `Datasets` tab.
 
-![](images/kwt/DATASET.png)  
+![](images/kwt/DATASET.png)
 
-## FAQ's  
-The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.  
+## FAQ's
 
-![](images/kwt/faq.png)  
+The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.
 
+![](images/kwt/faq.png)
 
-## User  
+## User
 
 You can find all your account details—including usage percentage, plan validity, subscription type, and billing information—under the `User` tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.
 
-![](images/kwt/user_tab.png) 
+![](images/kwt/user_tab.png)

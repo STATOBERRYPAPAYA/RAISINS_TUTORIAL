@@ -1,31 +1,47 @@
 # Welcome {.unnumbered}
 
-Welcome to the *Textbook of Agricultural Statistics* – a comprehensive resource thoughtfully crafted by the Department of Agricultural Statistics at the College of Agriculture, Vellayani, Kerala Agricultural University. This book was created to meet the need for a clear, accessible, and practical guide to statistics tailored for agricultural research.
+Dear Reader,
 
-Statistics is an essential tool in agriculture, enabling researchers and practitioners to uncover patterns, validate results, and make data-driven decisions. However, the subject is often perceived as complex and challenging to master. This textbook is designed to change that perception, offering straightforward explanations and practical guidance to make statistical concepts approachable and applicable.
+Welcome to *The RAISINS Handbook*—an online guide born from a shared vision, sustained by passion, and dedicated to every student, scholar, and researcher striving to bring clarity and rigour to agricultural research. This handbook is free to read.
 
-As John Tukey once said, *"The greatest value of a picture is when it forces us to notice what we never expected to see."* We have embraced this philosophy by incorporating clear examples, practical applications, and data visualizations to illustrate concepts and deepen understanding.
+It all began with a simple idea: to make data analysis accessible, accurate, and stress-free for the agricultural research community. Back in 2020, we introduced **GRAPES** (General R-based Analysis Platform Empowered by Statistics) [www.kaugrapes.com](https://www.kaugrapes.com) —a humble, browser-based tool designed for the students and researchers of Kerala Agricultural University. Little did we know then, it would grow into a trusted companion for more than 100,000 users worldwide and earn citations in over 100 Scopus-indexed journals.
 
-While this book is primarily written with undergraduate students in mind, its simplicity and focus on real-world applications make it a valuable resource for a wide audience, including postgraduate students, researchers, and anyone seeking to build a strong foundation in statistics and experimental design.
+But growth brings new challenges. GRAPES, originally tailored for local use, struggled to keep pace with the scale and expectations of a global audience. We knew we needed to build something more robust—something that could not just meet, but anticipate the needs of modern agricultural research.
 
-You will find clear explanations, practical examples, and step-by-step instructions throughout the chapters, all tailored to the unique needs of agricultural studies. Our goal is to ensure that learners at all levels can confidently apply statistical methods to their work and research.
+That dream took shape in 2024, when a spirited team of young statisticians came together to form [STATOBERRY LLP](https://www.statoberry.com/), under the mentorship of Dr. Pratheesh P. Gopinath, Head of the Department of Agricultural Statistics, College of Agriculture, Vellayani. From this dynamic collaboration emerged online web application for reseacrh data analysis in agriculture **RAISINS**—**R** and **AI** **S**olutions in **IN**ferential **S**tatistics. RAISINS can be accessed at [www.raisins.live](https://www.raisins.live/) 
 
-Whether you are new to statistics or looking to revisit the basics with a fresh perspective, we hope this book serves as a supportive companion in your journey to understanding and applying statistical tools effectively in agriculture.
+[RAISINS](https://www.raisins.live/) is not just another software. It is a complete ecosystem that brings together the power of R, Python, and AI in a seamless, point-and-click interface. Whether you're working on design of experiments, social science surveys, or advanced statistical genetics, RAISINS simplifies the process, automates best practices, and delivers publication-ready results—without requiring you to write a single line of code.
 
-### Acknowledgements
+This handbook is your step-by-step guide to harnessing RAISINS for agricultural research. It is designed to take you beyond the "how" into the "why"—helping you not just use the software, but understand the statistical foundation behind it. Whether you are preparing your MSc thesis, conducting doctoral research, or mentoring future scientists, we hope this book becomes a reliable companion in your journey.
 
-This book is the result of collaborative efforts among dedicated teachers and statisticians, but the majority of the reviewing, editing, and refinement has been inspired and shaped by the students.\
-For two years, this book was made available online on the MeLON (Module for eLearning and Online Notes) platform of the College of Agriculture, Vellayani. During this time, students provided valuable feedback, pointed out areas for improvement, and offered insights that greatly enhanced the quality and clarity of the content. We are sincerely grateful to all the students whose suggestions and input played a key role in the development of this textbook.
+## Why RAISINS is Paid—and Why That Matters
 
-We would also like to thank the College of Agriculture, Vellayani, for fostering an environment that encourages learning, growth, and the sharing of ideas.
+We are often asked: “R is open source and free. GRAPES is free. So why is RAISINS a paid platform?” It’s a fair question—and it deserves an honest answer.
 
-### Note from the Publisher
+RAISINS is the result of years of work and sleepless nights by a dedicated team of statisticians who wanted to create something meaningful for the agricultural community. Hosting the platform on scalable servers, ensuring data security, continuously updating features—all of this incurs real costs. We’ve kept our plans as affordable as possible. It’s not about profit. It’s about sustainability. It’s about keeping RAISINS alive, relevant, and growing for the benefit of everyone.
+
+## A Shared Mission
+
+Our dream is simple, yet ambitious: *to bring all agricultural data analysis under one intuitive platform.* From field layout designs to psychometric validations, from varietal trials to farmer surveys—RAISINS is our humble attempt to unify, simplify, and empower.
+
+As you go through these pages and explore the features of RAISINS, we hope you feel the heart and hard work that went into every module. This book is a tribute to our users, our mentors, our students, and the wider agricultural research community that keeps asking better questions—and demanding better answers.  
+
+This handbook is more than just a guide—it's a dynamic, evolving resource built to grow alongside RAISINS and its users. By keeping it online, we can quickly incorporate your feedback, introduce new features, and reflect updates to the platform in real time. Whether we're adding new analysis modules or refining existing ones, this living document ensures you always have the most accurate and up-to-date guidance at your fingertips.
+
+
+Thank you for joining us on this journey.
+
+With warmth and gratitude,
+**Team RAISINS**
+*STATOBERRY LLP*  
+
+## Note from the Publisher
 
 This textbook is published by **PAPAYA**, the publication division of [Statoberry LLP](https://www.statoberry.com/), which is committed to providing high-quality educational resources for agricultural research. The online version of this book is available for free, in line with our dedication to open access and knowledge sharing. Visit us at [PAPAYA](https://www.statoberry.com/papaya).
 
 ### Copyright Information
 
-© 2024 **Statoberry LLP**. All rights reserved.
+© 2025 **Statoberry LLP**. All rights reserved.
 
 Online version of this book is licensed under a\
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />\

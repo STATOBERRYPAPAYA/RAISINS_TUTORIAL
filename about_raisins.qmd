@@ -1,0 +1,31 @@
+# About RAISINS  
+
+RAISINS (R and AI Solutions in INferential Statistics) is a web-based data analysis platform purpose-built for the agricultural research community. Developed by STATOBERRY LLP under the academic mentorship of the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University, RAISINS brings together the computational power of R, Python, and Artificial Intelligence into a unified, user-friendly online environment.
+
+The platform was designed to eliminate the technical barriers often encountered by researchers and students when engaging with statistical software. Instead of requiring users to write code or install packages, RAISINS offers a clean, click-driven interface where users can simply choose the relevant analysis module, upload their data, and receive a complete, publication-ready output—instantly.  
+
+## Accesing RAISINS  
+
+RAISINS is a cloud-based application accessible through any modern web browser. It requires no download, installation or setup, making it immediately usable across devices—be it a desktop, laptop, tablet, or smartphone.
+
+Access Website:
+🌐 [www.raisins.live](https://www.raisins.live/)  
+
+## Workflow Overview  
+
+The standard user workflow is as follows:
+
+Select Module: Choose the appropriate statistical module from RAISINS website.  
+
+Upload Data: Enter data via upload (CSV/XLS/XLSX) or create data in app itself
+
+Run Analysis: Configure basic parameters if needed and click `Run Analysis`
+
+View Outputs: Results are displayed in a structured layout with interpretation, plots, and export options.
+
+Download Report: All outputs can be downloaded as a consolidated PDF, word or html document.  
+
+## Available modules  
+
+
+
