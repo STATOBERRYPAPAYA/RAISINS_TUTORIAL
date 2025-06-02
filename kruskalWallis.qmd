@@ -228,7 +228,7 @@ RAISINS (R and AI Solutions in INferential Statistics) is an online platform tha
 
 Head to [www.raisins.live](https://www.raisins.live) where you can access various analytical modules. You can accesss the kruskal wallis test module from the analysis tools under social science section
 
-![Accessing Kruskal Wallis test in RAISINS](images/kwt/click.png){#kwtinraisins}
+![Accessing Kruskal Wallis test in RAISINS](images/kwt/Click.png){#kwtinraisins}
 
 You can log in to the web application using the credentials you received after subscribing.
 
@@ -410,7 +410,7 @@ A **mean value plot** also known as a line plot, is a graphical representation o
 
 ::::: g-col-6
 :::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
-![Connected line plot](images/kwt/Connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
+![Connected line plot](images/kwt/connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
 
 ::: {#connectedplot-desc .plot-description}
 A **connected line plot**, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups
