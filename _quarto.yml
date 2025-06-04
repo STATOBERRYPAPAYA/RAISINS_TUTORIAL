@@ -10,7 +10,7 @@ project:
 book:
   title: "The RAISINS Handbook"
   subtitle: "Handling Statistical Analysis of Agricultural Research Data using RAISINS -online software"
-  favicon: images/cover.jpg
+  favicon: images/cover.JPG
   author: 
     - Dr. Pratheesh P. Gopinath
     - Mohammed Hisham M.
@@ -22,10 +22,10 @@ book:
   search: true
   site-url: https://www.raisins.live/
   repo-url: https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues
-  image: images/cover.png
+  image: images/cover.JPG
   image-alt: "Textbook of Agricultural Statistics"
   open-graph: 
-    image: images/cover.jpg
+    image: images/cover.JPG
     image-alt: "Textbook of Agricultural Statistics"
   chapters:
     - index.qmd
@@ -50,7 +50,7 @@ book:
     right: |
         Licenced under [CC-BY-NC-ND 4.0 Int License](https://creativecommons.org/licenses/by-nc-nd/4.0/) <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">![](/images/cclogo.png){style='width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;'}</a>
         Built with <a href="https://quarto.org/">Quarto</a>
-  cover-image: images/cover.jpg
+  cover-image: images/cover.JPG
   
 bibliography: 
   - book.bib
