@@ -13,8 +13,8 @@ book:
   favicon: images/cover.jpg
   author: 
     - Dr. Pratheesh P. Gopinath
-    - Jithin Chandran
     - Mohammed Hisham M.
+    - Jithin Chandran
   date: "5/23/2025"
   reader-mode: true
   page-navigation: true
