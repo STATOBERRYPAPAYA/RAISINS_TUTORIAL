@@ -8,7 +8,7 @@ It all began with a simple idea: to make data analysis accessible, accurate, and
 
 But growth brings new challenges. GRAPES, originally tailored for local use, struggled to keep pace with the scale and expectations of a global audience. We knew we needed to build something more robust—something that could not just meet, but anticipate the needs of modern agricultural research.
 
-That dream took shape in 2024, when a spirited team of young statisticians came together to form [STATOBERRY LLP](https://www.statoberry.com/), under the mentorship of Dr. Pratheesh P. Gopinath, Head of the Department of Agricultural Statistics, College of Agriculture, Vellayani. From this dynamic collaboration emerged online web application for reseacrh data analysis in agriculture **RAISINS**—**R** and **AI** **S**olutions in **IN**ferential **S**tatistics. RAISINS can be accessed at [www.raisins.live](https://www.raisins.live/) 
+That dream took shape in 2024, when a spirited team of young statisticians came together to form [STATOBERRY LLP](https://www.statoberry.com/), under the mentorship of Dr. Pratheesh P. Gopinath, Head of the Department of Agricultural Statistics, College of Agriculture, Vellayani. From this dynamic collaboration emerged online web application for reseacrh data analysis in agriculture **RAISINS**—**R** and **AI** **S**olutions in **IN**ferential **S**tatistics. RAISINS can be accessed at [www.raisins.live](https://www.raisins.live/)
 
 [RAISINS](https://www.raisins.live/) is not just another software. It is a complete ecosystem that brings together the power of R, Python, and AI in a seamless, point-and-click interface. Whether you're working on design of experiments, social science surveys, or advanced statistical genetics, RAISINS simplifies the process, automates best practices, and delivers publication-ready results—without requiring you to write a single line of code.
 
@@ -24,16 +24,13 @@ RAISINS is the result of years of work and sleepless nights by a dedicated team 
 
 Our dream is simple, yet ambitious: *to bring all agricultural data analysis under one intuitive platform.* From field layout designs to psychometric validations, from varietal trials to farmer surveys—RAISINS is our humble attempt to unify, simplify, and empower.
 
-As you go through these pages and explore the features of RAISINS, we hope you feel the heart and hard work that went into every module. This book is a tribute to our users, our mentors, our students, and the wider agricultural research community that keeps asking better questions—and demanding better answers.  
+As you go through these pages and explore the features of RAISINS, we hope you feel the heart and hard work that went into every module. This book is a tribute to our users, our mentors, our students, and the wider agricultural research community that keeps asking better questions—and demanding better answers.
 
 This handbook is more than just a guide—it's a dynamic, evolving resource built to grow alongside RAISINS and its users. By keeping it online, we can quickly incorporate your feedback, introduce new features, and reflect updates to the platform in real time. Whether we're adding new analysis modules or refining existing ones, this living document ensures you always have the most accurate and up-to-date guidance at your fingertips.
 
-
 Thank you for joining us on this journey.
 
-With warmth and gratitude,
-**Team RAISINS**
-*STATOBERRY LLP*  
+With warmth and gratitude, **Team RAISINS** *STATOBERRY LLP*
 
 ## Note from the Publisher
 
