@@ -50,7 +50,7 @@ book:
     right: |
         Licenced under [CC-BY-NC-ND 4.0 Int License](https://creativecommons.org/licenses/by-nc-nd/4.0/) <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">![](/images/cclogo.png){style='width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;'}</a>
         Built with <a href="https://quarto.org/">Quarto</a>
-  cover-image: images/cover.JPG
+  cover-image: images/cover.jpg
   
 bibliography: 
   - book.bib
