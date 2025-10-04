@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored CRD Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            gap: 2px;
+            background: #333;
+            border: 3px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 
+                5px 5px 0px rgba(0,0,0,0.2),
+                10px 10px 0px rgba(0,0,0,0.1);
+            transform: translateZ(0);
+            transition: all 0.3s ease;
+        }
+        
+        .cell:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 
+                7px 7px 0px rgba(0,0,0,0.2),
+                12px 12px 0px rgba(0,0,0,0.1);
+        }
+        
+        .treatment-a {
+            background-color: #ff6b6b;
+        }
+        
+        .treatment-b {
+            background-color: #4ecdc4;
+        }
+        
+        .treatment-c {
+            background-color: #ffd93d;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+        
+        .treatment-d {
+            background-color: #a8e6cf;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+        
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 500px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            border: 2px solid #333;
+        }
+        
+        .legend-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Randomized CRD Layout</h2>
+        <div class="grid">
+            <div class="cell treatment-c">C</div>
+            <div class="cell treatment-a">A</div>
+            <div class="cell treatment-d">D</div>
+            <div class="cell treatment-b">B</div>
+            <div class="cell treatment-c">C</div>
+            
+            <div class="cell treatment-b">B</div>
+            <div class="cell treatment-d">D</div>
+            <div class="cell treatment-a">A</div>
+            <div class="cell treatment-c">C</div>
+            <div class="cell treatment-a">A</div>
+            
+            <div class="cell treatment-d">D</div>
+            <div class="cell treatment-c">C</div>
+            <div class="cell treatment-b">B</div>
+            <div class="cell treatment-a">A</div>
+            <div class="cell treatment-d">D</div>
+            
+            <div class="cell treatment-b">B</div>
+            <div class="cell treatment-a">A</div>
+            <div class="cell treatment-c">C</div>
+            <div class="cell treatment-d">D</div>
+            <div class="cell treatment-b">B</div>
+        </div>
+        
+        <h2>Treatment Legend</h2>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color treatment-a"></div>
+                <div class="legend-text">Treatment A (Red)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color treatment-b"></div>
+                <div class="legend-text">Treatment B (Teal)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color treatment-c"></div>
+                <div class="legend-text">Treatment C (Yellow)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color treatment-d"></div>
+                <div class="legend-text">Treatment D (Green)</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
