@@ -297,11 +297,11 @@
   {
     "objectID": "references.html",
     "href": "references.html",
-    "title": "2  References",
+    "title": "3  References",
     "section": "",
     "text": "Conover, W. J. 1999. Practical Nonparametric Statistics. 3rd\ned. New York: John Wiley & Sons.\n\n\nDunn, Olive Jean. 1964. “Multiple Comparisons Using Rank\nSums.” Technometrics 6 (3): 241–52. https://doi.org/10.1080/00401706.1964.10490181.\n\n\nKruskal, William H., and W. Allen Wallis. 1952. “Use of Ranks in\nOne-Criterion Variance Analysis.” Journal of the American\nStatistical Association 47 (260): 583–621. https://doi.org/10.2307/2280779.\n\n\nMendiburu, F. de. 2020. Agricolae: Statistical Procedures for\nAgricultural Research. https://cran.r-project.org/package=agricolae.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>References</span>"
     ]
   },
   {

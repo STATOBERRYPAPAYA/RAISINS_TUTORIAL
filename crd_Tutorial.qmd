@@ -9,7 +9,28 @@ format:
     css: custom.css
 ---
 
-In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots).
+<!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
+
+In the **1920s**, statistician 
+<span data-bs-toggle="popover" 
+      data-bs-trigger="hover" 
+      data-bs-html="true"
+      data-bs-placement="right"
+      data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>">
+  <strong>Ronald A. Fisher</strong>
+</span> 
+made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **prevent bias** and enable reliable **statistical analysis** through analysis of variance **(ANOVA)** by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots).
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+})
+</script>
+```
 
 In this design, **experimental units** are randomly assigned to **treatments** without any systematic bias, ensuring that every unit has an equal probability of receiving any given treatment. This random assignment helps counter potential biases and addresses the inherent variability among experimental units, making comparisons between treatments impartial. In order to account for **natural variation** in soil and environment, the first famous instances involved agricultural field trials in which adjacent plots were randomly assigned to different crop kinds or fertilizer treatments. **Agricultural field trials** were the first well-known instances, in which adjacent plots were randomly assigned to different crop varieties or fertilizer treatments to account for inherent soil and environmental variance.
 
@@ -18,144 +39,6 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 ::: callout-tip
 #### This design is used to examine the effects of a single primary element without considering additional bothersome aspects.
 :::
-
-## Definition of Completely Randomized Design
-
-Experiments using the **Completely Randomized Design (CRD)** are set up in which experimental units receive treatments entirely at random. Accordingly, each unit has an equal probability of getting any kind of care. This prevents bias and ensures that the groups are fairly comparable. Therefore, if changes in results are observed, we can be sure that they are caused by the therapies and not by other unidentified causes.
-
-# Assumptions of Completely Randomized Design
-
-In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
-
-**Independence** : Independence in experimental design refers to the fact that the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit. Because it gives us confidence that every unit offers a distinct and unaffected piece of information regarding the process or treatment under study, this is a fundamental premise of the **majority** of statistical tests.
-
-**Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment. This procedure balances **known** and **unknown** factors across groups, removing selection bias and guaranteeing fairness. By doing this, the groups are initially made comparable, and any variations in results can be ascribed to the treatments rather than underlying differences. Random number tables, computer algorithms, and other chance techniques are frequently used for randomization.
-
-**Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
-
-**Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
-
-**Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
-
-# Implementation of Completely Randomized Design
-
-Let us breakdown the essential steps involved in executing a **Completely Randomized Design (CRD)** and elucidate the significance of each phase for an effective experiment.
-
-1.  **Define Your Treatments** :
-
-Determining exactly what you wish to test is the **first stage** in designing an experiment. Treatments are the many conditions or interventions that you wish to compare.
-
-**Example** :
-
--   If you are testing plant growth, your treatments could be different fertilizer types: Fertilizer A, Fertilizer B, and Fertilizer C.
-
--   In a microbiology experiment, treatments might be different probiotic cultures applied to the samples.
-
-**Why this is important ?** :
-
--   Each treatment must be distinct and well-defined so that you know exactly what is being applied to each experimental unit
-
--   If treatments are unclear or overlapping, it becomes impossible to tell which one is causing any observed effect
-
--   Clear definitions ensure that your experiment produces meaningful and reliable results
-
-**Tip for beginners** :
-
--   Write down a list of all treatments before starting the experiment
-
--   Make sure each treatment can be replicated consistently throughout your study
-
-2.  **Select Experimental Units** :
-
-Once you know your treatments, the next step is to choose the experimental units - the subjects, plots, or samples that will receive the treatments.
-
-**Key point** : Try to make your units as similar (homogeneous) as possible.
-
-**Examples** :
-
--   In a plant experiment, choose plots with similar soil type, sunlight, and water availability.
-
--   In animal studies, select animals of the same breed, age, and health status.
-
-**Why this matters ?** :
-
--   If your units differ in ways unrelated to the treatments, it’s hard to know whether the differences in results are due to the treatment or the natural differences among the units.
-
--   Using homogeneous units helps ensure that any observed effects are truly caused by the treatments.
-
-**Tip for beginners** :
-
--   Before starting, list the key characteristics your units should have.
-
--   Try to minimize variations that are not part of your experiment.
-
-3.  **Random Assignment**:
-
-After selecting your experimental units, the next step is to assign treatments randomly. This ensures that each unit has an equal chance of receiving any treatment.
-
-**Common ways to randomize**:
-
--   Random number tables - Use a pre-made table of random numbers to assign treatments.
-
--   Statistical software - For example, in R you can use sample(); in Excel, use RAND() or RANDBETWEEN().
-
--   Drawing lots - Write treatment names on slips of paper and draw them for each unit.
-
-**Why this is important ?**:
-
--   Randomization removes selection bias and helps balance out unknown or hidden variables across treatment groups.
-
--   It ensures that differences in outcomes can be attributed to the treatments, not to pre-existing differences among units.
-
-**Tip for beginners**:
-
--   Always document your randomization method so others can reproduce your experiment.
-
--   Avoid “manual” assignments based on convenience - these can unintentionally introduce bias.
-
-4.  **Conduct the Experiment**:
-
--   Once treatments are randomly assigned, it’s time to carry out the experiment.
-
-**Key points**:
-
--   Apply each treatment exactly as planned to the units it was assigned to.
-
--   Keep all other conditions the same across all units - such as light, temperature, watering, or handling - so that only the treatment varies.
-
--   Collect data carefully and systematically. Record measurements in a consistent way for every unit.
-
-**Why this matters ?**:
-
--   Consistency ensures that any differences you observe are truly caused by the treatments, not by uncontrolled factors.
-
--   Accurate and systematic data collection makes your results reliable and reproducible.
-
-**Tip for beginners**:
-
-Prepare a data recording sheet or table before starting. Double-check that measurements are taken at the same time and under the same conditions for all units.
-
-5.  **Analyze the Data**:
-
-After you have collected all your data, the next step is to analyze it using statistical methods.
-
-**How to do it**:
-
--   A common technique is Analysis of Variance (ANOVA), which compares the average outcomes of all treatment groups. ANOVA helps you decide whether the differences you see between treatments are statistically significant or just due to random variation.
-
-**Why this matters ?**:
-
--   Experimental units naturally vary, even under identical conditions.
-
--   ANOVA accounts for this random variation and tells you whether the treatment itself caused the observed differences.
-
--   This ensures that your conclusions about which treatment is better are scientifically valid.
-
-**Tip for beginners**:
-
--   Make sure your data is organized in a table with treatments and corresponding measurements.
-
--   Use statistical software (like R, Excel, or SPSS) to perform ANOVA efficiently and accurately.
 
 # Key Characteristics
 
@@ -252,3 +135,69 @@ ANOVA Table Structure:
 Let’s explore some practical situations in agricultural research where the Completely Randomised Design, also known as the CRD, is applied.
 
 ## Study Context
+
+1.  Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.
+
+2.  The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.
+
+3.  An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.
+
+## Theory
+
+The theory of the Completely Randomized Design can be read below, or if you're a non-statistician who is simply interested in the practical elements, you can go straight to **Section---**, where we've provided a real- world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.
+
+## Assumptions
+
+In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
+
+**Independence** : Independence in experimental design refers to the fact that the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit. Because it gives us confidence that every unit offers a distinct and unaffected piece of information regarding the process or treatment under study, this is a fundamental premise of the **majority** of statistical tests.
+
+**Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment. This procedure balances **known** and **unknown** factors across groups, removing selection bias and guaranteeing fairness. By doing this, the groups are initially made comparable, and any variations in results can be ascribed to the treatments rather than underlying differences. Random number tables, computer algorithms, and other chance techniques are frequently used for randomization.
+
+**Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
+
+**Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
+
+**Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
+
+## Hypotheses
+
+## The Test Statistic
+
+## Correction for Ties
+
+## Interpreting the Results
+
+# Getting started in RAISINS
+
+**RAISINS (R and AI Solutions in INferential Statistics)** is an online platform designed to make agricultural research data analysis easier. RAISINS doesn't need to be downloaded; it's entirely online. It provides robust, user-friendly statistical tools by combining the strengths of R, Python, and AI. The Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University, is providing mentorship to STATOBERRY LLP as it develops the platform.
+
+Head to www.raisins.live where you can access various analytical modules. You can access the completely randomised design module from the analysis tools under **Analysis of Experiments**.
+
+![CRD Analysis](CRD_1.webp){fig-align="center"}
+
+# A working example
+
+We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section 2.1.1**. For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. 
+
+The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
+
+Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
