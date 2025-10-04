@@ -11,15 +11,7 @@ format:
 
 <!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
 
-In the **1920s**, statistician 
-<span data-bs-toggle="popover" 
-      data-bs-trigger="hover" 
-      data-bs-html="true"
-      data-bs-placement="right"
-      data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>">
-  <strong>Ronald A. Fisher</strong>
-</span> 
-made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **prevent bias** and enable reliable **statistical analysis** through analysis of variance **(ANOVA)** by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots).
+In the **1920s**, statistician [<strong>Ronald A. Fisher</strong>]{data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="right" data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>"} made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **prevent bias** and enable reliable **statistical analysis** through analysis of variance **(ANOVA)** by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots) as in @fig-crd
 
 ```{=html}
 <script>
@@ -32,7 +24,17 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 ```
 
+<!-- ![Random assignment of treatments in CRD design](crd1.png){.center fig-align="center" width="511"} -->
+::: {#fig-crd}
+
+![](crd1.png){#fig-crd fig-align="center" width="511"}
+
+Random assignment of treatments in CRD design
+:::
+
 In this design, **experimental units** are randomly assigned to **treatments** without any systematic bias, ensuring that every unit has an equal probability of receiving any given treatment. This random assignment helps counter potential biases and addresses the inherent variability among experimental units, making comparisons between treatments impartial. In order to account for **natural variation** in soil and environment, the first famous instances involved agricultural field trials in which adjacent plots were randomly assigned to different crop kinds or fertilizer treatments. **Agricultural field trials** were the first well-known instances, in which adjacent plots were randomly assigned to different crop varieties or fertilizer treatments to account for inherent soil and environmental variance.
+
+<!-- [Random assignment of treatments in CRD](crd1.png) -->
 
 Although **CRD** is generally not advised for heterogeneous settings, it is especially appropriate when the experimental material is **homogeneous**, as in laboratory or greenhouse investigations. Due to its ease of use and efficiency, CRD has established itself as a key instrument in experimental statistics and is still essential in domains including industrial engineering, quality control analysis, medicine, and agriculture.
 
@@ -128,7 +130,7 @@ Yᵢⱼ = μ + τᵢ + εᵢⱼ
 
 # Analysis of Variance (ANOVA)
 
-ANOVA Table Structure:
+ANOVA Table Structure: as in @fig-crd
 
 # Example
 
@@ -178,26 +180,8 @@ Head to www.raisins.live where you can access various analytical modules. You ca
 
 # A working example
 
-We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section 2.1.1**. For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. 
+We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section 2.1.1**. For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
 The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
 Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
