@@ -68,6 +68,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="crd_Tutorial_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="crd_Tutorial_files/libs/bootstrap/bootstrap-ce6282254bc1ab34facc83f4222b8a07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.css">
 </head>
@@ -100,9 +129,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-test-statistic" id="toc-the-test-statistic" class="nav-link" data-scroll-target="#the-test-statistic">The Test Statistic</a></li>
   <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties">Correction for Ties</a></li>
   <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results">Interpreting the Results</a></li>
+  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test">Post-hoc test</a></li>
   </ul></li>
-  <li><a href="#getting-started-in-raisins" id="toc-getting-started-in-raisins" class="nav-link" data-scroll-target="#getting-started-in-raisins">Getting started in RAISINS</a></li>
-  <li><a href="#a-working-example" id="toc-a-working-example" class="nav-link" data-scroll-target="#a-working-example">A working example</a></li>
   </ul>
 </nav>
 </div>
@@ -128,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
-<p>In the <strong>1920s</strong>, statistician <span data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="right" data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>"><strong>Ronald A. Fisher</strong></span> made significant contributions to the development of the <strong>Completely Randomized Design (CRD)</strong>, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to <strong>prevent bias</strong> and enable reliable <strong>statistical analysis</strong> through analysis of variance <strong>(ANOVA)</strong> by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots) as in <a href="#fig-crd" class="quarto-xref">Figure&nbsp;1</a></p>
+<p>In the <strong>1920s</strong>, statistician <span data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="right" data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>"><strong>Ronald A. Fisher</strong></span> made significant contributions to the development of the <strong>Completely Randomized Design (CRD)</strong>, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to <strong>prevent bias</strong> and enable reliable <strong>statistical analysis</strong> through analysis of variance <strong>(ANOVA)</strong> by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots) as in <a href="#fig-crd" class="quarto-xref">Figure&nbsp;2</a></p>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -163,6 +191,16 @@ This design is used to examine the effects of a single primary element without c
 <div class="callout-body-container callout-body">
 
 </div>
+</div>
+<div id="fig-crd" class="quarto-float quarto-figure quarto-figure-center anchored" width="511" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-crd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="onewayANOVA.png" id="fig-crd" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="511">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-crd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
 </div>
 <section id="key-characteristics" class="level1">
 <h1>Key Characteristics</h1>
@@ -229,7 +267,7 @@ This design is used to examine the effects of a single primary element without c
 </section>
 <section id="analysis-of-variance-anova" class="level1">
 <h1>Analysis of Variance (ANOVA)</h1>
-<p>ANOVA Table Structure: as in <a href="#fig-crd" class="quarto-xref">Figure&nbsp;1</a></p>
+<p>ANOVA Table Structure: as in <a href="#fig-crd" class="quarto-xref">Figure&nbsp;2</a></p>
 </section>
 <section id="example" class="level1">
 <h1>Example</h1>
@@ -257,15 +295,133 @@ This design is used to examine the effects of a single primary element without c
 </section>
 <section id="hypotheses" class="level2">
 <h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<p>The Completely Randomized Design (CRD) evaluates the following hypotheses:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Null Hypothesis (H₀)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All treatment means are equal, indicating that the treatments have no significant effect on the response variable</p>
+<p><span class="math display">\[H_0 : \mu_1 = \mu_2 = \cdots = \mu_t\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Alternative Hypothesis (H₁)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At least one treatment mean (<span class="math inline">\(\mu_i\)</span>) is significantly different from the others, suggesting that treatments have an effect on the response variable.</p>
+<p><span class="math display">\[H_1 : \text{At least one } \mu_i \text{ differs}\]</span></p>
+</div>
+</div>
 </section>
 <section id="the-test-statistic" class="level2">
 <h2 class="anchored" data-anchor-id="the-test-statistic">The Test Statistic</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The test statistic for CRD is calculated using the <strong>one-way ANOVA F-statistic</strong>:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+F = \frac{\text{Mean Square due to Treatments (MST)}}{\text{Mean Square due to Error (MSE)}}
+\]</span></p>
+<p>This statistic is used to determine whether there are significant differences among the treatment means.</p>
+</div>
+</div>
 </section>
 <section id="correction-for-ties" class="level2">
 <h2 class="anchored" data-anchor-id="correction-for-ties">Correction for Ties</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adjustment for Unequal Variances or Missing Values
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using <strong>Aitken’s adjustment</strong> or a <strong>corrected mean square</strong> approach:</p>
+<p><span class="math display">\[
+F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corrected Mean Square Error}}
+\]</span> This ensures that the test remains valid under minor violations of CRD assumptions.</p>
+</div>
+</div>
 </section>
 <section id="interpreting-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-the-results">Interpreting the Results</h2>
+<p>In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is used to test whether there are significant differences among the treatment means. The test statistic, F, follows an F distribution with two sets of degrees of freedom: the numerator degrees of freedom (k−1), where k is the number of treatments, and the denominator degrees of freedom (N−k), where N is the total number of experimental units. To determine if the null hypothesis—that all treatment means are equal- can be rejected, the calculated F value from the ANOVA table is compared to the critical F value obtained from an F distribution table based on the degrees of freedom and the chosen significance level (α). If the computed F value exceeds the critical value, the null hypothesis is rejected, indicating that at least one treatment mean differs significantly from the others. However, ANOVA alone does not indicate which specific treatments differ. Therefore, if a significant difference is detected, multiple comparison tests such as Tukey’s HSD, Bonferroni, or Fisher’s LSD are performed to make pairwise comparisons between treatments and identify precisely where the differences exist.</p>
+<p><strong>Add these tests Tukey’s HSD, Bonferroni, or Fisher’s LSD</strong></p>
+</section>
+<section id="post-hoc-test" class="level2">
+<h2 class="anchored" data-anchor-id="post-hoc-test">Post-hoc test</h2>
+<p>When the ANOVA in a <strong>Completely Randomised Design (CRD)</strong> is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, Bonferroni correction method, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.</p>
+<div class="TUKEY-box">
+<p><strong>Tukey’s Honestly Significant Difference (HSD) Test</strong></p>
+<p>Let’s explore <strong>Tukey’s Honestly Significant Difference (HSD)</strong> test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey’s HSD test helps you find out exactly which pairs of treatment means differ significantly.</p>
+<p>The main idea is that Tukey’s HSD compares all possible pairs of treatment means while controlling the overall Type I error rate, so you avoid false positives when making multiple comparisons. It calculates a critical value based on the number of treatments, degrees of freedom for error (from ANOVA), and the mean square error.</p>
+<p>In CRD, this method works well because treatments are assigned completely at random and the error variance is assumed homogeneous. Tukey’s HSD uses the within-group variance from ANOVA (Mean Square Error) and the number of replicates per treatment to assess whether the difference between any two means is “honestly significant.”</p>
+<p>Before explaining the formula and steps, could you share how comfortable you are with ANOVA in CRD and post-hoc tests like Tukey’s HSD? This helps me tailor the explanation.</p>
+<div class="lsd-box">
+<p><strong>LSD (Least Significant Difference) Test</strong></p>
+<p>The <strong>Least Significant Difference (LSD)</strong> test is a post-hoc statistical procedure used in the context of a Completely Randomized Design (CRD) to identify which specific treatment means differ significantly after a one-way ANOVA has indicated an overall significant effect. When the ANOVA F-test rejects the null hypothesis, it implies that at least one treatment mean is different, but it does not specify which pairs differ. The LSD test addresses this by performing pairwise comparisons between treatment means using a critical difference threshold.</p>
+<p>The LSD is calculated as <span class="math display">\[
+\text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
+\]</span> where, t_{/2, , df_{}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.</p>
+<div class="Bonferroni-box">
+<p><strong>Bonferroni test</strong></p>
+<p>The Bonferroni test is a post-hoc multiple comparison procedure used in the context of a Completely Randomized Design (CRD) to control the family-wise error rate when conducting multiple pairwise comparisons among treatment means after a significant ANOVA result. It adjusts the significance level by dividing the desired overall alpha level (typically 0.05) by the number of comparisons being made, thereby reducing the probability of committing a Type I error due to multiple testing.For example, if there are <span class="math inline">\(g\)</span> planned comparisons, each individual test is evaluated at a significance level of <span class="math inline">\(\alpha/g\)</span>, making the criterion for statistical significance more stringent.</p>
+<p>The Bonferroni-adjusted confidence interval for a contrast <span class="math inline">\(\hat{L}\)</span> is given by:</p>
+<p><span class="math display">\[\hat{L} \pm t_{1-\alpha/(2g), df_{\text{error}}} \cdot s(\hat{L})\]</span></p>
+<p>where <span class="math inline">\(s(\hat{L})\)</span> is the standard error of the contrast.</p>
+<p>This method is particularly useful when only a small number of pre-planned comparisons are of interest, as it is more powerful than Scheffé’s method in such cases, though less powerful than Tukey’s HSD when all pairwise comparisons are required.While the Bonferroni correction is simple to apply and does not require equal sample sizes, it is considered conservative and may increase the risk of Type II errors (failing to detect true differences), especially when many comparisons are made. Therefore, it is most appropriately used in CRD when the number of comparisons is limited and specified a priori, ensuring robust inference while maintaining control over the overall error rate. The attached image illustrates the application of the Bonferroni correction in a statistical context, highlighting adjusted p-values and significance thresholds.</p>
+<section id="p-adjustment-method" class="level1">
+<h1>p Adjustment Method</h1>
+<p>In the case of a Completely Randomised Design (CRD), the p-value adjustment method is critical when performing multiple comparisons to control the risk of Type I error (false positives) that occurs due to repeated hypothesis tests across treatments or levels.</p>
+<section id="common-p-adjustment-methods" class="level2">
+<h2 class="anchored" data-anchor-id="common-p-adjustment-methods">Common p Adjustment Methods</h2>
+<p>. The <strong>Bonferroni method</strong> is the simplest and most conservative adjustment, multiplying each p-value by the number of tests, thereby controlling the family-wise error rate (FWER).</p>
+<p>. Holm, Hochberg, and Hommel methods provide strong control of the FWER and tend to be less conservative than Bonferroni, increasing the power while still controlling errors.</p>
+<p>. The Benjamini-Hochberg (BH, also known as FDR) and Benjamini-Yekutieli (BY) methods control the false discovery rate and are less stringent than the above family-wise approaches, making them a preferred choice when more discoveries are acceptable.</p>
+<p>. In R, the p.adjust function can be used with these methods. For example: p.adjust(p.values, method=“bonferroni”) or method=“BH”.</p>
+</section>
+<section id="application-in-crd" class="level2">
+<h2 class="anchored" data-anchor-id="application-in-crd">Application in CRD</h2>
+<p>. For CRD experiments, after ANOVA has indicated significant differences among treatments, pairwise comparisons (e.g., Tukey’s, Bonferroni, Holm, or BH) are made.</p>
+<p>. Tukey’s method is often used for pairwise comparisons in CRD, as it gives an exact experiment-wise error rate, especially suited for all possible pairwise contrasts among treatments.</p>
+<p>. The adjustment method should match the experimental goals: conservative corrections (Bonferroni, Holm) if strict error control is needed; FDR-based methods (BH) if tolerance for more discoveries is acceptable.</p>
+</section>
+<section id="key-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="key-recommendations">Key Recommendations</h2>
+<p>. Use Bonferroni or Holm for strict family-wise error rate control.</p>
+<p>. Use Tukey’s for all-pairwise comparisons in CRD.</p>
+<p>. Use BH for exploratory analysis with many tests.</p>
+<p>. Apply the adjustment after running ANOVA and before interpreting multiple comparisons.</p>
+<p><strong>ADD the links here</strong></p>
+<ul>
+<li>Different p-adjustment methods are listed below, if you are interested you can click on them to read more:</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 </section>
 </section>
 <section id="getting-started-in-raisins" class="level1">
@@ -281,9 +437,47 @@ This design is used to examine the effects of a single primary element without c
 </section>
 <section id="a-working-example" class="level1">
 <h1>A working example</h1>
-<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using <strong>Example 1</strong>, which is covered in <strong>Section 2.1.1</strong>. For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
+<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using <strong>Example 1</strong>, which is covered in <strong>Section</strong> . For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
 <p>The dataset format required for analysis in <strong>RAISINS</strong> is illustrated in Figure 2.3.</p>
 <p>Once the dataset is ready, head onto the Analysis tab in <strong>RAISINS</strong> and click on <strong>Browse</strong> and <strong>upload</strong> the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>RAISINS generates result table in the format given in Figure 2.5 after the analysis. The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.</p>
+<p>RAISINS generates result table in the format given in <strong>Figure</strong> after the analysis.</p>
+</section>
+<section id="customization-tabs" class="level2">
+<h2 class="anchored" data-anchor-id="customization-tabs">Customization tabs</h2>
+<p>In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in Figure.</p>
+</section>
+<section id="plots-and-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="plots-and-graphs">Plots and graphs</h2>
+</section>
+<section id="customizing-plots" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-plots">Customizing plots</h2>
+</section>
+<section id="multivariate-and-ai" class="level2">
+<h2 class="anchored" data-anchor-id="multivariate-and-ai">Multivariate and AI</h2>
+</section>
+<section id="preparing-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-your-data">Preparing your data</h2>
+</section>
+<section id="preparing-data-in-ms-excel" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-data-in-ms-excel">Preparing data in MS Excel</h2>
+</section>
+<section id="creating-dataset-in-raisins" class="level2">
+<h2 class="anchored" data-anchor-id="creating-dataset-in-raisins">Creating dataset in RAISINS</h2>
+</section>
+<section id="model-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="model-datasets">Model Datasets</h2>
+</section>
+<section id="faqs" class="level2">
+<h2 class="anchored" data-anchor-id="faqs">FAQ’s</h2>
+</section>
+</section>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 </main>
