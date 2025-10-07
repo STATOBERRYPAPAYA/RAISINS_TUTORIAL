@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <!-- ![Random assignment of treatments in CRD design](crd1.png){.center fig-align="center" width="511"} -->
 
 ::: {#fig-crd}
-![](crd1.png){#fig-crd fig-align="center" width="511"}
+![](crd1.png){fig-align="center" width="511"}
 
 Random assignment of treatments in CRD design
 :::
@@ -42,7 +42,7 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 #### This design is used to examine the effects of a single primary element without considering additional bothersome aspects.
 :::
 
-![](onewayANOVA.png){#fig-crd fig-align="center" width="511"}
+![](onewayANOVA.png){fig-align="center" width="511"}
 
 # Key Characteristics
 
@@ -171,7 +171,7 @@ The Completely Randomized Design (CRD) evaluates the following hypotheses:
 ::: callout-important
 #### Null Hypothesis (H₀)
 
-All treatment means are equal, indicating that the treatments have no significant effect on the response variable  
+All treatment means are equal, indicating that the treatments have no significant effect on the response variable
 
 $$H_0 : \mu_1 = \mu_2 = \cdots = \mu_t$$
 :::
@@ -179,7 +179,7 @@ $$H_0 : \mu_1 = \mu_2 = \cdots = \mu_t$$
 ::: callout-important
 #### Alternative Hypothesis (H₁)
 
-At least one treatment mean ($\mu_i$) is significantly different from the others, suggesting that treatments have an effect on the response variable.  
+At least one treatment mean ($\mu_i$) is significantly different from the others, suggesting that treatments have an effect on the response variable.
 
 $$H_1 : \text{At least one } \mu_i \text{ differs}$$
 :::
@@ -187,7 +187,7 @@ $$H_1 : \text{At least one } \mu_i \text{ differs}$$
 ## The Test Statistic
 
 ::: callout-tip
-#### The test statistic for CRD is calculated using the **one-way ANOVA F-statistic**:  
+#### The test statistic for CRD is calculated using the **one-way ANOVA F-statistic**:
 
 $$
 F = \frac{\text{Mean Square due to Treatments (MST)}}{\text{Mean Square due to Error (MSE)}}
@@ -201,12 +201,11 @@ This statistic is used to determine whether there are significant differences am
 ::: callout-tip
 #### Adjustment for Unequal Variances or Missing Values
 
-If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using **Aitken's adjustment** or a **corrected mean square** approach:  
+If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using **Aitken's adjustment** or a **corrected mean square** approach:
 
 $$
 F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corrected Mean Square Error}}
-$$
-This ensures that the test remains valid under minor violations of CRD assumptions.
+$$ This ensures that the test remains valid under minor violations of CRD assumptions.
 :::
 
 ## Interpreting the Results
@@ -219,7 +218,7 @@ In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is use
 
 When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, Bonferroni correction method, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
 
-::: TUKEY-box
+::::: TUKEY-box
 **Tukey’s Honestly Significant Difference (HSD) Test**
 
 Let's explore **Tukey's Honestly Significant Difference (HSD)** test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey's HSD test helps you find out exactly which pairs of treatment means differ significantly.
@@ -230,21 +229,17 @@ In CRD, this method works well because treatments are assigned completely at ran
 
 Before explaining the formula and steps, could you share how comfortable you are with ANOVA in CRD and post-hoc tests like Tukey's HSD? This helps me tailor the explanation.
 
-::: lsd-box
-**LSD (Least Significant Difference) Test**  
+:::: lsd-box
+**LSD (Least Significant Difference) Test**
 
 The **Least Significant Difference (LSD)** test is a post-hoc statistical procedure used in the context of a Completely Randomized Design (CRD) to identify which specific treatment means differ significantly after a one-way ANOVA has indicated an overall significant effect. When the ANOVA F-test rejects the null hypothesis, it implies that at least one treatment mean is different, but it does not specify which pairs differ. The LSD test addresses this by performing pairwise comparisons between treatment means using a critical difference threshold.
 
-The LSD is calculated as 
-$$
+The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
-$$
-where, t_{\alpha/2, \, df_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), 
-MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping. 
-
+$$ where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
 
 ::: Bonferroni-box
-**Bonferroni test**   
+**Bonferroni test**
 
 The Bonferroni test is a post-hoc multiple comparison procedure used in the context of a Completely Randomized Design (CRD) to control the family-wise error rate when conducting multiple pairwise comparisons among treatment means after a significant ANOVA result. It adjusts the significance level by dividing the desired overall alpha level (typically 0.05) by the number of comparisons being made, thereby reducing the probability of committing a Type I error due to multiple testing.For example, if there are $g$ planned comparisons, each individual test is evaluated at a significance level of $\alpha/g$, making the criterion for statistical significance more stringent.
 
@@ -262,41 +257,41 @@ In the case of a Completely Randomised Design (CRD), the p-value adjustment meth
 
 ## Common p Adjustment Methods
 
- . The **Bonferroni method** is the simplest and most conservative adjustment, multiplying each p-value by the number of tests, thereby controlling the family-wise error rate (FWER).
- 
- . Holm, Hochberg, and Hommel methods provide strong control of the FWER and tend to be less conservative than Bonferroni, increasing the power while still controlling errors.
+. The **Bonferroni method** is the simplest and most conservative adjustment, multiplying each p-value by the number of tests, thereby controlling the family-wise error rate (FWER).
 
- . The Benjamini-Hochberg (BH, also known as FDR) and Benjamini-Yekutieli (BY) methods control the false discovery rate and are less stringent than the above family-wise approaches, making them a preferred choice when more discoveries are acceptable.
- 
- . In R, the p.adjust function can be used with these methods. For example: p.adjust(p.values, method="bonferroni") or method="BH".
- 
-## Application in CRD  
+. Holm, Hochberg, and Hommel methods provide strong control of the FWER and tend to be less conservative than Bonferroni, increasing the power while still controlling errors.
 
- . For CRD experiments, after ANOVA has indicated significant differences among treatments, pairwise comparisons (e.g., Tukey's, Bonferroni, Holm, or BH) are made.
+. The Benjamini-Hochberg (BH, also known as FDR) and Benjamini-Yekutieli (BY) methods control the false discovery rate and are less stringent than the above family-wise approaches, making them a preferred choice when more discoveries are acceptable.
 
- . Tukey’s method is often used for pairwise comparisons in CRD, as it gives an exact experiment-wise error rate, especially suited for all possible pairwise contrasts among treatments.
+. In R, the p.adjust function can be used with these methods. For example: p.adjust(p.values, method="bonferroni") or method="BH".
 
- . The adjustment method should match the experimental goals: conservative corrections (Bonferroni, Holm) if strict error control is needed; FDR-based methods (BH) if tolerance for more discoveries is acceptable.
+## Application in CRD
+
+. For CRD experiments, after ANOVA has indicated significant differences among treatments, pairwise comparisons (e.g., Tukey's, Bonferroni, Holm, or BH) are made.
+
+. Tukey’s method is often used for pairwise comparisons in CRD, as it gives an exact experiment-wise error rate, especially suited for all possible pairwise contrasts among treatments.
+
+. The adjustment method should match the experimental goals: conservative corrections (Bonferroni, Holm) if strict error control is needed; FDR-based methods (BH) if tolerance for more discoveries is acceptable.
 
 ## Key Recommendations
 
- . Use Bonferroni or Holm for strict family-wise error rate control.
+. Use Bonferroni or Holm for strict family-wise error rate control.
 
- . Use Tukey’s for all-pairwise comparisons in CRD.
+. Use Tukey’s for all-pairwise comparisons in CRD.
 
- . Use BH for exploratory analysis with many tests.
+. Use BH for exploratory analysis with many tests.
 
- . Apply the adjustment after running ANOVA and before interpreting multiple comparisons.
+. Apply the adjustment after running ANOVA and before interpreting multiple comparisons.
 
-**ADD the links here** 
+**ADD the links here**
 
-- Different p-adjustment methods are listed below, if you are interested you can click on them to read more:
--
--
--
--
--
--
+-   Different p-adjustment methods are listed below, if you are interested you can click on them to read more:
+-   
+-   
+-   
+-   
+-   
+-   
 
 # Getting started in RAISINS
 
@@ -316,8 +311,7 @@ Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click o
 
 ## Results
 
-RAISINS generates result table in the format given in Figure 2.5 after the analysis.
-The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.
+RAISINS generates result table in the format given in Figure 2.5 after the analysis. The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
 
 RAISINS generates result table in the format given in **Figure** after the analysis.
 
@@ -325,30 +319,76 @@ RAISINS generates result table in the format given in **Figure** after the analy
 
 In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in Figure.
 
-
-
-
-
-
 ## Plots and graphs
 
+**RAISINS** is designed for a smooth and hassle-free experience. Once you click the **Run Analysis** button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible plot related to the **Completely Randomised Design** is readily available. Simply click on the Plots & Graphs tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.
 
-## Customizing plots
+![BOX PLOT](BOXPLOT.webp){fig-align="center"} ![VIOLIN PLOT](VIOLIN.webp){fig-align="center"} ![Barplot with grouping](BARPLOTGROUP.webp){fig-align="center"} ![Mean Value Plot](MEANVALUE.webp){fig-align="center"} ![Connected Line Plot](CONNECTEDLINE.webp){fig-align="center"}
 
+# Advanced Plots
+
+![Advanced Raincloud Plot](ADVANRAINCLOUD.webp){fig-align="center"}
+
+![Circular Bar Plot](CIRCULARBAR.webp){fig-align="center"} ![Raincloud Plot](RAINCLOU.webp){fig-align="center"} ![Pair Plot](PAIRPLOT.webp){fig-align="center"} ![Correlation Plot](CORRPLOT.webp){fig-align="center"} \## Customizing plots
+
+RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user.Click on the below images to get a clear idea on the customizing features
+
+![Customization](CSSett.webp){fig-align="center"} ![Customization](CSSett.webp){fig-align="center"}
 
 ## Multivariate and AI
 
+The **Completely Randomised Design (CRD)** is generally used to compare the effects of different treatments on a single response variable. However, when multiple traits are measured for the same set of treatments (for example: \*\*Yield, Plant Height, Leaf Area, Root Weight, and Quality), you can explore them together using the Multivariate tab (see Figure -----).Multivariate analysis in CRD helps you examine how treatments perform across several traits simultaneously-offering a broader view of treatment performance. Remember, the Principal Component Analysis (PCA) used here is an exploratory tool, helping you visualize relationships among traits and treatments, but it is not an inferential statistical test.
+
+![Multivariate tab in RAISINS](MULTITAB.webp){fig-align="center" width="595"}
+![](MAN2.webp){fig-align="center" width="595"}
+![](MAN3.webp){fig-align="center" width="595"}
+
+![](MAN4.webp){fig-align="center" width="595"}
+![](MAN5.webp){fig-align="center" width="595"}
+
+![](MAN6.webp){fig-align="center" width="595"}
+
+![](MAN7.webp){fig-align="center" width="595"}
+![](MAN8.webp){fig-align="center" width="595"}
+![](CRD_Scree_Plot2025-10-07.webp){fig-align="center" width="595"}
+![](Indexplot12025-10-07.webp){fig-align="center" width="595"}
+![](Indexplot22025-10-07.webp){fig-align="center" width="595"}
+![](BiplotPCA2025-10-07.webp){fig-align="center" width="595"}
 
 ## Preparing your data
 
+"Your analysis is only as good as your data! Feed RAISINS high-quality data, and it will deliver powerful insights  feed it messy data, and the results won’t be trustworthy."
+
+ 1. Create your dataset in MS Excel  
+
+ 2. Build your dataset directly within the RAISINS app
 
 ## Preparing data in MS Excel
 
+Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in Figure----. As illustrated in Figure 2.3, groups must appear repeatedly based on replications, and the data can also be arranged as shown in Figure-----.
 
 ## Creating dataset in RAISINS
+
+If you’re unsure about the correct format for creating a dataset, don’t worry—Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:
+
+- Navigate to the **Create Data Tab**
+
+- Select the number of **Treatments**
+
+- Select number of **Replications**
+
+- Click on **Create** button  
+
+Model layout will appear as shown in **Figure-----**. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis`tab!
 
 
 ## Model Datasets
 
-
 ## FAQ’s
+
+![](2.webp){fig-align="center" width="595"}
+
+## USER 
+
+![](user_2.webp){fig-align="center" width="595"}
+
