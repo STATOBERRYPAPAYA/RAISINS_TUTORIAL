@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
 Random assignment of treatments in CRD design
 :::
 
-In this design, **experimental units** are randomly assigned to **treatments** without any systematic bias, ensuring that every unit has an equal probability of receiving any given treatment. This random assignment helps counter potential biases and addresses the inherent variability among experimental units, making comparisons between treatments impartial. In order to account for **natural variation** in soil and environment, the first famous instances involved agricultural field trials in which adjacent plots were randomly assigned to different crop kinds or fertilizer treatments. **Agricultural field trials** were the first well-known instances, in which adjacent plots were randomly assigned to different crop varieties or fertilizer treatments to account for inherent soil and environmental variance.
+In this design,**experimental units** are randomly assigned to **treatments** without any systematic bias, ensuring that every unit has an equal probability of receiving any given treatment. This random assignment helps counter potential biases and addresses the inherent variability among experimental units, making comparisons between treatments impartial. In order to account for **natural variation** in soil and environment, the first famous instances involved agricultural field trials in which adjacent plots were randomly assigned to different crop kinds or fertilizer treatments. **Agricultural field trials** were the first well-known instances, in which adjacent plots were randomly assigned to different crop varieties or fertilizer treatments to account for inherent soil and environmental variance.
 
 <!-- [Random assignment of treatments in CRD](crd1.png) -->
 
@@ -46,93 +46,273 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 
 # Key Characteristics
 
-• **Random allocation**: Treatments are randomly assigned to experimental units
+Here are the main features of the design - hover or click each point to see more information.
 
-• **Homogeneous conditions**: Best suited when experimental units are relatively uniform
+<ul>
+  <li>
+    <span data-bs-toggle="tooltip" data-bs-placement="right" 
+          title="Treatments are randomly assigned to experimental units to eliminate bias.">
+      🎲 <b>Random allocation</b>
+    </span>
+  </li>
 
-• **Flexibility**: Number of replications can vary between treatments
+  <li>
+    <span data-bs-toggle="tooltip" data-bs-placement="right" 
+          title="Best suited when experimental units are relatively uniform">
+      🌿 <b>Homogeneous conditions</b>
+    </span>
+  </li>
 
-• **Simple analysis**: Uses one-way ANOVA for statistical analysis
+  <li>
+    <span data-bs-toggle="tooltip" data-bs-placement="right" 
+          title="The number of replications can vary between treatments, offering flexibility in design.">
+      🔄 <b>Flexibility</b>
+    </span>
+  </li>
 
-# When to Use CRD ?
+  <li>
+    <span data-bs-toggle="tooltip" data-bs-placement="right" 
+          title="Uses one-way ANOVA for statistical analysis.">
+      📊 <b>Simple analysis</b>
+    </span>
+  </li>
+</ul>
 
-**Appropriate situations**:
+```{=html}
+<script>
+// Enable all Bootstrap tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+```
 
-• Laboratory experiments with controlled conditions
 
-• Greenhouse experiments with uniform environmental conditions
+# When to Use CRD? Explore Each Situation
 
-• Animal feeding trials where animals are relatively homogeneous
+**Below given are the appropriate situations to be used for CRD, please click on each icon to see more information**
 
-• Pot experiments with uniform soil and environmental conditions
+<details>
+  <summary>🧪 Laboratory Experiments</summary>
+  Best used under controlled conditions for reproducible results.
+</details>
 
-# Not recommended when:
+<details>
+  <summary>🌱 Greenhouse Experiments</summary>
+  Ideal for experiments where environmental uniformity is crucial.
+</details>
 
-• Experimental area shows significant variation (use RCBD instead)
+<details>
+  <summary>🐄 Animal Feeding Trials</summary>
+  Works well when animals are homogeneous in age, breed, or weight.
+</details>
 
-• There's a known gradient in the experimental material
+<details>
+  <summary>🪴 Pot Experiments</summary>
+  Suitable for experiments with uniform soil and environmental factors.
+</details>
 
-• Field experiments with heterogeneous soil conditions
+# Advantages & Disadvantages of CRD
 
-# Advantages and Disadvantages
+:::: {.columns}
 
-## Advantages:
-
-• Simple to design and analyze
-
-• Flexible in number of treatments and replications
-
-• Maximum degrees of freedom for error term
-
-• Missing data doesn't complicate analysis significantly
-
+::: {.column width="48%"}
+::: {.callout-tip icon=false}
+## Advantages
+• Simple to design and analyze  
+• Flexible in number of treatments and replications  
+• Maximum degrees of freedom for error term  
+• Missing data doesn't complicate analysis significantly  
 • Easy to understand and implement
+:::
+:::
 
-## Disadvantages:
-
-• Requires homogeneous experimental conditions
-
-• Less precise than blocking designs when heterogeneity exists
-
+::: {.column width="48%"}
+::: {.callout-warning icon=false}
+## Disadvantages
+• Requires homogeneous experimental conditions  
+• Less precise than blocking designs when heterogeneity exists  
 • Can lead to larger experimental error if conditions are not uniform
+:::
+:::
+
+::::
 
 ## Layout Example
 
 Suppose we're testing 4 fertilizer treatments (A, B, C, D) with 5 replications each (20 experimental units total):
 
-::: panel-tabset
-### CRD Layout Preview
+## Randomized CRD Layout
 
-<iframe src="crd_colored_layout.html" width="100%" height="500px" style="border:none;">
+```{css, echo=FALSE}
 
-</iframe>
-:::
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 15px;
+  padding: 30px;
+  background: white;
+  margin: 20px auto;
+}
 
-# Statistical Model
+.cell {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  border: 2px solid #333;
+  box-shadow: 
+    6px 6px 0px rgba(0,0,0,0.15),
+    12px 12px 0px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-The linear model for **CRD** is:
+.cell:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 
+    9px 9px 0px rgba(0,0,0,0.15),
+    15px 15px 0px rgba(0,0,0,0.08);
+}
 
-``` r
-Yᵢⱼ = μ + τᵢ + εᵢⱼ  
+.treatment-a {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.treatment-b {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44b3aa 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.treatment-c {
+  background: linear-gradient(135deg, #ffd93d 0%, #f5ca1f 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.treatment-d {
+  background: linear-gradient(135deg, #a8e6cf 0%, #8fd9b6 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 20px;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.legend-box {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+}
+
+.legend-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.center {
+  text-align: center;
+}
 ```
 
-**Where**:
+```{r, echo=FALSE, results='asis'}
+# Create the CRD layout
+layout <- matrix(c(
+  "C", "A", "D", "B", "C",
+  "B", "D", "A", "C", "A",
+  "D", "C", "B", "A", "D",
+  "B", "A", "C", "D", "B"
+), nrow = 4, byrow = TRUE)
 
-• **Yᵢⱼ** = observation for the jth unit receiving the ith treatment
+# Generate HTML for the grid
+cat('<div class="center">\n')
+cat('<div class="grid-container">\n')
 
-• **μ** = overall mean
+for (i in 1:nrow(layout)) {
+  for (j in 1:ncol(layout)) {
+    treatment <- layout[i, j]
+    class_name <- paste0("cell treatment-", tolower(treatment))
+    cat(sprintf('  <div class="%s">%s</div>\n', class_name, treatment))
+  }
+}
 
-• **τᵢ** = effect of the ith treatment
+cat('</div>\n')
+cat('</div>\n')
+```
 
-• **εᵢⱼ** = random error (assumed to be normally distributed with mean 0 and variance σ²)
+# CRD Linear Model
 
-• **i** = 1, 2, ..., t (treatments)
+Explore the linear model for **Completely Randomized Design (CRD)** interactively:
 
-• **j** = 1, 2, ..., r (replications)
+<div class="formula-card" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" 
+     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'">
+  
+  <h2 style="color:#00695c; text-align:center;">CRD Linear Model</h2>
+  
+  <p style="font-size:1.5rem; text-align:center; color:#004d40;">
+    <strong>Y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></strong>
+  </p>
+  
+  <ul style="font-size:1.1rem; line-height:1.8; color:#004d40;">
+    <li><strong>Y<sub>ij</sub></strong> = observation for the <em>jth</em> unit receiving the <em>i</em>th treatment</li>
+    <li><strong>μ</strong> = overall mean</li>
+    <li><strong>τ<sub>i</sub></strong> = effect of the <em>i</em>th treatment</li>
+    <li><strong>ε<sub>ij</sub></strong> = random error (assumed ~ N(0, σ²))</li>
+    <li><strong>i</strong> = 1, 2, ..., t (number of treatments)</li>
+    <li><strong>j</strong> = 1, 2, ..., r (number of replications)</li>
+  </ul>
+  
+  <p style="text-align:center; font-size:0.9rem; color:#00796b;">Hover over this card to see it pop!</p>
+</div>
+
+<style>
+.formula-card {
+  background: linear-gradient(135deg, #b2dfdb, #e0f2f1);
+  border-left: 6px solid #004d40;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 700px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+</style>
 
 # Analysis of Variance (ANOVA)
 
-ANOVA Table Structure: as in @fig-crd
+ANOVA - CRD
+
+
 
 # Example
 
@@ -140,11 +320,37 @@ Let’s explore some practical situations in agricultural research where the Com
 
 ## Study Context
 
-1.  Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.
+<p>
 
-2.  The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.
+1.  Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
 
-3.  An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.
+</p>
+
+::: {#example-image1 style="display: none;"}
+<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
+:::
+
+<p>
+
+2.  The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+
+</p>
+
+::: {#example-image1 style="display: none;"}
+<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
+:::
+
+<p>
+
+3.  An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+
+</p>
+
+::: {#example-image1 style="display: none;"}
+<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
+:::
+
+<p>
 
 ## Theory
 
@@ -154,15 +360,15 @@ The theory of the Completely Randomized Design can be read below, or if you're a
 
 In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
 
-**Independence** : Independence in experimental design refers to the fact that the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit. Because it gives us confidence that every unit offers a distinct and unaffected piece of information regarding the process or treatment under study, this is a fundamental premise of the **majority** of statistical tests.
+- **Independence** : In experimental design the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit
 
-**Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment. This procedure balances **known** and **unknown** factors across groups, removing selection bias and guaranteeing fairness. By doing this, the groups are initially made comparable, and any variations in results can be ascribed to the treatments rather than underlying differences. Random number tables, computer algorithms, and other chance techniques are frequently used for randomization.
+- **Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment
 
-**Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
+- **Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
 
-**Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
+- **Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
 
-**Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
+- **Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
 
 ## Hypotheses
 
@@ -218,9 +424,7 @@ In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is use
 
 When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, Bonferroni correction method, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
 
-::::: TUKEY-box
-**Tukey’s Honestly Significant Difference (HSD) Test**
-
+**Tukey's Test**
 Let's explore **Tukey's Honestly Significant Difference (HSD)** test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey's HSD test helps you find out exactly which pairs of treatment means differ significantly.
 
 The main idea is that Tukey's HSD compares all possible pairs of treatment means while controlling the overall Type I error rate, so you avoid false positives when making multiple comparisons. It calculates a critical value based on the number of treatments, degrees of freedom for error (from ANOVA), and the mean square error.
@@ -229,7 +433,6 @@ In CRD, this method works well because treatments are assigned completely at ran
 
 Before explaining the formula and steps, could you share how comfortable you are with ANOVA in CRD and post-hoc tests like Tukey's HSD? This helps me tailor the explanation.
 
-:::: lsd-box
 **LSD (Least Significant Difference) Test**
 
 The **Least Significant Difference (LSD)** test is a post-hoc statistical procedure used in the context of a Completely Randomized Design (CRD) to identify which specific treatment means differ significantly after a one-way ANOVA has indicated an overall significant effect. When the ANOVA F-test rejects the null hypothesis, it implies that at least one treatment mean is different, but it does not specify which pairs differ. The LSD test addresses this by performing pairwise comparisons between treatment means using a critical difference threshold.
@@ -237,19 +440,6 @@ The **Least Significant Difference (LSD)** test is a post-hoc statistical proced
 The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 $$ where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
-
-::: Bonferroni-box
-**Bonferroni test**
-
-The Bonferroni test is a post-hoc multiple comparison procedure used in the context of a Completely Randomized Design (CRD) to control the family-wise error rate when conducting multiple pairwise comparisons among treatment means after a significant ANOVA result. It adjusts the significance level by dividing the desired overall alpha level (typically 0.05) by the number of comparisons being made, thereby reducing the probability of committing a Type I error due to multiple testing.For example, if there are $g$ planned comparisons, each individual test is evaluated at a significance level of $\alpha/g$, making the criterion for statistical significance more stringent.
-
-The Bonferroni-adjusted confidence interval for a contrast $\hat{L}$ is given by:
-
-$$\hat{L} \pm t_{1-\alpha/(2g), df_{\text{error}}} \cdot s(\hat{L})$$
-
-where $s(\hat{L})$ is the standard error of the contrast.
-
-This method is particularly useful when only a small number of pre-planned comparisons are of interest, as it is more powerful than Scheffé's method in such cases, though less powerful than Tukey's HSD when all pairwise comparisons are required.While the Bonferroni correction is simple to apply and does not require equal sample sizes, it is considered conservative and may increase the risk of Type II errors (failing to detect true differences), especially when many comparisons are made. Therefore, it is most appropriately used in CRD when the number of comparisons is limited and specified a priori, ensuring robust inference while maintaining control over the overall error rate. The attached image illustrates the application of the Bonferroni correction in a statistical context, highlighting adjusted p-values and significance thresholds.
 
 # p Adjustment Method
 
@@ -303,7 +493,7 @@ Head to www.raisins.live where you can access various analytical modules. You ca
 
 # A working example
 
-We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
+We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
 The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
@@ -321,17 +511,88 @@ In RAISINS, you can easily customize your analysis by adjusting settings such as
 
 ## Plots and graphs
 
-**RAISINS** is designed for a smooth and hassle-free experience. Once you click the **Run Analysis** button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible plot related to the **Completely Randomised Design** is readily available. Simply click on the Plots & Graphs tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.
+Do follow the below given steps for making plots and graphs for **Completely Randomised Design**
 
-![BOX PLOT](BOXPLOT.webp){fig-align="center"} ![VIOLIN PLOT](VIOLIN.webp){fig-align="center"} ![Barplot with grouping](BARPLOTGROUP.webp){fig-align="center"} ![Mean Value Plot](MEANVALUE.webp){fig-align="center"} ![Connected Line Plot](CONNECTEDLINE.webp){fig-align="center"}
+- **Step 1**: Click <em>Run Analysis</em> - your results appear instantly, organized and ready to review.  
 
-# Advanced Plots
+- **Step 2**: Open the <em>Plots & Graphs</em> tab to find all CRD plots in one place.  
 
-![Advanced Raincloud Plot](ADVANRAINCLOUD.webp){fig-align="center"}
+- **Step 3**: Use the ⚙️ gear icon to customize your plots - colors, labels, styles, and more!  
 
-![Circular Bar Plot](CIRCULARBAR.webp){fig-align="center"} ![Raincloud Plot](RAINCLOU.webp){fig-align="center"} ![Pair Plot](PAIRPLOT.webp){fig-align="center"} ![Correlation Plot](CORRPLOT.webp){fig-align="center"} \## Customizing plots
+- **Step 4**: Export your plots in <em>high-quality PNG (300 dpi)</em> for reports or presentations.  
 
-RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user.Click on the below images to get a clear idea on the customizing features
+RAISINS transforms analysis into a <strong>visual, interactive, and effortless journey
+
+::: {.grid}
+
+::: {.g-col-6}
+![BOX PLOT](CRDBOXPLOT.webp){fig-align="center"} 
+:::
+
+::: {.g-col-6}  
+
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+
+:::
+
+:::
+
+::: {.grid}
+::: {.g-col-6}
+![BOX PLOT](CRDBOXPLOT.webp){fig-align="center"} 
+:::
+::: {.g-col-6 .d-flex .align-items-center}  
+::: {.px-3}
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+:::
+:::
+:::
+
+::: {.grid}
+::: {.g-col-6}
+![VIOLIN PLOT](CRDVIOLINPLOT.webp){fig-align="center"} 
+:::
+::: {.g-col-6 .d-flex .align-items-center}  
+::: {.px-3}
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+:::
+:::
+:::
+
+::: {.grid}
+::: {.g-col-6}
+![Mean Value Plot](CRDMEANVPLOT.webp){fig-align="center"} 
+:::
+::: {.g-col-6 .d-flex .align-items-center}  
+::: {.px-3}
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+:::
+:::
+:::  
+
+::: {.grid}
+::: {.g-col-6}
+![Connected Line Plot](CRDCONNECT.webp){fig-align="center"} 
+:::
+::: {.g-col-6 .d-flex .align-items-center}  
+::: {.px-3}
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+:::
+:::
+:::  
+
+::: {.grid}
+::: {.g-col-6}
+![Bar Plot with grouping](CRDBARPLOT.webp){fig-align="center"} 
+:::
+::: {.g-col-6 .d-flex .align-items-center}  
+::: {.px-3}
+A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+:::
+:::
+:::
+
+RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features
 
 ![Customization](CSSett.webp){fig-align="center"} ![Customization](CSSett.webp){fig-align="center"}
 
@@ -383,6 +644,20 @@ Model layout will appear as shown in **Figure-----**. Now you may enter the obse
 
 
 ## Model Datasets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## FAQ’s
 
