@@ -49,33 +49,15 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 Here are the main features of the design - hover or click each point to see more information.
 
 <ul>
-  <li>
-    <span data-bs-toggle="tooltip" data-bs-placement="right" 
-          title="Treatments are randomly assigned to experimental units to eliminate bias.">
-      🎲 <b>Random allocation</b>
-    </span>
-  </li>
 
-  <li>
-    <span data-bs-toggle="tooltip" data-bs-placement="right" 
-          title="Best suited when experimental units are relatively uniform">
-      🌿 <b>Homogeneous conditions</b>
-    </span>
-  </li>
+<li>[ 🎲 <b>Random allocation</b> ]{data-bs-toggle="tooltip" data-bs-placement="right" title="Treatments are randomly assigned to experimental units to eliminate bias."}</li>
 
-  <li>
-    <span data-bs-toggle="tooltip" data-bs-placement="right" 
-          title="The number of replications can vary between treatments, offering flexibility in design.">
-      🔄 <b>Flexibility</b>
-    </span>
-  </li>
+<li>[ 🌿 <b>Homogeneous conditions</b> ]{data-bs-toggle="tooltip" data-bs-placement="right" title="Best suited when experimental units are relatively uniform"}</li>
 
-  <li>
-    <span data-bs-toggle="tooltip" data-bs-placement="right" 
-          title="Uses one-way ANOVA for statistical analysis.">
-      📊 <b>Simple analysis</b>
-    </span>
-  </li>
+<li>[ 🔄 <b>Flexibility</b> ]{data-bs-toggle="tooltip" data-bs-placement="right" title="The number of replications can vary between treatments, offering flexibility in design."}</li>
+
+<li>[ 📊 <b>Simple analysis</b> ]{data-bs-toggle="tooltip" data-bs-placement="right" title="Uses one-way ANOVA for statistical analysis."}</li>
+
 </ul>
 
 ```{=html}
@@ -88,56 +70,67 @@ tooltipTriggerList.map(function (tooltipTriggerEl) {
 </script>
 ```
 
-
 # When to Use CRD? Explore Each Situation
 
 **Below given are the appropriate situations to be used for CRD, please click on each icon to see more information**
 
 <details>
-  <summary>🧪 Laboratory Experiments</summary>
-  Best used under controlled conditions for reproducible results.
+
+<summary>🧪 Laboratory Experiments</summary>
+
+Best used under controlled conditions for reproducible results.
+
 </details>
 
 <details>
-  <summary>🌱 Greenhouse Experiments</summary>
-  Ideal for experiments where environmental uniformity is crucial.
+
+<summary>🌱 Greenhouse Experiments</summary>
+
+Ideal for experiments where environmental uniformity is crucial.
+
 </details>
 
 <details>
-  <summary>🐄 Animal Feeding Trials</summary>
-  Works well when animals are homogeneous in age, breed, or weight.
+
+<summary>🐄 Animal Feeding Trials</summary>
+
+Works well when animals are homogeneous in age, breed, or weight.
+
 </details>
 
 <details>
-  <summary>🪴 Pot Experiments</summary>
-  Suitable for experiments with uniform soil and environmental factors.
+
+<summary>🪴 Pot Experiments</summary>
+
+Suitable for experiments with uniform soil and environmental factors.
+
 </details>
 
 # Advantages & Disadvantages of CRD
 
-:::: {.columns}
-
-::: {.column width="48%"}
-::: {.callout-tip icon=false}
+::::::: columns
+:::: {.column width="48%"}
+::: {.callout-tip icon="false"}
 ## Advantages
-• Simple to design and analyze  
-• Flexible in number of treatments and replications  
-• Maximum degrees of freedom for error term  
-• Missing data doesn't complicate analysis significantly  
+
+• Simple to design and analyze\
+• Flexible in number of treatments and replications\
+• Maximum degrees of freedom for error term\
+• Missing data doesn't complicate analysis significantly\
 • Easy to understand and implement
 :::
-:::
+::::
 
-::: {.column width="48%"}
-::: {.callout-warning icon=false}
+:::: {.column width="48%"}
+::: {.callout-warning icon="false"}
 ## Disadvantages
-• Requires homogeneous experimental conditions  
-• Less precise than blocking designs when heterogeneity exists  
+
+• Requires homogeneous experimental conditions\
+• Less precise than blocking designs when heterogeneity exists\
 • Can lead to larger experimental error if conditions are not uniform
 :::
-:::
-
 ::::
+:::::::
 
 ## Layout Example
 
@@ -275,27 +268,43 @@ cat('</div>\n')
 
 Explore the linear model for **Completely Randomized Design (CRD)** interactively:
 
-<div class="formula-card" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" 
-     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'">
-  
-  <h2 style="color:#00695c; text-align:center;">CRD Linear Model</h2>
-  
-  <p style="font-size:1.5rem; text-align:center; color:#004d40;">
-    <strong>Y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></strong>
-  </p>
-  
-  <ul style="font-size:1.1rem; line-height:1.8; color:#004d40;">
-    <li><strong>Y<sub>ij</sub></strong> = observation for the <em>jth</em> unit receiving the <em>i</em>th treatment</li>
-    <li><strong>μ</strong> = overall mean</li>
-    <li><strong>τ<sub>i</sub></strong> = effect of the <em>i</em>th treatment</li>
-    <li><strong>ε<sub>ij</sub></strong> = random error (assumed ~ N(0, σ²))</li>
-    <li><strong>i</strong> = 1, 2, ..., t (number of treatments)</li>
-    <li><strong>j</strong> = 1, 2, ..., r (number of replications)</li>
-  </ul>
-  
-  <p style="text-align:center; font-size:0.9rem; color:#00796b;">Hover over this card to see it pop!</p>
-</div>
+::: {.formula-card onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'"}
+<h2 style="color:#00695c; text-align:center;">
 
+CRD Linear Model
+
+</h2>
+
+<p style="font-size:1.5rem; text-align:center; color:#004d40;">
+
+<strong>Y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></strong>
+
+</p>
+
+<ul style="font-size:1.1rem; line-height:1.8; color:#004d40;">
+
+<li><strong>Y<sub>ij</sub></strong> = observation for the <em>jth</em> unit receiving the <em>i</em>th treatment</li>
+
+<li><strong>μ</strong> = overall mean</li>
+
+<li><strong>τ<sub>i</sub></strong> = effect of the <em>i</em>th treatment</li>
+
+<li><strong>ε<sub>ij</sub></strong> = random error (assumed \~ N(0, σ²))</li>
+
+<li><strong>i</strong> = 1, 2, ..., t (number of treatments)</li>
+
+<li><strong>j</strong> = 1, 2, ..., r (number of replications)</li>
+
+</ul>
+
+<p style="text-align:center; font-size:0.9rem; color:#00796b;">
+
+Hover over this card to see it pop!
+
+</p>
+:::
+
+```{=html}
 <style>
 .formula-card {
   background: linear-gradient(135deg, #b2dfdb, #e0f2f1);
@@ -307,12 +316,11 @@ Explore the linear model for **Completely Randomized Design (CRD)** interactivel
   transition: transform 0.3s, box-shadow 0.3s;
 }
 </style>
+```
 
 # Analysis of Variance (ANOVA)
 
 ANOVA - CRD
-
-
 
 # Example
 
@@ -336,7 +344,7 @@ Let’s explore some practical situations in agricultural research where the Com
 
 </p>
 
-::: {#example-image1 style="display: none;"}
+::: {style="display: none;"}
 <img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
 :::
 
@@ -346,7 +354,7 @@ Let’s explore some practical situations in agricultural research where the Com
 
 </p>
 
-::: {#example-image1 style="display: none;"}
+::: {style="display: none;"}
 <img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
 :::
 
@@ -360,15 +368,15 @@ The theory of the Completely Randomized Design can be read below, or if you're a
 
 In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
 
-- **Independence** : In experimental design the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit
+-   **Independence** : In experimental design the **outcome** (response) of one experimental unit is not affected by or connected to the outcome of another unit
 
-- **Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment
+-   **Random Assignment** : In experimental design, **randomization** is the process of allocating treatments to experimental units at random, ensuring that each unit has an equal chance of receiving any given treatment
 
-- **Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
+-   **Homogeneity of Variance** : Also referred to as homoscedasticity, the variance of mistakes should be the same for every group or treatment
 
-- **Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
+-   **Normality** : Each treatment's residuals or errors should have a normal distribution. For ANOVA results to be valid, this is necessary
 
-- **Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
+-   **Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
 
 ## Hypotheses
 
@@ -424,7 +432,8 @@ In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is use
 
 When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, Bonferroni correction method, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
 
-**Tukey's Test**
+**Tukey's Test** 
+
 Let's explore **Tukey's Honestly Significant Difference (HSD)** test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey's HSD test helps you find out exactly which pairs of treatment means differ significantly.
 
 The main idea is that Tukey's HSD compares all possible pairs of treatment means while controlling the overall Type I error rate, so you avoid false positives when making multiple comparisons. It calculates a critical value based on the number of treatments, degrees of freedom for error (from ANOVA), and the mean square error.
@@ -440,6 +449,7 @@ The **Least Significant Difference (LSD)** test is a post-hoc statistical proced
 The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 $$ where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
+
 
 # p Adjustment Method
 
@@ -495,134 +505,456 @@ Head to www.raisins.live where you can access various analytical modules. You ca
 
 We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
+![Working Example](mangodata.webp){fig-align="center"}
 The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
 Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
 
-## Results
+
+
+# Results
 
 RAISINS generates result table in the format given in Figure 2.5 after the analysis. The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
 
 RAISINS generates result table in the format given in **Figure** after the analysis.
 
+![Analysis Window in RAISINS](sstabs.webp){fig-align="center"}
+
+![Analysis Window in RAISINS](Results table .webp){fig-align="center"}
+
 ## Customization tabs
 
 In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in Figure.
+
+
+![Customization tab](CUSRES.webp){fig-align="center"}
 
 ## Plots and graphs
 
 Do follow the below given steps for making plots and graphs for **Completely Randomised Design**
 
-- **Step 1**: Click <em>Run Analysis</em> - your results appear instantly, organized and ready to review.  
+-   **Step 1**: Click <em>Run Analysis</em> - your results appear instantly, organized and ready to review.
 
-- **Step 2**: Open the <em>Plots & Graphs</em> tab to find all CRD plots in one place.  
+-   **Step 2**: Open the <em>Plots & Graphs</em> tab to find all CRD plots in one place.
 
-- **Step 3**: Use the ⚙️ gear icon to customize your plots - colors, labels, styles, and more!  
+-   **Step 3**: Use the ⚙️ gear icon to customize your plots - colors, labels, styles, and more!
 
-- **Step 4**: Export your plots in <em>high-quality PNG (300 dpi)</em> for reports or presentations.  
+-   **Step 4**: Export your plots in <em>high-quality PNG (300 dpi)</em> for reports or presentations.
 
 RAISINS transforms analysis into a <strong>visual, interactive, and effortless journey
 
-::: {.grid}
+```{=html}
+<style>
+/* Container for the two images */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
 
-::: {.g-col-6}
-![BOX PLOT](CRDBOXPLOT.webp){fig-align="center"} 
+/* Image card styling */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* Image itself */
+.img-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease;
+}
+
+/* Slight zoom on hover */
+.img-card:hover img,
+.img-card:focus-within img {
+  transform: scale(1.05);
+}
+
+/* Overlay text */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Show overlay on hover */
+.img-card:hover .img-overlay,
+.img-card:focus-within .img-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text inside overlay */
+.img-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+```
+
+::: image-grid
+<!-- Boxplot Image -->
+
+<figure class="img-card" tabindex="0">
+
+<img src="CRDBOXPLOT.webp" alt="Boxplot visualization"/>
+
+<figcaption class="img-overlay">
+
+<p><strong>Boxplot</strong> summarizes continuous data distribution using quartiles and identifies outliers.</p>
+
+</figcaption>
+
+</figure>
+
+<!-- Barplot Image -->
+
+<figure class="img-card" tabindex="0">
+
+<img src="CRDBARPLOT.webp" alt="Barplot visualization"/>
+
+<figcaption class="img-overlay">
+
+<p><strong>Barplot</strong> displays categorical data with rectangular bars proportional to values.</p>
+
+</figcaption>
+
+</figure>
 :::
 
-::: {.g-col-6}  
+<!-- Put this in the body of your .qmd file -->
 
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
+```{=html}
+<style>
+/* Container grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
 
+/* Figure wrapper */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* The image itself */
+.img-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .35s ease;
+}
+
+/* Zoom effect on hover/focus */
+.img-card:hover img,
+.img-card:focus-within img {
+  transform: scale(1.06);
+}
+
+/* Overlay that contains the explanation text */
+.img-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.65) 60%);
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform .28s ease, opacity .28s ease;
+  opacity: 0;
+  pointer-events: none; /* prevents accidental clicks when hidden */
+}
+
+/* Reveal on hover or keyboard focus */
+.img-card:hover .img-overlay,
+.img-card:focus-within .img-overlay {
+  transform: translateY(0%);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Text inside overlay */
+.img-overlay .explain {
+  max-height: 45%;
+  overflow: auto;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* Make keyboard-accessible: show focus ring on the button-like element */
+.img-card a {
+  outline: none;
+}
+.img-card a:focus {
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.18);
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 680px) {
+  .image-grid { grid-template-columns: 1fr; }
+}
+</style>
+```
+
+```{=html}
+<style>
+/* Container for two images side by side */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Image card wrapper */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* Image styling */
+.img-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease;
+}
+
+/* Zoom effect */
+.img-card:hover img,
+.img-card:focus-within img {
+  transform: scale(1.05);
+}
+
+/* Overlay styling */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Show overlay when hovered or focused */
+.img-card:hover .img-overlay,
+.img-card:focus-within .img-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay text */
+.img-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 700px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+```
+
+::: image-grid
+<!-- Mean Value Plot -->
+
+<figure class="img-card" tabindex="0">
+
+<img src="CRDMEANVPLOT.webp" alt="Mean Value Plot visualization"/>
+
+<figcaption class="img-overlay">
+
+<p><strong>Mean Value Plot</strong> displays the average value of a variable across categories, often combined with individual data points to show both central tendency and distribution.</p>
+
+</figcaption>
+
+</figure>
+
+<!-- Connected Line Plot -->
+
+<figure class="img-card" tabindex="0">
+
+<img src="CRDCONNECT.webp" alt="Connected Line Plot visualization"/>
+
+<figcaption class="img-overlay">
+
+<p><strong>Connected Line Plot</strong> links sequential data points with lines to illustrate trends or changes over time or ordered intervals.</p>
+
+</figcaption>
+
+</figure>
 :::
 
-:::
+```{=html}
+<style>
+/* Single image container */
+.single-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
 
-::: {.grid}
-::: {.g-col-6}
-![BOX PLOT](CRDBOXPLOT.webp){fig-align="center"} 
-:::
-::: {.g-col-6 .d-flex .align-items-center}  
-::: {.px-3}
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
-:::
-:::
-:::
+/* Image card wrapper */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  max-width: 550px;
+  width: 100%;
+}
 
-::: {.grid}
-::: {.g-col-6}
-![VIOLIN PLOT](CRDVIOLINPLOT.webp){fig-align="center"} 
-:::
-::: {.g-col-6 .d-flex .align-items-center}  
-::: {.px-3}
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
-:::
-:::
-:::
+/* Image styling */
+.img-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease;
+}
 
-::: {.grid}
-::: {.g-col-6}
-![Mean Value Plot](CRDMEANVPLOT.webp){fig-align="center"} 
-:::
-::: {.g-col-6 .d-flex .align-items-center}  
-::: {.px-3}
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
-:::
-:::
-:::  
+/* Zoom effect */
+.img-card:hover img,
+.img-card:focus-within img {
+  transform: scale(1.05);
+}
 
-::: {.grid}
-::: {.g-col-6}
-![Connected Line Plot](CRDCONNECT.webp){fig-align="center"} 
-:::
-::: {.g-col-6 .d-flex .align-items-center}  
-::: {.px-3}
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
-:::
-:::
-:::  
+/* Overlay styling */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
-::: {.grid}
-::: {.g-col-6}
-![Bar Plot with grouping](CRDBARPLOT.webp){fig-align="center"} 
-:::
-::: {.g-col-6 .d-flex .align-items-center}  
-::: {.px-3}
-A boxplot—also called a box-and-whisker plot—is a graphical representation used in statistics to display the distribution of a dataset based on its five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum.
-:::
-:::
+/* Show overlay when hovered or focused */
+.img-card:hover .img-overlay,
+.img-card:focus-within .img-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay text */
+.img-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive size */
+@media (max-width: 700px) {
+  .img-card {
+    max-width: 90%;
+  }
+}
+</style>
+```
+
+::: single-image-container
+<figure class="img-card" tabindex="0">
+
+<img src="CRDVIOLINPLOT.webp" alt="Violin Plot visualization"/>
+
+<figcaption class="img-overlay">
+
+<p><strong>Violin Plot</strong> is a data visualization that combines a boxplot and a kernel density plot to show both the summary statistics and the probability density of a numeric variable across different categories, with the width of the shape indicating the density of data points at various values.</p>
+
+</figcaption>
+
+</figure>
 :::
 
 RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features
 
-![Customization](CSSett.webp){fig-align="center"} ![Customization](CSSett.webp){fig-align="center"}
+![Customization](CSSett.webp){fig-align="center"} 
 
 ## Multivariate and AI
 
-The **Completely Randomised Design (CRD)** is generally used to compare the effects of different treatments on a single response variable. However, when multiple traits are measured for the same set of treatments (for example: \*\*Yield, Plant Height, Leaf Area, Root Weight, and Quality), you can explore them together using the Multivariate tab (see Figure -----).Multivariate analysis in CRD helps you examine how treatments perform across several traits simultaneously-offering a broader view of treatment performance. Remember, the Principal Component Analysis (PCA) used here is an exploratory tool, helping you visualize relationships among traits and treatments, but it is not an inferential statistical test.
+The **Completely Randomised Design (CRD)** is generally used to compare the effects of different treatments on a single response variable. However, when multiple traits are measured for the same set of treatments (for example: Yield, Plant Height, Leaf Area, Root Weight, and Quality), you can explore them together using the Multivariate tab (see Figure -----).Multivariate analysis in CRD helps you examine how treatments perform across several traits simultaneously-offering a broader view of treatment performance. Remember, the Principal Component Analysis (PCA) used here is an exploratory tool, helping you visualize relationships among traits and treatments, but it is not an inferential statistical test.
+![Multivariate tab in RAISINS](MULTITAB.webp){fig-align="center"} 
+To perform MANOVA and PCA please note that the number of treatments must be greater than the number of variables. A MANOVA and PCA will be automatically carried out based on the selected variables. MANOVA table with interpretation appears automatically.PCA results and plots will appear along with automated interpretation.
 
-![Multivariate tab in RAISINS](MULTITAB.webp){fig-align="center" width="595"}
-![](MAN2.webp){fig-align="center" width="595"}
-![](MAN3.webp){fig-align="center" width="595"}
+![](MAN2.webp){fig-align="center"}
 
-![](MAN4.webp){fig-align="center" width="595"}
-![](MAN5.webp){fig-align="center" width="595"}
+![](MAN3.webp){fig-align="center"}
 
-![](MAN6.webp){fig-align="center" width="595"}
+![](MAN4.webp){fig-align="center"}
 
-![](MAN7.webp){fig-align="center" width="595"}
-![](MAN8.webp){fig-align="center" width="595"}
-![](CRD_Scree_Plot2025-10-07.webp){fig-align="center" width="595"}
-![](Indexplot12025-10-07.webp){fig-align="center" width="595"}
-![](Indexplot22025-10-07.webp){fig-align="center" width="595"}
-![](BiplotPCA2025-10-07.webp){fig-align="center" width="595"}
+![](MAN5.webp){fig-align="center"}
+
+![](MAN6.webp){fig-align="center"}
+
+![](MAN7.webp){fig-align="center"} 
+![](MAN8.webp){fig-align="center"} 
+
+![](CRD_Scree_Plot2025-10-07.webp){fig-align="center"} 
+
+![](Indexplot12025-10-07.webp){fig-align="center"}
+
+![](Indexplot22025-10-07.webp){fig-align="center"}
+
+![](images/clipboard-1264746654.webp){fig-align="center"} 
+
+![](BiplotPCA2025-10-07.webp){fig-align="center"}
 
 ## Preparing your data
 
-"Your analysis is only as good as your data! Feed RAISINS high-quality data, and it will deliver powerful insights  feed it messy data, and the results won’t be trustworthy."
+"Your analysis is only as good as your data! Feed RAISINS high-quality data, and it will deliver powerful insights feed it messy data, and the results won’t be trustworthy."
 
- 1. Create your dataset in MS Excel  
+1.  Create your dataset in MS Excel
 
- 2. Build your dataset directly within the RAISINS app
+2.  Build your dataset directly within the RAISINS app
 
 ## Preparing data in MS Excel
 
@@ -630,40 +962,24 @@ Open a new blank sheet in MS Excel with only one sheet included, and avoid addin
 
 ## Creating dataset in RAISINS
 
-If you’re unsure about the correct format for creating a dataset, don’t worry—Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:
+If you’re unsure about the correct format for creating a dataset, don’t worry - Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:
 
-- Navigate to the **Create Data Tab**
+-   Navigate to the **Create Data Tab**
 
-- Select the number of **Treatments**
+-   Select the number of **Treatments**
 
-- Select number of **Replications**
+-   Select number of **Replications**
 
-- Click on **Create** button  
+-   Click on **Create** button
 
 Model layout will appear as shown in **Figure-----**. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis`tab!
 
-
 ## Model Datasets
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## FAQ’s
 
-![](2.webp){fig-align="center" width="595"}
+![](2.webp){fig-align="center"}
 
-## USER 
+## USER
 
-![](user_2.webp){fig-align="center" width="595"}
-
+![](user_2.webp){fig-align="center"}
