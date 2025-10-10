@@ -915,9 +915,37 @@ RAISINS transforms analysis into a <strong>visual, interactive, and effortless j
 </figure>
 :::
 
+
+
+
+
+
+
 RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features
 
 ![Customization](CSSett.webp){fig-align="center"} 
+
+::: {.panel-tabset}
+::: {layout-ncol=3}
+![](Cust1.webp)
+
+![](Cust2.webp)
+
+![](Cust3.webp)
+
+![](Cust4.webp)
+
+![](Cust5.webp)
+
+![](Cust6.webp)
+
+![](Cust8.webp)
+
+![](Cust9.webp)
+
+![](Cust10.webp)
+:::
+:::
 
 ## Multivariate and AI
 
