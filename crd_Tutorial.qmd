@@ -264,6 +264,126 @@ cat('</div>\n')
 cat('</div>\n')
 ```
 
+
+```{css, echo=FALSE}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 15px;
+  padding: 30px;
+  background: white;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  border: 2px solid #333;
+  box-shadow: 
+    6px 6px 0px rgba(0,0,0,0.15),
+    12px 12px 0px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cell:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 
+    9px 9px 0px rgba(0,0,0,0.15),
+    15px 15px 0px rgba(0,0,0,0.08);
+}
+
+/* Treatment Colors */
+.treatment-a {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.treatment-b {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44b3aa 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.treatment-c {
+  background: linear-gradient(135deg, #ffd93d 0%, #f5ca1f 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+.treatment-d {
+  background: linear-gradient(135deg, #a8e6cf 0%, #8fd9b6 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+/* Legend */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 20px;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.legend-box {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+}
+.legend-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Only center this specific title */
+.layout-title {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+layout <- matrix(c(
+  "C", "A", "D", "B", "C",
+  "B", "D", "A", "C", "A",
+  "D", "C", "B", "A", "D",
+  "B", "A", "C", "D", "B"
+), nrow = 4, byrow = TRUE)
+
+# Title for layout (use class to control its alignment)
+cat('<h2 class="layout-title">Randomized CRD Layout</h2>\n')
+
+# Start container div
+cat('<div style="text-align:center;">\n')
+cat('<div class="grid-container">\n')
+
+for (i in 1:nrow(layout)) {
+  for (j in 1:ncol(layout)) {
+    trt <- layout[i, j]
+    class_name <- paste0("cell treatment-", tolower(trt))
+    cat(sprintf('<div class="%s">%s</div>\n', class_name, trt))
+  }
+}
+
+cat('</div>\n</div>\n')
+``` 
+
 # CRD Linear Model
 
 Explore the linear model for **Completely Randomized Design (CRD)** interactively:
@@ -271,7 +391,7 @@ Explore the linear model for **Completely Randomized Design (CRD)** interactivel
 ::: {.formula-card onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'"}
 <h2 style="color:#00695c; text-align:center;">
 
-CRD Linear Model
+**CRD Linear Model**
 
 </h2>
 
@@ -318,7 +438,7 @@ Hover over this card to see it pop!
 </style>
 ```
 
-# Analysis of Variance (ANOVA)
+## Analysis of Variance (ANOVA)
 
 ANOVA - CRD
 
@@ -362,7 +482,7 @@ Let’s explore some practical situations in agricultural research where the Com
 
 ## Theory
 
-The theory of the Completely Randomized Design can be read below, or if you're a non-statistician who is simply interested in the practical elements, you can go straight to **Section---**, where we've provided a real- world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.
+The theory of the Completely Randomized Design can be read below, or if you're a non-statistician who is simply interested in the practical elements, you can go straight to **Section---**, where we've provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.
 
 ## Assumptions
 
@@ -450,67 +570,26 @@ The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 $$ where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
 
-
 # p Adjustment Method
 
-In the case of a Completely Randomised Design (CRD), the p-value adjustment method is critical when performing multiple comparisons to control the risk of Type I error (false positives) that occurs due to repeated hypothesis tests across treatments or levels.
-
-## Common p Adjustment Methods
-
-. The **Bonferroni method** is the simplest and most conservative adjustment, multiplying each p-value by the number of tests, thereby controlling the family-wise error rate (FWER).
-
-. Holm, Hochberg, and Hommel methods provide strong control of the FWER and tend to be less conservative than Bonferroni, increasing the power while still controlling errors.
-
-. The Benjamini-Hochberg (BH, also known as FDR) and Benjamini-Yekutieli (BY) methods control the false discovery rate and are less stringent than the above family-wise approaches, making them a preferred choice when more discoveries are acceptable.
-
-. In R, the p.adjust function can be used with these methods. For example: p.adjust(p.values, method="bonferroni") or method="BH".
-
-## Application in CRD
-
-. For CRD experiments, after ANOVA has indicated significant differences among treatments, pairwise comparisons (e.g., Tukey's, Bonferroni, Holm, or BH) are made.
-
-. Tukey’s method is often used for pairwise comparisons in CRD, as it gives an exact experiment-wise error rate, especially suited for all possible pairwise contrasts among treatments.
-
-. The adjustment method should match the experimental goals: conservative corrections (Bonferroni, Holm) if strict error control is needed; FDR-based methods (BH) if tolerance for more discoveries is acceptable.
-
-## Key Recommendations
-
-. Use Bonferroni or Holm for strict family-wise error rate control.
-
-. Use Tukey’s for all-pairwise comparisons in CRD.
-
-. Use BH for exploratory analysis with many tests.
-
-. Apply the adjustment after running ANOVA and before interpreting multiple comparisons.
-
-**ADD the links here**
-
--   Different p-adjustment methods are listed below, if you are interested you can click on them to read more:
--   
--   
--   
--   
--   
--   
+The **p adjustment method** used for CRD in RAISINS is none.
 
 # Getting started in RAISINS
 
 **RAISINS (R and AI Solutions in INferential Statistics)** is an online platform designed to make agricultural research data analysis easier. RAISINS doesn't need to be downloaded; it's entirely online. It provides robust, user-friendly statistical tools by combining the strengths of R, Python, and AI. The Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University, is providing mentorship to STATOBERRY LLP as it develops the platform.
 
-Head to www.raisins.live where you can access various analytical modules. You can access the completely randomised design module from the analysis tools under **Analysis of Experiments**.
+Head to [www.raisins.live](https://www.raisins.live/) where you can access various analytical modules. You can access the completely randomised design module from the analysis tools under **Analysis of Experiments**.
 
 ![CRD Analysis](CRD_1.webp){fig-align="center"}
 
 # A working example
 
-We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using **Example 1**, which is covered in **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
+We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using Example 1, which is covered in [Study Context]()            **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
 ![Working Example](mangodata.webp){fig-align="center"}
 The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
 Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
-
-
 
 # Results
 
@@ -915,12 +994,6 @@ RAISINS transforms analysis into a <strong>visual, interactive, and effortless j
 </figure>
 :::
 
-
-
-
-
-
-
 RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features
 
 ![Customization](CSSett.webp){fig-align="center"} 
@@ -1011,3 +1084,27 @@ Model layout will appear as shown in **Figure-----**. Now you may enter the obse
 ## USER
 
 ![](user_2.webp){fig-align="center"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

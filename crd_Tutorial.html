@@ -82,8 +82,10 @@ window.Quarto = {
   <li><a href="#layout-example" id="toc-layout-example" class="nav-link" data-scroll-target="#layout-example">Layout Example</a></li>
   <li><a href="#randomized-crd-layout" id="toc-randomized-crd-layout" class="nav-link" data-scroll-target="#randomized-crd-layout">Randomized CRD Layout</a></li>
   </ul></li>
-  <li><a href="#crd-linear-model" id="toc-crd-linear-model" class="nav-link" data-scroll-target="#crd-linear-model">CRD Linear Model</a></li>
+  <li><a href="#crd-linear-model" id="toc-crd-linear-model" class="nav-link" data-scroll-target="#crd-linear-model">CRD Linear Model</a>
+  <ul class="collapse">
   <li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova" class="nav-link" data-scroll-target="#analysis-of-variance-anova">Analysis of Variance (ANOVA)</a></li>
+  </ul></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a>
   <ul class="collapse">
   <li><a href="#study-context" id="toc-study-context" class="nav-link" data-scroll-target="#study-context">Study Context</a></li>
@@ -95,12 +97,7 @@ window.Quarto = {
   <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results">Interpreting the Results</a></li>
   <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test">Post-hoc test</a></li>
   </ul></li>
-  <li><a href="#p-adjustment-method" id="toc-p-adjustment-method" class="nav-link" data-scroll-target="#p-adjustment-method">p Adjustment Method</a>
-  <ul class="collapse">
-  <li><a href="#common-p-adjustment-methods" id="toc-common-p-adjustment-methods" class="nav-link" data-scroll-target="#common-p-adjustment-methods">Common p Adjustment Methods</a></li>
-  <li><a href="#application-in-crd" id="toc-application-in-crd" class="nav-link" data-scroll-target="#application-in-crd">Application in CRD</a></li>
-  <li><a href="#key-recommendations" id="toc-key-recommendations" class="nav-link" data-scroll-target="#key-recommendations">Key Recommendations</a></li>
-  </ul></li>
+  <li><a href="#p-adjustment-method" id="toc-p-adjustment-method" class="nav-link" data-scroll-target="#p-adjustment-method">p Adjustment Method</a></li>
   <li><a href="#getting-started-in-raisins" id="toc-getting-started-in-raisins" class="nav-link" data-scroll-target="#getting-started-in-raisins">Getting started in RAISINS</a></li>
   <li><a href="#a-working-example" id="toc-a-working-example" class="nav-link" data-scroll-target="#a-working-example">A working example</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
@@ -445,6 +442,126 @@ B
 </div>
 </div>
 </div>
+<div class="cell">
+<style type="text/css">
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 15px;
+  padding: 30px;
+  background: white;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  border: 2px solid #333;
+  box-shadow: 
+    6px 6px 0px rgba(0,0,0,0.15),
+    12px 12px 0px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cell:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 
+    9px 9px 0px rgba(0,0,0,0.15),
+    15px 15px 0px rgba(0,0,0,0.08);
+}
+
+/* Treatment Colors */
+.treatment-a {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.treatment-b {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44b3aa 100%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.treatment-c {
+  background: linear-gradient(135deg, #ffd93d 0%, #f5ca1f 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+.treatment-d {
+  background: linear-gradient(135deg, #a8e6cf 0%, #8fd9b6 100%);
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+/* Legend */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 20px;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.legend-box {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+}
+.legend-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Only center this specific title */
+.layout-title {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+layout <- matrix(c(
+  "C", "A", "D", "B", "C",
+  "B", "D", "A", "C", "A",
+  "D", "C", "B", "A", "D",
+  "B", "A", "C", "D", "B"
+), nrow = 4, byrow = TRUE)
+
+# Title for layout (use class to control its alignment)
+cat('<h2 class="layout-title">Randomized CRD Layout</h2>\n')
+
+# Start container div
+cat('<div style="text-align:center;">\n')
+cat('<div class="grid-container">\n')
+
+for (i in 1:nrow(layout)) {
+  for (j in 1:ncol(layout)) {
+    trt <- layout[i, j]
+    class_name <- paste0("cell treatment-", tolower(trt))
+    cat(sprintf('<div class="%s">%s</div>\n', class_name, trt))
+  }
+}
+
+cat('</div>\n</div>\n')
+</style>
+</div>
 </section>
 </section>
 <section id="crd-linear-model" class="level1">
@@ -452,7 +569,7 @@ B
 <p>Explore the linear model for <strong>Completely Randomized Design (CRD)</strong> interactively:</p>
 <div class="formula-card" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'">
 <h2 style="color:#00695c; text-align:center;" class="anchored" data-anchor-id="crd-linear-model">
-<p>CRD Linear Model</p>
+<p><strong>CRD Linear Model</strong></p>
 </h2>
 <p style="font-size:1.5rem; text-align:center; color:#004d40;">
 </p><p><strong>Y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></strong></p>
@@ -492,10 +609,10 @@ B
   transition: transform 0.3s, box-shadow 0.3s;
 }
 </style>
-</section>
-<section id="analysis-of-variance-anova" class="level1">
-<h1>Analysis of Variance (ANOVA)</h1>
+<section id="analysis-of-variance-anova" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-variance-anova">Analysis of Variance (ANOVA)</h2>
 <p>ANOVA - CRD</p>
+</section>
 </section>
 <section id="example" class="level1">
 <h1>Example</h1>
@@ -530,7 +647,7 @@ B
 </p></section>
 <section id="theory" class="level2">
 <h2 class="anchored" data-anchor-id="theory">Theory</h2>
-<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <strong>Section—</strong>, where we’ve provided a real- world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
+<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <strong>Section—</strong>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
 </section>
 <section id="assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
@@ -635,42 +752,12 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </section>
 <section id="p-adjustment-method" class="level1">
 <h1>p Adjustment Method</h1>
-<p>In the case of a Completely Randomised Design (CRD), the p-value adjustment method is critical when performing multiple comparisons to control the risk of Type I error (false positives) that occurs due to repeated hypothesis tests across treatments or levels.</p>
-<section id="common-p-adjustment-methods" class="level2">
-<h2 class="anchored" data-anchor-id="common-p-adjustment-methods">Common p Adjustment Methods</h2>
-<p>. The <strong>Bonferroni method</strong> is the simplest and most conservative adjustment, multiplying each p-value by the number of tests, thereby controlling the family-wise error rate (FWER).</p>
-<p>. Holm, Hochberg, and Hommel methods provide strong control of the FWER and tend to be less conservative than Bonferroni, increasing the power while still controlling errors.</p>
-<p>. The Benjamini-Hochberg (BH, also known as FDR) and Benjamini-Yekutieli (BY) methods control the false discovery rate and are less stringent than the above family-wise approaches, making them a preferred choice when more discoveries are acceptable.</p>
-<p>. In R, the p.adjust function can be used with these methods. For example: p.adjust(p.values, method=“bonferroni”) or method=“BH”.</p>
-</section>
-<section id="application-in-crd" class="level2">
-<h2 class="anchored" data-anchor-id="application-in-crd">Application in CRD</h2>
-<p>. For CRD experiments, after ANOVA has indicated significant differences among treatments, pairwise comparisons (e.g., Tukey’s, Bonferroni, Holm, or BH) are made.</p>
-<p>. Tukey’s method is often used for pairwise comparisons in CRD, as it gives an exact experiment-wise error rate, especially suited for all possible pairwise contrasts among treatments.</p>
-<p>. The adjustment method should match the experimental goals: conservative corrections (Bonferroni, Holm) if strict error control is needed; FDR-based methods (BH) if tolerance for more discoveries is acceptable.</p>
-</section>
-<section id="key-recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="key-recommendations">Key Recommendations</h2>
-<p>. Use Bonferroni or Holm for strict family-wise error rate control.</p>
-<p>. Use Tukey’s for all-pairwise comparisons in CRD.</p>
-<p>. Use BH for exploratory analysis with many tests.</p>
-<p>. Apply the adjustment after running ANOVA and before interpreting multiple comparisons.</p>
-<p><strong>ADD the links here</strong></p>
-<ul>
-<li>Different p-adjustment methods are listed below, if you are interested you can click on them to read more:</li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
-</section>
+<p>The <strong>p adjustment method</strong> used for CRD in RAISINS is none.</p>
 </section>
 <section id="getting-started-in-raisins" class="level1">
 <h1>Getting started in RAISINS</h1>
 <p><strong>RAISINS (R and AI Solutions in INferential Statistics)</strong> is an online platform designed to make agricultural research data analysis easier. RAISINS doesn’t need to be downloaded; it’s entirely online. It provides robust, user-friendly statistical tools by combining the strengths of R, Python, and AI. The Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University, is providing mentorship to STATOBERRY LLP as it develops the platform.</p>
-<p>Head to www.raisins.live where you can access various analytical modules. You can access the completely randomised design module from the analysis tools under <strong>Analysis of Experiments</strong>.</p>
+<p>Head to <a href="https://www.raisins.live/">www.raisins.live</a> where you can access various analytical modules. You can access the completely randomised design module from the analysis tools under <strong>Analysis of Experiments</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="CRD_1.webp" class="img-fluid figure-img"></p>
@@ -680,7 +767,7 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </section>
 <section id="a-working-example" class="level1">
 <h1>A working example</h1>
-<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using <strong>Example 1</strong>, which is covered in <strong>Section</strong> . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
+<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using Example 1, which is covered in <a href="">Study Context</a> <strong>Section</strong> . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
 <p><img src="mangodata.webp" class="img-fluid quarto-figure quarto-figure-center" alt="Working Example"> The dataset format required for analysis in <strong>RAISINS</strong> is illustrated in Figure 2.3.</p>
 <p>Once the dataset is ready, head onto the Analysis tab in <strong>RAISINS</strong> and click on <strong>Browse</strong> and <strong>upload</strong> the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.</p>
 </section>
