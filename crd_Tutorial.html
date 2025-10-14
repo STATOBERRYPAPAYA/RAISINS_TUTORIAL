@@ -621,30 +621,27 @@ cat('</div>\n</div>\n')
 <h2 class="anchored" data-anchor-id="study-context">Study Context</h2>
 <p>
 </p><ol type="1">
-<li>Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a></li>
+<li>Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.<a href="#" id="toggle">Example1</a><br>
+<img id="mango" src="mangodata.webp" style="display:none; margin-top:10px; max-width:100%;"></li>
 </ol>
-<p></p>
-<div id="example-image1" style="display: none;">
-<p><img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"></p>
-</div>
+<script>
+document.getElementById("toggle").onclick = e => {
+  e.preventDefault();
+  const img = document.getElementById("mango");
+  img.style.display = img.style.display === "none" ? "block" : "none";
+};
+</script>
 <p>
 </p><ol start="2" type="1">
-<li>The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a></li>
+<li>The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.<a href="#" onclick="var img=document.getElementById('chem-img'); img.style.display = img.style.display === 'none' ? 'block' : 'none'; return false;">Example2</a></li>
+</ol>
+<p><img id="chem-img" src="CHEMEXAMPLE.webp" style="display:none; max-width:100%; margin-top:10px;"></p>
+<p></p>
+<ol start="3" type="1">
+<li>An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument. <a href="#" onclick="var img=document.getElementById('shape-img'); img.style.display = img.style.display === 'none' ? 'block' : 'none'; return false;">Example3</a> <img id="shape-img" src="SHAPEEXAMPLE.webp" style="display:none; max-width:100%; margin-top:10px;"></li>
 </ol>
 <p></p>
-<div style="display: none;">
-<p><img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"></p>
-</div>
-<p>
-</p><ol start="3" type="1">
-<li>An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a></li>
-</ol>
-<p></p>
-<div style="display: none;">
-<p><img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"></p>
-</div>
-<p>
-</p></section>
+</section>
 <section id="theory" class="level2">
 <h2 class="anchored" data-anchor-id="theory">Theory</h2>
 <p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <strong>Section—</strong>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
@@ -1143,18 +1140,65 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </figure>
 </div>
 <p>RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="CSSett.webp" class="img-fluid figure-img"></p>
-<figcaption>Customization</figcaption>
-</figure>
+<style>
+  .gallery-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  .gallery-row img {
+    height: 150px; /* set thumbnail height */
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .gallery-row img:hover {
+    transform: scale(1.05);
+  }
+  /* Modal style */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  .modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+<div class="gallery-row">
+<p><img src="Cust1.webp" onclick="openModal(this)"> <img src="Cust2.webp" onclick="openModal(this)"> <img src="Cust3.webp" onclick="openModal(this)"> <img src="Cust4.webp" onclick="openModal(this)"> <img src="Cust5.webp" onclick="openModal(this)"> <img src="Cust6.webp" onclick="openModal(this)"> <img src="Cust8.webp" onclick="openModal(this)"> <img src="Cust9.webp" onclick="openModal(this)"> <img src="Cust10.webp" onclick="openModal(this)"></p>
 </div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"></ul>
-<div class="tab-content">
-
+<!-- Modal -->
+<div id="imgModal" class="modal">
+<p><span class="modal-close" onclick="document.getElementById('imgModal').style.display='none'">×</span> <img class="modal-content" id="modalImage"></p>
 </div>
-</div>
+<script>
+function openModal(img) {
+  var modal = document.getElementById('imgModal');
+  var modalImg = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+</script>
 </strong></section><strong>
 <section id="multivariate-and-ai" class="level2">
 <h2 class="anchored" data-anchor-id="multivariate-and-ai">Multivariate and AI</h2>
@@ -1233,6 +1277,11 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 <li><p>Click on <strong>Create</strong> button</p></li>
 </ul>
 <p>Model layout will appear as shown in <strong>Figure—–</strong>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code>tab!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="CREATEDAT.webp" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="model-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="model-datasets">Model Datasets</h2>

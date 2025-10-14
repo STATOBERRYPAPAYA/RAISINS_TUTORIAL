@@ -450,35 +450,33 @@ Let’s explore some practical situations in agricultural research where the Com
 
 <p>
 
-1.  Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+1.  Ten mango cultivars (V1 through V10), each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Completely Randomized Design (CRD) to see whether the mango varieties differ significantly from one another.<a href="#" id="toggle">Example1</a>  
+<img id="mango" src="mangodata.webp" style="display:none; margin-top:10px; max-width:100%;">
 
-</p>
-
-::: {#example-image1 style="display: none;"}
-<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
-:::
-
-<p>
-
-2.  The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
-
-</p>
-
-::: {style="display: none;"}
-<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
-:::
+```{=html}
+<script>
+document.getElementById("toggle").onclick = e => {
+  e.preventDefault();
+  const img = document.getElementById("mango");
+  img.style.display = img.style.display === "none" ? "block" : "none";
+};
+</script>
+```
 
 <p>
 
-3.  An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.<a href="#example1" class="toggle-image" data-target="example-image1">Example1</a>
+2.  The impact of four chemical treatments (C1 through C4) on a response variable that is measured over time is being assessed by a chemist. There are four replications of each treatment, for a total of 16 observations per time point. On Day 1, Day 3, Day 6, Day 7, and Day 15, observations were made. There are four replications for every treatment since each treatment is repeated four times. An Arcsine transformation can be tested using the proportion data in the final column. To ascertain whether the four chemical treatments differ significantly from one another, a Completely Randomized Design (CRD) can be employed to examine each response variable or time point independently.<a href="#" onclick="var img=document.getElementById('chem-img'); img.style.display = img.style.display === 'none' ? 'block' : 'none'; return false;">Example2</a>
+
+<img id="chem-img" src="CHEMEXAMPLE.webp" style="display:none; max-width:100%; margin-top:10px;">
+
 
 </p>
 
-::: {style="display: none;"}
-<img src="images/kwt/ex1.png" alt="Kruskal-Wallis Test Example1" style="max-width: 100%; height: auto;"/>
-:::
+3.  An engineer is evaluating three different shapes of an instrument (Wedge, Sphere, and Square) to study their effect at different depths. Each shape is tested 10 times, giving a total of 30 observations. Observations were recorded at 4 depths: 1mm, 2mm, 3mm, and 4mm. Since each shape is replicated 10 times, there are 10 replications per shape. A Completely Randomised Design (CRD) can be used to analyze each depth separately to determine whether there are significant differences among the three shapes of the instrument.
+<a href="#" onclick="var img=document.getElementById('shape-img'); img.style.display = img.style.display === 'none' ? 'block' : 'none'; return false;">Example3</a>
+<img id="shape-img" src="SHAPEEXAMPLE.webp" style="display:none; max-width:100%; margin-top:10px;">
 
-<p>
+</p>
 
 ## Theory
 
@@ -996,29 +994,78 @@ RAISINS transforms analysis into a <strong>visual, interactive, and effortless j
 
 RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features
 
-![Customization](CSSett.webp){fig-align="center"} 
+<style>
+  .gallery-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  .gallery-row img {
+    height: 150px; /* set thumbnail height */
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .gallery-row img:hover {
+    transform: scale(1.05);
+  }
+  /* Modal style */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  .modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
 
-::: {.panel-tabset}
-::: {layout-ncol=3}
-![](Cust1.webp)
+<div class="gallery-row">
+  <img src="Cust1.webp" onclick="openModal(this)">
+  <img src="Cust2.webp" onclick="openModal(this)">
+  <img src="Cust3.webp" onclick="openModal(this)">
+  <img src="Cust4.webp" onclick="openModal(this)">
+  <img src="Cust5.webp" onclick="openModal(this)">
+  <img src="Cust6.webp" onclick="openModal(this)">
+  <img src="Cust8.webp" onclick="openModal(this)">
+  <img src="Cust9.webp" onclick="openModal(this)">
+  <img src="Cust10.webp" onclick="openModal(this)">
+</div>
 
-![](Cust2.webp)
+<!-- Modal -->
+<div id="imgModal" class="modal">
+  <span class="modal-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
-![](Cust3.webp)
+<script>
+function openModal(img) {
+  var modal = document.getElementById('imgModal');
+  var modalImg = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+</script>
 
-![](Cust4.webp)
-
-![](Cust5.webp)
-
-![](Cust6.webp)
-
-![](Cust8.webp)
-
-![](Cust9.webp)
-
-![](Cust10.webp)
-:::
-:::
 
 ## Multivariate and AI
 
@@ -1074,6 +1121,8 @@ If you’re unsure about the correct format for creating a dataset, don’t worr
 -   Click on **Create** button
 
 Model layout will appear as shown in **Figure-----**. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in `Analysis`tab!
+
+![](CREATEDAT.webp){fig-align="center"}
 
 ## Model Datasets
 
