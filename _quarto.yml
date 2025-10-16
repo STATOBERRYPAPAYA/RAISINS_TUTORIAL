@@ -23,10 +23,6 @@ book:
   site-url: https://www.raisins.live/
   repo-url: https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues
   image: images/cover.jpg
-  image-alt: "Textbook of Agricultural Statistics"
-  open-graph: 
-    image: images/cover.jpg
-    image-alt: "Textbook of Agricultural Statistics"
   chapters:
     - index.qmd
     - preface.qmd

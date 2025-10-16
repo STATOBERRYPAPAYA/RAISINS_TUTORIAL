@@ -43,7 +43,7 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 
 ![](onewayANOVA.png){fig-align="center" width="511"}
 
-# Key Characteristics
+# Key Characteristics 
 
 Here are the main features of the design - hover or click each point to see more information.
 
@@ -68,7 +68,7 @@ tooltipTriggerList.map(function (tooltipTriggerEl) {
 })
 </script>
 ```
-# When to Use CRD? Explore Each Situation
+# When to Use CRD? Explore Each Situation  {#sec-results}
 
 **Below given are the appropriate situations to be used for CRD, please click on each icon to see more information**
 
@@ -130,7 +130,7 @@ Suitable for experiments with uniform soil and environmental factors.
 :::
 :::
 
-## Layout Example
+# Layout Example
 
 Suppose we're testing 4 fertilizer treatments (A, B, C, D) with 5 replications each (20 experimental units total):
 
@@ -201,16 +201,24 @@ Suppose we're testing 4 fertilizer treatments (A, B, C, D) with 5 replications e
 .teal { background-color: #3baea0; color: #fff; }
 </style>
 ```
+## Legends
+
+![](ssleg.webp){fig-align="center"}
 
 # CRD Linear Model
 
-Explore the linear model for **Completely Randomized Design (CRD)** interactively:
+The mathematical form of the **Completely Randomised Design (CRD)** is very important because it gives a precise, structured way to describe and analyze the experiment statistically. This helps us understand that what we observe is not just random - it’s a combination of systematic treatment differences and random variation.
 
-::: {.formula-card onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'"}
-<h2 style="color:#00695c; text-align:center;">
+The **CRD linear model** allows us to partition the total variation in the data into:
 
-**CRD Linear Model**
+ - Variation due to treatments
 
+ - Variation due to random error
+ 
+**The model assumes**: Errors are independent, normally distributed, and have equal variance. These assumptions make it possible to apply valid statistical tests, confidence intervals, and predictive models.
+
+::: {.callout-tip icon="false"}
+## **CRD Linear Model**
 </h2>
 
 <p style="font-size:1.5rem; text-align:center; color:#004d40;">
@@ -218,6 +226,7 @@ Explore the linear model for **Completely Randomized Design (CRD)** interactivel
 <strong>Y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></strong>
 
 </p>
+:::
 
 <ul style="font-size:1.1rem; line-height:1.8; color:#004d40;">
 
@@ -235,35 +244,51 @@ Explore the linear model for **Completely Randomized Design (CRD)** interactivel
 
 </ul>
 
-<p style="text-align:center; font-size:0.9rem; color:#00796b;">
-
-Hover over this card to see it pop!
-
 </p>
+
+::: callout-tip
+#### Without the mathematical model, we couldn’t formally test or compare treatments reliably.
 :::
 
-```{=html}
-<style>
-.formula-card {
-  background: linear-gradient(135deg, #b2dfdb, #e0f2f1);
-  border-left: 6px solid #004d40;
-  border-radius: 15px;
-  padding: 25px;
-  margin: 20px auto;
-  max-width: 700px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-</style>
-```
 ## Analysis of Variance (ANOVA)
 
 ANOVA - CRD
+
+## ANOVA Table for Completely Randomized Design (CRD)
+
+| **Source of Variation** | **Degrees of Freedom (df)** | **Sum of Squares (SS)** | **Mean Square (MS)** | **F Ratio** |
+|:------------------------:|:---------------------------:|:-----------------------:|:--------------------:|:------------:|
+| Treatments               | \( t - 1 \)                | SST                     | MST                  | \( \dfrac{MST}{MSE} \)|
+| Error (Residual)         | \( N - t \)                | SSE                     | MSE                  |              |
+| Total                    | \( N - 1 \)                | TSS                     |                      |              |
+
+<style>
+table {
+  margin: 20px auto;
+  width: 90%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 1rem;
+}
+th, td {
+  border: 1px solid #b2dfdb;
+  padding: 10px;
+}
+th {
+  background-color: #e0f2f1;
+  color: #004d40;
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+</style>
 
 # Example
 
 Let’s explore some practical situations in agricultural research where the Completely Randomised Design, also known as the CRD, is applied.
 
-## Study Context
+## Study Context {#sec-example}
 
 <p>
 
@@ -291,11 +316,11 @@ document.getElementById("toggle").onclick = e => {
 
 </p>
 
-## Theory
+## Theory {#sec-theory}
 
 The theory of the Completely Randomized Design can be read below, or if you're a non-statistician who is simply interested in the practical elements, you can go straight to **Section---**, where we've provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.
 
-## Assumptions
+## Assumptions {#sec-assumptions}
 
 In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
 
@@ -309,7 +334,7 @@ In order to guarantee the **validity** and **dependability** of experimental out
 
 -   **Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
 
-## Hypotheses
+## Hypotheses {#sec-hypotheses}
 
 The Completely Randomized Design (CRD) evaluates the following hypotheses:
 
@@ -329,7 +354,7 @@ At least one treatment mean ($\mu_i$) is significantly different from the others
 $$H_1 : \text{At least one } \mu_i \text{ differs}$$
 :::
 
-## The Test Statistic
+## The Test Statistic {#sec-teststatistic}
 
 ::: callout-tip
 #### The test statistic for CRD is calculated using the **one-way ANOVA F-statistic**:
@@ -341,10 +366,10 @@ $$
 This statistic is used to determine whether there are significant differences among the treatment means.
 :::
 
-## Correction for Ties
+## Correction for Ties  {#sec-results}
 
 ::: callout-tip
-#### Adjustment for Unequal Variances or Missing Values
+#### Adjustment for Unequal Variances or Missing Values 
 
 If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using **Aitken's adjustment** or a **corrected mean square** approach:
 
@@ -353,15 +378,13 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 $$ This ensures that the test remains valid under minor violations of CRD assumptions.
 :::
 
-## Interpreting the Results
+## Interpreting the Results {#sec-results}
 
-In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is used to test whether there are significant differences among the treatment means. The test statistic, F, follows an F distribution with two sets of degrees of freedom: the numerator degrees of freedom (k−1), where k is the number of treatments, and the denominator degrees of freedom (N−k), where N is the total number of experimental units. To determine if the null hypothesis—that all treatment means are equal- can be rejected, the calculated F value from the ANOVA table is compared to the critical F value obtained from an F distribution table based on the degrees of freedom and the chosen significance level (α). If the computed F value exceeds the critical value, the null hypothesis is rejected, indicating that at least one treatment mean differs significantly from the others. However, ANOVA alone does not indicate which specific treatments differ. Therefore, if a significant difference is detected, multiple comparison tests such as Tukey’s HSD, Bonferroni, or Fisher’s LSD are performed to make pairwise comparisons between treatments and identify precisely where the differences exist.
+In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is used to test whether there are significant differences among the treatment means. The test statistic, F, follows an F distribution with two sets of degrees of freedom: the numerator degrees of freedom (k−1), where k is the number of treatments, and the denominator degrees of freedom (N−k), where N is the total number of experimental units. To determine if the null hypothesis - that all treatment means are equal - can be rejected, the calculated F value from the ANOVA table is compared to the critical F value obtained from an F distribution table based on the degrees of freedom and the chosen significance level (α). If the computed F value exceeds the critical value, the null hypothesis is rejected, indicating that at least one treatment mean differs significantly from the others. However, ANOVA alone does not indicate which specific treatments differ. Therefore, if a significant difference is detected, multiple comparison tests such as Tukey’s HSD, Bonferroni, or Fisher’s LSD are performed to make pairwise comparisons between treatments and identify precisely where the differences exist.
 
-**Add these tests Tukey’s HSD, Bonferroni, or Fisher’s LSD**
+## Post-hoc test {#sec-posthoctest}
 
-## Post-hoc test
-
-When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, Bonferroni correction method, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
+When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
 
 **Tukey's Test**
 
@@ -381,11 +404,11 @@ The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 $$ where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
 
-# p Adjustment Method
+# p Adjustment Method {#sec-padjustment}
 
 The **p adjustment method** used for CRD in RAISINS is none.
 
-# Getting started in RAISINS
+# Getting started in RAISINS {#sec-getting}
 
 **RAISINS (R and AI Solutions in INferential Statistics)** is an online platform designed to make agricultural research data analysis easier. RAISINS doesn't need to be downloaded; it's entirely online. It provides robust, user-friendly statistical tools by combining the strengths of R, Python, and AI. The Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University, is providing mentorship to STATOBERRY LLP as it develops the platform.
 
@@ -393,15 +416,15 @@ Head to [www.raisins.live](https://www.raisins.live/) where you can access vario
 
 ![CRD Analysis](CRD_1.webp){fig-align="center"}
 
-# A working example
+# A working example {#sec-aworkingex}
 
-We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using Example 1, which is covered in [Study Context]() **Section** . For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
+We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using Example 1, which is covered in [Study Context]() **Section**. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
 ![Working Example](mangodata.webp){fig-align="center"} The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
-Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
+Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest (multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
 
-# Results
+# Results {#sec-results}
 
 RAISINS generates result table in the format given in Figure 2.5 after the analysis. The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
 
@@ -411,13 +434,13 @@ RAISINS generates result table in the format given in **Figure** after the analy
 
 ![Analysis Window in RAISINS](Results%20table%20.webp){fig-align="center"}
 
-## Customization tabs
+## Customization tabs {#sec-cust}
 
 In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in Figure.
 
 ![Customization tab](CUSRES.webp){fig-align="center"}
 
-## Plots and graphs
+## Plots and graphs {#sec-plots}
 
 Do follow the below given steps for making plots and graphs for **Completely Randomised Design**
 
@@ -867,7 +890,7 @@ function openModal(img) {
 }
 </script>
 ```
-## Multivariate and AI
+## Multivariate and AI {#sec-multivariateAI}
 
 The **Completely Randomised Design (CRD)** is generally used to compare the effects of different treatments on a single response variable. However, when multiple traits are measured for the same set of treatments (for example: Yield, Plant Height, Leaf Area, Root Weight, and Quality), you can explore them together using the Multivariate tab (see Figure -----).Multivariate analysis in CRD helps you examine how treatments perform across several traits simultaneously-offering a broader view of treatment performance. Remember, the Principal Component Analysis (PCA) used here is an exploratory tool, helping you visualize relationships among traits and treatments, but it is not an inferential statistical test. ![Multivariate tab in RAISINS](MULTITAB.webp){fig-align="center"} To perform MANOVA and PCA please note that the number of treatments must be greater than the number of variables. A MANOVA and PCA will be automatically carried out based on the selected variables. MANOVA table with interpretation appears automatically.PCA results and plots will appear along with automated interpretation.
 
@@ -893,7 +916,7 @@ The **Completely Randomised Design (CRD)** is generally used to compare the effe
 
 ![](BiplotPCA2025-10-07.webp){fig-align="center"}
 
-## Preparing your data
+## Preparing your data {#sec-preparing}
 
 "Your analysis is only as good as your data! Feed RAISINS high-quality data, and it will deliver powerful insights feed it messy data, and the results won’t be trustworthy."
 
@@ -901,11 +924,11 @@ The **Completely Randomised Design (CRD)** is generally used to compare the effe
 
 2.  Build your dataset directly within the RAISINS app
 
-## Preparing data in MS Excel
+## Preparing data in MS Excel {#sec-MSEXCEL}
 
 Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in Figure----. As illustrated in Figure 2.3, groups must appear repeatedly based on replications, and the data can also be arranged as shown in Figure-----.
 
-## Creating dataset in RAISINS
+## Creating dataset in RAISINS {#sec-MSEXCEL}
 
 If you’re unsure about the correct format for creating a dataset, don’t worry - Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:
 
@@ -921,12 +944,12 @@ Model layout will appear as shown in **Figure-----**. Now you may enter the obse
 
 ![](CREATEDAT.webp){fig-align="center"}
 
-## Model Datasets
+## Model Datasets {#sec-Mode}
 
-## FAQ’s
+## FAQ’s {#sec-FAQ}
 
 ![](2.webp){fig-align="center"}
 
-## USER
+## USER {#sec-USER}
 
 ![](user_2.webp){fig-align="center"}

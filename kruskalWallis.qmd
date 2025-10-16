@@ -13,7 +13,6 @@
   }
 </style>
 ```
-
 Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup>
 
 ::: affiliations
@@ -76,7 +75,6 @@ document.querySelectorAll('.toggle-image').forEach(link => {
 });
 </script>
 ```
-
 ## Theory
 
 You can either read through the theory of the Kruskal-Wallis test below, or, if you're a non-statistician interested only in the practical aspects, you may skip ahead to @sec-rasins, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.
@@ -178,7 +176,7 @@ A post-hoc test is a follow-up analysis performed after finding a significant re
 
 When the Kruskal-Wallis test is significant, the following post hoc tests are commonly used for pairwise comparisons:
 
-::::: {style="display: flex; gap: 2em;"}
+::: {style="display: flex; gap: 2em;"}
 ::: dunn-box
 **Dunn's Test**\
 The Dunn test is a post-hoc statistical procedure used in conjunction with the Kruskal-Wallis test. Used to determine which specific groups differ when the Kruskal-Wallis test indicates a significant difference among multiple groups. It compares the sums of ranks between every pair of groups by calculating the difference in their average ranks and standardizing this difference using an estimate of its standard error. The standardized test statistic in Dunn’s test is compared to the standard normal distribution (the Z-distribution) to determine significance. [@dunn1964]
@@ -188,7 +186,7 @@ The Dunn test is a post-hoc statistical procedure used in conjunction with the K
 **LSD (Least Significant Difference) Test**\
 The nonparametric LSD test is a post-hoc procedure used after a significant Kruskal-Wallis test to find which groups differ. It calculates the minimum significant difference (MSD) between group mean ranks based on an estimate of rank variance and uses the Student’s t-distribution to determine significance. Groups are compared pairwise by checking if their mean rank differences exceed the MSD. This test assumes similar group sizes and equal variance of ranks, offering a simpler method to classify groups when these conditions hold.[@agricolae]
 :::
-:::::
+:::
 
 ::: {style="margin-bottom: 1cm;"}
 :::
@@ -297,7 +295,6 @@ function hideDescription(id) {
 }
 </script>
 ```
-
 ```{=html}
 <style>
 .plot-container {
@@ -366,68 +363,67 @@ function hideDescription(id) {
 #violinplot-desc { background: linear-gradient(135deg, rgba(132, 250, 176, 0.8), rgba(143, 211, 244, 0.8)); }
 </style>
 ```
-
-::::::::::::::::::::: grid
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')"}
+::: grid
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')"}
 ![Box plot](images/kwt/box.png){fallback="https://via.placeholder.com/300x300?text=Box+Plot"}
 
 ::: {#boxplot-desc .plot-description}
 A **box plot** displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It highlights central tendencies, variability, and outliers with a splash of clarity!
 :::
-::::
-:::::
+:::
+:::
 
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')"}
 ![Violin plot](images/kwt/violin.png){fallback="https://via.placeholder.com/300x300?text=Violin+Plot"}
 
 ::: {#violinplot-desc .plot-description}
 A **violin plot** combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.
 :::
-::::
-:::::
+:::
+:::
 
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')"}
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')"}
 ![Bar plot](images/kwt/bar.png){fallback="https://via.placeholder.com/300x300?text=Bar+Plot"}
 
 ::: {#barplot-desc .plot-description}
 A **Bar plot** with error bars is a visualization that displays data using rectangular bars, where each bar’s height represents a value (e.g., mean), and error bars indicate the variability or uncertainty (e.g., standard deviation or standard error) around that value. This type of plot is commonly used in scientific and statistical contexts to summarize data and convey reliability..
 :::
-::::
-:::::
+:::
+:::
 
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')"}
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')"}
 ![Mean Value Plot](images/kwt/mean.png){fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"}
 
 ::: {#meanvalueplot-desc .plot-description}
 A **mean value plot** also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars that indicates the variability around the mean. It's used to visualize the central tendency and spread of data.
 :::
-::::
-:::::
+:::
+:::
 
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')"}
 ![Connected line plot](images/kwt/connected.png){fallback="https://via.placeholder.com/300x300?text=Connected+Plot"}
 
 ::: {#connectedplot-desc .plot-description}
 A **connected line plot**, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups
 :::
-::::
-:::::
+:::
+:::
 
-::::: g-col-6
-:::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('pairsplot-desc')" onmouseout="hideDescription('pairsplot-desc')"}
 ![Pairs plot](images/kwt/corr.png){fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"}
 
 ::: {#pairsplot-desc .plot-description}
 A pairs plot provides three key pieces of information. First, it shows the individual distribution of each variable using a histogram with a smoothed line along the diagonal. Second, it displays the correlation coefficient between each pair of variables, giving a quick sense of their relationship. Third, it includes scatter plots to visually assess how two variables relate to each other. For example, in the example plot, you can see the histogram of the variable *Color* and *Texture*, the scatter plot with *Color* on the x-axis and *Texture* on the y-axis, and the correlation between *Color* and *Texture*, which is 0.14.
 :::
-::::
-:::::
-:::::::::::::::::::::
+:::
+:::
+:::
 
 ### Customizing plots
 
@@ -556,12 +552,11 @@ window.onclick = function(event) {
 console.log("Script loaded successfully.");
 </script>
 ```
-
 ## Multivariate and AI {#sec-multi}
 
-The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (*i.e.* Appearance, Color, Texture, Taste, Flavour), navigate to `Multivariate` tab see @fig-multiraisin. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.  
+The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (*i.e.* Appearance, Color, Texture, Taste, Flavour), navigate to `Multivariate` tab see @fig-multiraisin. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.
 
-![Multivariate tab in RAISINS](images/kwt/multi.png){#fig-multiraisin}  
+![Multivariate tab in RAISINS](images/kwt/multi.png){#fig-multiraisin}
 
 A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.
 
@@ -581,9 +576,9 @@ The index plot shown in @fig-index, used in the context of Principal Component A
 
 ![Index Plot](images/kwt/index.png){#fig-index width="430"}
 
-Additionally, the biplot in @fig-Biplot clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from @fig-res1. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.  
+Additionally, the biplot in @fig-Biplot clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from @fig-res1. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.
 
-![Biplot from PCA](images/kwt/biplot.png){#fig-Biplot}  
+![Biplot from PCA](images/kwt/biplot.png){#fig-Biplot}
 
 Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.
 
