@@ -27,7 +27,7 @@ In the Kruskal Wallis test, it is enough for the data to be in the form of ordin
 
 ![When to use kruskal wallis test](images/kwt/when_kruskal.png){#fig-akwt fig-align="center" width="100%"}
 
-## Example
+## Example 
 
 Let's explore some practical situations in agricultural research where the Kruskal-Wallis test, also known as the Kruskal-Wallis H test, is applied.
 

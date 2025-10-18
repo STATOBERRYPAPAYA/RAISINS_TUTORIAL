@@ -420,7 +420,7 @@ Head to [www.raisins.live](https://www.raisins.live/) where you can access vario
 
 We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using Example 1, which is covered in [Study Context]() **Section**. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
-![Working Example](mangodata.webp){fig-align="center"} The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
+![Working Example](mangodata.webp){fig-align="center"} 
 
 Once the dataset is ready, head onto the Analysis tab in **RAISINS** and click on **Browse** and **upload** the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest (multiple variables can also be selected) and then click on Run Analysis. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See Figure 2.4 for marked Analysis window in RAISINS.
 
@@ -439,6 +439,7 @@ RAISINS generates result table in the format given in **Figure** after the analy
 In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in Figure.
 
 ![Customization tab](CUSRES.webp){fig-align="center"}
+The dataset format required for analysis in **RAISINS** is illustrated in Figure 2.3.
 
 ## Plots and graphs {#sec-plots}
 
@@ -946,10 +947,18 @@ Model layout will appear as shown in **Figure-----**. Now you may enter the obse
 
 ## Model Datasets {#sec-Mode}
 
+To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the `Datasets` tab.
+
+![](MODELDATASCREE.webp){fig-align="center"}
+
 ## FAQ’s {#sec-FAQ}
+
+The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.
 
 ![](2.webp){fig-align="center"}
 
 ## USER {#sec-USER}
+
+You can find all your account details - including usage percentage, plan validity, subscription type, and billing information - under the `User` tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.
 
 ![](user_2.webp){fig-align="center"}
