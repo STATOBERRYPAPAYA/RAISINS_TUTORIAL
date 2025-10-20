@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Kruskal Wallis Test – The RAISINS Handbook</title>
+<title>The RAISINS Handbook - 2&nbsp; Kruskal Wallis Test</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -58,25 +57,19 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6aab2237a180306a840e93b83f485a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-bad6a7b64396174f9e6ce9f1aaf6e4b8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -85,70 +78,36 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="2&nbsp; Kruskal Wallis Test – The RAISINS Handbook">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://www.raisins.live/images/cover.jpg">
-<meta property="og:site_name" content="The RAISINS Handbook">
-<meta property="og:image:alt" content="Textbook of Agricultural Statistics">
-<meta name="twitter:title" content="2&nbsp; Kruskal Wallis Test – The RAISINS Handbook">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <meta name="twitter:title" content="The RAISINS Handbook - 2&nbsp; Kruskal Wallis Test">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.raisins.live/images/papayalogo.png">
-<meta name="twitter:image:alt" content="Textbook of Agricultural Statistics">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="541">
 <meta name="twitter:image-width" content="956">
-</head>
+</head><body class="nav-sidebar floating">mathjax
 
-<body class="nav-sidebar floating">
+
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kruskalWallis.html">Non-parametric Test</a></li><li class="breadcrumb-item"><a href="./kruskalWallis.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kruskal Wallis Test</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kruskalWallis.html">Non-parametric Test</a></li><li class="breadcrumb-item"><a href="./kruskalWallis.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kruskal Wallis Test</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -157,7 +116,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/sidebarcover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -165,7 +124,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The RAISINS Handbook</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/STATOBERRYPAPAYA/RAISINS_TUTORIAL/issues" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -202,9 +161,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Non-parametric Test</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -226,7 +185,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -250,27 +209,29 @@ window.Quarto = {
   <li><a href="#sec-rasins" id="toc-sec-rasins" class="nav-link" data-scroll-target="#sec-rasins"><span class="header-section-number">2.3</span> Getting started in RAISINS</a>
   <ul class="collapse">
   <li><a href="#a-working-example" id="toc-a-working-example" class="nav-link" data-scroll-target="#a-working-example"><span class="header-section-number">2.3.1</span> A working example</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2.3.2</span> Results</a></li>
-  <li><a href="#customization-tabs" id="toc-customization-tabs" class="nav-link" data-scroll-target="#customization-tabs"><span class="header-section-number">2.3.3</span> Customization tabs</a></li>
-  <li><a href="#plots-and-graphs" id="toc-plots-and-graphs" class="nav-link" data-scroll-target="#plots-and-graphs"><span class="header-section-number">2.3.4</span> Plots and graphs</a></li>
-  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots"><span class="header-section-number">2.3.5</span> Customizing plots</a></li>
   </ul></li>
-  <li><a href="#sec-multi" id="toc-sec-multi" class="nav-link" data-scroll-target="#sec-multi"><span class="header-section-number">2.4</span> Multivariate and AI</a></li>
-  <li><a href="#sec-createData" id="toc-sec-createData" class="nav-link" data-scroll-target="#sec-createData"><span class="header-section-number">2.5</span> Preparing your data</a>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results"><span class="header-section-number">3</span> Results</a>
   <ul class="collapse">
-  <li><a href="#preparing-data-in-ms-excel" id="toc-preparing-data-in-ms-excel" class="nav-link" data-scroll-target="#preparing-data-in-ms-excel"><span class="header-section-number">2.5.1</span> Preparing data in MS Excel</a></li>
-  <li><a href="#creating-dataset-in-raisins" id="toc-creating-dataset-in-raisins" class="nav-link" data-scroll-target="#creating-dataset-in-raisins"><span class="header-section-number">2.5.2</span> Creating dataset in RAISINS</a></li>
+  <li><a href="#customization-tabs" id="toc-customization-tabs" class="nav-link" data-scroll-target="#customization-tabs"><span class="header-section-number">3.0.1</span> Customization tabs</a></li>
+  <li><a href="#plots-and-graphs" id="toc-plots-and-graphs" class="nav-link" data-scroll-target="#plots-and-graphs"><span class="header-section-number">3.0.2</span> Plots and graphs</a></li>
+  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots"><span class="header-section-number">3.0.3</span> Customizing plots</a></li>
+  <li><a href="#sec-multi" id="toc-sec-multi" class="nav-link" data-scroll-target="#sec-multi"><span class="header-section-number">3.1</span> Multivariate and AI</a></li>
+  <li><a href="#sec-createData" id="toc-sec-createData" class="nav-link" data-scroll-target="#sec-createData"><span class="header-section-number">3.2</span> Preparing your data</a>
+  <ul class="collapse">
+  <li><a href="#preparing-data-in-ms-excel" id="toc-preparing-data-in-ms-excel" class="nav-link" data-scroll-target="#preparing-data-in-ms-excel"><span class="header-section-number">3.2.1</span> Preparing data in MS Excel</a></li>
+  <li><a href="#creating-dataset-in-raisins" id="toc-creating-dataset-in-raisins" class="nav-link" data-scroll-target="#creating-dataset-in-raisins"><span class="header-section-number">3.2.2</span> Creating dataset in RAISINS</a></li>
   </ul></li>
-  <li><a href="#sec-Datasets" id="toc-sec-Datasets" class="nav-link" data-scroll-target="#sec-Datasets"><span class="header-section-number">2.6</span> Model Datasets</a></li>
-  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">2.7</span> FAQ’s</a></li>
-  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">2.8</span> User</a></li>
+  <li><a href="#sec-Datasets" id="toc-sec-Datasets" class="nav-link" data-scroll-target="#sec-Datasets"><span class="header-section-number">3.3</span> Model Datasets</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs"><span class="header-section-number">3.4</span> FAQ’s</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">3.5</span> User</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kruskalWallis.html">Non-parametric Test</a></li><li class="breadcrumb-item"><a href="./kruskalWallis.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kruskal Wallis Test</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><span id="kwt" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kruskal Wallis Test</span></span></h1>
 </div>
@@ -285,9 +246,7 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <style>
   sup {
@@ -305,25 +264,17 @@ window.Quarto = {
 <p><sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,</p>
 </div>
 <p>The Kruskal-Wallis test is a <strong>non-parametric</strong> (distribution free) statistical test used to compare the medians of two or more independent groups when the data is not normally distributed or the assumptions of a <strong>one-way ANOVA</strong> are violated. It’s essentially a non-parametric equivalent of a one-way ANOVA, but instead of comparing means, it compares medians. It is named after <strong>William Kruskal and W. Allen Wallis</strong>, who developed it in 1952 <span class="citation" data-cites="kwtref">(<a href="references.html#ref-kwtref" role="doc-biblioref">Kruskal and Wallis 1952</a>)</span>.</p>
-<p>In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in <a href="#fig-anvakwt" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.</p>
-<div id="fig-anvakwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-anvakwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/Difference_between_ANOVA_and_KW_test.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="558">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anvakwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Comparison between ANOVA (means) and Kruskal Wallis test (ranks)
-</figcaption>
+<p>In the Kruskal Wallis test, it is enough for the data to be in the form of ordinal variables, which means values that can be ranked or ordered. This is because the test does not use the actual differences between the values. Unlike ANOVA, which compares group means using real quantitative values and assumes normal distribution and equal variances, the Kruskal Wallis test works by converting all observations into ranks and then checking how these ranks are distributed across the groups. This makes the Kruskal Wallis test suitable for situations where the data are not normally distributed or where the measurements are not precise but can still be ordered in a meaningful way. In the illustration in <a href="#fig-anvakwt">Figure&nbsp;<span>2.1</span></a>, you can see ANOVA uses the actual data values, while the Kruskal Wallis test replaces them with their ranks to see if the groups are significantly different.</p>
+<div id="fig-anvakwt" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/Difference_between_ANOVA_and_KW_test.png" class="img-fluid figure-img" width="558"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.1: Comparison between ANOVA (means) and Kruskal Wallis test (ranks)</figcaption>
 </figure>
 </div>
-<div id="fig-akwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-akwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/when_kruskal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-akwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: When to use kruskal wallis test
-</figcaption>
+<div id="fig-akwt" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/when_kruskal.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.2: When to use kruskal wallis test</figcaption>
 </figure>
 </div>
 <section id="example" class="level2" data-number="2.1">
@@ -369,7 +320,7 @@ document.querySelectorAll('.toggle-image').forEach(link => {
 </section>
 <section id="theory" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="theory"><span class="header-section-number">2.2</span> Theory</h2>
-<p>You can either read through the theory of the Kruskal-Wallis test below, or, if you’re a non-statistician interested only in the practical aspects, you may skip ahead to <a href="#sec-rasins" class="quarto-xref"><span>Section 2.3</span></a>, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.</p>
+<p>You can either read through the theory of the Kruskal-Wallis test below, or, if you’re a non-statistician interested only in the practical aspects, you may skip ahead to <a href="#sec-rasins"><span>Section&nbsp;2.3</span></a>, where we explain the test with a practical example. The theory section outlines the key steps involved in performing the Kruskal-Wallis test. Understanding these concepts will help you carry out the analysis with clarity and confidence.</p>
 <section id="assumptions" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">2.2.1</span> Assumptions</h3>
 <p>The Kruskal-Wallis test relies on the following assumptions:</p>
@@ -432,7 +383,7 @@ Steps in Kruskal-Wallis Test
 </details></section>
 <section id="the-test-statistic" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="the-test-statistic"><span class="header-section-number">2.2.3</span> The Test Statistic</h3>
-<p>The Kruskal-Wallis test statistic is calculated using the <a href="#eq-kwt1" class="quarto-xref">Equation&nbsp;<span>2.1</span></a></p>
+<p>The Kruskal-Wallis test statistic is calculated using the <a href="#eq-kwt1">Equation&nbsp;<span>2.1</span></a></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Use this for Kruskal-Wallis Test">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -455,7 +406,7 @@ Use this for Kruskal-Wallis Test
 <li><span class="math inline">\(n_i\)</span> is the number of observations in group <span class="math inline">\(i\)</span>.</li>
 <li><span class="math inline">\(R_i\)</span> is the sum of ranks for group <span class="math inline">\(i\)</span>.</li>
 </ul>
-<p>When there are no ties in the data, <span class="math inline">\(H\)</span> follows a chi-square distribution with <span class="math inline">\(k-1\)</span> degrees of freedom. When ties exist, a correction factor given in the <a href="#eq-kwt2" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is applied.</p>
+<p>When there are no ties in the data, <span class="math inline">\(H\)</span> follows a chi-square distribution with <span class="math inline">\(k-1\)</span> degrees of freedom. When ties exist, a correction factor given in the <a href="#eq-kwt2">Equation&nbsp;<span>2.2</span></a> is applied.</p>
 </section>
 <section id="correction-for-ties" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="correction-for-ties"><span class="header-section-number">2.2.4</span> Correction for Ties</h3>
@@ -542,49 +493,38 @@ Which p-adjustment method to use?
 <div id="kwtinraisins" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/kwt/Click.png" class="img-fluid figure-img"></p>
-<figcaption>Accessing Kruskal Wallis test in RAISINS</figcaption>
+<figcaption class="figure-caption">Accessing Kruskal Wallis test in RAISINS</figcaption>
 </figure>
 </div>
 <p>You can log in to the web application using the credentials you received after subscribing.</p>
 <section id="a-working-example" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="a-working-example"><span class="header-section-number">2.3.1</span> A working example</h3>
-<p>We’ll guide you through the entire Kruskal-Wallis test step by step. To begin, let’s look at how the analysis can be carried out using Example 1 described in <a href="#sec-exkwt" class="quarto-xref"><span>Section 2.1.1</span></a>. For clarity, here’s a quick recap of the example: A food scientist is evaluating four drink flavours (V1 to V4) based on five sensory attributes—appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges, providing ten replications (ratings) per flavour.</p>
-<p>The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>.</p>
-<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-createData" class="quarto-xref"><span>Section 2.5</span></a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Datasets" class="quarto-xref"><span>Section 2.6</span></a>. See how dataset is arranged for analysis <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>.</p>
-<div id="fig-raisinkwt" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-raisinkwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="558">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-raisinkwt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: Dataset arrangement for analyzing sensory ratings of four drink flavours using the Kruskal-Wallis test in RAISINS
-</figcaption>
+<p>We’ll guide you through the entire Kruskal-Wallis test step by step. To begin, let’s look at how the analysis can be carried out using Example 1 described in <a href="#sec-exkwt"><span>Section&nbsp;2.1.1</span></a>. For clarity, here’s a quick recap of the example: A food scientist is evaluating four drink flavours (V1 to V4) based on five sensory attributes—appearance, color, texture, taste, and flavour. Each flavour is rated by ten judges, providing ten replications (ratings) per flavour.</p>
+<p>The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-raisinkwt">Figure&nbsp;<span>2.3</span></a>.</p>
+<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-createData"><span>Section&nbsp;3.2</span></a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Datasets"><span>Section&nbsp;3.3</span></a>. See how dataset is arranged for analysis <a href="#fig-raisinkwt">Figure&nbsp;<span>2.3</span></a>.</p>
+<div id="fig-raisinkwt" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/ex1.png" class="img-fluid figure-img" width="558"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.3: Dataset arrangement for analyzing sensory ratings of four drink flavours using the Kruskal-Wallis test in RAISINS</figcaption>
 </figure>
 </div>
-<p>Once the dataset is ready, head onto the <code>Analysis</code> tab in RAISINS and click on <code>Browse</code> and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on <code>Run Analysis</code>. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See <a href="#fig-analysistab" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> for marked Analysis window in RAISINS.</p>
-<div id="fig-analysistab" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-analysistab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/Analysis.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysistab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: Analysis window in RAISINS
-</figcaption>
+<p>Once the dataset is ready, head onto the <code>Analysis</code> tab in RAISINS and click on <code>Browse</code> and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on <code>Run Analysis</code>. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See <a href="#fig-analysistab">Figure&nbsp;<span>2.4</span></a> for marked Analysis window in RAISINS.</p>
+<div id="fig-analysistab" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/Analysis.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.4: Analysis window in RAISINS</figcaption>
 </figure>
 </div>
 </section>
-<section id="results" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="results"><span class="header-section-number">2.3.2</span> Results</h3>
-<p>RAISINS generates result table in the format given in <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> after the analysis.<br>
+</section>
+<section id="sec-results" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Results</h1>
+<p>RAISINS generates result table in the format given in <a href="#fig-res1">Figure&nbsp;<span>3.1</span></a> after the analysis.<br>
 The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it’s significance(p-value). ** indicates significance at 1% level and * indicates significance at 5% level.</p>
-<div id="fig-res1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/result.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="703">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5: Result table in RAISINS
-</figcaption>
+<div id="fig-res1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/result.png" class="img-fluid figure-img" width="703"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Result table in RAISINS</figcaption>
 </figure>
 </div>
 <p>From the result table, it can be concluded that the four drinks differ significantly in terms of appearance, texture, taste, and flavor, as indicated by the significant chi-square values for these characters. However, for the character color, the chi-square value is not significant, suggesting that there is no statistically meaningful difference in color among the four drinks.</p>
@@ -592,24 +532,19 @@ Figure&nbsp;2.5: Result table in RAISINS
 <p>After a significant result in the Kruskal-Wallis test, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. Dunn’s test will be performed by default, you can change the post-hoc test to LSD (Least significant difference test) by changing from the drop down menu. The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning their mean ranks are not significantly different.</p>
 <p>For example, in the case of the character <em>Color</em>, no letter groupings are shown, indicating that the Kruskal-Wallis test did not find significant differences among the treatments. However, for <em>Appearance</em>, treatments V1 and V2 are assigned the letter ‘a’, while V3 and V4 are assigned the letter ‘b’. This indicates that V1 and V2 form one group with similar appearance, while V3 and V4 form another, significantly different group. Since the mean ranks of V3 and V4 are higher, it suggests that these treatments were rated better in appearance.</p>
 <p>You can interpret the results for the other characters in the same way: treatments with the same letter do not differ significantly in their effect on that character, while those with different letters do.</p>
-<p>From the results <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> , it’s found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on <code>Multivaraite</code> tab. The results as mentioned in <a href="#sec-multi" class="quarto-xref"><span>Section 2.4</span></a> gives you the best treatment based on all the observed characters.</p>
-</section>
-<section id="customization-tabs" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="customization-tabs"><span class="header-section-number">2.3.3</span> Customization tabs</h3>
-<p>In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in <a href="#fig-tabs" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>.</p>
-<div id="fig-tabs" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/tabs.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: Customising the results
-</figcaption>
+<p>From the results <a href="#fig-res1">Figure&nbsp;<span>3.1</span></a> , it’s found that appearance wise, drinks V3 and V4 are the best, and by color V2 and V3 are the best. If your objective is to select treatments based on all characters, a multivariate analysis has to be performed. For that click on <code>Multivaraite</code> tab. The results as mentioned in <a href="#sec-multi"><span>Section&nbsp;3.1</span></a> gives you the best treatment based on all the observed characters.</p>
+<section id="customization-tabs" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="customization-tabs"><span class="header-section-number">3.0.1</span> Customization tabs</h3>
+<p>In RAISINS, you can easily customize your analysis by adjusting settings such as decimal places, choice of post-hoc tests, p-value adjustment methods, font style, and significance level. These options help tailor the results to your specific needs, as shown in <a href="#fig-tabs">Figure&nbsp;<span>3.2</span></a>.</p>
+<div id="fig-tabs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/tabs.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Customising the results</figcaption>
 </figure>
 </div>
 </section>
-<section id="plots-and-graphs" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="plots-and-graphs"><span class="header-section-number">2.3.4</span> Plots and graphs</h3>
+<section id="plots-and-graphs" class="level3" data-number="3.0.2">
+<h3 data-number="3.0.2" class="anchored" data-anchor-id="plots-and-graphs"><span class="header-section-number">3.0.2</span> Plots and graphs</h3>
 <p>RAISINS is designed for a smooth and hassle-free experience. Once you click the <code>Run Analysis</code> button, all relevant results and outputs appear instantly—leaving no room for confusion. We’ve ensured that every possible plot related to the Kruskal-Wallis test is readily available. Simply click on the <code>Plots &amp; Graphs</code> tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.</p>
 <script>
 // Hide all descriptions on page load
@@ -703,7 +638,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/box.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Box+Plot"></p>
-<figcaption>Box plot</figcaption>
+<figcaption class="figure-caption">Box plot</figcaption>
 </figure>
 </div>
 <div id="boxplot-desc" class="plot-description">
@@ -716,7 +651,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/violin.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Violin+Plot"></p>
-<figcaption>Violin plot</figcaption>
+<figcaption class="figure-caption">Violin plot</figcaption>
 </figure>
 </div>
 <div id="violinplot-desc" class="plot-description">
@@ -729,7 +664,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/bar.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Bar+Plot"></p>
-<figcaption>Bar plot</figcaption>
+<figcaption class="figure-caption">Bar plot</figcaption>
 </figure>
 </div>
 <div id="barplot-desc" class="plot-description">
@@ -742,7 +677,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/mean.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"></p>
-<figcaption>Mean Value Plot</figcaption>
+<figcaption class="figure-caption">Mean Value Plot</figcaption>
 </figure>
 </div>
 <div id="meanvalueplot-desc" class="plot-description">
@@ -755,7 +690,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/connected.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Connected+Plot"></p>
-<figcaption>Connected line plot</figcaption>
+<figcaption class="figure-caption">Connected line plot</figcaption>
 </figure>
 </div>
 <div id="connectedplot-desc" class="plot-description">
@@ -768,7 +703,7 @@ function hideDescription(id) {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/kwt/corr.png" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Pairs+Plot"></p>
-<figcaption>Pairs plot</figcaption>
+<figcaption class="figure-caption">Pairs plot</figcaption>
 </figure>
 </div>
 <div id="pairsplot-desc" class="plot-description">
@@ -778,8 +713,8 @@ function hideDescription(id) {
 </div>
 </div>
 </section>
-<section id="customizing-plots" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="customizing-plots"><span class="header-section-number">2.3.5</span> Customizing plots</h3>
+<section id="customizing-plots" class="level3" data-number="3.0.3">
+<h3 data-number="3.0.3" class="anchored" data-anchor-id="customizing-plots"><span class="header-section-number">3.0.3</span> Customizing plots</h3>
 <p>RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user.<strong>Click</strong> on the below images to get a clear idea on the customizing features</p>
 <style>
 .grid-container {
@@ -903,119 +838,82 @@ window.onclick = function(event) {
 console.log("Script loaded successfully.");
 </script>
 </section>
-</section>
-<section id="sec-multi" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-multi"><span class="header-section-number">2.4</span> Multivariate and AI</h2>
-<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (<em>i.e.</em> Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <a href="#fig-multiraisin" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
-<div id="fig-multiraisin" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-multiraisin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/multi.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiraisin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: Multivariate tab in RAISINS
-</figcaption>
+<section id="sec-multi" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-multi"><span class="header-section-number">3.1</span> Multivariate and AI</h2>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (<em>i.e.</em> Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <a href="#fig-multiraisin">Figure&nbsp;<span>3.3</span></a>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
+<div id="fig-multiraisin" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/multi.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Multivariate tab in RAISINS</figcaption>
 </figure>
 </div>
 <p>A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.</p>
-<p>The scree plot given <a href="#fig-scree" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
-<div id="fig-scree" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/scree.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: Scree Plot
-</figcaption>
+<p>The scree plot given <a href="#fig-scree">Figure&nbsp;<span>3.4</span></a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
+<div id="fig-scree" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/scree.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Scree Plot</figcaption>
 </figure>
 </div>
-<p>The loadings of each variable on PCs can be seen in <a href="#fig-loadings" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in <a href="#fig-indexscore" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>. More mathematical aspects of index construction and scalling can be read in the app itself.</p>
-<div id="fig-loadings" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/loadings.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loadings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.9: Loadings of each varaibles on PCs
-</figcaption>
+<p>The loadings of each variable on PCs can be seen in <a href="#fig-loadings">Figure&nbsp;<span>3.5</span></a>. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in <a href="#fig-indexscore">Figure&nbsp;<span>3.6</span></a>. More mathematical aspects of index construction and scalling can be read in the app itself.</p>
+<div id="fig-loadings" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/loadings.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: Loadings of each varaibles on PCs</figcaption>
 </figure>
 </div>
 <p>Based on index score it can be seen that, V3 has the highest index followed by V4. So Experimenter can select the drink V3 and V4. Also in some cases when the loadings of prefered variables are negative, a lower index value is preferred. Here to refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.</p>
-<div id="fig-indexscore" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/index_score.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indexscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10: Index score based on PCA
-</figcaption>
+<div id="fig-indexscore" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/index_score.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Index score based on PCA</figcaption>
 </figure>
 </div>
-<p>The index plot shown in <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In <a href="#fig-index" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.</p>
-<div id="fig-index" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/index.png" class="img-fluid figure-img" width="430">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-index-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.11: Index Plot
-</figcaption>
+<p>The index plot shown in <a href="#fig-index">Figure&nbsp;<span>3.7</span></a>, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In <a href="#fig-index">Figure&nbsp;<span>3.7</span></a>, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.</p>
+<div id="fig-index" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/index.png" class="img-fluid figure-img" width="430"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.7: Index Plot</figcaption>
 </figure>
 </div>
-<p>Additionally, the biplot in <a href="#fig-Biplot" class="quarto-xref">Figure&nbsp;<span>2.12</span></a> clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from <a href="#fig-res1" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.</p>
-<div id="fig-Biplot" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/biplot.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Biplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.12: Biplot from PCA
-</figcaption>
+<p>Additionally, the biplot in <a href="#fig-Biplot">Figure&nbsp;<span>3.8</span></a> clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from <a href="#fig-res1">Figure&nbsp;<span>3.1</span></a>. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.</p>
+<div id="fig-Biplot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/biplot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.8: Biplot from PCA</figcaption>
 </figure>
 </div>
 <p>Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.</p>
-<p>RAISINS is equipped with an <strong>AI-powered RAISINS Assistant</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai" class="quarto-xref">Figure&nbsp;<span>2.13</span></a></p>
-<div id="fig-ai" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/ai.gif" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.13: AI powere RAISINS Assistant to interpret your results
-</figcaption>
+<p>RAISINS is equipped with an <strong>AI-powered RAISINS Assistant</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai">Figure&nbsp;<span>3.9</span></a></p>
+<div id="fig-ai" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/ai.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.9: AI powere RAISINS Assistant to interpret your results</figcaption>
 </figure>
 </div>
 <p>RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.</p>
 </section>
-<section id="sec-createData" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-createData"><span class="header-section-number">2.5</span> Preparing your data</h2>
+<section id="sec-createData" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-createData"><span class="header-section-number">3.2</span> Preparing your data</h2>
 <p>What truly matters is the quality of your data! As the saying goes, “garbage in, garbage out” — and this holds true for any software. To prepare your dataset for analysis in RAISINS, you have two options:</p>
 <ol type="1">
 <li>Create your dataset in MS Excel<br>
 </li>
 <li>Build your dataset directly within the RAISINS app</li>
 </ol>
-<section id="preparing-data-in-ms-excel" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="preparing-data-in-ms-excel"><span class="header-section-number">2.5.1</span> Preparing data in MS Excel</h3>
-<p>Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in <a href="#fig-modata1" class="quarto-xref">Figure&nbsp;<span>2.14</span></a>. As illustrated in <a href="#fig-raisinkwt" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>, groups must appear repeatedly based on replications, and the data can also be arranged as shown in <a href="#fig-modata2" class="quarto-xref">Figure&nbsp;<span>2.15</span></a>.</p>
-<div id="fig-modata1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-modata1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/modeldata1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modata1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.14: Model1 showing how the prepared Excel file for upload should look like
-</figcaption>
+<section id="preparing-data-in-ms-excel" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="preparing-data-in-ms-excel"><span class="header-section-number">3.2.1</span> Preparing data in MS Excel</h3>
+<p>Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in <a href="#fig-modata1">Figure&nbsp;<span>3.10</span></a>. As illustrated in <a href="#fig-raisinkwt">Figure&nbsp;<span>2.3</span></a>, groups must appear repeatedly based on replications, and the data can also be arranged as shown in <a href="#fig-modata2">Figure&nbsp;<span>3.11</span></a>.</p>
+<div id="fig-modata1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/modeldata1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.10: Model1 showing how the prepared Excel file for upload should look like</figcaption>
 </figure>
 </div>
-<div id="fig-modata2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-modata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/modeldata2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.15: Model2 showing how the prepared Excel file for upload should look like
-</figcaption>
+<div id="fig-modata2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/modeldata2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.11: Model2 showing how the prepared Excel file for upload should look like</figcaption>
 </figure>
 </div>
 <details>
@@ -1085,44 +983,39 @@ How to Save as CSV in MS Excel
 </blockquote>
 </details>
 </section>
-<section id="creating-dataset-in-raisins" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="creating-dataset-in-raisins"><span class="header-section-number">2.5.2</span> Creating dataset in RAISINS</h3>
+<section id="creating-dataset-in-raisins" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="creating-dataset-in-raisins"><span class="header-section-number">3.2.2</span> Creating dataset in RAISINS</h3>
 <p>If you’re unsure about the correct format for creating a dataset, don’t worry—Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:</p>
 <p>➡️Navigate to the <code>Create Data</code> Tab</p>
 <p>➡️ Select the number of <strong>Treatments</strong></p>
 <p>➡️ Select number of <strong>Replications</strong></p>
 <p>➡️Click on<code>Create</code> button**</p>
-<p>Model layout will appear as shown in <a href="#fig-createdata" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code> tab!</p>
-<div id="fig-createdata" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-createdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/kwt/create_data.png" class="img-fluid figure-img" width="1011">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-createdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.16: Creating dataset within RAISINS
-</figcaption>
+<p>Model layout will appear as shown in <a href="#fig-createdata">Figure&nbsp;<span>3.12</span></a>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code> tab!</p>
+<div id="fig-createdata" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/create_data.png" class="img-fluid figure-img" width="1011"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.12: Creating dataset within RAISINS</figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="sec-Datasets" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-Datasets"><span class="header-section-number">2.6</span> Model Datasets</h2>
+<section id="sec-Datasets" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-Datasets"><span class="header-section-number">3.3</span> Model Datasets</h2>
 <p>To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the <code>Datasets</code> tab.</p>
 <p><img src="images/kwt/DATASET.png" class="img-fluid"></p>
 </section>
-<section id="faqs" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="faqs"><span class="header-section-number">2.7</span> FAQ’s</h2>
+<section id="faqs" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="faqs"><span class="header-section-number">3.4</span> FAQ’s</h2>
 <p>The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.</p>
 <p><img src="images/kwt/faq.png" class="img-fluid"></p>
 </section>
-<section id="user" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="user"><span class="header-section-number">2.8</span> User</h2>
+<section id="user" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="user"><span class="header-section-number">3.5</span> User</h2>
 <p>You can find all your account details—including usage percentage, plan validity, subscription type, and billing information—under the <code>User</code> tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.</p>
 <p><img src="images/kwt/user_tab.png" class="img-fluid"></p>
 
 
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-conover1999practical" class="csl-entry" role="listitem">
 Conover, W. J. 1999. <em>Practical Nonparametric Statistics</em>. 3rd ed. New York: John Wiley &amp; Sons.
 </div>
@@ -1136,6 +1029,7 @@ Kruskal, William H., and W. Allen Wallis. 1952. <span>“Use of Ranks in One-Cri
 Mendiburu, F. de. 2020. <em>Agricolae: Statistical Procedures for Agricultural Research</em>. <a href="https://cran.r-project.org/package=agricolae">https://cran.r-project.org/package=agricolae</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1180,33 +1074,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1275,15 +1142,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1318,7 +1183,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1350,48 +1226,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/www\.raisins\.live\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1401,17 +1240,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1423,129 +1253,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1589,7 +1297,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1615,32 +1322,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1702,12 +1383,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./about_raisins.html" class="pagination-link" aria-label="About RAISINS">
+      <a href="./about_raisins.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About RAISINS</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
+      <a href="./references.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1715,18 +1396,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Published by PAPAYA publishing division of <a href="https://www.statoberry.com/papaya"><img src=".\images/statoberry.png" class="img-fluid" style="width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a></p>
-</div>   
-    <div class="nav-footer-center">
-<p><a href="https://www.statoberry.com/papaya"><img src=".\images/papayalogo.png" class="img-fluid" style="width: auto; height: 90px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a></p>
-</div>
-    <div class="nav-footer-right">
-<p>Licenced under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND 4.0 Int License</a> <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src=".\images/cclogo.png" class="img-fluid" style="width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a> Built with <a href="https://quarto.org/">Quarto</a></p>
-</div>
+    <div class="nav-footer-left">Published by PAPAYA publishing division of <a href="https://www.statoberry.com/papaya"><img src=".\images/statoberry.png" class="img-fluid" style="width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a></div>   
+    <div class="nav-footer-center"><a href="https://www.statoberry.com/papaya"><img src=".\images/papayalogo.png" class="img-fluid" style="width: auto; height: 90px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a></div>
+    <div class="nav-footer-right">Licenced under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND 4.0 Int License</a> <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src=".\images/cclogo.png" class="img-fluid" style="width: auto; height: 35px; padding-left: 10px; padding-right: 10px; margin-bottom:5px;"></a> Built with <a href="https://quarto.org/">Quarto</a></div>
   </div>
 </footer>
-
 
 
 

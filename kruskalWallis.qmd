@@ -244,7 +244,7 @@ Once the dataset is ready, head onto the `Analysis` tab in RAISINS and click on 
 
 ![Analysis window in RAISINS](images/kwt/Analysis.png){#fig-analysistab fig-align="center"}
 
-### Results
+# Results {#sec-results}
 
 RAISINS generates result table in the format given in @fig-res1 after the analysis.\
 The result table contains mean ± SD of each observed characters, Chi-square values and p-values showing test significance. The table contains chi-square statistics of each character and it's significance(p-value). \*\* indicates significance at 1% level and \* indicates significance at 5% level.
