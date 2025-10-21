@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>crd_tutorial</title>
+<title>Completely Randomised Design</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,33 +37,76 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#key-characteristics" id="toc-key-characteristics" class="nav-link active" data-scroll-target="#key-characteristics">Key Characteristics</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">When to Use CRD? Explore Each Situation</a></li>
+  <li><a href="#advantages-disadvantages-of-crd" id="toc-advantages-disadvantages-of-crd" class="nav-link" data-scroll-target="#advantages-disadvantages-of-crd">Advantages &amp; Disadvantages of CRD</a></li>
+  <li><a href="#layout-example" id="toc-layout-example" class="nav-link" data-scroll-target="#layout-example">Layout Example</a></li>
+  <li><a href="#crd-linear-model" id="toc-crd-linear-model" class="nav-link" data-scroll-target="#crd-linear-model">CRD Linear Model</a></li>
+  <li><a href="#anova-table-for-completely-randomized-design-crd" id="toc-anova-table-for-completely-randomized-design-crd" class="nav-link" data-scroll-target="#anova-table-for-completely-randomized-design-crd">ANOVA Table for Completely Randomized Design (CRD)</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a>
+  <ul class="collapse">
+  <li><a href="#sec-example" id="toc-sec-example" class="nav-link" data-scroll-target="#sec-example">Study Context</a></li>
+  </ul></li>
+  <li><a href="#sec-theory" id="toc-sec-theory" class="nav-link" data-scroll-target="#sec-theory">Theory</a></li>
+  <li><a href="#sec-assumptions" id="toc-sec-assumptions" class="nav-link" data-scroll-target="#sec-assumptions">Assumptions</a></li>
+  <li><a href="#sec-hypotheses" id="toc-sec-hypotheses" class="nav-link" data-scroll-target="#sec-hypotheses">Hypotheses</a></li>
+  <li><a href="#sec-teststatistic" id="toc-sec-teststatistic" class="nav-link" data-scroll-target="#sec-teststatistic">The Test Statistic</a></li>
+  <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties">Correction for Ties</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">Interpreting the Results</a></li>
+  <li><a href="#sec-posthoctest" id="toc-sec-posthoctest" class="nav-link" data-scroll-target="#sec-posthoctest">Post-hoc test</a></li>
+  <li><a href="#sec-padjustment" id="toc-sec-padjustment" class="nav-link" data-scroll-target="#sec-padjustment">p Adjustment Method</a></li>
+  <li><a href="#sec-raisins" id="toc-sec-raisins" class="nav-link" data-scroll-target="#sec-raisins">Getting started in RAISINS</a></li>
+  <li><a href="#sec-aworkingex" id="toc-sec-aworkingex" class="nav-link" data-scroll-target="#sec-aworkingex">A working example</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">Results</a></li>
+  <li><a href="#sec-cust" id="toc-sec-cust" class="nav-link" data-scroll-target="#sec-cust">Customization tabs</a>
+  <ul class="collapse">
+  <li><a href="#sec-plots" id="toc-sec-plots" class="nav-link" data-scroll-target="#sec-plots">Plots and graphs</a></li>
+  </ul></li>
+  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots">Customizing plots</a></li>
+  <li><a href="#sec-multivariateAI" id="toc-sec-multivariateAI" class="nav-link" data-scroll-target="#sec-multivariateAI">Multivariate and AI</a>
+  <ul class="collapse">
+  <li><a href="#sec-preparing" id="toc-sec-preparing" class="nav-link" data-scroll-target="#sec-preparing">Preparing your data</a></li>
+  <li><a href="#sec-MSEXCEL" id="toc-sec-MSEXCEL" class="nav-link" data-scroll-target="#sec-MSEXCEL">Preparing data in MS Excel</a></li>
+  <li><a href="#sec-MSEXCEL" id="toc-sec-MSEXCEL" class="nav-link" data-scroll-target="#sec-MSEXCEL">Creating dataset in RAISINS</a></li>
+  </ul></li>
+  <li><a href="#sec-Mode" id="toc-sec-Mode" class="nav-link" data-scroll-target="#sec-Mode">Model Datasets</a></li>
+  <li><a href="#sec-FAQ" id="toc-sec-FAQ" class="nav-link" data-scroll-target="#sec-FAQ">FAQ’s</a>
+  <ul class="collapse">
+  <li><a href="#sec-USER" id="toc-sec-USER" class="nav-link" data-scroll-target="#sec-USER">USER</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
-
-
-<section id="crd" class="level1">
-<h1>Completely Randomised Design</h1>
-<style>
-  sup {
-    color: blue;
-    font-size: 0.8em;  /* smaller superscript */
-  }
-  .affiliations {
-    color: grey;
-    font-size: 0.9em;  /* one size smaller than normal */
-    margin-top: 0.2em;
-  }
-</style>
-<p>——————<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup></p>
-<div class="affiliations">
-<p><sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,</p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Completely Randomised Design</h1>
 </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
 <p>In the <strong>1920s</strong>, statistician <span data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="right" data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>"><strong>Ronald A. Fisher</strong></span> made significant contributions to the development of the <strong>Completely Randomized Design (CRD)</strong>, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to <strong>prevent bias</strong> and enable reliable <strong>statistical analysis</strong> through analysis of variance <strong>(ANOVA)</strong> by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units.</p>
 <p>In this design,<strong>experimental units</strong> are randomly assigned to <strong>treatments</strong> without any systematic bias, ensuring that every unit has an equal probability of receiving any given treatment. This random assignment helps counter potential biases and addresses the inherent variability among experimental units, making comparisons between treatments impartial. In order to account for <strong>natural variation</strong> in soil and environment, the first famous instances involved agricultural field trials in which adjacent plots were randomly assigned to different crop kinds or fertilizer treatments. <strong>Agricultural field trials</strong> were the first well-known instances, in which adjacent plots were randomly assigned to different crop varieties or fertilizer treatments to account for inherent soil and environmental variance.</p>
@@ -86,7 +129,6 @@ This design is used to examine the effects of a single primary element without c
 <p><img src="onewayANOVA.png" class="img-fluid figure-img" width="511"></p>
 </figure>
 </div>
-</section>
 <section id="key-characteristics" class="level1">
 <h1>Key Characteristics</h1>
 <p>Here are the main features of the design - hover or click each point to see more information.</p>
@@ -411,7 +453,7 @@ document.getElementById("toggle").onclick = e => {
 </section>
 <section id="sec-theory" class="level1">
 <h1>Theory</h1>
-<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <a href="#sec-raisins">Section&nbsp;17</a>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
+<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <a href="#sec-raisins">Section&nbsp;16</a>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
 </section>
 <section id="sec-assumptions" class="level1">
 <h1>Assumptions</h1>
@@ -528,9 +570,9 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </section>
 <section id="sec-aworkingex" class="level1">
 <h1>A working example</h1>
-<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using Example 1, which is covered in <a href="#sec-example">Section&nbsp;8.1</a>. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
+<p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using Example 1, which is covered in <a href="#sec-example">Section&nbsp;7.1</a>. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
 <p>The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
-<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-preparing">Section&nbsp;22.1</a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Mode">Section&nbsp;23</a>. See how dataset is arranged for analysis <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
+<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-preparing">Section&nbsp;21.1</a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Mode">Section&nbsp;22</a>. See how dataset is arranged for analysis <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
 <div id="fig-dataset" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="mangodata.webp" class="img-fluid figure-img"></p>
@@ -691,19 +733,21 @@ function openModal(img) {
 <figcaption class="figure-caption">Figure&nbsp;10: Loadings of each variable</figcaption>
 </figure>
 </div>
-<p>The biplot given <strong>?@fig-biplot</strong> gives a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation, smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.</p>
-<p><img src="BiplotPCA2025-10-07.webp" id="fig-biplot" class="img-fluid" data-fig-align="center" alt="PCA-Biplot"> In RAISINS, we calculate a scaled index score by converting the index score to a range of 0 to 1, making it easier to interpret and compare. This standardized approach ensures consistency in evaluating treatments based on their index scores.</p>
-<p>To refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature given <a href="#fig-indexscore">Figure&nbsp;11</a>, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue. Additionally, a plot based on the index scores is also displayed to aid in your analysis.</p>
+<p>The biplot in <strong>?@fig-biplot</strong> gives a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation, smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.</p>
+<p><img src="BiplotPCA2025-10-07.webp" id="fig-biplot" class="img-fluid" alt="PCA-Biplot"> In RAISINS, we calculate a scaled index score by converting the index score to a range of 0 to 1, making it easier to interpret and compare. This standardized approach ensures consistency in evaluating treatments based on their index scores.</p>
+<p>To refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature given as in <a href="#fig-indexscore">Figure&nbsp;11</a>, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue. Additionally, a plot based on the index scores is also displayed to aid in your analysis.</p>
 <div id="fig-indexscore" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="MAN5.webp" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;11: Index score</figcaption>
 </figure>
 </div>
-<div id="fig-index" class="quarto-figure quarto-figure-center anchored">
+<p><img src="Indexplot12025-10-07.webp" id="fig-index" class="img-fluid" data-fig-align="center" alt="Indexplot"> Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.</p>
+<p>RAISINS is equipped with an AI-powered RAISINS Assistant designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai">Figure&nbsp;12</a>.</p>
+<div id="fig-ai" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="Indexplot12025-10-07.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;12: Indexplot</figcaption>
+<p><img src="AI%20interpretation.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;12: AI powered RAISINS Assistant to interpret your results</figcaption>
 </figure>
 </div>
 <section id="sec-preparing" class="level2">

@@ -1,24 +1,13 @@
-# Completely Randomised Design {#crd}
-
-```{=html}
-<style>
-  sup {
-    color: blue;
-    font-size: 0.8em;  /* smaller superscript */
-  }
-  .affiliations {
-    color: grey;
-    font-size: 0.9em;  /* one size smaller than normal */
-    margin-top: 0.2em;
-  }
-</style>
-```
-------------------<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup>
-
-::: affiliations
-<sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,
-:::
-
+---
+title: "Completely Randomised Design"
+format:
+  html:
+    mainfont: "Times New Roman"
+    theme: yeti
+    toc: true
+    toc-depth: 3
+    css: custom.css
+---
 
 <!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
 
@@ -558,20 +547,23 @@ Look upon the loadings of each variable in the given @fig-loadings and decide wh
 
 ![Loadings of each variable](MAN4.webp){#fig-loadings fig-align="center"}
 
-The biplot given @fig-biplot gives a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation, smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.
+The biplot in @fig-biplot gives a visual representation of the relationships among variables and treatments. Treatments with high values for a specific variable are positioned in the direction of that variable. The angle between variables in the biplot indicates their correlation, smaller angles suggest high positive correlation, while larger angles close to 90 degrees suggest weak or no correlation. Thus, the biplot aids in understanding the contributions of variables to each PC and in identifying patterns among treatments.
 
-![PCA-Biplot](BiplotPCA2025-10-07.webp){#fig-biplot fig-align="center"}
+![PCA-Biplot](BiplotPCA2025-10-07.webp){#fig-biplot}
 In RAISINS, we calculate a scaled index score by converting the index score to a range of 0 to 1, making it easier to interpret and compare. This standardized approach ensures consistency in evaluating treatments based on their index scores.
 
-To refine your selection, use the 'Select cutoff for Scaled Index Score' feature given @fig-indexscore, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue. Additionally, a plot based on the index scores is also displayed to aid in your analysis.
+To refine your selection, use the 'Select cutoff for Scaled Index Score' feature given as in @fig-indexscore, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue. Additionally, a plot based on the index scores is also displayed to aid in your analysis.
 
 ![Index score](MAN5.webp){#fig-indexscore fig-align="center"}
 
 
 
 ![Indexplot](Indexplot12025-10-07.webp){#fig-index fig-align="center"}
+Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.
 
+RAISINS is equipped with an AI-powered RAISINS Assistant designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below @fig-ai.
 
+![AI powered RAISINS Assistant to interpret your results](AI interpretation.webp){#fig-ai fig-align="center"}
 
 ## Preparing your data {#sec-preparing}
 
