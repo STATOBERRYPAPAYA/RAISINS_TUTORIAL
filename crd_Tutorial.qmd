@@ -9,6 +9,7 @@ format:
     css: custom.css
 ---
 
+
 <!-- In the **1920s**, statistician **Ronald A. Fisher** made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **preventing bias** and enabling reliable **statistical analysis** through analysis of variance **(ANOVA)** was to randomly assign treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units (such as land plots). -->
 
 In the **1920s**, statistician [<strong>Ronald A. Fisher</strong>]{data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="right" data-bs-content="<img src='fisher.jpg' width='200' alt='Ronald A. Fisher' style='border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3);'>"} made significant contributions to the development of the **Completely Randomized Design (CRD)**, which was first used in the early 20th century. Fisher developed this design to enhance agricultural studies, particularly to identify subtle yet significant variations in crop yields under various fertilizer treatments. His novel approach was to **prevent bias** and enable reliable **statistical analysis** through analysis of variance **(ANOVA)** by randomly assigning treatments to experimental units (like land plots). In order to prevent bias and enable reliable statistical analysis using analysis of variance (ANOVA), he invented the practice of randomly allocating treatments to experimental units.
@@ -293,7 +294,7 @@ document.getElementById("toggle").onclick = e => {
 
 The theory of the Completely Randomized Design can be read below, or if you're a non-statistician who is simply interested in the practical elements, you can go straight to @sec-raisins, where we've provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.
 
-# Assumptions {#sec-assumptions}
+## Assumptions {#sec-assumptions}
 
 In order to guarantee the **validity** and **dependability** of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is **crucial** for the integrity of statistical analysis, particularly when employing **ANOVA**.
 
@@ -307,7 +308,7 @@ In order to guarantee the **validity** and **dependability** of experimental out
 
 -   **Additivity** : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result
 
-# Hypotheses {#sec-hypotheses}
+## Hypotheses {#sec-hypotheses}
 
 The Completely Randomized Design (CRD) evaluates the following hypotheses:
 
@@ -339,7 +340,7 @@ $$
 This statistic is used to determine whether there are significant differences among the treatment means.
 :::
 
-# Correction for Ties  
+## Correction for Ties  
 ::: callout-tip
 #### Adjustment for Unequal Variances or Missing Values 
 
@@ -350,11 +351,11 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 $$ This ensures that the test remains valid under minor violations of CRD assumptions.
 :::
 
-# Interpreting the Results {#sec-results}
+## Interpreting the Results {#sec-results}
 
 In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is used to test whether there are significant differences among the treatment means. The test statistic, F, follows an F distribution with two sets of degrees of freedom: the numerator degrees of freedom (k-1), where k is the number of treatments, and the denominator degrees of freedom (N-k), where N is the total number of experimental units. To determine if the null hypothesis - that all treatment means are equal - can be rejected, the calculated F value from the ANOVA table is compared to the critical F value obtained from an F distribution table based on the degrees of freedom and the chosen significance level (α). If the computed F value exceeds the critical value, the null hypothesis is rejected, indicating that at least one treatment mean differs significantly from the others. However, ANOVA alone does not indicate which specific treatments differ. Therefore, if a significant difference is detected, multiple comparison tests such as Tukey’s HSD or Fisher’s LSD are performed to make pairwise comparisons between treatments and identify precisely where the differences exist.
 
-# Post-hoc test {#sec-posthoctest}
+## Post-hoc test {#sec-posthoctest}
 
 When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
 
@@ -375,7 +376,7 @@ The LSD is calculated as $$
 $$ 
 where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
 
-# p Adjustment Method {#sec-padjustment}
+## p Adjustment Method {#sec-padjustment}
 
 The **p adjustment method** used for CRD in RAISINS is none.
 
@@ -387,7 +388,7 @@ Head to [www.raisins.live](https://www.raisins.live/) where you can access vario
 
 ![CRD Analysis](CRD_1.webp){fig-align="center"}
 
-# A working example {#sec-aworkingex}
+## A working example {#sec-aworkingex}
 
 We'll walk you through every stage of the **Completely Randomised Design** step by step. Let's start by examining how the analysis can be performed using Example 1, which is covered in @sec-example. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.
 
@@ -401,7 +402,7 @@ Once the dataset is ready, head onto the `Analysis tab` in RAISINS and click on 
 
 ![Analysis Window in RAISINS](sstabs.webp){#fig-analysistab fig-align="center"}
 
-# Results {#sec-results}
+## Results {#sec-results}
 
 RAISINS generates result table in the format given in @fig-result and @fig-result2 after the analysis. 
 The first result table is Treatment and Error Mean Squares (ANOVA) table containing source of variation, degrees of freedom, mean squares provided for each character. The second result table is detailed tabular representation with multiple comparisons containing mean ± SD, F value, p value, CD, MSE, SE(m), SE(d), CV(%), Cohen's F.
@@ -420,7 +421,7 @@ SE(m) for yield = 59.53, shows moderate precision in yield mean estimation.
 SE(d) = 84.19, indicates the uncertainty when comparing two treatment means.
 The low to moderate CV values indicate that the experiment was conducted with reasonable accuracy and reliability.
 
-# Customization tabs {#sec-cust}
+## Customization tabs {#sec-cust}
 
 In RAISINS, you can easily customize your analysis by adjusting settings such as choice of post-hoc tests, level of significance, digits after decimal, and font style. These options help tailor the results to your specific needs, as shown in @fig-custom.
 
@@ -440,7 +441,7 @@ Do follow the below given steps for making plots and graphs for **Completely Ran
 
 RAISINS transforms analysis into a <strong>visual, interactive, and effortless journey.
 
-# Customizing plots
+## Customizing plots
 
 RAISINS provides users various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features.
 
@@ -511,7 +512,7 @@ function openModal(img) {
 </script>
 ```
 
-# Multivariate and AI {#sec-multivariateAI}
+## Multivariate and AI {#sec-multivariateAI}
 
 In a **Completely Randomised Design (CRD)**, treatments are assigned randomly to experimental units, ensuring that each unit has an equal chance of receiving any treatment. This design is commonly used to compare the effects of different treatments on a single response variable.
 
@@ -651,13 +652,13 @@ Model layout will appear as shown in @fig-createdata. Now you may enter the obse
 
 ![Creating dataset within RAISINS](CREATEDAT.webp){#fig-createdata fig-align="center"}
 
-# Model Datasets {#sec-Mode}
+## Model Datasets {#sec-Mode}
 
 To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the `Datasets` tab.
 
 ![](modeldata.webp){fig-align="center"}
 
-# FAQ’s {#sec-FAQ}
+## FAQ’s {#sec-FAQ}
 
 The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.
 

@@ -58,31 +58,31 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#sec-example" id="toc-sec-example" class="nav-link" data-scroll-target="#sec-example">Study Context</a></li>
   </ul></li>
-  <li><a href="#sec-theory" id="toc-sec-theory" class="nav-link" data-scroll-target="#sec-theory">Theory</a></li>
+  <li><a href="#sec-theory" id="toc-sec-theory" class="nav-link" data-scroll-target="#sec-theory">Theory</a>
+  <ul class="collapse">
   <li><a href="#sec-assumptions" id="toc-sec-assumptions" class="nav-link" data-scroll-target="#sec-assumptions">Assumptions</a></li>
   <li><a href="#sec-hypotheses" id="toc-sec-hypotheses" class="nav-link" data-scroll-target="#sec-hypotheses">Hypotheses</a></li>
-  <li><a href="#sec-teststatistic" id="toc-sec-teststatistic" class="nav-link" data-scroll-target="#sec-teststatistic">The Test Statistic</a></li>
+  </ul></li>
+  <li><a href="#sec-teststatistic" id="toc-sec-teststatistic" class="nav-link" data-scroll-target="#sec-teststatistic">The Test Statistic</a>
+  <ul class="collapse">
   <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties">Correction for Ties</a></li>
   <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">Interpreting the Results</a></li>
   <li><a href="#sec-posthoctest" id="toc-sec-posthoctest" class="nav-link" data-scroll-target="#sec-posthoctest">Post-hoc test</a></li>
   <li><a href="#sec-padjustment" id="toc-sec-padjustment" class="nav-link" data-scroll-target="#sec-padjustment">p Adjustment Method</a></li>
-  <li><a href="#sec-raisins" id="toc-sec-raisins" class="nav-link" data-scroll-target="#sec-raisins">Getting started in RAISINS</a></li>
+  </ul></li>
+  <li><a href="#sec-raisins" id="toc-sec-raisins" class="nav-link" data-scroll-target="#sec-raisins">Getting started in RAISINS</a>
+  <ul class="collapse">
   <li><a href="#sec-aworkingex" id="toc-sec-aworkingex" class="nav-link" data-scroll-target="#sec-aworkingex">A working example</a></li>
   <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">Results</a></li>
-  <li><a href="#sec-cust" id="toc-sec-cust" class="nav-link" data-scroll-target="#sec-cust">Customization tabs</a>
-  <ul class="collapse">
+  <li><a href="#sec-cust" id="toc-sec-cust" class="nav-link" data-scroll-target="#sec-cust">Customization tabs</a></li>
   <li><a href="#sec-plots" id="toc-sec-plots" class="nav-link" data-scroll-target="#sec-plots">Plots and graphs</a></li>
-  </ul></li>
   <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots">Customizing plots</a></li>
-  <li><a href="#sec-multivariateAI" id="toc-sec-multivariateAI" class="nav-link" data-scroll-target="#sec-multivariateAI">Multivariate and AI</a>
-  <ul class="collapse">
+  <li><a href="#sec-multivariateAI" id="toc-sec-multivariateAI" class="nav-link" data-scroll-target="#sec-multivariateAI">Multivariate and AI</a></li>
   <li><a href="#sec-preparing" id="toc-sec-preparing" class="nav-link" data-scroll-target="#sec-preparing">Preparing your data</a></li>
   <li><a href="#sec-MSEXCEL" id="toc-sec-MSEXCEL" class="nav-link" data-scroll-target="#sec-MSEXCEL">Preparing data in MS Excel</a></li>
   <li><a href="#sec-MSEXCEL" id="toc-sec-MSEXCEL" class="nav-link" data-scroll-target="#sec-MSEXCEL">Creating dataset in RAISINS</a></li>
-  </ul></li>
   <li><a href="#sec-Mode" id="toc-sec-Mode" class="nav-link" data-scroll-target="#sec-Mode">Model Datasets</a></li>
-  <li><a href="#sec-FAQ" id="toc-sec-FAQ" class="nav-link" data-scroll-target="#sec-FAQ">FAQ’s</a>
-  <ul class="collapse">
+  <li><a href="#sec-FAQ" id="toc-sec-FAQ" class="nav-link" data-scroll-target="#sec-FAQ">FAQ’s</a></li>
   <li><a href="#sec-USER" id="toc-sec-USER" class="nav-link" data-scroll-target="#sec-USER">USER</a></li>
   </ul></li>
   </ul>
@@ -453,10 +453,9 @@ document.getElementById("toggle").onclick = e => {
 </section>
 <section id="sec-theory" class="level1">
 <h1>Theory</h1>
-<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <a href="#sec-raisins">Section&nbsp;16</a>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
-</section>
-<section id="sec-assumptions" class="level1">
-<h1>Assumptions</h1>
+<p>The theory of the Completely Randomized Design can be read below, or if you’re a non-statistician who is simply interested in the practical elements, you can go straight to <a href="#sec-raisins">Section&nbsp;10</a>, where we’ve provided a real-world example. The essential procedures for carrying out the Completely Randomized Design are described in the theoretical section. Comprehending these ideas will enable you to do the analysis with assurance and clarity.</p>
+<section id="sec-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-assumptions">Assumptions</h2>
 <p>In order to guarantee the <strong>validity</strong> and <strong>dependability</strong> of experimental outcomes, CRD (Completely Randomized Design) is predicated on a number of essential assumptions. Maintaining these fundamental parameters throughout the experiment is <strong>crucial</strong> for the integrity of statistical analysis, particularly when employing <strong>ANOVA</strong>.</p>
 <ul>
 <li><p><strong>Independence</strong> : In experimental design the <strong>outcome</strong> (response) of one experimental unit is not affected by or connected to the outcome of another unit</p></li>
@@ -466,8 +465,8 @@ document.getElementById("toggle").onclick = e => {
 <li><p><strong>Additivity</strong> : There is no interaction between unaccounted for factors; the effects in the model are additive. This indicates that the overall mean, treatment effect, and random error add up to the observed result</p></li>
 </ul>
 </section>
-<section id="sec-hypotheses" class="level1">
-<h1>Hypotheses</h1>
+<section id="sec-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="sec-hypotheses">Hypotheses</h2>
 <p>The Completely Randomized Design (CRD) evaluates the following hypotheses:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -498,6 +497,7 @@ Alternative Hypothesis (H₁)
 </div>
 </div>
 </section>
+</section>
 <section id="sec-teststatistic" class="level1">
 <h1>The Test Statistic</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -516,9 +516,8 @@ F = \frac{\text{Mean Square due to Treatments (MST)}}{\text{Mean Square due to E
 <p>This statistic is used to determine whether there are significant differences among the treatment means.</p>
 </div>
 </div>
-</section>
-<section id="correction-for-ties" class="level1">
-<h1>Correction for Ties</h1>
+<section id="correction-for-ties" class="level2">
+<h2 class="anchored" data-anchor-id="correction-for-ties">Correction for Ties</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -536,12 +535,12 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </div>
 </div>
 </section>
-<section id="sec-results" class="level1">
-<h1>Interpreting the Results</h1>
+<section id="sec-results" class="level2">
+<h2 class="anchored" data-anchor-id="sec-results">Interpreting the Results</h2>
 <p>In a Completely Randomised Design (CRD), the analysis of variance (ANOVA) is used to test whether there are significant differences among the treatment means. The test statistic, F, follows an F distribution with two sets of degrees of freedom: the numerator degrees of freedom (k-1), where k is the number of treatments, and the denominator degrees of freedom (N-k), where N is the total number of experimental units. To determine if the null hypothesis - that all treatment means are equal - can be rejected, the calculated F value from the ANOVA table is compared to the critical F value obtained from an F distribution table based on the degrees of freedom and the chosen significance level (α). If the computed F value exceeds the critical value, the null hypothesis is rejected, indicating that at least one treatment mean differs significantly from the others. However, ANOVA alone does not indicate which specific treatments differ. Therefore, if a significant difference is detected, multiple comparison tests such as Tukey’s HSD or Fisher’s LSD are performed to make pairwise comparisons between treatments and identify precisely where the differences exist.</p>
 </section>
-<section id="sec-posthoctest" class="level1">
-<h1>Post-hoc test</h1>
+<section id="sec-posthoctest" class="level2">
+<h2 class="anchored" data-anchor-id="sec-posthoctest">Post-hoc test</h2>
 <p>When the ANOVA in a <strong>Completely Randomised Design (CRD)</strong> is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.</p>
 <p><strong>Tukey’s Test</strong></p>
 <p>Let’s explore <strong>Tukey’s Honestly Significant Difference (HSD)</strong> test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey’s HSD test helps you find out exactly which pairs of treatment means differ significantly.</p>
@@ -553,9 +552,10 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 \]</span> where, t_{/2, , df_{}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.</p>
 </section>
-<section id="sec-padjustment" class="level1">
-<h1>p Adjustment Method</h1>
+<section id="sec-padjustment" class="level2">
+<h2 class="anchored" data-anchor-id="sec-padjustment">p Adjustment Method</h2>
 <p>The <strong>p adjustment method</strong> used for CRD in RAISINS is none.</p>
+</section>
 </section>
 <section id="sec-raisins" class="level1">
 <h1>Getting started in RAISINS</h1>
@@ -567,12 +567,11 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 <figcaption class="figure-caption">CRD Analysis</figcaption>
 </figure>
 </div>
-</section>
-<section id="sec-aworkingex" class="level1">
-<h1>A working example</h1>
+<section id="sec-aworkingex" class="level2">
+<h2 class="anchored" data-anchor-id="sec-aworkingex">A working example</h2>
 <p>We’ll walk you through every stage of the <strong>Completely Randomised Design</strong> step by step. Let’s start by examining how the analysis can be performed using Example 1, which is covered in <a href="#sec-example">Section&nbsp;7.1</a>. For clarity, here’s a quick recap of the example: Ten mango cultivars each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. Thirty observations are obtained by replicating each variety three times.</p>
 <p>The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
-<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-preparing">Section&nbsp;21.1</a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Mode">Section&nbsp;22</a>. See how dataset is arranged for analysis <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
+<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-preparing">Section&nbsp;10.7</a>. Additionally, model datasets are available within the app for testing purposes, as explained in <a href="#sec-Mode">Section&nbsp;10.10</a>. See how dataset is arranged for analysis <a href="#fig-dataset">Figure&nbsp;1</a>.</p>
 <div id="fig-dataset" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="mangodata.webp" class="img-fluid figure-img"></p>
@@ -587,8 +586,8 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </figure>
 </div>
 </section>
-<section id="sec-results" class="level1">
-<h1>Results</h1>
+<section id="sec-results" class="level2">
+<h2 class="anchored" data-anchor-id="sec-results">Results</h2>
 <p>RAISINS generates result table in the format given in <a href="#fig-result">Figure&nbsp;3</a> and <a href="#fig-result2">Figure&nbsp;4</a> after the analysis. The first result table is Treatment and Error Mean Squares (ANOVA) table containing source of variation, degrees of freedom, mean squares provided for each character. The second result table is detailed tabular representation with multiple comparisons containing mean ± SD, F value, p value, CD, MSE, SE(m), SE(d), CV(%), Cohen’s F. **indicates significance at 1% level and * indicates significance at 5% level.</p>
 <p>RAISINS generates result table in the format given in <a href="#fig-result">Figure&nbsp;3</a> and <a href="#fig-result2">Figure&nbsp;4</a> after the analysis.</p>
 <div id="fig-result" class="quarto-figure quarto-figure-center anchored">
@@ -606,8 +605,8 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </div>
 <p>From the above result table <a href="#fig-result2">Figure&nbsp;4</a>, Alphonso and Totapuri recorded higher yields, suggesting they may be better-performing varieties under the given conditions.The lower MSE for Obs1 indicates that the replicates of that variable are more consistent. SE(m) for yield = 59.53, shows moderate precision in yield mean estimation. SE(d) = 84.19, indicates the uncertainty when comparing two treatment means. The low to moderate CV values indicate that the experiment was conducted with reasonable accuracy and reliability.</p>
 </section>
-<section id="sec-cust" class="level1">
-<h1>Customization tabs</h1>
+<section id="sec-cust" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cust">Customization tabs</h2>
 <p>In RAISINS, you can easily customize your analysis by adjusting settings such as choice of post-hoc tests, level of significance, digits after decimal, and font style. These options help tailor the results to your specific needs, as shown in <a href="#fig-custom">Figure&nbsp;5</a>.</p>
 <div id="fig-custom" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -615,6 +614,7 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 <figcaption class="figure-caption">Figure&nbsp;5: Customization tab</figcaption>
 </figure>
 </div>
+</section>
 <section id="sec-plots" class="level2">
 <h2 class="anchored" data-anchor-id="sec-plots">Plots and graphs</h2>
 <p>Do follow the below given steps for making plots and graphs for <strong>Completely Randomised Design</strong></p>
@@ -626,9 +626,8 @@ F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corr
 </ul>
 <p>RAISINS transforms analysis into a <strong>visual, interactive, and effortless journey.</strong></p><strong>
 </strong></section><strong>
-</strong></section><strong>
-<section id="customizing-plots" class="level1">
-<h1>Customizing plots</h1>
+<section id="customizing-plots" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-plots">Customizing plots</h2>
 <p>RAISINS provides users various customization features for the plots to enhance the visualization according to the requirement of the user. Click on the below images to get a clear idea on the customizing features.</p>
 <style>
   .gallery-row {
@@ -690,8 +689,8 @@ function openModal(img) {
 }
 </script>
 </section>
-<section id="sec-multivariateAI" class="level1">
-<h1>Multivariate and AI</h1>
+<section id="sec-multivariateAI" class="level2">
+<h2 class="anchored" data-anchor-id="sec-multivariateAI">Multivariate and AI</h2>
 <p>In a <strong>Completely Randomised Design (CRD)</strong>, treatments are assigned randomly to experimental units, ensuring that each unit has an equal chance of receiving any treatment. This design is commonly used to compare the effects of different treatments on a single response variable.</p>
 <p>In our example, when <strong>ten mango cultivars</strong> - <em>Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra,</em> and <em>Totapuri</em> - are evaluated by a horticultural scientist. Each variety represents a treatment and is <strong>replicated three times</strong>, resulting in <strong>thirty observations</strong> in total. Data are recorded for four response variables: <strong>Yield, Obs1, Obs2, and Fruit Weight (FW)</strong>.</p>
 <p>Each of these variables can be analyzed separately under the CRD framework to determine whether the mango varieties differ significantly for individual traits. However, when multiple traits are measured for the same treatments, a <strong>multivariate approach</strong> can be used.</p>
@@ -750,6 +749,7 @@ function openModal(img) {
 <figcaption class="figure-caption">Figure&nbsp;12: AI powered RAISINS Assistant to interpret your results</figcaption>
 </figure>
 </div>
+</section>
 <section id="sec-preparing" class="level2">
 <h2 class="anchored" data-anchor-id="sec-preparing">Preparing your data</h2>
 <p>“Your analysis is only as good as your data! Feed RAISINS high-quality data, and it will deliver powerful insights feed it messy data, and the results won’t be trustworthy.”</p>
@@ -858,9 +858,8 @@ How to Save as CSV in MS Excel
 </figure>
 </div>
 </section>
-</section>
-<section id="sec-Mode" class="level1">
-<h1>Model Datasets</h1>
+<section id="sec-Mode" class="level2">
+<h2 class="anchored" data-anchor-id="sec-Mode">Model Datasets</h2>
 <p>To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the <code>Datasets</code> tab.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -868,14 +867,15 @@ How to Save as CSV in MS Excel
 </figure>
 </div>
 </section>
-<section id="sec-FAQ" class="level1">
-<h1>FAQ’s</h1>
+<section id="sec-FAQ" class="level2">
+<h2 class="anchored" data-anchor-id="sec-FAQ">FAQ’s</h2>
 <p>The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="2.webp" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</section>
 <section id="sec-USER" class="level2">
 <h2 class="anchored" data-anchor-id="sec-USER">USER</h2>
 <p>You can find all your account details - including usage percentage, plan validity, subscription type, and billing information-under the <code>User</code> tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.</p>
@@ -885,7 +885,7 @@ How to Save as CSV in MS Excel
 </figure>
 </div>
 </section>
-</section>
+</strong></section><strong>
 
 </strong></main><strong>
 <!-- /main column -->
