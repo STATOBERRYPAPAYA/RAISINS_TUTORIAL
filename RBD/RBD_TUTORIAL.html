@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Randomised Block Design</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="RBD_TUTORIAL_files/libs/clipboard/clipboard.min.js"></script>
+<script src="RBD_TUTORIAL_files/libs/quarto-html/quarto.js"></script>
+<script src="RBD_TUTORIAL_files/libs/quarto-html/popper.min.js"></script>
+<script src="RBD_TUTORIAL_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="RBD_TUTORIAL_files/libs/quarto-html/anchor.min.js"></script>
+<link href="RBD_TUTORIAL_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="RBD_TUTORIAL_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="RBD_TUTORIAL_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="RBD_TUTORIAL_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="RBD_TUTORIAL_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example">Example</a>
+  <ul class="collapse">
+  <li><a href="#sec-exrbd" id="toc-sec-exrbd" class="nav-link" data-scroll-target="#sec-exrbd">Study Context</a></li>
+  </ul></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory</a>
+  <ul class="collapse">
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#the-test-statistic" id="toc-the-test-statistic" class="nav-link" data-scroll-target="#the-test-statistic">The Test Statistic</a></li>
+  </ul></li>
+  <li><a href="#correction-for-ties" id="toc-correction-for-ties" class="nav-link" data-scroll-target="#correction-for-ties">Correction for Ties</a>
+  <ul class="collapse">
+  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results">Interpreting the Results</a></li>
+  <li><a href="#sec-post" id="toc-sec-post" class="nav-link" data-scroll-target="#sec-post">Post-hoc test</a></li>
+  <li><a href="#p-adjustment" id="toc-p-adjustment" class="nav-link" data-scroll-target="#p-adjustment">p Adjustment Method</a></li>
+  </ul></li>
+  <li><a href="#sec-rasins" id="toc-sec-rasins" class="nav-link" data-scroll-target="#sec-rasins">Getting started in RAISINS</a>
+  <ul class="collapse">
+  <li><a href="#a-working-example" id="toc-a-working-example" class="nav-link" data-scroll-target="#a-working-example">A working example</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#customization-tabs" id="toc-customization-tabs" class="nav-link" data-scroll-target="#customization-tabs">Customization tabs</a></li>
+  <li><a href="#plots-and-graphs" id="toc-plots-and-graphs" class="nav-link" data-scroll-target="#plots-and-graphs">Plots and graphs</a></li>
+  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots">Customizing plots</a></li>
+  </ul></li>
+  <li><a href="#sec-multi" id="toc-sec-multi" class="nav-link" data-scroll-target="#sec-multi">Multivariate and AI</a></li>
+  <li><a href="#sec-createData" id="toc-sec-createData" class="nav-link" data-scroll-target="#sec-createData">Preparing your data</a>
+  <ul class="collapse">
+  <li><a href="#preparing-data-in-ms-excel" id="toc-preparing-data-in-ms-excel" class="nav-link" data-scroll-target="#preparing-data-in-ms-excel">Preparing data in MS Excel</a></li>
+  <li><a href="#creating-dataset-in-raisins" id="toc-creating-dataset-in-raisins" class="nav-link" data-scroll-target="#creating-dataset-in-raisins">Creating dataset in RAISINS</a></li>
+  </ul></li>
+  <li><a href="#sec-Datasets" id="toc-sec-Datasets" class="nav-link" data-scroll-target="#sec-Datasets">Model Datasets</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs">FAQ’s</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user">User</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Randomised Block Design</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The idea behind <strong>Randomized Block Design (RBD)</strong> dates back to the early 1900s, when agricultural experimentation was at its height under the direction of English statistician <strong>Sir Ronald A. Fisher</strong> at the <strong>Rothamsted Experimental Station</strong> in the 1920s. The statistical cornerstone of contemporary experimental design was established by Fisher’s introduction of the fundamental concepts of <strong>randomization</strong>, <strong>replication</strong>, and <strong>blocking(local control)</strong>, which fundamentally changed the way scientists carried out experiments. <a href="#fig-prin">Figure&nbsp;1</a> shows the Fisher’s diagram summarizing the roles of <strong>three basic principles</strong> of experimental designs.</p>
+<div id="fig-prin" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="REPLICATION.webp" style="width:50.0%" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Fisher’s diagram summarizing the roles of three basic principles of experimental designs.</figcaption>
+</figure>
+</div>
+<p>Researchers quickly discovered that different experimental units, such as laboratory samples, plant species, or land plots, are not all the same. Slope, precipitation, soil fertility, and microclimate are some of the natural causes of these units’ differences. The actual effects of the treatments under examination may be obscured or distorted by such inherent variability. To address the problem of <strong>natural variability</strong> among experimental units, the statistician <strong>Sir Ronald A. Fisher</strong> introduced the concept of the <strong>Randomized Block Design (RBD)</strong>.</p>
+<div class="fisher-quote">
+<p><strong>His method was elegant yet powerful</strong> “<em>Control what you know, and randomize what you don’t</em>”</p>
+</div>
+<p>Click on the <strong><code>&gt;</code> arrow icon</strong> next to each step to expand and explore <code>examples</code>, <code>purposes</code>, and <code>key ideas</code></p>
+<div class="callout callout-style-default callout-note callout-titled" title="🔹 Step 1: Identify Similar Experimental Units">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔹 Step 1: Identify Similar Experimental Units
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Group <strong>experimental units</strong> that share similar characteristics into <strong>blocks</strong>.</p>
+<p>💡 <em>Example:</em><br>
+In an agricultural experiment, plots with similar <strong>soil fertility</strong> or <strong>moisture levels</strong> can be grouped within the same block.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="🔹 Step 2: Assign Treatments Within Blocks">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔹 Step 2: Assign Treatments Within Blocks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once blocks are formed, <strong>randomly assign treatments</strong> within each block.</p>
+<p>🎲 <em>Purpose:</em><br>
+This ensures every treatment is tested under <strong>comparable conditions</strong>, helping to <strong>reduce bias</strong> and <strong>increase accuracy</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="🔹 Step 3: Reduce the Impact of Heterogeneity">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔹 Step 3: Reduce the Impact of Heterogeneity
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>By grouping similar experimental units, RBD <strong>controls known variability</strong> (like slope, rainfall, or fertility).</p>
+<p>🎯 <em>Result:</em><br>
+Researchers can focus on <strong>true treatment effects</strong>, rather than background noise.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>💡 Insight: Blocking doesn’t remove variability-it organizes it. This organization is what makes your treatment comparisons fair, precise, and statistically sound.</p>
+</blockquote>
+<p>Originally, the <strong>Randomized Block Design (RBD)</strong> was developed for agricultural field trials, where researchers needed to compare treatments (like fertilizers) under varying soil and environmental conditions.</p>
+<p>But its usefulness doesn’t stop there and RBD has become a powerful tool across many disciplines !</p>
+<p><em>Hover or click each point to see more information</em></p>
+<ul>
+<li>
+<span data-bs-toggle="tooltip" data-bs-placement="right" title="To compare fertilizers or crop varieties across plots that differ in soil fertility or moisture.">🌾 <b><strong>Agriculture</strong></b></span>
+</li>
+<li>
+<span data-bs-toggle="tooltip" data-bs-placement="right" title="Test medications across groups of patients with different age ranges or health backgrounds - each group acting as a “block” to control variability.">💊 <b><strong>Clinical Trials</strong></b></span>
+</li>
+<li>
+<span data-bs-toggle="tooltip" data-bs-placement="right" title="Evaluate materials or production methods across different batches, ensuring fair comparison despite batch-to-batch differences.">🏭 <b><strong>Industrial Quality Control</strong></b></span>
+</li>
+<li>
+<span data-bs-toggle="tooltip" data-bs-placement="right" title="Assess performance of designs or processes while accounting for environmental or machine-level differences.">⚙️ <b><strong>Engineering Optimization</strong></b></span>
+</li>
+</ul>
+<script>
+// Enable all Bootstrap tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>Let’s explore some practical situations in agricultural research where the <strong>Randomised Block Design</strong>, is applied.</p>
+<section id="sec-exrbd" class="level3">
+<h3 class="anchored" data-anchor-id="sec-exrbd">Study Context</h3>
+<p>
+</p><ol type="1">
+<li>Ten mango cultivars, each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. The experiment is laid out in three blocks to account for variability among experimental units, such as differences in soil fertility or microclimatic conditions. Each block contains all ten varieties, and the assignment of treatments within each block is randomized. Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Randomized Block Design (RBD) to determine whether the mango varieties differ significantly while controlling for block effects.<a href="#" id="toggle">Example1</a><br>
+<img src="RBSS1.webp" id="mango" style="display:none; margin-top:10px; max-width:50%;"></li>
+</ol>
+<script>
+document.getElementById("toggle").onclick = e => {
+  e.preventDefault();
+  const img = document.getElementById("mango");
+  img.style.display = img.style.display === "none" ? "block" : "none";
+};
+</script>
+<p>
+</p><ol start="2" type="1">
+<li>A field experiment was conducted to evaluate the impact of four chemical treatments (C1, C2, C3, and C4) on a plant species using a Randomized Block Design (RBD). The field was divided into four blocks to account for possible variation in environmental conditions such as soil fertility and moisture. Each block received all four treatments, randomly assigned within the block, resulting in a total of 16 observations per time point. Data were recorded on Day 1, Day 3, Day 6, Day 7, and Day 15 to study the temporal response of the plants to the treatments. The final column of the dataset contains proportion data, which can be subjected to an Arcsine transformation before analysis. The RBD framework allows the chemist to determine whether the four chemical treatments differ significantly while controlling for block-to-block variability.<a href="#example2" class="toggle-image" data-target="example-image2">Example2</a></li>
+</ol>
+<p></p>
+<div id="example-image2" style="display: none;">
+<p><img src="RBDSS3.webp" alt="Kruskal-Wallis Test Example2" style="max-width: 50%; height: auto;"></p>
+</div>
+<p>
+</p><ol start="3" type="1">
+<li>This study uses a Randomised Block Design to compare water quality among five river stations (treatments). Water quality parameters (transparency, depth, water temperature, pH, dissolved oxygen, nitrate, phosphate, etc.) were measured at each station. Measurements were repeated across five sampling occasions (blocks) to control temporal variability (for example five weekly visits). Within each sampling occasion (block), all five stations were sampled - the order of sampling or the sub-sampling positions may be considered randomized within the block. Thus the design has 5 treatments (stations) and 5 blocks (sampling occasions), giving one observation per treatment × block cell (25 observations per parameter). This layout lets us remove between-occasion variability (block effect) and test whether station differences (treatment effect) are statistically significant.<a href="#example3" class="toggle-image" data-target="example-image3">Example3</a></li>
+</ol>
+<p></p>
+<div id="example-image3" style="display: none;">
+<p><img src="RBDSS4.webp" alt="Kruskal-Wallis Test Example3" style="max-width: 50%; height: auto;"></p>
+</div>
+<script>
+document.querySelectorAll('.toggle-image').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('data-target');
+    const imgDiv = document.getElementById(targetId);
+    imgDiv.style.display = imgDiv.style.display === 'none' ? 'block' : 'none';
+  });
+});
+</script>
+</section>
+</section>
+<section id="theory" class="level2">
+<h2 class="anchored" data-anchor-id="theory">Theory</h2>
+<p>You can either read through the theory of the Randomised Block Design, or, if you’re a non-statistician interested only in the practical aspects, you may skip ahead to <a href="#sec-rasins">Section&nbsp;4</a>, where we have explained the design with a practical example.The theory section outlines the key steps involved in performing the Randomised Block Design.Understanding these concepts will help you carry out the analysis with clarity and confidence.</p>
+<section id="assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions">Assumptions</h3>
+<p>The following assumptions ensure the <code>validity</code> and <code>precision</code> of results in an RBD experiment:</p>
+<ol type="1">
+<li><p>🧩 <strong>Homogeneity within Blocks</strong> - Experimental units within each <strong>block</strong> are <em>homogeneous</em>, meaning the units within a block are more similar to each other than to those in other blocks.</p></li>
+<li><p>🔄 <strong>No Treatment × Block Interaction</strong> - There is <strong>no interaction</strong> between treatments and blocks - implying that the treatment effects are consistent across all blocks.</p></li>
+<li><p>🎲 <strong>Randomization within Blocks</strong> - Treatments are <strong>randomly assigned</strong> within each block to ensure unbiased estimates of treatment effects.</p></li>
+<li><p>📈 <strong>Normality and Equal Variance</strong> - The <strong>variability</strong> within each block (experimental error) is assumed to follow a <strong>normal distribution</strong> with <strong>constant variance</strong>.</p></li>
+<li><p>🧱 <strong>Blocks as a Source of Controlled Variation</strong> - The <strong>blocks</strong> account for a known source of variability, thereby reducing unexplained variance and <strong>improving the precision</strong> of treatment effect tests.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>✅ <em>By satisfying these assumptions, the RBD design effectively separate block effects from random error-enhancing the reliability of treatment comparisons.</em></p>
+</blockquote>
+<p><strong>Click on the <code>➤</code> arrow icon below to explore the Key Features of Randomised Block Design</strong></p>
+<details>
+<summary>
+<strong>Key Features of Randomised Block Design</strong>
+</summary>
+<ul>
+<li><p>Experimental units are grouped into <strong>homogeneous</strong> sub-groups called <strong>blocks</strong>, which represent sources of variation that can be controlled separately from the treatment effect.</p></li>
+<li><p>Within each block, treatments are <strong>randomly assigned</strong> to experimental units, restricting randomization to within blocks.</p></li>
+<li><p>RBD controls variability by removing <strong>block-to-block variation</strong> from experimental error, leading to more precise estimates of treatment effects.</p></li>
+<li><p>It combines the <strong>principles of randomization, replication, and local control</strong>, making conclusions more reliable.</p></li>
+<li><p>Flexible design allowing any number of <strong>treatments</strong> and <strong>replications</strong>.</p></li>
+<li><p>The <strong>blocking factor</strong> is a nuisance variable that is not the main focus but is accounted for to reduce <strong>confounding variability</strong>.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>Commonly used when experimental material or conditions are not homogeneous, allowing better comparison across treatments within similar conditions.</p>
+</blockquote>
+</details>
+</section>
+<section id="hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="hypotheses">Hypotheses</h3>
+<p>There are two primary hypotheses tested in RBD:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Treatment Hypothesis (Ht)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Treatment Hypothesis (Ht)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Null hypothesis (H₀): All treatment means are equal. <span class="math display">\[
+H_0: \tau_1 = \tau_2 = \tau_3 = \cdots = \tau_t = 0
+\]</span></li>
+<li>Alternative Hypothesis (H₁): At least one treatment mean differs.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Block Hypothesis (Hb)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Block Hypothesis (Hb)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Null Hypothesis (H₀): All block effects are equal. <span class="math display">\[
+H_0: \beta_1 = \beta_2 = \cdots = \beta_r = 0
+\]</span></li>
+<li>Alternative hypothesis (H₁): At least one block differs.</li>
+</ul>
+</div>
+</div>
+<p><strong>Click on the <code>➤</code> arrow icon below to explore the Steps in Randomised Block Design</strong></p>
+<details>
+<summary>
+Steps in Randomised Block Design
+</summary>
+<ul>
+<li><p><strong>Step one</strong>: Arrange Data in a Two-Way Table</p></li>
+<li><p><strong>Step two</strong>: Compute the Marginal Totals and Grand Total</p></li>
+<li><p><strong>Step three</strong>: Calculate Correction Factor (CF)</p></li>
+<li><p><strong>Step four</strong>: Compute the Sum of Squares</p></li>
+<li><p><strong>Step five</strong>: Compute Mean Squares</p></li>
+<li><p><strong>Step six</strong>: Compute F-Statistics</p></li>
+<li><p><strong>Step seven</strong>: Decision and Interpretation</p></li>
+</ul>
+</details></section>
+<section id="the-test-statistic" class="level3">
+<h3 class="anchored" data-anchor-id="the-test-statistic">The Test Statistic</h3>
+<p>The test statistic for <strong>Randomized Block Design (RBD)</strong> is calculated using a <strong>two-way ANOVA</strong> F-statistic that tests the equality of treatment means while accounting for block effects.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The F statistic for testing the treatment effect is">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The F statistic for testing the treatment effect is
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+F = \frac{MST}{MSE} = \frac{\frac{SST}{k-1}}{\frac{SSE}{n - b - k + 1}}
+\]</span></p>
+</div>
+</div>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(MST\)</span>: Mean Square for Treatments</li>
+<li><span class="math inline">\(MSE\)</span>: Mean Square Error</li>
+<li><span class="math inline">\(SST\)</span>: Sum of Squares for Treatments</li>
+<li><span class="math inline">\(SSE\)</span>: Sum of Squares for Error (Residual)</li>
+<li><span class="math inline">\(n\)</span> is the total number of observations</li>
+<li><span class="math inline">\(k\)</span> is the number of treatments</li>
+<li><span class="math inline">\(b\)</span> is the number of blocks</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="The F statistic for testing the block effect is">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The F statistic for testing the block effect is
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+F_{\text{Block}} = \frac{MSB}{MSE} = \frac{\frac{SSB}{b-1}}{\frac{SSE}{n - b - k + 1}}
+\]</span></p>
+</div>
+</div>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(MSB\)</span>: Mean Square for Blocks</li>
+<li><span class="math inline">\(MSE\)</span>: Mean Square Error</li>
+<li><span class="math inline">\(SSB\)</span>: Sum of Squares for Blocks</li>
+<li><span class="math inline">\(SSE\)</span>: Sum of Squares for Error (Residual)</li>
+<li><span class="math inline">\(n\)</span> is the total number of observations</li>
+<li><span class="math inline">\(k\)</span> is the number of treatments</li>
+<li><span class="math inline">\(b\)</span> is the number of blocks</li>
+</ul>
+</section>
+</section>
+<section id="correction-for-ties" class="level2">
+<h2 class="anchored" data-anchor-id="correction-for-ties">Correction for Ties</h2>
+<p>In <strong>RBD (Randomized Block Design)</strong>, the correction for ties or missing values typically involves adjusting the ANOVA F-statistic to account for unequal sample sizes or violations of assumptions. This adjustment is often based on Aitken’s or other corrected mean square approaches which enables the test to remain robust even if the strict assumptions of RBD are slightly violated.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adjustment for Unequal Variances or Missing Values
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using <strong>Aitken’s adjustment</strong> or a <strong>corrected mean square</strong> approach:</p>
+<p><span class="math display">\[
+F_{adjusted} = \frac{\text{Corrected Mean Square for Treatments}}{\text{Corrected Mean Square Error}}
+\]</span> This ensures that the test remains valid under minor violations of assumptions.</p>
+</div>
+</div>
+<section id="interpreting-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-results">Interpreting the Results</h3>
+<p>In a Randomized Block Design (RBD),the Analysis of variance (ANOVA) is used to determine whether there are significant changes between treatment means, but with an emphasis on blocking. Based on its specific numerator degrees of freedom (number of treatments minus one) and denominator degrees of freedom (residual/error, which accounts for variance after both treatment and block effects are removed), the F test statistic for treatments is computed and compared to a critical value.The null hypothesis that all treatment means are equal is rejected if the computed F value for treatments is greater than the critical value, suggesting that at least one treatment differs significantly. An F test for blocks is also included in the ANOVA table to ascertain whether blocking was successful in reducing nuisance variance. Post-hoc multiple comparison tests, like Tukey’s HSD or Fisher’s LSD, are used to determine whether specific pairs of treatments are substantially different after accounting for block effects in the analysis, as ANOVA in RBD, like in CRD, does not define which treatments vary.</p>
+<details>
+<summary>
+What is a post-hoc test?
+</summary>
+<p>A post hoc test is a statistical procedure performed after an initial analysis, such as ANOVA, shows a statistically significant result. Its purpose is to determine exactly which groups differ from each other when you have three or more groups. In other words, after finding an overall difference among group means, post hoc tests help identify <strong>where those specific differences lie</strong>.</p>
+</details>
+</section>
+<section id="sec-post" class="level3">
+<h3 class="anchored" data-anchor-id="sec-post">Post-hoc test</h3>
+<p>In the case of a <strong>Randomized Block Design (RBD)</strong>, a post-hoc test is used after finding a significant treatment effect in your overall RBD analysis, typically via ANOVA. The purpose of the post-hoc test remains the same as in other designs-it helps you determine which specific treatment groups differ from each other. A significant outcome from an RBD and the primary statistical test (such a two-way ANOVA) shows that at least one treatment effect varies between blocks. Like a standard ANOVA, this result does not specify which particular treatments vary; rather, it merely indicates that differences exist. After that, all pairs of treatment means within the blocked structure are compared using post-hoc tests (such LSD, Tukey’s or DMRT) to help identify which treatments differ from one another.</p>
+<p>When the <strong>Randomized Block Design (RBD)</strong> is significant, the following <strong>post hoc tests</strong> are commonly used to help identify which treatments differ from one another:</p>
+<div style="display: flex; gap: 2em;">
+<div class="Tukey's-box">
+<p><strong>Tukey’s Test</strong><br>
+When an ANOVA indicates that there are significant differences between treatment means, a post hoc analysis called <strong>Tukey’s Honest Significant Difference (HSD)</strong> test is employed in a Randomized Block Design (RBD).RBD accounts for variability from non-treatment factors by grouping experimental units into blocks.Tukey’s HSD accounts for <strong>block effects</strong> and preserves the familywise error rate while enabling all pairwise comparisons among treatment means once an ANOVA demonstrates a <strong>significant treatment effect</strong>.The procedure uses the <strong>mean square error</strong> from the ANOVA and a <strong>critical value</strong> from the Studentized Range distribution to calculate the <strong>minimum significant difference</strong>, ensuring only truly distinct treatment pairs are flagged as significantly different. This method increases the <strong>reliability</strong> and <strong>power of treatment comparisons</strong> in blocked experiments, making it especially valuable in <strong>agricultural and biological studies</strong> where environmental or site-specific variation is present.</p>
+</div>
+<div class="lsd-box">
+<p><strong>LSD (Least Significant Difference) Test</strong><br>
+In the context of a Randomized Block Design (RBD), the <strong>Least Significant Difference (LSD)</strong> test is a <strong>parametric mean comparison method</strong> that is conducted following the confirmation of treatment differences by a significant ANOVA result. By determining the smallest difference necessary for statistical significance between pairs of means, using the <strong>pooled error variance</strong> from ANOVA, LSD is intended to determine <strong>which particular treatment means differ from one another</strong>.Blocks are used in RBD to help limit field heterogeneity, which <strong>increases experiment precision</strong> and <strong>strengthens the pooled error term</strong> for LSD computation. However, because doing numerous LSD comparisons raises the chance of <strong>Type I error</strong>, particularly as the number of treatments increases, practitioners are advised to utilize the LSD test sparingly-only for preplanned or nearby mean comparisons.When comparisons are meaningful and not made arbitrarily after data inspection, the test performs well. Based on the parametric assumptions of normality and equal variances, LSD in RBD is a robust yet flexible method for identifying differences between treatment means. It also takes use of the accuracy gain provided by blocking.</p>
+</div>
+</div>
+<div style="margin-bottom: 1cm;">
+
+</div>
+<details>
+<summary>
+Which post-hoc test to use?
+</summary>
+<p>In a Randomized Block Design (RBD), a post-hoc test is applied after finding a significant treatment effect in the overall analysis, typically via ANOVA. The purpose of the post-hoc test is to identify which specific treatment groups differ from each other, since a significant result from the overall ANOVA only indicates that at least one treatment effect varies between blocks but does not specify where those differences occur. After establishing statistical significance for treatment effects in the RBD, post-hoc procedures such as LSD, Tukey’s, or DMRT are used to compare all pairs of treatment means within the blocked structure. These pairwise comparisons help pinpoint which treatments differ specifically, enabling targeted interpretation and decision-making in the context of the blocking that controlled for known sources of variation.This approach ensures that the results account for block effects and maintains the rigor of identifying meaningful treatment differences while controlling for experiment-wise error rates, providing a robust analysis framework for blocked experimental designs.</p>
+</details></section>
+<section id="p-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="p-adjustment">p Adjustment Method</h3>
+<p><strong>In statistical hypothesis testing, p-values indicate the probability of observing results at least as extreme as those observed, assuming the null hypothesis is true. When multiple tests are conducted, the risk of false positives (Type I errors) increases. P-value adjustment methods address this issue by controlling the overall error rate, ensuring reliable inference in multiple testing scenarios.</strong></p>
+<p><strong>Different p-adjustment methods are listed below, if you are interested you can click on them to read more:</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bonferroni_correction"><strong>Bonferroni</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method"><strong>Holm</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multiple_testing_correction#Hommel"><strong>Hommel</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Hochberg_procedure"><strong>Benjamini-Hochberg Procedure (BH)</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure"><strong>Benjamini-Yekutieli Procedure (BY)</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/False_discovery_rate"><strong>False Discovery Rate (q-value) Approach</strong></a></li>
+</ul>
+<details>
+<summary>
+Which p-adjustment method to use?
+</summary>
+<p><strong>In agricultural research, it is a common practice to use no p-value adjustment (“none”) for multiple comparisons after tests like the Kruskal-Wallis. This is because agricultural experiments often involve smaller numbers of treatments and replications, where strict adjustments may be overly conservative and reduce the ability to detect meaningful differences. Researchers prefer to interpret results with caution rather than risk missing important findings due to overly strict error control. Nonetheless, the choice should always consider the study design, number of comparisons, and the consequences of Type I versus Type II errors in the specific context. However, When you have a large number of groups and sizable sample sizes, like in social science research, controlling the false discovery rate (FDR) becomes important to balance detecting true differences while limiting false positives. In such cases, the Benjamini-Hochberg (BH) procedure is often recommended. It controls the expected proportion of false discoveries (Type I errors) among the rejected hypotheses, which is less conservative than Bonferroni but still provides strong error control suitable for large-scale multiple testing. If your tests are dependent or more complex, the Benjamini-Yekutieli (BY) procedure can be used as it controls FDR under any dependency structure, though it is more conservative than BH.</strong></p>
+</details>
+</section>
+</section>
+<section id="sec-rasins" class="level2">
+<h2 class="anchored" data-anchor-id="sec-rasins">Getting started in RAISINS</h2>
+<p>RAISINS (R and AI Solutions in INferential Statistics) is an online platform that simplifies data analysis for agricultural research. RAISINS is completely online and doesnot require any downloads. It integrates the power of R, Python, and AI to offer user-friendly, robust statistical tools. The platform is developed by STATOBERRY LLP, with mentorship from the Department of Agricultural Statistics, College of Agriculture, Vellayani, Kerala Agricultural University.</p>
+<p>Head to <a href="https://www.raisins.live">www.raisins.live</a> where you can access various analytical modules. You can accesss the RBD Analysis module from the analysis tools under <strong>Analysis of Experiments</strong>.</p>
+<div id="rbdinraisins" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Getweb.webp" class="img-fluid figure-img" width="685"></p>
+<figcaption class="figure-caption">Accessing Randomised Block Design in RAISINS</figcaption>
+</figure>
+</div>
+<p>You can log in to the web application using the credentials you received after subscribing.</p>
+<section id="a-working-example" class="level3">
+<h3 class="anchored" data-anchor-id="a-working-example">A working example</h3>
+<p>We’ll guide you through the entire <strong>RBD Analysis</strong> module step by step. To begin, let’s look at how the analysis can be carried out using Example 1 described in <a href="#sec-exrbd">Section&nbsp;1.1</a>. For clarity, here’s a quick recap of the example: Ten mango cultivars, each representing a different treatment, are being evaluated by a horticultural scientist. Alphonso, Kesar, Dasheri, Himsagar, Chausa, Badami, Safeda, Bombay, Langra, and Totapuri are among the kinds that are included. The experiment is laid out in three blocks to account for variability among experimental units, such as differences in soil fertility or microclimatic conditions. Each block contains all ten varieties, and the assignment of treatments within each block is randomized. The dataset format required for analysis in RAISINS is illustrated in <a href="#fig-raisinrbd">Figure&nbsp;2</a>.</p>
+<p>Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in <a href="#sec-createData">Section&nbsp;6</a>. Additionally, model datasets are available within the app for testing purposes,as explained in <a href="#sec-Datasets">Section&nbsp;7</a>. See how dataset is arranged for analysis <a href="#fig-raisinrbd">Figure&nbsp;2</a>.</p>
+<p>Each response variable (yield, Obs1, Obs2, FW) can be analyzed using a Randomized Block Design (RBD) to determine whether the mango varieties differ significantly while controlling for block effects.</p>
+<div id="fig-raisinrbd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="RBSS1.webp" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Dataset arrangement for analyzing how the ten mango varieties differ significantly while controlling for block effects using the RBD Analysis in RAISINS</figcaption>
+</figure>
+</div>
+<div id="fig-analysistab" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="AnalysisRBD.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Analysis window in RAISINS</figcaption>
+</figure>
+</div>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p>RAISINS generates result table in the format given in <a href="#fig-res1">Figure&nbsp;4</a> and <a href="#fig-res2">Figure&nbsp;5</a> after the analysis.<br>
+The first result table is ANOVA summary table containing source of variation, degrees of freedom, mean squares provided for each character. The second result table is detailed tabular representation with letter grouping and other important statistics containing F stat value, p value, CD, MSE, SE(m), SE(d), CV(%), Cohen’s F. **indicates significance at 1% level and * indicates significance at 5% level.</p>
+<div id="fig-res1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="res.webp" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Result table in RAISINS showing the ANOVA summary</figcaption>
+</figure>
+</div>
+<p>The ANOVA results show that treatment differences were highly significant for yield and significant for Obs1, indicating that cultivars varied substantially in these two traits. However, differences for Obs2 and FW were not significant, implying that these traits remained consistent across treatments. The block effect was significant only for yield, confirming that blocking successfully controlled field variability for that trait.</p>
+<div id="fig-res2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="ss2.webp" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Result table in RAISINS showing the detailed tabular representation with letter grouping and other important statistics</figcaption>
+</figure>
+</div>
+<p>The detailed mean comparison table revealed that treatment differences were highly significant for yield and significant for Obs1, while Obs2 and fruit weight (FW) showed no significant variation among cultivars. The cultivar Alphonso recorded the highest yield, followed by Totapuri and Dasheri, whereas Safeda had the lowest yield. For Obs1, Dasheri and Himsagar performed better than the rest. Traits Obs2 and FW did not vary significantly, indicating uniformity across cultivars. The low coefficients of variation (below 22%) suggest that the experiment was conducted with good precision and reliability.</p>
+<p>After a significant result in the RBD Analysis, a post-hoc comparison is automatically performed to identify which treatment groups differ significantly for each character under study. LSD (Least significant difference test) will be performed by default, you can change the post-hoc test to Tukey’s test and DMRT(Duncan’s Multiple Range Test) by changing from the drop down menu. The results of the post-hoc test are summarized using letter groupings. Treatments that share the same letter are considered on par, meaning they are not significantly different.</p>
+<p>For example, in the case of the response variables <strong>Obs2</strong> and <strong>FW</strong>, no letter groupings are shown, indicating that the Randomised Block Design did not find significant differences among the treatments. However, for <strong>yield</strong>, treatments Alphonso and Dasheri are assigned the letter ‘a’, while Badami and Chausa are assigned the letter ‘abc’,Bombay_g, Kesar and Langra are assigned the letter ’cd. This indicates that Alphonso and Dasheri form one group with similar yield, while Badami and Chausa form another group with similar yield and Bombay_g, Kesar and Langra form another significantly different group.</p>
+<p>You can interpret the results for the other response variables in the same way: treatments with the same letter do not differ significantly in their effect on that response variable, while those with different letters do.</p>
+<p>From the results <a href="#fig-res2">Figure&nbsp;5</a>, it’s found that yield wise, varieties <strong>Alphonsa</strong> and <strong>Dasheri</strong> are the best, and by Obs1 wise, <strong>Dasheri</strong> and <strong>Himsagar</strong> are the best. If your objective is to select treatments based on all response variables, a multivariate analysis has to be performed. For that click on <code>Multivaraite</code> tab. The results as mentioned in <a href="#sec-multi">Section&nbsp;5</a> gives you the best treatment based on all the response variables.</p>
+</section>
+<section id="customization-tabs" class="level3">
+<h3 class="anchored" data-anchor-id="customization-tabs">Customization tabs</h3>
+<p>In RAISINS, you can easily customize your analysis by adjusting settings such as choice of multiple comparison test, level of significance, decimal places, font style, and significance level. These options help tailor the results to your specific needs, as shown in <a href="#fig-tabs">Figure&nbsp;6</a>.</p>
+<div id="fig-tabs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/tabs.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Customising the results</figcaption>
+</figure>
+</div>
+</section>
+<section id="plots-and-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="plots-and-graphs">Plots and graphs</h3>
+<p><strong>RAISINS</strong> is designed for a smooth and hassle-free experience. Once you click the <code>Run Analysis</code> button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible plot related to the <strong>Randomised Block Design</strong> is readily available. Simply click on the <code>Plots &amp; Graphs</code> tab to view them. Each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG format (300 dpi) for use in reports or presentations.</p>
+<script>
+// Hide all descriptions on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const descriptions = document.querySelectorAll('.plot-description');
+  descriptions.forEach(desc => {
+    desc.style.display = 'none';
+    console.log('Hiding on load: ' + desc.id); // Debug log
+  });
+});
+
+function showDescription(id) {
+  console.log('Showing description: ' + id); // Debug log
+  document.getElementById(id).style.display = 'flex';
+}
+
+function hideDescription(id) {
+  console.log('Hiding description: ' + id); // Debug log
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+<style>
+.plot-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 350px; /* Fixed width for container */
+  height: 300px; /* Fixed height for container */
+  overflow: hidden; /* Ensure content fits within container */
+  margin: 10px; /* Add margin to prevent overlap */
+}
+
+.plot-container img {
+  width: 350px; /* Fixed image width */
+  height: 300px; /* Fixed image height */
+  object-fit: cover; /* Scale image to cover container */
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plot-container:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plot-description {
+  display: none !important; /* Ensure hidden by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover full image width */
+  height: 100%; /* Cover full image height */
+  z-index: 1000; /* Ensure description is above image */
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 142, 83, 0.8)); /* Semi-transparent gradient */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex; /* Center text */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+  pointer-events: none; /* Prevent description from blocking hover */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Visible border for debugging */
+}
+
+.plot-container:hover .plot-description {
+  display: flex !important; /* Force visibility on hover, using flex for centering */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Unique background gradients for each plot description */
+#boxplot-desc { background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 142, 83, 0.8)); }
+#pairsplot-desc { background: linear-gradient(135deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)); }
+#barplot-desc { background: linear-gradient(135deg, rgba(161, 140, 209, 0.8), rgba(251, 194, 235, 0.8)); }
+#connectedplot-desc { background: linear-gradient(135deg, rgba(0, 221, 235, 0.8), rgba(38, 166, 154, 0.8)); }
+#meanvalueplot-desc { background: linear-gradient(135deg, rgba(255, 154, 139, 0.8), rgba(255, 106, 136, 0.8)); }
+#violinplot-desc { background: linear-gradient(135deg, rgba(132, 250, 176, 0.8), rgba(143, 211, 244, 0.8)); }
+</style>
+<div class="grid">
+<div class="g-col-6">
+<div class="plot-container" onmouseover="showDescription('boxplot-desc')" onmouseout="hideDescription('boxplot-desc')">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RBDWEBBoxplot.webp" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Box+Plot"></p>
+<figcaption class="figure-caption">Box plot</figcaption>
+</figure>
+</div>
+<div id="boxplot-desc" class="plot-description">
+<p>A <strong>box plot</strong> displays the distribution of data with a five-number summary: minimum, Q1, median, Q3, and maximum. It highlights central tendencies, variability, and outliers with a splash of clarity!</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="plot-container" onmouseover="showDescription('violinplot-desc')" onmouseout="hideDescription('violinplot-desc')">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RBDWEBViolinplot.webp" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Violin+Plot"></p>
+<figcaption class="figure-caption">Violin plot</figcaption>
+</figure>
+</div>
+<div id="violinplot-desc" class="plot-description">
+<p>A <strong>violin plot</strong> combines the box plot and the density trace (or smoothed histogram) into a single display that reveals structure found within the data.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="plot-container" onmouseover="showDescription('barplot-desc')" onmouseout="hideDescription('barplot-desc')">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RBDWEBBarplot.webp" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Bar+Plot"></p>
+<figcaption class="figure-caption">Bar plot</figcaption>
+</figure>
+</div>
+<div id="barplot-desc" class="plot-description">
+<p>A <strong>Bar plot</strong> with error bars is a visualization that displays data using rectangular bars, where each bar’s height represents a value (e.g., mean), and error bars indicate the variability or uncertainty (e.g., standard deviation or standard error) around that value. This type of plot is commonly used in scientific and statistical contexts to summarize data and convey reliability..</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="plot-container" onmouseover="showDescription('meanvalueplot-desc')" onmouseout="hideDescription('meanvalueplot-desc')">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RBDWEBMeanvalueplot.webp" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Mean+Value+Plot"></p>
+<figcaption class="figure-caption">Mean Value Plot</figcaption>
+</figure>
+</div>
+<div id="meanvalueplot-desc" class="plot-description">
+<p>A <strong>mean value plot</strong> also known as a line plot, is a graphical representation of the average (mean) value of a dataset, often accompanied by error bars that indicates the variability around the mean. It’s used to visualize the central tendency and spread of data.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="plot-container" onmouseover="showDescription('connectedplot-desc')" onmouseout="hideDescription('connectedplot-desc')">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RBDWEBConnected.webp" class="img-fluid figure-img" data-fallback="https://via.placeholder.com/300x300?text=Connected+Plot"></p>
+<figcaption class="figure-caption">Connected line plot</figcaption>
+</figure>
+</div>
+</div>
+<div id="connectedplot-desc" class="plot-description">
+<p>A <strong>connected line plot</strong>, is a type of chart where mean value points are represented by dots and connected across group by lines, better for comparing between groups, and to see trends and relationships between groups</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-plots">Customizing plots</h3>
+<p>RAISINS provides user various customization features for the plots to enhance the visualization according to the requirement of the user.<strong>Click</strong> on the below images to get a clear idea on the customizing features.</p>
+<style>
+  .gallery-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  .gallery-row img {
+    height: 150px; /* set thumbnail height */
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .gallery-row img:hover {
+    transform: scale(1.05);
+  }
+  /* Modal style */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  .modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+</style>
+<div class="gallery-row">
+<p><img src="Cust1.webp" onclick="openModal(this)"> <img src="Cust2.webp" onclick="openModal(this)"> <img src="Cust3.webp" onclick="openModal(this)"> <img src="Cust4.webp" onclick="openModal(this)"> <img src="Cust5.webp" onclick="openModal(this)"> <img src="Cust6.webp" onclick="openModal(this)"> <img src="Cust8.webp" onclick="openModal(this)"> <img src="Cust9.webp" onclick="openModal(this)"> <img src="Cust10.webp" onclick="openModal(this)"></p>
+</div>
+<!-- Modal -->
+<div id="imgModal" class="modal">
+<p><span class="modal-close" onclick="document.getElementById('imgModal').style.display='none'">×</span> <img id="modalImage" class="modal-content"></p>
+</div>
+<script>
+function openModal(img) {
+  var modal = document.getElementById('imgModal');
+  var modalImg = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+</script>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+.grid-item {
+  cursor: pointer;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 50%; /* Reduced from 80% to make the zoomed image smaller */
+  max-height: 50%; /* Reduced from 80% to make the zoomed image smaller */
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+.modal-description {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div class="grid-container">
+  <div class="grid-item" onclick="openModal('images/kwt/plot1.png', 'A gear button on the left side of each plot can be used to customize the plots according to the requirements.')">
+    <img src="images/kwt/plot1.png" alt="Plot 1">
+  </div>
+<div class="grid-item" onclick="openModal('images/kwt/plot2.png', 'Titles &amp; labels: Once clicked a dropdown menu appears, where you can change the axis title, plot titles and legends. You can enter them manually !')">
+    <img src="images/kwt/plot2.png" alt="Plot 2">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot3.png', 'colours &amp; patterns: This section is used to change the colours of the each plots.')">
+    <img src="images/kwt/plot3.png" alt="Plot 3">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot4.png', 'colours &amp; patterns: Different themes are available in this section. Use them accordingly')">
+    <img src="images/kwt/plot4.png" alt="Plot 4">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot5.png', 'Line &amp; theme: The appearance of lines and themes can be changed in this part.')">
+    <img src="images/kwt/plot5.png" alt="Plot 5">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot6.png', 'Show/hide options: For showing and hiding the letter grouping and axis labels, the check boxes can be used respectively. Along with this, the size of grouping letter can also be altererd.')">
+    <img src="images/kwt/plot6.png" alt="Plot 6">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot7.png', 'Size &amp; spacing:  The distance of each section, their sizes &amp;  text angle can be changed here.')">
+    <img src="images/kwt/plot7.png" alt="Plot 7">
+  </div>
+  <div class="grid-item" onclick="openModal('images/kwt/plot8.png', 'Text &amp; label:  Here you can change text color and size, also the background color and border colour of the sections!.')">
+    <img src="images/kwt/plot8.png" alt="Plot 8">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="Zoomed Plot">
+    <div id="modalDescription" class="modal-description"></div>
+  </div>
+</div>
+
+<script>
+function openModal(src, description) {
+  console.log("Opening modal with src:", src); // Debugging log
+  const modal = document.getElementById('myModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalDesc = document.getElementById('modalDescription');
+  if (modal && modalImg && modalDesc) {
+    modal.style.display = 'flex';
+    modalImg.src = src;
+    modalDesc.textContent = description;
+  } else {
+    console.error("Modal elements not found.");
+  }
+}
+
+function closeModal() {
+  console.log("Closing modal"); // Debugging log
+  const modal = document.getElementById('myModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+  const modal = document.getElementById('myModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
+// Debugging: Log when script loads
+console.log("Script loaded successfully.");
+</script>
+</section>
+</section>
+<section id="sec-multi" class="level2">
+<h2 class="anchored" data-anchor-id="sec-multi">Multivariate and AI</h2>
+<p>The Kruskal-Wallis test is usually used to compare one variable across several groups. Now, In our example of rating four drinks; if we have to identify best drink based on multiple variables (<em>i.e.</em> Appearance, Color, Texture, Taste, Flavour), navigate to <code>Multivariate</code> tab see <a href="#fig-multiraisin">Figure&nbsp;7</a>. Multivariate analysis in kruskal wallis test helps you to compare different characters simultaneously!. Remember the PCA used for multivariate selection, is an exploratory technique, not an inferential method.</p>
+<div id="fig-multiraisin" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/multi.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Multivariate tab in RAISINS</figcaption>
+</figure>
+</div>
+<p>A PCA will be automatically carried out based on the selected variables. PCA results and plots will appear along with automated interpretation.</p>
+<p>The scree plot given <a href="#fig-scree">Figure&nbsp;8</a> illustrates the proportion of variance explained by each principal component. In our example PC1 accounts for approximately 61.08% of the variance in the dataset, while PC2 accounts for about 38.02% of the variance. Together, PC1 and PC2 explain approximately 99.1% of the total variance (termed as cumulative variance). Since PC1 explains more than 60% of the variance, a PC1-based index score is a strong consideration. Additionally, since both PCs explain more than 99% of the variance in the data, an index score based on both PCs is also appropriate. You should also take a look upon the loadings of each variable on the PCs and decide which PC-based index needs to be selected.</p>
+<div id="fig-scree" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/scree.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8: Scree Plot</figcaption>
+</figure>
+</div>
+<p>The loadings of each variable on PCs can be seen in <a href="#fig-loadings">Figure&nbsp;9</a>. Here Appearance, Color, Texture and Flavour has positive loading in PC1. So if you want to select best drink based on these four characters, you can use an Index based on PC1. In RAISINS this index is automatically calculated. You can see the index values calculated in <a href="#fig-indexscore">Figure&nbsp;10</a>. More mathematical aspects of index construction and scalling can be read in the app itself.</p>
+<div id="fig-loadings" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/loadings.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;9: Loadings of each varaibles on PCs</figcaption>
+</figure>
+</div>
+<p>Based on index score it can be seen that, V3 has the highest index followed by V4. So Experimenter can select the drink V3 and V4. Also in some cases when the loadings of prefered variables are negative, a lower index value is preferred. Here to refine your selection, use the ‘Select cutoff for Scaled Index Score’ feature, where you can choose the cutoff percentage to select treatments above or below a certain threshold. The default cutoff is set at 75%. By toggling the up-arrow and down-arrow buttons below the cutoff selection, you can select the top or bottom percentage of treatments as per your preference. Selected treatments are highlighted in yellow in the table below, providing a clear visual cue.</p>
+<div id="fig-indexscore" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/index_score.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;10: Index score based on PCA</figcaption>
+</figure>
+</div>
+<p>The index plot shown in <a href="#fig-index">Figure&nbsp;11</a>, used in the context of Principal Component Analysis (PCA), visually displays the positions of treatments (or groups) based on their index scores—similar to a radar chart. In <a href="#fig-index">Figure&nbsp;11</a>, V3 and V4 emerge as the selected drinks based on the four characters under study: appearance, color, texture, and flavour.</p>
+<div id="fig-index" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/index.png" class="img-fluid figure-img" width="430"></p>
+<figcaption class="figure-caption">Figure&nbsp;11: Index Plot</figcaption>
+</figure>
+</div>
+<p>Additionally, the biplot in <a href="#fig-Biplot">Figure&nbsp;12</a> clearly shows that V4 and V3 are positioned closer to three key characters—Appearance, Texture, and Flavour—indicating that these treatments scored highly for these attributes. If taste alone is the criterion, V2 emerges as the best candidate, as evident from <a href="#fig-res1">Figure&nbsp;4</a>. On the other hand, V1 appears to be the least favourable option, having received low scores across all characters.</p>
+<div id="fig-Biplot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/biplot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;12: Biplot from PCA</figcaption>
+</figure>
+</div>
+<p>Combining all this information, the experimenter can arrive at an overall conclusion that is statistically sound and contextually relevant to their study.</p>
+<p>RAISINS is equipped with an <strong>AI-powered RAISINS Assistant</strong> designed to assist users in comprehending the outcomes of statistical tests and data analysis. This functionality provides clear and concise summaries of results, identifies statistically significant differences between groups, and offers informed suggestions for potential next steps or interpretations. The AI interpretation given below <a href="#fig-ai">Figure&nbsp;13</a></p>
+<div id="fig-ai" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/ai.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;13: AI powere RAISINS Assistant to interpret your results</figcaption>
+</figure>
+</div>
+<p>RAISINS enables users to draw meaningful conclusions without requiring advanced expertise in statistics.</p>
+</section>
+<section id="sec-createData" class="level2">
+<h2 class="anchored" data-anchor-id="sec-createData">Preparing your data</h2>
+<p>What truly matters is the quality of your data! As the saying goes, “garbage in, garbage out” — and this holds true for any software. To prepare your dataset for analysis in RAISINS, you have two options:</p>
+<ol type="1">
+<li>Create your dataset in MS Excel<br>
+</li>
+<li>Build your dataset directly within the RAISINS app</li>
+</ol>
+<section id="preparing-data-in-ms-excel" class="level3">
+<h3 class="anchored" data-anchor-id="preparing-data-in-ms-excel">Preparing data in MS Excel</h3>
+<p>Open a new blank sheet in MS Excel with only one sheet included, and avoid adding any unnecessary content. The dataset should follow a column-based format, where the first column represents the treatment or group to be compared—you can name this column appropriately, such as “Group” or “Treatment.” All characters under study (e.g., Appearance, Texture, Taste) should be arranged in separate columns, and each group should be repeated according to the number of replications. The file can be saved in CSV, XLS, or XLSX format, but CSV is recommended as it is lighter and enables faster loading. Ensure that there are no unwanted spaces in column names or group names. For reference, see the structure shown in <a href="#fig-modata1">Figure&nbsp;14</a>. As illustrated in <strong>?@fig-raisinkwt</strong>, groups must appear repeatedly based on replications, and the data can also be arranged as shown in <a href="#fig-modata2">Figure&nbsp;15</a>.</p>
+<div id="fig-modata1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/modeldata1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;14: Model1 showing how the prepared Excel file for upload should look like</figcaption>
+</figure>
+</div>
+<div id="fig-modata2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/modeldata2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15: Model2 showing how the prepared Excel file for upload should look like</figcaption>
+</figure>
+</div>
+<details>
+<summary>
+Dataset Creation Rules
+</summary>
+<ol type="1">
+<li><strong>Column Naming Convention</strong>
+<ul>
+<li>No spaces allowed in column names.<br>
+</li>
+<li>Use underscores (<code>_</code>) or full stops (<code>.</code>) for separation.</li>
+<li>Avoid symbols and special characters like %,# etc</li>
+</ul></li>
+<li><strong>Data Arrangement</strong>
+<ul>
+<li>Start data arrangement towards the upper-left corner.<br>
+</li>
+<li>Ensure the row above the data is not blank.</li>
+</ul></li>
+<li><strong>Cell Management</strong>
+<ul>
+<li>Avoid typing or deleting in cells without data.<br>
+</li>
+<li>If needed, select affected cells, right-click, and select <strong>Clear Contents</strong>.</li>
+</ul></li>
+<li><strong>Column Relevance</strong>
+<ul>
+<li>Name all columns meaningfully.<br>
+</li>
+<li>Exclude unnecessary columns not required for analysis.</li>
+</ul></li>
+</ol>
+</details>
+<details>
+<summary>
+How to Save as CSV in MS Excel
+</summary>
+<ol type="1">
+<li><p><strong>Open Your Workbook</strong></p>
+<ul>
+<li>Ensure your data is arranged properly with only one sheet.</li>
+</ul></li>
+<li><p><strong>Click ‘File’ Menu</strong></p>
+<ul>
+<li>Go to the top-left corner and click on <strong>File</strong>.</li>
+</ul></li>
+<li><p><strong>Choose ‘Save As’ or ‘Save a Copy’</strong></p>
+<ul>
+<li>Select the location where you want to save your file.</li>
+</ul></li>
+<li><p><strong>Set File Type to CSV</strong></p>
+<ul>
+<li>In the <strong>‘Save as type’</strong> dropdown menu, choose <strong>CSV (Comma delimited) (*.csv)</strong>.</li>
+</ul></li>
+<li><p><strong>Name Your File</strong></p>
+<ul>
+<li>Enter a relevant file name without spaces (use underscores if needed).</li>
+</ul></li>
+<li><p><strong>Click ‘Save’</strong></p>
+<ul>
+<li>Click <strong>Save</strong> to export the file.</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p>💡 Tip: Before saving, double-check that your data is on the first sheet and follows the required format (e.g., no empty rows above the data, meaningful column names).</p>
+</blockquote>
+</details>
+</section>
+<section id="creating-dataset-in-raisins" class="level3">
+<h3 class="anchored" data-anchor-id="creating-dataset-in-raisins">Creating dataset in RAISINS</h3>
+<p>If you’re unsure about the correct format for creating a dataset, don’t worry—Raisins offers an option to create data directly within the app using the prescribed template. Here’s how:</p>
+<p>➡️Navigate to the <code>Create Data</code> Tab</p>
+<p>➡️ Select the number of <strong>Treatments</strong></p>
+<p>➡️ Select number of <strong>Replications</strong></p>
+<p>➡️Click on<code>Create</code> button**</p>
+<p>Model layout will appear as shown in <a href="#fig-createdata">Figure&nbsp;16</a>. Now you may enter the observations manually into the CSV file once downloaded, or paste the observations straight into the file provided. Once you have entered the observations in the layout, download the csv file and upload in <code>Analysis</code> tab!</p>
+<div id="fig-createdata" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kwt/create_data.png" class="img-fluid figure-img" width="1011"></p>
+<figcaption class="figure-caption">Figure&nbsp;16: Creating dataset within RAISINS</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-Datasets" class="level2">
+<h2 class="anchored" data-anchor-id="sec-Datasets">Model Datasets</h2>
+<p>To test the app or better understand the data arrangement, we provide model datasets within the app. You can download them from the <code>Datasets</code> tab.</p>
+<p><img src="images/kwt/DATASET.png" class="img-fluid"></p>
+</section>
+<section id="faqs" class="level2">
+<h2 class="anchored" data-anchor-id="faqs">FAQ’s</h2>
+<p>The app includes a dedicated FAQ tab to help clarify common doubts and guide users through various features. This section provides detailed answers to frequently asked questions, offering additional information and helpful tips to ensure a smooth user experience. If you’re ever unsure about how something works, the FAQ tab is a great place to start.</p>
+<p><img src="images/kwt/faq.png" class="img-fluid"></p>
+</section>
+<section id="user" class="level2">
+<h2 class="anchored" data-anchor-id="user">User</h2>
+<p>You can find all your account details—including usage percentage, plan validity, subscription type, and billing information—under the <code>User</code> tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.</p>
+<p><img src="images/kwt/user_tab.png" class="img-fluid"></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -685,6 +685,6 @@ The app includes a dedicated FAQ tab to help clarify common doubts and guide use
 
 ## User
 
-You can find all your account details—including usage percentage, plan validity, subscription type, and billing information—under the `User` tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.
+You can find all your account details—including usage percentage, plan validity, subscription type, and billing information-under the `User` tab. This section also allows you to download your GST invoice. We adhere to a strict data policy: each time you log in, a temporary instance of the app is created exclusively for you, which is automatically terminated when you log out. No uploaded data or generated results are stored, ensuring complete privacy and data security.
 
 ![](images/kwt/user_tab.png)
