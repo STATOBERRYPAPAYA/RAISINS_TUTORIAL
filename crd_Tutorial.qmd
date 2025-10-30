@@ -42,6 +42,12 @@ Although **CRD** is generally not advised for heterogeneous settings, it is espe
 
 ![](onewayANOVA.png){fig-align="center" width="511"}
 
+### CRD Layout
+
+This layout visually represents a Completely Randomized Design (CRD) arrangement with four treatments labeled as A, B, C, and D arranged randomly across experimental units.Each square block corresponds to one experimental unit or plot where a treatment is applied.Letters A, B, C, and D represent the four different treatment groups applied to the experimental units randomly and replicated three times.The randomized arrangement inside the grid (3 rows and 4 columns) exemplifies the core principle of CRD, where treatments are assigned entirely at random without restrictions or blocking.The layout shows no pattern by row or column, confirming random allocation, which helps ensure that uncontrolled variability is minimized by chance.
+
+![CRD Layout](layweb.webp){fig-align="center"}
+
 ## Example
 
 Let’s explore some practical situations in agricultural research where the Completely Randomised Design, also known as the CRD, is applied.
@@ -244,12 +250,12 @@ This statistic is used to determine whether there are significant differences am
 
 ### Correction for Ties
 
-If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using **Aitken's adjustment** or a **corrected mean square** approach:
+If the assumptions of ANOVA are slightly violated, or if there are unequal sample sizes (missing values) in the dataset, the F-statistic can be adjusted using **Aitken's adjustment** or a **corrected mean square** approach using the @eq-ct:
 
 ::: {.callout-tip title="Use this for Completely Randomised Design"}
 Adjustment for Unequal Variances or Missing Values $$
 F_{adjusted} = \frac{\text{Corrected Mean Square Between Treatments}}{\text{Corrected Mean Square Error}}
-$$
+$${#eq-ct}
 :::
 
 This ensures that the test remains valid under minor violations of CRD assumptions.
@@ -339,52 +345,13 @@ If the computed F value exceeds the critical value, the null hypothesis is rejec
 
 <summary>What is a post-hoc test?</summary>
 
-A post-hoc test is a follow-up analysis performed after finding a significant result in an overall statistical test (like ANOVA or Kruskal-Wallis). Its purpose is to identify exactly which groups or treatments differ from each other. In other words, it helps pinpoint where the differences lie between multiple groups when the initial test shows that not all groups are the same.
+A post-hoc test is a follow-up analysis performed after finding a significant result in an overall statistical test (like ANOVA). Its purpose is to identify exactly which groups or treatments differ from each other. In other words, it helps pinpoint where the differences lie between multiple groups when the initial test shows that not all groups are the same.
 
 </details>
 
 ### Post-hoc test {#sec-post}
 
-When the Completely Randomised Design is significant, the following post hoc tests are commonly used for pairwise comparisons:
-
-::: {style="display: flex; gap: 2em;"}
-::: LSD
-**LSD Test**\
-:::
-
-::: Tukey-box
-**Tukey's Test**\
-:::
-:::
-
-::: Duncan-box
-**DMRT**\
-:::
-
-:::
-
-::: {style="margin-bottom: 1cm;"}
-:::
-
-<details>
-
-<summary>Which post-hoc test to use?</summary>
-
-When choosing a post-hoc test after performing a Completely Randomised Design, the decision largely depends on the characteristics of your data and the goals of your analysis.--------------------------------------------------
-
-</details>
-
-## Post-hoc test {#sec-posthoctest}
-
 When the ANOVA in a **Completely Randomised Design (CRD)** is significant, the following post hoc tests are commonly used for pairwise comparisons: Tukey’s Honestly Significant Difference (HSD) test, and Fisher’s Least Significant Difference (LSD) test. These tests help identify which specific treatment means differ from each other, addressing the limitation of ANOVA in not indicating the exact sources of variation.
-
-**Tukey's Test**
-
-Let's explore **Tukey's Honestly Significant Difference (HSD)** test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey's HSD test helps you find out exactly which pairs of treatment means differ significantly.
-
-The main idea is that Tukey's HSD compares all possible pairs of treatment means while controlling the overall Type I error rate, so you avoid false positives when making multiple comparisons. It calculates a critical value based on the number of treatments, degrees of freedom for error (from ANOVA), and the mean square error.
-
-In CRD, this method works well because treatments are assigned completely at random and the error variance is assumed homogeneous. Tukey's HSD uses the within-group variance from ANOVA (Mean Square Error) and the number of replicates per treatment to assess whether the difference between any two means is "honestly significant."
 
 **LSD (Least Significant Difference) Test**
 
@@ -393,7 +360,23 @@ The **Least Significant Difference (LSD)** test is a post-hoc statistical proced
 The LSD is calculated as $$
 \text{LSD} = t_{\alpha/2, \, df_{\text{error}}} \sqrt{\frac{2 \cdot \text{MSE}}{n}}
 $$
-where, t\_{\alpha/2, , df\_{\text{error}}} is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
+where, **t₍α/2, dfₑᵣᵣₒᵣ₎** is the critical t-value at the chosen significance level (e.g., 0.05), MSE is the mean square error from the ANOVA, and n is the number of replications per treatment under equal sample sizes. Any absolute difference between two treatment means exceeding this LSD value is declared statistically significant. The test assumes homogeneity of variances and is most valid when the overall F-test is significant, as it uses a pooled error term from all treatments, making it more powerful but also more prone to Type I errors when multiple comparisons are made without adjustment. Therefore, while the LSD test is simple and sensitive, it should be applied cautiously, preferably for pre-planned comparisons or adjacent means in ordered arrays, to avoid inflated error rates due to data snooping.
+
+**Tukey's Test**
+
+Let's explore **Tukey's Honestly Significant Difference (HSD)** test as it applies to Completely Randomized Design (CRD). After conducting an ANOVA on your CRD experiment, which tells you if there is any significant difference among group means overall, Tukey's HSD test helps you find out exactly which pairs of treatment means differ significantly. The main idea is that Tukey's HSD compares all possible pairs of treatment means while controlling the overall Type I error rate, so you avoid false positives when making multiple comparisons. It calculates a critical value based on the number of treatments, degrees of freedom for error (from ANOVA), and the mean square error. In CRD, this method works well because treatments are assigned completely at random and the error variance is assumed homogeneous. Tukey's HSD uses the within-group variance from ANOVA (Mean Square Error) and the number of replicates per treatment to assess whether the difference between any two means is "honestly significant."
+
+**Duncan's Multiple Range Test (DMRT)**
+
+Duncan's Multiple Range Test (DMRT) is a post-hoc statistical method used after ANOVA to identify which specific treatment means differ significantly from one another, especially in agricultural experiments using designs like the Completely Randomized Design (CRD). After confirming significant overall differences via ANOVA, DMRT ranks the treatment means and calculates critical differences using the studentized range statistic (Q) and the standard error based on error variance from ANOVA. For each pair of means, the observed mean difference is compared to a calculated critical value that increases with the number of means being compared, making DMRT more powerful than simpler tests like LSD. If the difference exceeds the critical threshold, the means are considered significantly different; otherwise, they are grouped together. This systematic and sequential approach provides clear groupings of treatments, ensuring that the probability of discovering real differences is maximized, which is why DMRT has gained popularity in agricultural research.
+
+<details>
+
+<summary>Which post-hoc test to use?</summary>
+
+When choosing a post-hoc test after performing a Completely Randomised Design, the decision largely depends on the characteristics of your data and the goals of your analysis.
+
+</details>
 
 ## Getting started in RAISINS {#sec-rasins}
 
