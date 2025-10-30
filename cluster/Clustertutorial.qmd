@@ -1,0 +1,40 @@
+---
+title: "Hierarchical Cluster Analysis"
+format:
+  html:
+    mainfont: "Times New Roman"
+    theme: yeti
+    toc: true
+    toc-depth: 3
+    css: custom.css
+---
+```{=html}
+<style>
+  sup {
+    color: blue;
+    font-size: 0.8em;  /* smaller superscript */
+  }
+  .affiliations {
+    color: grey;
+    font-size: 0.9em;  /* one size smaller than normal */
+    margin-top: 0.2em;
+  }
+</style>
+```
+Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup>
+
+::: affiliations
+<sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,
+:::
+
+Cluster analysis is an unsupervised learning technique used to group similar items (observations) together. Observations in the same cluster are more similar to each other than to those in other clusters.
+
+
+# HCPC
+
+
+Hierarchical clustering on principal components (HCPC) is a hybrid approach that combines the strengths of principal component analysis (PCA) and hierarchical clustering. PCA first reduces the dimensionality of the dataset by summarizing correlated variables into a smaller set of uncorrelated components that retain most of the original variance. Then, hierarchical clustering is performed on these principal components instead of the raw variables, which enhances the separation of clusters and reduces noise caused by variable correlations. This method is particularly useful for visualizing and identifying meaningful groupings in complex multivariate datasets, as it simplifies interpretation while preserving the main structure of the data.
+
+
+
+
