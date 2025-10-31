@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hierarchical Cluster Analysis</title>
+<title>Hierarchical Cluster Analysis in RAISINS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -46,7 +46,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#hcpc" id="toc-hcpc" class="nav-link active" data-scroll-target="#hcpc">HCPC</a></li>
+  <li><a href="#how-to-prepare-your-data" id="toc-how-to-prepare-your-data" class="nav-link active" data-scroll-target="#how-to-prepare-your-data">How to Prepare Your Data?</a>
+  <ul class="collapse">
+  <li><a href="#preparing-data-in-ms-excel" id="toc-preparing-data-in-ms-excel" class="nav-link" data-scroll-target="#preparing-data-in-ms-excel">Preparing data in MS Excel</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-data-file-in-ms-excel" id="toc-creating-a-data-file-in-ms-excel" class="nav-link" data-scroll-target="#creating-a-data-file-in-ms-excel">1. Creating a Data File in MS Excel</a></li>
+  <li><a href="#file-format-recommendation" id="toc-file-format-recommendation" class="nav-link" data-scroll-target="#file-format-recommendation">2. File Format Recommendation</a></li>
+  <li><a href="#naming-columns-and-treatments" id="toc-naming-columns-and-treatments" class="nav-link" data-scroll-target="#naming-columns-and-treatments">3. Naming Columns and Treatments</a></li>
+  <li><a href="#creating-data-using-the-app-recommended-method" id="toc-creating-data-using-the-app-recommended-method" class="nav-link" data-scroll-target="#creating-data-using-the-app-recommended-method">4. Creating Data Using the App (Recommended Method)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#uploading-the-data-file-for-analysis" id="toc-uploading-the-data-file-for-analysis" class="nav-link" data-scroll-target="#uploading-the-data-file-for-analysis">Uploading the Data File for Analysis</a></li>
+  <li><a href="#dendrograms" id="toc-dendrograms" class="nav-link" data-scroll-target="#dendrograms">Dendrograms</a></li>
   </ul>
 </nav>
 </div>
@@ -54,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hierarchical Cluster Analysis</h1>
+<h1 class="title">Hierarchical Cluster Analysis in RAISINS</h1>
 </div>
 
 
@@ -80,14 +91,145 @@ ul.task-list li input[type="checkbox"] {
     margin-top: 0.2em;
   }
 </style>
-<p>Jithin Chandran<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup></p>
+<p>—————<sup>1</sup>, Dr Pratheesh P Gopinath<sup>2</sup></p>
 <div class="affiliations">
 <p><sup>1</sup>Statoberry LLP, <sup>2</sup>Department of Agricultural Statistics, Kerala Agricultural University,</p>
 </div>
-<p>Cluster analysis is an unsupervised learning technique used to group similar items (observations) together. Observations in the same cluster are more similar to each other than to those in other clusters.</p>
-<section id="hcpc" class="level1">
-<h1>HCPC</h1>
-<p>Hierarchical clustering on principal components (HCPC) is a hybrid approach that combines the strengths of principal component analysis (PCA) and hierarchical clustering. PCA first reduces the dimensionality of the dataset by summarizing correlated variables into a smaller set of uncorrelated components that retain most of the original variance. Then, hierarchical clustering is performed on these principal components instead of the raw variables, which enhances the separation of clusters and reduces noise caused by variable correlations. This method is particularly useful for visualizing and identifying meaningful groupings in complex multivariate datasets, as it simplifies interpretation while preserving the main structure of the data.</p>
+<p>Hierarchical Cluster Analysis (HCA) is a statistical method used to group similar data points into clusters based on their characteristics, building a tree-like structure to show how these groups form. In RAISINS (R and AI Solutions for INferential Statistics), a web-based platform for statistical analysis, HCA is implemented using R packages like FactoMineR. It’s particularly useful in agricultural research for categorizing genotypes, treatments, or traits by minimizing within-cluster distances and maximizing between-cluster differences. The process starts with individual data points and merges them iteratively into larger clusters, visualized through dendrograms.</p>
+<p><em>Below is a compact, practical guide you can use as a tutorial to perform Hierarchical Cluster Analysis in RAISINS.</em></p>
+<section id="how-to-prepare-your-data" class="level1">
+<h1>How to Prepare Your Data?</h1>
+<p>Proper data preparation is crucial for accurate HCA results in RAISINS. The platform guides users through preprocessing, but following best practices ensures reliability. What truly matters is the quality of your data! As the saying goes, “garbage in, garbage out” - and this holds true for any software.</p>
+<p>To prepare your dataset for analysis in RAISINS, you have two options:</p>
+<ol type="1">
+<li>Create your dataset in MS Excel</li>
+<li>Build your dataset directly within the RAISINS app</li>
+</ol>
+<section id="preparing-data-in-ms-excel" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-data-in-ms-excel">Preparing data in MS Excel</h2>
+<p>RAISINS allows for analyzing multiple characters simultaneously. So you can enter the observations for all characters for a particular set of treatments in a single excel file.</p>
+<section id="creating-a-data-file-in-ms-excel" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-data-file-in-ms-excel">1. Creating a Data File in MS Excel</h3>
+<ul>
+<li><p>Open a new microsoft excel file, use single sheet only.</p></li>
+<li><p>Start with Cell A1: Open a new MS Excel file and begin entering data from cell A1. Do not leave any blank rows above.</p></li>
+<li><p>First Row - Column Names: The first row must contain the column names.</p></li>
+<li><p>Column 1: Enter treatment/labels. <strong>There should not be any repetition in the label ID’s</strong>. If there is replications, you can use the mean values.</p></li>
+<li><p>From Column 2 Onwards: Enter the names of each character(variable) under study as separate columns (e.g.Murder, Assault, UrbanPop, Rape). You can give any names to the columns.</p></li>
+</ul>
+<p>See <a href="#fig-modata1">Figure&nbsp;1</a> showing how the prepared Excel file for upload should look like</p>
+<div id="fig-modata1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="PREP1.webp" class="img-fluid figure-img" style="width:45.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Model1 showing how the prepared Excel file for upload should look like</figcaption>
+</figure>
+</div>
+</section>
+<section id="file-format-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="file-format-recommendation">2. File Format Recommendation</h3>
+<ul>
+<li>In RAISINS you can upload file in xls, xlsx or csv format. But we recommend a csv format as it will be much lighter.</li>
+</ul>
+<details>
+<summary>
+Follow the below steps save your Excel file in csv format.
+</summary>
+<ol type="1">
+<li><p>Open your Excel file.</p></li>
+<li><p>Click on <strong>File</strong> in the top-left corner.</p></li>
+<li><p>Select <code>Save As</code> from the menu.</p></li>
+<li><p>Choose the <strong>location</strong> where you want to save the file.</p></li>
+<li><p>In the Save as type <strong>dropdown menu</strong>, select <code>CSV (Comma delimited) (*.csv)</code>.</p></li>
+<li><p>Enter a <strong>name</strong> for your file.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+</ol>
+</details></section>
+<section id="naming-columns-and-treatments" class="level3">
+<h3 class="anchored" data-anchor-id="naming-columns-and-treatments">3. Naming Columns and Treatments</h3>
+<ul>
+<li><p>Keep It Simple and Straight (KISS): Use simple and short names for column headers.</p></li>
+<li><p>Avoid Complexity: Do not include units, special characters, or spaces in names (e.g., use char1 instead of Character 1). This helps ensure the names appear neatly in plots and outputs.</p></li>
+<li><p>This helps ensure the names appear neatly in plots and outputs.</p></li>
+</ul>
+<details>
+<summary>
+Dataset Creation Rules
+</summary>
+<ol type="1">
+<li><strong>Column Naming Convention</strong>
+<ul>
+<li>No spaces allowed in column names.<br>
+</li>
+<li>Use underscores (<code>_</code>) or full stops (<code>.</code>) for separation.</li>
+<li>Avoid symbols and special characters like %,# etc</li>
+</ul></li>
+<li><strong>Data Arrangement</strong>
+<ul>
+<li>Start data arrangement towards the upper-left corner.<br>
+</li>
+<li>Ensure the row above the data is not blank.</li>
+</ul></li>
+<li><strong>Cell Management</strong>
+<ul>
+<li>Avoid typing or deleting in cells without data.<br>
+</li>
+<li>If needed, select affected cells, right-click, and select <strong>Clear Contents</strong>.</li>
+</ul></li>
+<li><strong>Column Relevance</strong>
+<ul>
+<li>Name all columns meaningfully.<br>
+</li>
+<li>Exclude unnecessary columns not required for analysis.</li>
+</ul></li>
+</ol>
+</details>
+</section>
+<section id="creating-data-using-the-app-recommended-method" class="level3">
+<h3 class="anchored" data-anchor-id="creating-data-using-the-app-recommended-method">4. Creating Data Using the App (Recommended Method)</h3>
+<ul>
+<li><p>Navigate to <code>Create Data</code> Tab: Click on the Create Dataset tab in the main menu at the top of the app.</p></li>
+<li><p>Specify Details: Enter the levels of Factor A, Factor B, Factor C and number of characters under study in the window that opens.</p></li>
+<li><p>Then click <code>create</code></p></li>
+<li><p>Model Data Entry File: A template for data entry will be generated. You can:</p>
+<ul>
+<li><p>Directly enter your data into this template.</p></li>
+<li><p>Or, copy-paste data from an existing Excel file.</p></li>
+</ul></li>
+<li><p>Download as CSV: Once the data is entered, click on the <code>Download CSV</code> File button. The downloaded CSV file can be uploaded for analysis in <code>Analysis tab</code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="uploading-the-data-file-for-analysis" class="level1">
+<h1>Uploading the Data File for Analysis</h1>
+<ul>
+<li><p>Upload the Prepared CSV/XLS File: Go to the <code>Analysis tab</code>(See <a href="#fig-modata2">Figure&nbsp;2</a>) and upload your prepared data file.</p></li>
+<li><p>Ensure Clean Data: Keep the file focused on the data; avoid adding any extra information or notes outside the data area.</p></li>
+</ul>
+<p>By following these instructions, you will have a well-prepared data file ready for analysis, allowing you to process multiple characters together.</p>
+<div id="fig-modata2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="tab1analysis1.webp" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Analysis tab</figcaption>
+</figure>
+</div>
+</section>
+<section id="dendrograms" class="level1">
+<h1>Dendrograms</h1>
+<p>A dendrogram is a tree-like diagram that visually represents how hierarchical clustering groups data step by step, allowing you to explore relationships and cluster formation within a dataset. A dendrogram displays the process of merging (or sometimes splitting) clusters during hierarchical cluster analysis.</p>
+<details>
+<summary>
+Step-by-Step: How to read a Dendrogram ?
+</summary>
+<ol type="1">
+<li><p>Start at the bottom - Each leaf represents a single observation or sample.</p></li>
+<li><p>Follow the lines upward - The first merges connect the most similar items. These connections indicate that the points or small clusters joined are very close based on the chosen similarity measure.</p></li>
+<li><p>Merging clusters - As you go higher, clusters are combined with others, and each branching indicates additional clustering - think of it as building a family tree for your data.</p></li>
+<li><p>Branch heights - The height at which branches merge tells you how similar the merged groups are-the lower the connection, the more similar the groups.</p></li>
+<li><p>Deciding number of clusters - By “cutting” the tree horizontally at a given level (distance threshold), you divide the data into clusters-each branch below the cut line forms a cluster.</p></li>
+</ol>
+</details>
+<p>RAISINS is designed for a smooth and hassle-free experience. Once you click the <code>Run Analysis</code> button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible dendrogram related to the Hierarchical Cluster analysis is readily available. Color-Coded Clusters dendrogram performed with the complete linkage method and euclidean distance metric, identified through elbow method, resulting in 2 clusters is available by default and each plot comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG (300 dpi), TIFF or PDF formats for use in reports or presentations.</p>
 </section>
 
 </main>

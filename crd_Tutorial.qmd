@@ -61,7 +61,7 @@ Let’s explore some practical situations in agricultural research where the Com
 </p>
 
 ::: {#example-image1 style="display: none;"}
-<img src="mangodata.webp" alt="Completely Randomised Design Example1" style="max-width: 100%; height: auto;"/>
+<img src="mangodata.webp" alt="Completely Randomised Design Example1" style="max-width: 50%; height: auto;"/>
 :::
 
 <p>
@@ -71,7 +71,7 @@ Let’s explore some practical situations in agricultural research where the Com
 </p>
 
 ::: {#example-image2 style="display: none;"}
-<img src="CHEMEXAMPLE.webp" alt="Completely Randomised Design Example2" style="max-width: 100%; height: auto;"/>
+<img src="CHEMEXAMPLE.webp" alt="Completely Randomised Design Example2" style="max-width: 50%; height: auto;"/>
 :::
 
 <p>
@@ -81,7 +81,7 @@ Let’s explore some practical situations in agricultural research where the Com
 </p>
 
 ::: {#example-image3 style="display: none;"}
-<img src="SHAPEEXAMPLE.webp" alt="Completely Randomised Design Example3" style="max-width: 100%; height: auto;"/>
+<img src="SHAPEEXAMPLE.webp" alt="Completely Randomised Design Example3" style="max-width: 50%; height: auto;"/>
 :::
 
 ```{=html}
@@ -398,7 +398,7 @@ The dataset format required for analysis in RAISINS is illustrated in @fig-data.
 
 Preparing data in RAISINS is simple and straightforward. Detailed instructions are provided in @sec-createData. Additionally, model datasets are available within the app for testing purposes, as explained in @sec-Datasets. See how dataset is arranged for analysis @fig-data.
 
-![Dataset arrangement for analyzing Ten mango cultivars each representing a different treatment evaluated by a horticultural scientist using the Completely Randomised Design in RAISINS](mangodata.webp){#fig-data fig-align="center"}
+![Dataset arrangement for analyzing Ten mango cultivars each representing a different treatment evaluated by a horticultural scientist using the Completely Randomised Design in RAISINS](mangodata.webp){#fig-data}
 
 Once the dataset is ready, head onto the `Analysis` tab in RAISINS and click on `Browse` and upload the data in csv, xls or xlsx format. After uploading select the treatment and variables of interest(multiple variables can also be selected) and then click on `Run Analysis`. A complete publication ready results and tables will be generated. Results can be downloaded as pdf, html or word format. See @fig-analysistab for marked Analysis window in RAISINS.
 
@@ -410,7 +410,7 @@ RAISINS generates result table in the format given in @fig-res1 and @fig-result2
 
 RAISINS generates result table in the format given in @fig-res1 and @fig-result2 after the analysis.
 
-![Result table in RAISINS](res1.webp){#fig-res1 fig-align="center" width="703"}
+![Result table in RAISINS](res1.webp){#fig-res1 fig-align="center" width="55%"}
 
 From the above result table @fig-res1 significant varietal differences were observed for yield and Obs1 traits, indicating that the performance of mango varieties differed significantly for these parameters. Obs2 and FW showed non-significant differences, meaning performance was relatively uniform across varieties for these traits.
 
