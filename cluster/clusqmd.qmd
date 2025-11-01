@@ -1,3 +1,215 @@
----
-title: "dendrograms"
----
+```{=html}
+<script>
+// Hide all descriptions on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const descriptions = document.querySelectorAll('.plot-description');
+  descriptions.forEach(desc => {
+    desc.style.display = 'none';
+    console.log('Hiding on load: ' + desc.id); // Debug log
+  });
+});
+
+function showDescription(id) {
+  console.log('Showing description: ' + id); // Debug log
+  document.getElementById(id).style.display = 'flex';
+}
+
+function hideDescription(id) {
+  console.log('Hiding description: ' + id); // Debug log
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+```
+```{=html}
+<style>
+.plot-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 350px; /* Fixed width for container */
+  height: 300px; /* Fixed height for container */
+  overflow: hidden; /* Ensure content fits within container */
+  margin: 10px; /* Add margin to prevent overlap */
+}
+
+.plot-container img {
+  width: 350px; /* Fixed image width */
+  height: 300px; /* Fixed image height */
+  object-fit: cover; /* Scale image to cover container */
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plot-container:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plot-description {
+  display: none !important; /* Ensure hidden by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover full image width */
+  height: 100%; /* Cover full image height */
+  z-index: 1000; /* Ensure description is above image */
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 142, 83, 0.8)); /* Semi-transparent gradient */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex; /* Center text */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+  pointer-events: none; /* Prevent description from blocking hover */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Visible border for debugging */
+}
+
+.plot-container:hover .plot-description {
+  display: flex !important; /* Force visibility on hover, using flex for centering */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Unique background gradients for each plot description */
+#Color-Coded Clusters Dendrogram-desc { background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 142, 83, 0.8)); }
+#Vertical Dendrogram -desc { background: linear-gradient(135deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)); }
+#Horizontal Dendrogram-desc { background: linear-gradient(135deg, rgba(161, 140, 209, 0.8), rgba(251, 194, 235, 0.8)); }
+#Classical Dendrogram-desc { background: linear-gradient(135deg, rgba(0, 221, 235, 0.8), rgba(38, 166, 154, 0.8)); }
+#meanvalueplot-desc { background: linear-gradient(135deg, rgba(255, 154, 139, 0.8), rgba(255, 106, 136, 0.8)); }
+#violinplot-desc { background: linear-gradient(135deg, rgba(132, 250, 176, 0.8), rgba(143, 211, 244, 0.8)); }
+</style>
+```
+::: grid
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Color-CodedClustersDendrogram-desc')" onmouseout="hideDescription('Color-Coded Clusters Dendrogram-desc')"}
+![Color-Coded Clusters Dendrogram](ColorCoded_Clusters.png){fallback="https://via.placeholder.com/300x300?text=Color-Coded Clusters+Plot"}
+
+::: {#Color-Coded Clusters Dendrogram-desc .plot-description}
+A color-coded cluster dendrogram is an enhanced version of the basic dendrogram where branches or clusters are colored differently to clearly distinguish the groupings formed by hierarchical clustering. This makes interpreting the tree much easier, especially for large datasets or when clusters overlap visually.
+:::
+:::
+:::
+
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('VerticalDendrogram-desc')" onmouseout="hideDescription('violinplot-desc')"}
+![Vertical Dendrogram](Vertical_Dendrogram.png){fallback="https://via.placeholder.com/300x300?text=Vertical+Plot"}
+
+::: {#Vertical Dendrogram-desc .plot-description}
+A vertical dendrogram is a classic, user-friendly way to display hierarchical clustering results with the data points along the bottom and cluster merges represented by upward vertical lines, enabling easy interpretation of cluster hierarchy and distances.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Horizontal Dendrogram-desc')" onmouseout="hideDescription('HorizontalDendrogram-desc')"}
+![Horizontal Dendrogram](Horizontal_Dendrogram.png){fallback="https://via.placeholder.com/300x300?text=Horizontal+Plot"}
+
+
+::: {#Horizontal Dendrogram-desc .plot-description}
+A horizontal dendrogram is a tree-like diagram used to visualize hierarchical clustering results where the structure extends horizontally rather than vertically. In this layout, the individual observations or samples appear along the vertical axis, and the branches stretch left to right, representing how clusters merge step-by-step based on dissimilarity or distance.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Classical Dendrogram-desc')" onmouseout="hideDescription('Classical-desc')"}
+![Classical Dendrogram](Classical_Dendrogram.png){fallback="https://via.placeholder.com/300x300?text=Classical+Plot"}
+
+::: {#Classical Dendrogram-desc .plot-description}
+A classical dendrogram is the traditional tree-like diagram used in hierarchical cluster analysis to represent the nested grouping of objects based on their similarity or distance. It is a fundamental visualization tool that shows how clusters are formed progressively, starting from each individual object and merging step by step into larger clusters until all objects are grouped into one.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Ward'slinkage-desc')" onmouseout="hideDescription('Ward's linkage-desc')"}
+![Ward's Linkage](Ward's_Linkage.png){fallback="https://via.placeholder.com/300x300?text=Ward's_Linkage+Plot"}
+
+
+::: {#Ward's linkage-desc .plot-description}
+Ward's linkage is a hierarchical clustering method focused on minimizing the increase in total within-cluster variance (or error sum of squares) when merging clusters. It is widely used because it tends to produce compact, spherical clusters, making it popular in many applications like biological data, market segmentation, and more.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Ward'slinkage-desc')" onmouseout="hideDescription('Rectangular Clusters-desc')"}
+![Rectangular Clusters](Rectangular_Clusters.png){fallback="https://via.placeholder.com/300x300?text=(Rectangular_Clusters+Plot"}
+
+
+::: {#Rectangular Clusters-desc .plot-description}
+Rectangular clusters are simply the visual aids drawn as boxes around groups of points identified as clusters on dendrograms or heat maps to facilitate clear, intuitive interpretation of cluster structure in hierarchical clustering outputs.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Ward'slinkage-desc')" onmouseout="hideDescription('Circular Dendrogram-desc')"}
+![Circular Dendrogram](Circular_Dendrogram.png){fallback="https://via.placeholder.com/300x300?text=(Circular_Dendrogram+Plot"}
+
+
+::: {#Circular Dendrogram-desc .plot-description}
+A Circular Dendrogram is a radial, space-efficient alternative to the classical dendrogram, arranging hierarchical cluster branches in concentric circles around a center. It enhances visual clarity for large or complex datasets by providing a 360-degree view of similarity and cluster structures, making it a valuable tool for hierarchical data visualization.
+:::
+:::
+
+::: g-col-6
+::: {.plot-container onmouseover="showDescription('Ward'slinkage-desc')" onmouseout="hideDescription('Circular Dendrogram-desc')"}
+![Coloured Rectangular Dendrogram](Colored_Rectangular_Dendrogram.png){fallback="https://via.placeholder.com/300x300?text=(Circular_Dendrogram+Plot"}
+
+
+::: {#Coloured Rectangular Dendrogram-desc .plot-description}
+A coloured rectangular dendrogram is an enhanced dendrogram visualization where clusters are not only enclosed in rectangular boxes but these boxes and the associated branches are also color-coded to clearly distinguish different clusters. This combination improves interpretability and presentation of hierarchical clustering results.
+:::
+:::
+:::
+
+
+::: {.custom-img-row}
+
+<style>
+.custom-img-row .image-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.custom-img-row .image-item {
+  flex: 1 1 45%;
+  text-align: center;
+}
+.custom-img-row .image-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.custom-img-row .image-caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+</style>
+
+<div class="image-row">
+
+  <div class="image-item">
+    ![](Circular_dendrogram.jpg)
+    <div class="image-caption">Circular dendrogram (k = 2): A radial representation showing cluster separation around a circle.</div>
+  </div>
+
+  <div class="image-item">
+    ![](Color-Coded_Clusters.jpg)
+    <div class="image-caption">Colour coded clusters (k = 2): Vertical dendrogram with branches grouped and color-coded by cluster.</div>
+  </div>
+
+</div>
+
+:::
+

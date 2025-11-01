@@ -31,6 +31,10 @@ Hierarchical Cluster Analysis (HCA) is a statistical method used to group simila
 
 _Below is a compact, practical guide you can use as a tutorial to perform Hierarchical Cluster Analysis in RAISINS._
 
+See @fig-cluana to get started with Cluster Analysis in RAISINS
+
+![Cluster analysis in RAISINS](CLUSANA.png){#fig-cluana fig-align="center" width="100%"}
+
 # How to Prepare Your Data? 
 
 Proper data preparation is crucial for accurate HCA results in RAISINS. The platform guides users through preprocessing, but following best practices ensures reliability. What truly matters is the quality of your data! As the saying goes, "garbage in, garbage out" - and this holds true for any software. 
@@ -114,6 +118,8 @@ This helps ensure the names appear neatly in plots and outputs.
 
 ### 4. Creating Data Using the App (Recommended Method)
 
+_See @fig-cr and follow the below steps to create data in RAISINS_
+
 - Navigate to `Create Data` Tab: Click on the Create Dataset tab in the main menu at the top of the app.
 
 - Specify Details: Enter the levels of Factor A, Factor B, Factor C and number of characters under study in the window that opens. 
@@ -127,6 +133,8 @@ This helps ensure the names appear neatly in plots and outputs.
     - Or, copy-paste data from an existing Excel file.
 
 - Download as CSV: Once the data is entered, click on the `Download CSV` File button. The downloaded CSV file can be uploaded for analysis in `Analysis tab`.
+
+![Creating Data in RAISINS](createdatatab.png){#fig-cr fig-align="center" width="100%"}
 
 # How to upload the data file for analysis ?
 
@@ -158,7 +166,7 @@ A dendrogram is a tree-like diagram that visually represents how hierarchical cl
 
 </details>
 
-RAISINS is designed for a smooth and hassle-free experience. Once you click the `Run Analysis` button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible dendrogram related to the Hierarchical Cluster analysis is readily available. Color-Coded Clusters dendrogram performed with the complete linkage method and euclidean distance metric, identified through elbow method, resulting in 2 clusters is available by default and each dendrogram comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG (300 dpi), TIFF or PDF formats for use in reports or presentations.
+RAISINS is designed for a smooth and hassle-free experience. Once you click the `Run Analysis` button, all relevant results and outputs appear instantly-leaving no room for confusion. We’ve ensured that every possible plot type related to the Hierarchical Cluster analysis is readily available. Color-Coded Clusters dendrogram performed with the complete linkage method and euclidean distance metric, identified through elbow method, resulting in 2 clusters is available by default and each dendrogram comes with a gear icon at the top-left corner, allowing you to customize its appearance. You can also download these plots in high-quality PNG (300 dpi), TIFF or PDF formats for use in reports or presentations.
 
 Explore @fig-1, @fig-2, @fig-3, @fig-4, @fig-5, @fig-6, @fig-7, @fig-8 where each dendrogram available in RAISINS is **visually illustrated and accompanied by a clear, insightful description below**, helping you easily understand the structure and meaning of each clustering pattern.
 
@@ -322,6 +330,15 @@ The Gap Statistic compares the total within-cluster dispersion for different k v
 :::
 
 </details>
+
+::: {layout-ncol=3}
+
+![**Elbow plot**](Elbowplot.png){#fig-ep  width=100%}
+
+![**Silhouette plot**](Silhouetteplot.png){#fig-sp  width=100%}
+
+![**Gap Statistic**](GapStatistic.png){#fig-gs  width=100%}
+:::
 
  - Scaling Options available in raisins: zscore, center, minmax, unitlength, robust, none 
  
