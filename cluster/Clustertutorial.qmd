@@ -178,10 +178,10 @@ Explore @fig-1, @fig-2, @fig-3, @fig-4, @fig-5, @fig-6, @fig-7, @fig-8 where eac
 ::: {layout-ncol=2}
 
 ![**Color coded clusters (k = 2)**  
-A color-coded cluster dendrogram is an enhanced version of the basic dendrogram where branches or clusters are colored differently to clearly distinguish the groupings formed by hierarchical clustering. This makes interpreting the tree much easier, especially for large datasets or when clusters overlap visually.](ColorCoded_Clusters.png){#fig-1 width=100%}
+A color-coded cluster dendrogram is an enhanced version of the basic dendrogram where branches or clusters are colored differently to clearly distinguish the groupings formed by hierarchical clustering. This makes interpreting the tree much easier, especially for large datasets or when clusters overlap visually.](ColorCoded_Clusters.webp){#fig-1 width=100%}
 
 ![**Vertical Dendrogram (k = 2)**  
-A vertical dendrogram is a classic, user-friendly way to display hierarchical clustering results with the data points along the bottom and cluster merges represented by upward vertical lines, enabling easy interpretation of cluster hierarchy and distances.](Vertical_Dendrogram.png){#fig-2 width=100%}
+A vertical dendrogram is a classic, user-friendly way to display hierarchical clustering results with the data points along the bottom and cluster merges represented by upward vertical lines, enabling easy interpretation of cluster hierarchy and distances.](Vertical_Dendrogram.webp){#fig-2 width=100%}
 :::
 
 ::: {layout-ncol=2}
